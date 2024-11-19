@@ -31,6 +31,7 @@
 	"dependencies": {
 		"aframe": "^1.6.0",
 		"tailwind-merge": "^2.5.4",
-		"three": "^0.170.0"
+		"three": "^0.170.0",
+		"tweakpane": "^4.0.5"
 	}
 }
