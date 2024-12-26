@@ -1,4 +1,7 @@
 <script>
+
+	import { Navbar, Footer } from '$components';
+
 	import { onMount } from 'svelte';
 	import '../app.css';
 
@@ -7,5 +10,7 @@
 </script>
 
 <div class="">
+	<Navbar />
 	{@render children()}
+	<Footer />
 </div>
