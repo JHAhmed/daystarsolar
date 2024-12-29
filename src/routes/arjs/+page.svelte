@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import model from '$lib/model.glb';
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
@@ -23,4 +23,4 @@
 		<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
 	  </a-scene>
 </div>
-
+ -->

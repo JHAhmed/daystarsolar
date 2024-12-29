@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import model from '$lib/model.glb';
 	import { browser } from '$app/environment';
 	import { Pane } from 'tweakpane';
@@ -35,8 +35,7 @@
 		<a-entity id="model" gltf-model={model} scale="0.5 0.5 0.5" position="-1 0.5 -3"></a-entity>
 		<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
 
-		<!-- Lighting -->
 		<a-light type="directional" position="2 4 5" intensity="2"></a-light>
 		<a-light type="ambient" intensity="0.5"></a-light>
 	</a-scene>
-</div>
+</div> -->
