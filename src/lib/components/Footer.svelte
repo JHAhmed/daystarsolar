@@ -46,19 +46,22 @@
         </div>
 
 
-        <div class="w-full py-16 flex flex-col justify-center items-left">
-            <p class="text-white font-light my-2">Sign up to our <span class="font-normal">newsletter</span></p>
-            <div class="flex items-center bg-white rounded-md shadow-md w-full max-w-md p-2">
-                <input 
-                  type="email" 
-                  placeholder="Email" 
-                  class="w-full border-none outline-none text-base p-2 focus:ring-transparent"
-                />
-                <button 
-                  class="bg-black text-white rounded-md p-2 flex items-center justify-center cursor-pointer">
-                  <ChevronIcon />
-                </button>
-              </div>
+        <div class="w-full py-16 flex flex-col justify-center items-center">
+
+            <div class="max-w-md w-full flex flex-col justify-center items-left">
+                <p class="text-white font-light my-2">Sign up to our <span class="font-normal">newsletter</span></p>
+                <div class="flex items-center bg-white rounded-md shadow-md w-full max-w-md p-2">
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      class="w-full border-none outline-none text-base p-2 focus:ring-transparent"
+                    />
+                    <button
+                        class="bg-black text-white rounded-md p-2 flex items-center justify-center cursor-pointer">
+                        <ChevronIcon />
+                    </button>
+                </div>
+            </div>
               
         </div>
 

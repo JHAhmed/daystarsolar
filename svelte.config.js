@@ -7,6 +7,7 @@ const config = {
 		alias: {
 			$components: 'src/lib/components',
 			$icons: 'src/lib/icons',
+			$shadcn: 'src/lib/ui',
 		},
 	},
 	preprocess: vitePreprocess(),

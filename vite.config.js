@@ -3,5 +3,5 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [sveltekit()],
-	assetsInclude: ['**/*.glb'] // Add this line
+	// assetsInclude: ['**/*.glb'] // Add this line
 });
