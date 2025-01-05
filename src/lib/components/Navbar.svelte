@@ -1,5 +1,5 @@
 <script>
-	import { ChevronIcon } from '$icons';
+	import { ChevronIcon, ArrowIcon } from '$icons';
 	import { logo } from '$lib';
 	import { onMount } from 'svelte';
 
@@ -23,78 +23,58 @@
 		};
 	});
 
-    import { page } from '$app/stores';  
-	
+	import { page } from '$app/stores';
+
 	let links = [
 		{ name: 'Home', href: '/', icon: ChevronIcon },
-        { name: 'Products', href: '/products', icon: ChevronIcon },
-        { name: 'Services', href: '/services', icon: ChevronIcon },
-        { name: 'About Us', href: '/about', icon: ChevronIcon },
-        { name: 'Contact', href: '/contact', icon: ChevronIcon },
+		{ name: 'Products', href: '/products', icon: ChevronIcon },
+		{ name: 'Services', href: '/services', icon: ChevronIcon },
+		{ name: 'About Us', href: '/about', icon: ChevronIcon },
+		{ name: 'Gallery', href: '/gallery', icon: ChevronIcon },
+		{ name: 'Blog', href: '/blog', icon: ChevronIcon }
 	];
 
-	let selected = $state(links.findIndex(link => link.href === $page.url.pathname))
+	let selected = $state(links.findIndex((link) => link.href === $page.url.pathname));
 	let isLightMode = $state(false);
 
 	$effect(() => {
-		const unsubscribe = page.subscribe(value => {
-			selected = links.findIndex(link => link.href === value.url.pathname);
+		const unsubscribe = page.subscribe((value) => {
+			selected = links.findIndex((link) => link.href === value.url.pathname);
 		});
 
 		return unsubscribe;
 	});
-
-    $effect(() => {
-        console.log(selected);
-    });
 </script>
 
 <nav class="mx-auto my-4 w-full rounded-lg bg-white px-2 lg:px-8">
 	<div class="mx-auto px-2 lg:px-8">
 		<div class="flex h-16 items-center justify-between lg:h-20">
 			<div class="flex-shrink-0">
-				<a href="/" title="" class="flex"> 
+				<a href="/" title="" class="flex">
 					<img class="h-8 w-auto lg:h-12" src={logo} alt="Daystar Logo" />
-                     <!-- LOGO -->
+					<!-- LOGO -->
 				</a>
 			</div>
 
 			<div class="hidden lg:flex lg:items-center lg:justify-end lg:space-x-12">
-				<a
-					href="/"
-					title=""
-					class="nav-btn tracking-0 lg:text-md font-sans relative p-4 px-0 text-sm text-black transition-all duration-200"
-                    class:nav-btn-selected={selected === 0}
-					>Home</a
-				>
-				<a
-					href="/products"
-					title=""
-					class="nav-btn tracking-0 lg:text-md font-sans relative inline-block p-4 px-0 text-sm text-black transition-all duration-200"
-                    class:nav-btn-selected={selected === 1}
-					>Products</a
-				>
-				<a
-					href="/services"
-					title=""
-					class="nav-btn tracking-0 lg:text-md font-sans relative inline-block p-4 px-0 text-sm text-black transition-all duration-200"
-                    class:nav-btn-selected={selected === 2}
-					>Services</a
-				>
-				<a
-					href="/about"
-					title=""
-					class="nav-btn tracking-0 lg:text-md font-sans relative inline-block p-4 px-0 text-sm text-black transition-all duration-200"
-                    class:nav-btn-selected={selected === 3}
-					>About Us</a
-				>
+				{#each links as link, i}
+					<a
+						href={link.href}
+						title=""
+						class="nav-btn tracking-0 lg:text-md relative inline-block p-4 px-0 font-sans text-sm text-black transition-all duration-200"
+						class:nav-btn-selected={selected === i}>{link.name}</a
+					>
+				{/each}
 				<a
 					href="/contact"
 					title=""
-					class="nav-btn tracking-0 lg:text-md font-sans relative inline-block p-4 px-0 text-sm text-black transition-all duration-200"
-                    class:nav-btn-selected={selected === 4}
-					>Contact</a
-				>
+					class="tracking-0 group/button lg:text-md relative inline-block rounded-full bg-orange-200 p-3 px-6 font-sans text-sm text-black transition-all duration-200 hover:bg-orange-300"
+					>Contact
+					<!-- <div class="absolute group-hover/button:-top-2 group-hover/button:-right-2 bg-black rounded-full p-1 -top-1 -right-1 duration-100"> -->
+					<div class="absolute -right-1 -top-1 rounded-full bg-black p-1 duration-100">
+						<ArrowIcon color="white" className="size-3 stroke-white -rotate-[135deg]" />
+					</div>
+				</a>
 			</div>
 			<div class="lg:hidden">
 				<button
@@ -111,19 +91,21 @@
 	{#if isOpen}
 		<div class="lg:hidden">
 			<div class="space-y-1 px-2 pb-3 pt-2">
+				{#each links as link, i}
+					<a
+						href={link.href}
+						onclick={toggleMenu}
+						class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+						>{link.name}</a
+					>
+				{/each}
 				<a
-					href="/"
-					class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-					>Home</a
+					href="/contact"
+					onclick={toggleMenu}
+					class="block rounded-md bg-orange-100 px-3 py-2 text-base font-medium text-gray-700 hover:bg-orange-200 hover:text-gray-900"
+					>Contact</a
 				>
-				<a
-					href="/about"
-					class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-					>About</a
-				>
-
 			</div>
-
 		</div>
 	{/if}
 </nav>
@@ -147,11 +129,11 @@
 		left: 0%;
 	}
 
-    .nav-btn-selected:after {
-        width: 100%;
-        left: 0%;
-        opacity: 0.5;
-    }
+	.nav-btn-selected:after {
+		width: 100%;
+		left: 0%;
+		opacity: 0.5;
+	}
 
 	@media (max-width: 1024px) {
 		.nav-btn:after {

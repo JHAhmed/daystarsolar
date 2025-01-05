@@ -30,7 +30,7 @@
 
 </script>
  
-<div class="bg-orange-100 w-full grid grid-cols-2 rounded-xl p-16 my-32">
+<div class="bg-orange-100 w-full grid grid-cols-2 rounded-xl p-16 my-24">
 
     <div class="w-full flex flex-col space-y-16 items-left justify-center">
 

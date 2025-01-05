@@ -6,20 +6,19 @@
 
 <footer class="mx-auto w-full">
 
-    <div class="bg-[#1F232C] p-8 w-full h-full grid grid-cols-3">
+    <div class=" bg-darkgray p-8 w-full h-full grid lg:grid-cols-3 grid-cols-1 gap-2">
 
-        <div class="w-full h-full flex flex-col items-left px-4">
+        <div class="w-full text-center lg:text-left h-full flex flex-col items-left px-4">
             <div class="flex flex-col justify-center grow items-cen">
                 <p class="text-white text-md font-light max-w-md">
                     <span class="font-normal">Daystar Solar</span> was formed with the intention of consulting; procuring,
                     supplying and installing solar power plants for commercial and domestic use.
                 </p>
             </div>
-            <p class="text-xs text-gray-500">© 2024 Daystar Solar  •  All rights reserved</p>
+            <p class="text-xs my-4 text-gray-500 md:block hidden">© 2024 Daystar Solar  •  All rights reserved</p>
         </div>
 
-
-        <div class="w-full py-16">
+        <div class="w-full p-8 md:py-16 md:text-left text-center">
             <div class="flex flex-col items-left w-full h-full justify-center px-4">
                 <div class="grid grid-cols-2">
 
@@ -45,11 +44,10 @@
             </div>
         </div>
 
-
-        <div class="w-full py-16 flex flex-col justify-center items-center">
+        <div class="w-full p-8 md:py-16 flex flex-col justify-center items-center">
 
             <div class="max-w-md w-full flex flex-col justify-center items-left">
-                <p class="text-white font-light my-2">Sign up to our <span class="font-normal">newsletter</span></p>
+                <p class="text-white text-center md:text-left font-light my-2">Sign up to our <span class="font-normal">newsletter</span></p>
                 <div class="flex items-center bg-white rounded-md shadow-md w-full max-w-md p-2">
                     <input
                       type="email"
@@ -64,31 +62,34 @@
             </div>
               
         </div>
+        <p class="text-xs my-2 text-gray-500 md:hidden text-center">© 2025 Daystar Solar  •  All rights reserved</p>
 
     </div>
 
-	<div class="mx-auto my-4 flex items-center justify-center px-2 lg:px-8">
+	<div class="mx-auto my-4 flex items-center relative justify-center px-4 lg:px-8">
 
-        <div class="space-x-6 flex">
+        <div class="space-x-6 flex mr-[6.5rem]">
             <a href="https://twitter.com/DaystarSolar">
-                <img class="h-2 w-auto lg:h-4" src={twitterLogo} alt="Twitter Logo" />
+                <img class="h-3 w-auto lg:h-4" src={twitterLogo} alt="Twitter Logo" />
             </a>
             <a href="https://www.facebook.com/daystarsolarindia">
-                <img class="h-2 w-auto lg:h-4" src={facebookLogo} alt="Facebook Logo" />
+                <img class="h-3 w-auto lg:h-4" src={facebookLogo} alt="Facebook Logo" />
             </a>
             <a href="https://in.linkedin.com/company/daystar-solar">
-                <img class="h-2 w-auto lg:h-4" src={linkedinLogo} alt="LinkedIn Logo" />
+                <img class="h-3 w-auto lg:h-4" src={linkedinLogo} alt="LinkedIn Logo" />
             </a>
         </div>
 
-        <div class="grow">
+        <div class="grow"></div>
+
+        <div class="flex items-center justify-center mx-auto absolute top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4">
             <a href="/" title="" class="flex items-center justify-center"> 
-                <img class="h-4 w-auto lg:h-6" src={logoSmall} alt="Daystar Logo" />
+                <img class="h-5 w-auto md:h-6" src={logoSmall} alt="Daystar Logo" />
             </a>
         </div>
 
-        <a href="/privacy-policy" class="text-xs font-normal">Privacy Policy</a>
-        <span class="mx-2">|</span>
-        <a href="/terms-of-service" class="text-xs font-normal">Terms of Service</a>
+        <div class="flex lg:flex-row flex-col items-center justify-center text-center space-x-2 text-xs font-medium text-gray-900">
+            <a href="https://wurks.studio/" class="text-gray-600 font-normal">By <span class="text-purple-600 font-medium">Wurks</span>.</a>
+        </div>
     </div>
 </footer>

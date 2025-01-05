@@ -1,3 +1,4 @@
+import { transform } from "motion";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
@@ -15,6 +16,7 @@ const config = {
 		},
 		extend: {
 			colors: {
+				darkgray: '#1F232C', 
 				border: "hsl(var(--border) / <alpha-value>)",
 				input: "hsl(var(--input) / <alpha-value>)",
 				ring: "hsl(var(--ring) / <alpha-value>)",
@@ -56,6 +58,15 @@ const config = {
 			},
 			fontFamily: {
 				sans: ["Poppins", ...fontFamily.sans]
+			},
+			animation: {
+				"loop-scroll": "loop-scroll 5s linear infinite"
+			},
+			keyframes: {
+				"loop-scroll": {
+					from: { transform: "translateX(0)" },
+					to: { transform: "translateX(-100%)" },
+				}
 			}
 		}
 	},
