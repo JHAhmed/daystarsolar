@@ -8,52 +8,42 @@
 	const steps = [
 		{
 			title: 'Customer Interaction',
-			description: 'Experience the pain points and provide the solutions.'
+			description: 'Understand pain points and offer tailored solutions to meet client needs.'
 		},
 		{
-			title: 'Digitisation',
+			title: 'Site Digitisation',
 			description:
-				'Site visit and digitisation of site parameters. This enables simulation for exact verification of performance.'
+				'Conduct site visits to gather parameters for precise simulation and performance verification.'
 		},
 		{
-			title: 'Design',
+			title: 'Design and Approvals',
 			description:
-				'Initial designs are based on surveyed parameters and solutions discussed. A clear plan is charted keeping in mind challenges on cost and design requirements.'
+				'Create initial designs based on site data, balancing cost and design challenges. Obtain statutory approvals and permissions within a clear timeline.'
 		},
 		{
-			title: 'Approvals',
+			title: 'Procurement and Installation',
 			description:
-				'Statutory approvals and permissions are involved in a properly executed timeline. Nothing is left to chance. Challenges are overcome with ingenuity.'
+				'Procure materials and validate designs before starting the installation with precision and efficiency.'
 		},
 		{
-			title: 'Installation',
+			title: 'Testing and Commissioning',
 			description:
-				'Once all parameters are approved from vendor and customer, the work is started after procurement and validation from the design team.'
+				'Perform rigorous testing, wiring, and structural integrity checks to ensure seamless commissioning.'
 		},
 		{
-			title: 'Commissioning',
+			title: 'Handover and Training',
 			description:
-				'All testing, wiring, earthing, structural integrity calculations, verification, and quality controls are observed during this process. This is exhaustive and intensive.'
+				'Deliver the completed plant and provide operational support during a dedicated “hand-holding” period.'
 		},
 		{
-			title: 'Handover',
+			title: 'Performance Monitoring',
 			description:
-				"Once commissioned, the completed plant is handed over from an operations perspective, and a 'hand-holding' period for operations is in progress."
+				'Track plant performance remotely and through inspections, ensuring peak operation and maintenance schedules.'
 		},
 		{
-			title: 'Report',
+			title: 'Service and Support',
 			description:
-				'A detailed project report is drafted once the handover is completed. This is essentially the custom reference manual with all electrical codes and designs.'
-		},
-		{
-			title: 'Followup',
-			description:
-				'We check up on the plant working remotely and by physical inspections. We track performance, cleaning schedules, and overall health of the plant.'
-		},
-		{
-			title: 'Service Backup',
-			description:
-				'Future-proofing our plants also means we have the best after-sales backup service. We work to keep your plant always healthy and generating for years.'
+				'Offer ongoing service and reliable after-sales support to keep your plant efficient for years.'
 		}
 	];
 
@@ -73,8 +63,6 @@
 			);
 		});
 	});
-
-
 </script>
 
 <Services />

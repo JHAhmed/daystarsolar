@@ -57,15 +57,13 @@
 	<div class="mb-16 grid grid-cols-12">
 		<div class="col-span-5">
 			<div class="mb-12 space-y-12">
-				<h2 class="text-md mb-4 font-semibold uppercase tracking-widest">Daystar Solar</h2>
-				<div class="h-[2px] w-8 bg-black"></div>
-				<h1 class="mb-8 max-w-xl font-serif text-4xl md:text-5xl">
-					Effective solar energy made simple
+				<!-- <h2 class="text-md mb-4 font-semibold uppercase tracking-widest">Daystar Solar</h2> -->
+				<!-- <div class="h-[2px] w-8 bg-black"></div> -->
+				<!-- <h1 class="mb-8 max-w-xl font-serif text-4xl md:text-5xl"> -->
+				<h1 class="my-12 max-w-xl py-8 text-4xl font-medium md:text-6xl">
+					Effective <span class="text-orange-400">solar</span> energy made simple
 				</h1>
-				<button
-					on:click={scrollToView}
-					class="flex items-center gap-2 rounded-md bg-orange-200 p-4"
-				>
+				<button on:click={scrollToView} class="flex items-center gap-2 rounded-md bg-blue-200 p-4">
 					<p class="mx-4 text-lg font-medium tracking-tighter">Solar Calculator</p>
 					<div
 						class="flex cursor-pointer items-center justify-center rounded-md bg-white p-2 text-black"

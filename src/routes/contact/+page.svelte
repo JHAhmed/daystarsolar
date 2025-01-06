@@ -89,13 +89,13 @@
 					type="text"
 					placeholder="John"
 					bind:value={firstName}
-					class="w-full rounded-lg bg-gray-100 p-4 focus:outline-none focus:ring-2 focus:ring-gray-200"
+					class="w-full rounded-lg bg-gray-200 p-4 focus:outline-none focus:ring-2 focus:ring-gray-200"
 				/>
 				<input
 					type="text"
 					placeholder="Smith"
 					bind:value={lastName}
-					class="w-full rounded-lg bg-gray-100 p-4 focus:outline-none focus:ring-2 focus:ring-gray-200"
+					class="w-full rounded-lg bg-gray-200 p-4 focus:outline-none focus:ring-2 focus:ring-gray-200"
 				/>
 			</div>
 
@@ -103,14 +103,14 @@
 				type="email"
 				placeholder="johnsmith@gmail.com"
 				bind:value={email}
-				class="w-full rounded-lg bg-gray-100 p-4 focus:outline-none focus:ring-2 focus:ring-gray-200"
+				class="w-full rounded-lg bg-gray-200 p-4 focus:outline-none focus:ring-2 focus:ring-gray-200"
 			/>
 
 			<textarea
 				placeholder="Hey there!"
 				bind:value={message}
 				rows="4"
-				class="h-full w-full resize-none rounded-lg bg-gray-100 p-4 focus:outline-none focus:ring-2 focus:ring-gray-200"
+				class="h-full w-full resize-none rounded-lg bg-gray-200 p-4 focus:outline-none focus:ring-2 focus:ring-gray-200"
 			></textarea>
 
 			<button

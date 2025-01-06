@@ -51,7 +51,7 @@
 		<div class="flex h-16 items-center justify-between lg:h-20">
 			<div class="flex-shrink-0">
 				<a href="/" title="" class="flex">
-					<img class="h-8 w-auto lg:h-12" src={logo} alt="Daystar Logo" />
+					<img class="h-10 w-auto lg:h-14" src={logo} alt="Daystar Logo" />
 					<!-- LOGO -->
 				</a>
 			</div>
@@ -68,7 +68,7 @@
 				<a
 					href="/contact"
 					title=""
-					class="tracking-0 group/button lg:text-md relative inline-block rounded-full bg-orange-200 p-3 px-6 font-sans text-sm text-black transition-all duration-200 hover:bg-orange-300"
+					class="tracking-0 group/button lg:text-md relative inline-block rounded-full bg-blue-200 p-3 px-6 font-sans text-sm text-black transition-all duration-200 hover:bg-blue-300"
 					>Contact
 					<!-- <div class="absolute group-hover/button:-top-2 group-hover/button:-right-2 bg-black rounded-full p-1 -top-1 -right-1 duration-100"> -->
 					<div class="absolute -right-1 -top-1 rounded-full bg-black p-1 duration-100">
@@ -102,7 +102,7 @@
 				<a
 					href="/contact"
 					onclick={toggleMenu}
-					class="block rounded-md bg-orange-100 px-3 py-2 text-base font-medium text-gray-700 hover:bg-orange-200 hover:text-gray-900"
+					class="block rounded-md bg-blue-100 px-3 py-2 text-base font-medium text-gray-700 hover:bg-blue-200 hover:text-gray-900"
 					>Contact</a
 				>
 			</div>
