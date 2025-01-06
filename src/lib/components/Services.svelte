@@ -57,7 +57,7 @@ A comprehensive maintenance contract should include these essential services:
 			title: 'Research & Development',
 			description: `The Photovoltaics (PV) team supports research and development initiatives focused on lowering manufacturing costs, increasing efficiency and performance, and improving reliability of PV technologies. These efforts aim to promote the widespread adoption of electricity produced directly from sunlight.
 <br>  
-				The Future of Solar Energy study focuses on two primary solar energy conversion technologies: photovoltaics (PV) and concentrated solar power (CSP, also known as solar thermal). The analysis examines these technologies in both their current state and potential future forms. Given that energy supply facilities typically operate for several decades, these two technologies will dominate solar power generation through 2050, which serves as the study's temporal limit.`
+The Future of Solar Energy study focuses on two primary solar energy conversion technologies: photovoltaics (PV) and concentrated solar power (CSP, also known as solar thermal). The analysis examines these technologies in both their current state and potential future forms. Given that energy supply facilities typically operate for several decades, these two technologies will dominate solar power generation through 2050, which serves as the study's temporal limit.`
 		},
 		{
 			title: 'Solar Audit & Liaisoning Works',
@@ -104,7 +104,7 @@ function truncateText(text, maxLength = 40) {
 		What we offer.
 	</p>
 
-	<div class="my-12 grid grid-cols-2 gap-4">
+	<div class="my-12 grid grid-cols-1 md:grid-cols-2 gap-4">
 		{#each services as item, i}
 			<div use:animateIn={{ delay: i / 5, blur: 8, y: 20, amount: 0.1 }} class="flex opacity-0">
 				<Accordion.Root class="flex w-full p-2 hover:bg-gray-50">
@@ -115,9 +115,9 @@ function truncateText(text, maxLength = 40) {
 							{item.title}
 							<!-- <h2 class=""></h2> -->
 							<!-- <div class="grow"></div> -->
-							<p class="mx-4 mr-8 text-sm font-light text-gray-600 transition-all duration-100">
+							<!-- <p class="mx-4 mr-8 text-sm font-light text-gray-600 transition-all duration-100">
 								{@html snarkdown(truncateText(item.description))}
-							</p>
+							</p> -->
 						</Accordion.Trigger>
 						<Accordion.Content>
 							<div class="flex">
