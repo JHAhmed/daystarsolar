@@ -4,6 +4,7 @@
 	import { animate, inView } from 'motion';
 	import { ChevronIcon, ArrowIcon } from '$icons';
 	import { CTA } from '$components';
+	import { animateIn } from '$lib';
 
 	let faq = [
 		{
@@ -98,31 +99,6 @@
 		}
 	];
 
-	function animateIn(element, args = { duration: 0.5, delay: 0, scale: 1, x: 0, y: 0, blur: 0, amount: 0.5 }) {
-
-		// inView(
-		// 	element,
-		// 	() => {
-
-		// 	},
-		// 	{ amount: args.amount }
-		// );
-
-		const animation = animate(
-					element,
-					{
-						opacity: 1,
-						scale: [args.scale, 1],
-						x: [args.x, 0],
-						y: [args.y, 0],
-						filter: [`blur(${args.blur}px)`, 'blur(0px)'] // Add blur animation
-					},
-					{
-						duration: args.duration,
-						delay: args.delay
-					}
-				);
-	}
 </script>
 
 <div class="mx-auto max-w-7xl px-4 py-6 md:py-12">
@@ -132,10 +108,10 @@
 	</div>
 </div>
 
-<div class="mx-auto grid max-w-7xl grid-cols-1 gap-4 p-8 text-left">
+<div class="mx-auto grid max-w-7xl grid-cols-1 gap-4 px-8 text-left">
 	{#each faq as item, i}
 		<!-- <div use:animateIn={{ delay: i / 5, blur: 8, amount: 0.1 }} class="opacity-0"> -->
-		<div use:animateIn={{ delay: i / 5, blur: 8, y: 20, amount: 0.1 }} class="opacity-0">
+		<div use:animateIn={{ delay: i / 5, blur: 8, y: 20, inView: false }} class="opacity-0">
 			<Accordion.Root class="w-full hover:bg-gray-50 p-2">
 				<Accordion.Item value="item-1">
 					<Accordion.Trigger class="text-md md:text-lg text-left">{item.question}</Accordion.Trigger>

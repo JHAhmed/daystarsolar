@@ -36,6 +36,7 @@
 	"dependencies": {
 		"@splinetool/viewer": "^1.9.56",
 		"motion": "^11.15.0",
-		"scrollmagic": "^2.0.8"
+		"scrollmagic": "^2.0.8",
+		"snarkdown": "^1.0.2"
 	}
 }

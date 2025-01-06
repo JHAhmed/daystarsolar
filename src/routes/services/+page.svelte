@@ -1,10 +1,8 @@
 <script>
-	import { browser } from '$app/environment';
-	import { CTA, ServicesCards } from '$components';
+	import { CTA, ServicesCards, Services } from '$components';
 	import { animate, inView, stagger, scroll } from 'motion';
 	import { onMount } from 'svelte';
-
-
+	import { animateIn } from '$lib';
 
 	let scrollContainer;
 	const steps = [
@@ -59,32 +57,6 @@
 		}
 	];
 
-	function animateIn(
-		element,
-		args = { duration: 0.5, delay: 0, scale: 1, x: 0, y: 0, blur: 0, amount: 0.5 }
-	) {
-		inView(
-			element,
-			() => {
-				const animation = animate(
-					element,
-					{
-						opacity: 1,
-						scale: [args.scale, 1],
-						x: [args.x, 0],
-						y: [args.y, 0],
-						filter: [`blur(${args.blur}px)`, 'blur(0px)']
-					},
-					{
-						duration: args.duration,
-						delay: args.delay
-					}
-				);
-			},
-			{ amount: args.amount }
-		);
-	}
-
 	onMount(() => {
 		inView(scrollContainer, () => {
 			const animation = animate(
@@ -101,27 +73,35 @@
 			);
 		});
 	});
+
+
 </script>
+
+<Services />
 
 <ServicesCards />
 
-<!-- <div class="mx-auto flex max-w-7xl flex-col items-center justify-center space-y-2 p-16"></div> -->
+<section class="mx-auto max-w-7xl p-8">
+	<h2
+		use:animateIn
+		class="my-8 text-left text-3xl font-semibold tracking-tighter opacity-0 md:text-5xl"
+	>
+		Our Process
+	</h2>
 
-<section class="mx-auto max-w-7xl py-8 md:py-16 p-8">
-
-	<h2 use:animateIn class="text-3xl md:text-5xl my-8 font-semibold tracking-tighter text-left opacity-0">Our Process</h2>
-
-	<div bind:this={scrollContainer} class="grid gap-8 gap-y-12 md:gap-y-16 md:grid-cols-4">
+	<div bind:this={scrollContainer} class="grid gap-8 gap-y-12 md:grid-cols-4 md:gap-y-16">
 		{#each steps as step, index}
 			<div use:animateIn={{ delay: index / 4, blur: 8, amount: 0.1 }} class="relative opacity-0">
 				<div class="my-4 flex items-center">
 					<div class=" step-point size-3 rounded-full bg-gray-900"></div>
-					<div class="absolute mx-6 h-0.5 w-5/6 md:w-full bg-gray-300"></div>
+					<div class="absolute mx-6 h-0.5 w-5/6 bg-gray-300 md:w-full"></div>
 				</div>
 
 				<div class="px-1">
-					<h3 class="mb-3 text-xl md:text-2xl font-semibold tracking-tighter">{step.title}</h3>
-					<p class="text-xs md:text-sm leading-snug tracking-tight text-gray-600">{step.description}</p>
+					<h3 class="mb-3 text-xl font-semibold tracking-tighter md:text-2xl">{step.title}</h3>
+					<p class="text-xs leading-snug tracking-tight text-gray-600 md:text-sm">
+						{step.description}
+					</p>
 				</div>
 			</div>
 		{/each}

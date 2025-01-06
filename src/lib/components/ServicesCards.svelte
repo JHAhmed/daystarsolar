@@ -4,6 +4,8 @@
 	import { animate, inView, stagger, scroll } from 'motion';
 	import { onMount } from 'svelte';
 
+	import { animateIn } from '$lib';
+
 	onMount(() => {
 
 		animate(
@@ -71,36 +73,9 @@
 
 	});
 
-	function animateIn(element, args = { duration: 1, delay: 0, scale: 1, x: 0, y: 10, blur: 8, amount: 0.5 }) {
-
-		inView(
-			element,
-			() => {
-			const animation = animate(
-					element,
-					{
-						opacity: 1,
-						scale: [args.scale, 1],
-						rotate: [-1, 0],
-						x: [args.x, 0],
-						y: [args.y, 0],
-						filter: [`blur(${args.blur}px)`, 'blur(0px)'] 
-					},
-					{
-						duration: args.duration,
-						delay: args.delay
-					}
-				);
-			},
-			{ amount: args.amount }
-		);
-		
-
-	}
-
 </script>
 
-<section class="mx-auto max-w-7xl px-6 py-8 md:py-16">
+<section class="mx-auto max-w-7xl px-6 py-8 md:py-12">
 	<h2 use:animateIn={{ delay: 0.0, duration: 0.2, blur: 2 }} class="text-3xl md:text-5xl my-8 font-semibold tracking-tighter text-left opacity-0">Why Choose Us?</h2>
 
 	<div class="grid gap-4 md:gap-8 md:grid-cols-3">
@@ -108,12 +83,12 @@
 		<div use:animateIn={{ delay: 0.0, duration: 0.5, blur: 8 }} class="rounded-xl origin-top-left opacity-0 bg-gray-50 p-6 md:p-8 text-center md:text-left motion">
 			<div class="m-6 mx-auto flex scale-75 md:scale-100 size-60 items-center justify-center" id="arrow-container">
 				<div class="flex">
-					{#each { length: 12 }, i}
+					{#each { length: 8 }, i}
 						<div class="flex flex-col">
-							{#each { length: 12 }, i}
+							{#each { length: 8 }, i}
 								<!-- <div class="size-2 p-1 rounded-full bg-black hover:size-3 duration-100"></div> -->
 								<div class="" style="transform-origin: center; transition: transform 0.1s ease;">
-									<ArrowIcon className="size-4 arrow stroke-[3] text-gray-900" />
+									<ArrowIcon className="size-6 arrow stroke-[3] text-gray-900" />
 								</div>
 							{/each}
 						</div>

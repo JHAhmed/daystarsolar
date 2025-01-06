@@ -11,6 +11,7 @@
 	} from '$icons';
 
 	import { animate, inView } from 'motion';
+	import { animateIn } from '$lib';
 
 	let firstName = '';
 	let lastName = '';
@@ -21,19 +22,6 @@
 		e.preventDefault();
 	};
 
-	function animateIn(element, args = { duration: 0.5, delay: 0, scale: 1, x: 0, y: 0 }) {
-		inView(
-			element,
-			() => {
-				const animation = animate(
-					element,
-					{ opacity: 1, scale: [args.scale, 1], x: [args.x, 0], y: [args.y, 0] },
-					{ duration: args.duration, delay: args.delay }
-				);
-			},
-			{ amount: 0.5 }
-		);
-	}
 </script>
 
 <div class="mx-auto max-w-7xl px-4 py-6 md:py-12">
