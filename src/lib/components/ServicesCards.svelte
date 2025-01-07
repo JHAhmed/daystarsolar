@@ -80,7 +80,7 @@
 
 	<div class="grid gap-4 md:gap-8 md:grid-cols-3">
 
-		<div use:animateIn={{ delay: 0.0, duration: 0.5, blur: 8 }} class="rounded-xl origin-top-left opacity-0 bg-gray-50 p-6 md:p-8 text-center md:text-left motion">
+		<div use:animateIn={{ delay: 0.0, duration: 0.5, blur: 8, rotate: 2 }} class="rounded-xl origin-top-left opacity-0 bg-gray-50 p-6 md:p-8 text-center md:text-left motion">
 			<div class="m-6 mx-auto flex scale-75 md:scale-100 size-60 items-center justify-center" id="arrow-container">
 				<div class="flex">
 					{#each { length: 8 }, i}
@@ -107,7 +107,7 @@
 			</p>
 		</div>
 
-		<div use:animateIn={{ delay: 0.2, duration: 0.5, blur: 8 }} class="rounded-xl origin-top-left opacity-0 bg-gray-50 p-6 md:p-8 text-center md:text-left motion">
+		<div use:animateIn={{ delay: 0.2, duration: 0.5, blur: 8, rotate: 2 }} class="rounded-xl origin-top-left opacity-0 bg-gray-50 p-6 md:p-8 text-center md:text-left motion">
 			<div class="m-6 mx-auto flex scale-75 md:scale-100 size-60 items-center justify-center">
 				<div class="flex">
 					{#each { length: 12 }, i}
@@ -130,7 +130,7 @@
 			</p>
 		</div>
 
-		<div use:animateIn={{ delay: 0.4, duration: 0.5, blur: 8 }} class="rounded-xl origin-top-left opacity-0 bg-gray-50 p-6 md:p-8 text-center md:text-left motion">
+		<div use:animateIn={{ delay: 0.4, duration: 0.5, blur: 8, rotate: 2 }} class="rounded-xl origin-top-left opacity-0 bg-gray-50 p-6 md:p-8 text-center md:text-left motion">
 			
 			<div class="m-6 mx-auto grid grid-cols-12 scale-75 md:scale-100 size-60 group gap-2 p-6 items-center justify-center">
 				<div class="flex bg-gray-400 col-span-4 box rounded-lg w-full h-full"></div>

@@ -34,6 +34,7 @@
 		"vite": "^5.4.11"
 	},
 	"dependencies": {
+		"marked": "^15.0.6",
 		"motion": "^11.15.0",
 		"snarkdown": "^1.0.2"
 	}

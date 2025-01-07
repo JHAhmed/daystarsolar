@@ -4,28 +4,30 @@
 	// import AmazonLogo from '$lib/components/AmazonLogo.svelte';
 	// import IndiaMartLogo from '$lib/components/IndiaMartLogo.svelte';
 
+	import { IndiaMartLogo, AmazonLogo } from '$components';
+
 	const products = [
 		{
 			title: 'Solar Street Lights',
-			image: solarImage1,
+			image: solarImage3,
 			byds: true,
 			alt: 'Solar powered street light against blue cloudy sky'
 		},
 		{
 			title: 'Solar Distribution Boxes',
-			image: solarImage2,
+			image: solarImage4,
 			byds: true,
 			alt: 'Solar distribution box mounted on red brick wall'
 		},
 		{
 			title: 'Solar Panels',
-			image: solarImage3,
+			image: solarImage2,
 			byds: false,
 			alt: 'Large solar panel array in a field during cloudy day'
 		},
 		{
 			title: 'Others',
-			image: solarImage4,
+			image: solarImage1,
 			byds: false,
 			alt: 'Worker installing solar panels on a roof'
 		}
@@ -42,9 +44,9 @@
 
 				<div class="absolute -inset-4 flex flex-col justify-between p-8">
 					<div class="flex justify-end">
-						<div class="rounded-full bg-white p-2">
+						<a href="/" class="rounded-full bg-white p-2">
 							<ArrowIcon className="h-4 w-4 text-black -rotate-[135deg]" />
-						</div>
+						</a>
 					</div>
 
 					<div class="p-4">
@@ -55,17 +57,17 @@
 
 						<div class="my-4 flex gap-3">
 							<button
-								class="flex items-center gap-2 rounded-full border-2 border-white bg-white/20 px-4 py-2 backdrop-blur-sm"
+								class="flex items-center gap-2 rounded-full border-2 border-white bg-white/20 px-2 py-2 backdrop-blur-sm"
 							>
-								<ArrowIcon class="h-4 w-4" />
-								<span class="text-sm text-white">Amazon</span>
+								<AmazonLogo />
+								<span class="text-sm text-white mx-2">Amazon</span>
 							</button>
 
 							<button
-								class="flex items-center gap-2 rounded-full border-2 border-white bg-white/20 px-4 py-2 backdrop-blur-sm"
+								class="flex items-center gap-2 rounded-full border-2 border-white bg-white/20 px-2 py-2 backdrop-blur-sm"
 							>
-								<ArrowIcon class="h-4 w-4" />
-								<span class="text-sm text-white">IndiaMART</span>
+								<IndiaMartLogo />
+								<span class="text-sm text-white mx-2">IndiaMART</span>
 							</button>
 						</div>
 					</div>
