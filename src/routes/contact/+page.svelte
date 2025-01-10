@@ -21,8 +21,15 @@
 	const handleSubmit = (e) => {
 		e.preventDefault();
 	};
-
 </script>
+
+<svelte:head>
+	<title>Contact Us | Daystar Solar</title>
+	<meta
+		name="description"
+		content="Get in touch with Daystar Solar for all your solar energy needs. Contact us for procurement, admin, service, and sales queries."
+	/>
+</svelte:head>
 
 <div class="mx-auto max-w-7xl px-4 py-6 md:py-12">
 	<div class="mb-16 text-center">
@@ -33,7 +40,7 @@
 	<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
 		<!-- Procurement Card -->
 		<div
-			class="motion-preset-focus hover:shadow-lg flex flex-col items-center justify-center rounded-2xl border-2 border-teal-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[100ms] hover:border-teal-300"
+			class="motion-preset-focus flex flex-col items-center justify-center rounded-2xl border-2 border-teal-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[100ms] hover:border-teal-300 hover:shadow-lg"
 		>
 			<ChatIcon className="size-6 stroke-1 my-4" />
 			<h3 class="mb-4 font-medium">Procurement</h3>
@@ -45,7 +52,7 @@
 
 		<!-- Admin Card -->
 		<div
-			class="motion-preset-focus hover:shadow-lg flex flex-col items-center justify-center rounded-2xl border-2 border-red-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[300ms] hover:border-red-300"
+			class="motion-preset-focus flex flex-col items-center justify-center rounded-2xl border-2 border-red-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[300ms] hover:border-red-300 hover:shadow-lg"
 		>
 			<UserIcon className="size-6 stroke-1 my-4" />
 			<h3 class="mb-4 font-medium">Admin</h3>
@@ -57,7 +64,7 @@
 
 		<!-- Service Card -->
 		<div
-			class="motion-preset-focus hover:shadow-lg flex flex-col items-center justify-center rounded-2xl border-2 border-amber-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[500ms] hover:border-amber-300"
+			class="motion-preset-focus flex flex-col items-center justify-center rounded-2xl border-2 border-amber-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[500ms] hover:border-amber-300 hover:shadow-lg"
 		>
 			<ToolsIcon className="size-6 stroke-1 my-4" />
 			<h3 class="mb-4 font-medium">Service</h3>
@@ -69,7 +76,7 @@
 
 		<!-- Sales Card -->
 		<div
-			class="motion-preset-focus hover:shadow-lg flex flex-col items-center justify-center rounded-2xl border-2 border-gray-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[700ms] hover:border-gray-300"
+			class="motion-preset-focus flex flex-col items-center justify-center rounded-2xl border-2 border-gray-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[700ms] hover:border-gray-300 hover:shadow-lg"
 		>
 			<BuildingIcon className="size-6 stroke-1 my-4" />
 			<h3 class="mb-4 font-medium">Sales</h3>
@@ -82,7 +89,7 @@
 </div>
 
 <div use:animateIn={{ y: 20, delay: 0.5 }} class="mx-auto max-w-7xl px-4 py-12 opacity-0">
-	<div class="grid md:h-[28rem] gap-8 md:grid-cols-2">
+	<div class="grid gap-8 md:h-[28rem] md:grid-cols-2">
 		<div class="flex h-full flex-col space-y-4">
 			<div class="grid grid-cols-2 gap-4">
 				<input
@@ -144,7 +151,6 @@
 			</a>
 
 			<div class="h-full overflow-hidden rounded-lg border-2 border-black bg-gray-100">
-				<!-- <img src="/api/placeholder/800/400" alt="Map location" class="h-full w-full object-cover" /> -->
 				<iframe
 					class="h-full w-full"
 					title="Daystar Solar"
@@ -156,16 +162,12 @@
 				  &q=Daystar+Solar"
 				>
 				</iframe>
-
-				<!-- <iframe title="Location" class="w-full h-full border-0 " frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=no.+5,+Branson+Garden+Street,+Davidpuram,+Kilpauk,+Chennai,+Tamil+Nadu+600010,+India&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe> -->
-
-
 			</div>
 		</div>
 	</div>
 </div>
 
-<div use:animateIn class="mx-auto max-w-7xl px-4 py-8 md:py-16 opacity-0">
+<div use:animateIn class="mx-auto max-w-7xl px-4 py-8 opacity-0 md:py-16">
 	<h2 class="mb-8 text-center text-2xl md:text-3xl">Prefer to call instead?</h2>
 
 	<div class="flex flex-col items-center justify-center gap-4 md:flex-row">

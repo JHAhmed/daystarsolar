@@ -53,6 +53,14 @@
 	<a href="/aframe" class="px-4 py-2 border-2 bg-white rounded-full border-black">A-Frame Preview</a>
 </div> -->
 
+<svelte:head>
+	<title>Daystar Solar - Solar Energy Solutions Provider in South India</title>
+	<meta
+		name="description"
+		content="Daystar Solar is a leading solar energy solutions provider in South India. We offer solar panels, street lights, and distribution boxes for residential and commercial use."
+	/>
+</svelte:head>
+
 <section class="mx-auto px-32 py-16 pb-0">
 	<div class="mb-16 grid grid-cols-12">
 		<div class="col-span-5">
@@ -95,6 +103,7 @@
 					src={sampleImage1}
 					alt="Modern house with solar panels installed on sloped roof with blue windows"
 					class="h-[90%] w-full rounded-md object-cover"
+					loading="lazy"
 				/>
 				<figcaption class="text-md my-4 text-center font-light uppercase tracking-widest">
 					Marina Mall, ECR
@@ -116,6 +125,7 @@
 					src={sampleImage2}
 					alt="Solar-powered street light against cloudy sky with modern design"
 					class="h-[90%] w-full rounded-md object-cover"
+					loading="lazy"
 				/>
 			</figure>
 
@@ -132,6 +142,7 @@
 					src={sampleImage3}
 					alt="Residential brick house with solar panels installed on roof and outdoor seating area"
 					class="h-[90%] w-full rounded-md object-cover"
+					loading="lazy"
 				/>
 				<figcaption class="text-md my-4 text-center font-light uppercase tracking-widest">
 					Mr. Gautam, Chennai

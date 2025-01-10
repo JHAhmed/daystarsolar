@@ -141,49 +141,34 @@
 	];
 
 	function truncateText(text, maxLength = 40) {
-		if (text.length > maxLength) {
-			return text.slice(0, maxLength) + '...';
-		}
-		return text;
+		return text.length > maxLength ? `${text.slice(0, maxLength)}...` : text;
 	}
 </script>
 
 <div class="mx-auto max-w-7xl p-4 text-left">
-	<h2
-		use:animateIn
-		class="mt-8 text-left text-3xl font-semibold tracking-tighter opacity-0 md:text-5xl"
-	>
+	<h1 use:animateIn class="mt-8 text-3xl font-semibold tracking-tight opacity-0 md:text-5xl">
 		Our Services
-	</h2>
-	<p
-		use:animateIn
-		class="my-4 text-left text-xl font-normal tracking-tighter opacity-0 md:text-3xl"
-	>
+	</h1>
+	<p use:animateIn class="my-4 text-xl font-normal tracking-tight opacity-0 md:text-3xl">
 		What we offer
 	</p>
 
-	<div class="relative">
-		<div class="my-12 grid grid-cols-1 gap-4 md:grid-cols-2">
-			{#each services as item, i}
-				<div use:animateIn={{ delay: i / 5, blur: 8, y: 20, amount: 0.1 }} class="flex opacity-0">
-					<Accordion.Root class="flex w-full p-2 hover:bg-gray-50">
-						<Accordion.Item class="w-full" value="item-1">
-							<Accordion.Trigger
-								class="w-full text-left text-lg font-semibold tracking-tight md:text-2xl [&[data-state=open]>p]:opacity-0 "
-							>
-								{item.title}
-							</Accordion.Trigger>
-							<Accordion.Content>
-								<div class="flex">
-									<p class="md:text-md py-2 text-sm text-gray-600">
-										{@html item.description}
-									</p>
-								</div>
-							</Accordion.Content>
-						</Accordion.Item>
-					</Accordion.Root>
-				</div>
-			{/each}
-		</div>
-	</div>
+	<section class="my-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+		{#each services as { title, description }, i}
+			<article use:animateIn={{ delay: i / 5, blur: 8, y: 20, amount: 0.1 }} class="opacity-0">
+				<Accordion.Root class="w-full p-4 bg-white rounded-md">
+					<Accordion.Item class="w-full" value={`item-${i}`}>
+						<Accordion.Trigger class="w-full text-left text-lg font-semibold tracking-tight md:text-2xl">
+							{title}
+						</Accordion.Trigger>
+						<Accordion.Content>
+							<div class="py-2 text-sm text-gray-600 md:text-base">
+								{@html description}
+							</div>
+						</Accordion.Content>
+					</Accordion.Item>
+				</Accordion.Root>
+			</article>
+		{/each}
+	</section>
 </div>

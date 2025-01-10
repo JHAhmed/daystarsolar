@@ -65,6 +65,14 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Services | Daystar Solar</title>
+	<meta
+		name="description"
+		content="Daystar Solar offers a wide range of solar services including consultation, installation, and maintenance for residential and commercial clients."
+	/>
+</svelte:head>
+
 <Services />
 
 <ServicesCards />
@@ -79,8 +87,11 @@
 
 	<div bind:this={scrollContainer} class="grid gap-8 gap-y-12 md:grid-cols-4 md:gap-y-16">
 		{#each steps as step, index}
-			<div use:animateIn={{ delay: index / 4, blur: 8, amount: 0.1 }} class="relative opacity-0">
-				<div class="my-4 flex items-center">
+			<div
+				use:animateIn={{ delay: index / 3, blur: 8, amount: 0.1, inView: false }}
+				class="relative opacity-0"
+			>
+				<div class="opac my-4 flex items-center">
 					<div class=" step-point size-3 rounded-full bg-gray-900"></div>
 					<div class="absolute mx-6 h-0.5 w-5/6 bg-gray-300 md:w-full"></div>
 				</div>

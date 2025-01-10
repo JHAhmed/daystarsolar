@@ -1,6 +1,6 @@
 <script>
 	import * as Accordion from '$lib/components/ui/accordion';
-	
+
 	import { animate, inView } from 'motion';
 	import { ChevronIcon, ArrowIcon } from '$icons';
 	import { CTA } from '$components';
@@ -98,8 +98,15 @@
 				'Electricity costs accumulate over a lifetime. Solar energy offers savings, eco-friendliness, and protection against future cost inflation.'
 		}
 	];
-
 </script>
+
+<svelte:head>
+	<title>FAQ | Daystar Solar</title>
+	<meta
+		name="description"
+		content="Find answers to frequently asked questions about solar energy, solar power plants, and solar panels from Daystar Solar."
+	/>
+</svelte:head>
 
 <div class="mx-auto max-w-7xl px-4 py-6 md:py-12">
 	<div class="text-center">
@@ -112,12 +119,13 @@
 	{#each faq as item, i}
 		<!-- <div use:animateIn={{ delay: i / 5, blur: 8, amount: 0.1 }} class="opacity-0"> -->
 		<div use:animateIn={{ delay: i / 5, blur: 8, y: 20, inView: false }} class="opacity-0">
-			<Accordion.Root class="w-full hover:bg-gray-50 p-2">
+			<Accordion.Root class="w-full p-2 hover:bg-gray-50">
 				<Accordion.Item value="item-1">
-					<Accordion.Trigger class="text-md md:text-lg text-left">{item.question}</Accordion.Trigger>
+					<Accordion.Trigger class="text-md text-left md:text-lg">{item.question}</Accordion.Trigger
+					>
 					<Accordion.Content>
 						<div class="flex">
-							<p class="text-sm md:text-md py-2 text-gray-500">{item.answer}</p>
+							<p class="md:text-md py-2 text-sm text-gray-500">{item.answer}</p>
 						</div>
 					</Accordion.Content>
 				</Accordion.Item>

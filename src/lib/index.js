@@ -11,6 +11,10 @@ export { default as sampleImage1 } from './assets/images/sample-1.jpeg';
 export { default as sampleImage2 } from './assets/images/sample-2.jpeg';
 export { default as sampleImage3 } from './assets/images/sample-3.jpeg';
 
+export { default as aboutImage1 } from './assets/images/about-1.png';
+export { default as aboutImage2 } from './assets/images/about-2.png';
+export { default as aboutImage3 } from './assets/images/about-3.png';
+
 export { default as solarImage1 } from './assets/images/others.jpg';
 export { default as solarImage2 } from './assets/images/solar-panels.jpg';
 export { default as solarImage3 } from './assets/images/street-lights.jpg';

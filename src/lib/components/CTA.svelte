@@ -6,7 +6,7 @@
 
 	function animateIn(
 		element,
-		args = { duration: 0.5, delay: 0.4, scale: 1, x: 0, y: 10, blur: 0, amount: 0.6 }
+		args = { duration: 0.5, delay: 0.4, scale: 1, x: 0, y: 10, blur: 4, amount: 0.4 }
 	) {
 		inView(
 			element,

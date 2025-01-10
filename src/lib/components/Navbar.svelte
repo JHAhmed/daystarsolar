@@ -29,9 +29,9 @@
 		{ name: 'Home', href: '/', icon: ChevronIcon },
 		{ name: 'Products', href: '/products', icon: ChevronIcon },
 		{ name: 'Services', href: '/services', icon: ChevronIcon },
-		{ name: 'About Us', href: '/about', icon: ChevronIcon },
 		{ name: 'Gallery', href: '/gallery', icon: ChevronIcon },
-		{ name: 'Blog', href: '/blog', icon: ChevronIcon }
+		{ name: 'Blog', href: '/blog', icon: ChevronIcon },
+		{ name: 'About Us', href: '/about', icon: ChevronIcon },
 	];
 
 	let selected = $state(links.findIndex((link) => link.href === $page.url.pathname));
