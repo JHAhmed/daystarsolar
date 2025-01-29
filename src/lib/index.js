@@ -1,6 +1,7 @@
 import { animate, inView, stagger, scroll } from 'motion';
 
 export { default as logo } from './assets/logo.png';
+export { default as quotationMark } from './icons/quote.svg';
 export { default as logoSmall } from './assets/logo-small.png';
 
 export { default as twitterLogo } from './assets/x.svg';
@@ -10,6 +11,12 @@ export { default as linkedinLogo } from './assets/linkedin.svg';
 export { default as sampleImage1 } from './assets/images/sample-1.jpeg';
 export { default as sampleImage2 } from './assets/images/sample-2.jpeg';
 export { default as sampleImage3 } from './assets/images/sample-3.jpeg';
+
+export { default as landingImage1 } from './assets/images/landingImage1.jpg';
+export { default as landingImage2 } from './assets/images/landingImage2.jpg';
+export { default as landingImage3 } from './assets/images/landingImage3.jpg';
+export { default as landingImage4 } from './assets/images/landingImage4.jpg';
+export { default as landingImage5 } from './assets/images/landingImage5.jpg';
 
 export { default as aboutImage1 } from './assets/images/about-1.png';
 export { default as aboutImage2 } from './assets/images/about-2.png';
