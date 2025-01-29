@@ -1,0 +1,281 @@
+<script>
+	import { blur } from 'svelte/transition';
+
+	import {
+		HomeIcon,
+		BuildingOfficeIcon,
+		BuildingOffice2Icon,
+		BoltIcon
+	} from '@fvilers/heroicons-svelte/24/outline';
+
+	import * as RadioGroup from '$lib/components/ui/radio-group/index.js';
+	import { Label } from '$lib/components/ui/label/index.js';
+	import { Input } from '$lib/components/ui/input/index.js';
+	import { CustomInput } from '$components';
+	import CustomDropdown from '$components/CustomDropdown.svelte';
+
+	const states = [
+		{ value: 'andhra-pradesh', label: 'Andhra Pradesh' },
+		{ value: 'arunachal-pradesh', label: 'Arunachal Pradesh' },
+		{ value: 'assam', label: 'Assam' },
+		{ value: 'bihar', label: 'Bihar' },
+		{ value: 'chhattisgarh', label: 'Chhattisgarh' },
+		{ value: 'goa', label: 'Goa' },
+		{ value: 'gujarat', label: 'Gujarat' },
+		{ value: 'haryana', label: 'Haryana' },
+		{ value: 'himachal-pradesh', label: 'Himachal Pradesh' },
+		{ value: 'jharkhand', label: 'Jharkhand' },
+		{ value: 'karnataka', label: 'Karnataka' },
+		{ value: 'kerala', label: 'Kerala' },
+		{ value: 'madhya-pradesh', label: 'Madhya Pradesh' },
+		{ value: 'maharashtra', label: 'Maharashtra' },
+		{ value: 'manipur', label: 'Manipur' },
+		{ value: 'meghalaya', label: 'Meghalaya' },
+		{ value: 'mizoram', label: 'Mizoram' },
+		{ value: 'nagaland', label: 'Nagaland' },
+		{ value: 'odisha', label: 'Odisha' },
+		{ value: 'punjab', label: 'Punjab' },
+		{ value: 'rajasthan', label: 'Rajasthan' },
+		{ value: 'sikkim', label: 'Sikkim' },
+		{ value: 'tamil-nadu', label: 'Tamil Nadu' },
+		{ value: 'telangana', label: 'Telangana' },
+		{ value: 'tripura', label: 'Tripura' },
+		{ value: 'uttar-pradesh', label: 'Uttar Pradesh' },
+		{ value: 'uttarakhand', label: 'Uttarakhand' },
+		{ value: 'west-bengal', label: 'West Bengal' },
+		{ value: 'andaman-and-nicobar', label: 'Andaman and Nicobar' },
+		{ value: 'chandigarh', label: 'Chandigarh' },
+		{ value: 'daman-and-diu', label: 'Daman and Diu' },
+		{ value: 'delhi', label: 'Delhi' },
+		{ value: 'jammu-and-kashmir', label: 'Jammu and Kashmir' },
+		{ value: 'ladakh', label: 'Ladakh' },
+		{ value: 'lakshadweep', label: 'Lakshadweep' },
+		{ value: 'puducherry', label: 'Puducherry' }
+	];
+
+	const residenceType = [
+		{
+			name: 'House (Own)',
+			value: 'house-own',
+			icon: HomeIcon
+		},
+		{
+			name: 'House (Rented)',
+			value: 'house-rent',
+			icon: BuildingOffice2Icon
+		},
+		{
+			name: 'Flat (Rented)',
+			value: 'flat-rent',
+			icon: BuildingOfficeIcon
+		}
+	];
+
+	const voltageType = [
+		{
+			name: 'Low Tension (LT)',
+			value: 'lt',
+			icon: BoltIcon
+		},
+		{
+			name: 'Low Tension (LTCT)',
+			value: 'ltct',
+			icon: BoltIcon
+		},
+		{
+			name: 'High Tension (HT)',
+			value: 'ht',
+			icon: BoltIcon
+		}
+	];
+
+	const consumerTypes = [
+		{
+			label: 'Domestic',
+			value: 'domestic'
+		},
+		{
+			label: 'Industrial',
+			value: 'industrial'
+		},
+		{
+			label: 'Commercial',
+			value: 'commercial'
+		},
+		{
+			label: 'Industrial (Private)',
+			value: 'industrial-private'
+		},
+		{
+			label: 'Industrial (Public)',
+			value: 'industrial-public'
+		}
+	];
+
+	const steps = [
+		{
+			title: 'Demographic',
+			icon: HomeIcon,
+			isActive: true
+		},
+		{
+			title: 'Policy',
+			icon: HomeIcon,
+			isActive: false
+		},
+		{
+			title: 'Consumption',
+			icon: HomeIcon,
+			isActive: false
+		}
+	];
+
+	// let residenceTypeValue = 'house-own';
+
+	let details = {
+		fullName: '',
+		phoneNumber: '',
+		state: '',
+		consumerType: '',
+		residenceTypeValue: 'house-own',
+		voltageTypeValue: 'lt'
+	};
+</script>
+
+<div class="absolute right-12 top-12 h-48 w-96 rounded-lg bg-gray-600 p-4 font-medium text-white">
+	<p>Name: {details.fullName}</p>
+	<p>Phone: {details.phoneNumber}</p>
+	<p>State: {details.state}</p>
+	<p>Consumer Type: {details.consumerType}</p>
+	<p>Residence Type: {details.residenceTypeValue}</p>
+	<p>Voltage Type: {details.voltageTypeValue}</p>
+</div>
+
+<section class="mx-auto w-full max-w-4xl px-4 py-12">
+	<div class="mb-12 text-center">
+		<h1 class="mb-4 text-5xl font-medium tracking-tight">Solar Calculator</h1>
+		<p class="text-xl text-gray-600">Calculate your cost, savings, ROI, and more!</p>
+	</div>
+
+	<div class="flex max-w-7xl items-center justify-center">
+		{#each steps as step, i}
+			{#if step.isActive}
+				<div class="flex items-center">
+					<div class="flex items-center gap-2 rounded-full border-2 border-orange-400 p-4">
+						<span
+							class="flex h-6 w-6 items-center justify-center rounded-full bg-orange-400 text-sm text-white"
+							>{i + 1}</span
+						>
+						<span class="mx-4 text-gray-800">{step.title}</span>
+					</div>
+				</div>
+				<div class="mx-4 h-px w-24 bg-gray-400 {i === 2 ? 'hidden' : ''}"></div>
+			{:else}
+				<div class="flex items-center">
+					<div class="flex items-center gap-2 rounded-full border-2 border-gray-300 p-4">
+						<span
+							class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-300 text-sm text-white"
+							>{i + 1}</span
+						>
+						<span class="mx-4 text-gray-800">{step.title}</span>
+					</div>
+					<div class="mx-4 h-px w-24 bg-gray-400 {i === 2 ? 'hidden' : ''}"></div>
+				</div>
+			{/if}
+		{/each}
+	</div>
+</section>
+
+<section class="mx-auto w-full max-w-5xl px-4 py-12">
+	<div class="my-8 flex w-full space-x-4">
+		<CustomInput bind:value={details.fullName} label="Full Name" />
+		<CustomInput
+			bind:value={details.phoneNumber}
+			label="Phone Number"
+			hasPrefix
+			placeholder="00000 00000"
+		/>
+	</div>
+
+	<div class="my-8 flex w-full flex-col space-y-8">
+		<CustomDropdown bind:value={details.state} options={states} />
+		<CustomDropdown
+			bind:value={details.consumerType}
+			label="Consumer Type"
+			placeholder="Select consumer type"
+			options={consumerTypes}
+		/>
+	</div>
+
+	{#if details.consumerType == 'Domestic'}
+		<div class="my-8" in:blur out:blur>
+			<Label for="residence-type" class="my-2">Residence Type</Label>
+			<RadioGroup.Root
+				id="residence-type"
+				value={details.residenceTypeValue}
+				class="flex items-center justify-between space-x-2"
+				onValueChange={(e) => {
+					details.residenceTypeValue = e;
+				}}
+			>
+				{#each residenceType as option, i}
+					<div
+						class="flex w-full items-center space-x-6 rounded-lg border-2 {details.residenceTypeValue ==
+						option.value
+							? 'border-orange-400'
+							: 'border-gray-600'} p-4"
+					>
+						<option.icon
+							class="size-6 {details.residenceTypeValue == option.value ? 'text-orange-400' : ''}"
+						/>
+						<Label class="flex grow cursor-pointer text-gray-800" for={`r${i}`}>{option.name}</Label
+						>
+						<RadioGroup.Item
+							value={option.value}
+							class={details.residenceTypeValue == option.value ? 'text-orange-400' : ''}
+							id={`r${i}`}
+						/>
+					</div>
+				{/each}
+				<RadioGroup.Input name="spacing" />
+			</RadioGroup.Root>
+		</div>
+	{/if}
+
+	<div class="my-8">
+		<Label for="voltage-type" class="my-2">Voltage Type</Label>
+		<RadioGroup.Root
+			id="voltage-type"
+			value={details.voltageTypeValue}
+			class="flex items-center justify-between space-x-2"
+			onValueChange={(e) => {
+				details.voltageTypeValue = e;
+			}}
+		>
+			{#each voltageType as option, i}
+				<div
+					class="flex w-full items-center space-x-6 rounded-lg border-2 {details.voltageTypeValue ==
+					option.value
+						? 'border-orange-400'
+						: 'border-gray-600'} p-4"
+				>
+					<option.icon
+						class="size-6 {details.voltageTypeValue == option.value ? 'text-orange-400' : ''}"
+					/>
+					<Label class="flex grow cursor-pointer text-gray-800" for={`r-${option.value}-${i}`}
+						>{option.name}</Label
+					>
+					<RadioGroup.Item
+						value={option.value}
+						class={details.voltageTypeValue == option.value ? 'text-orange-400' : ''}
+						id={`r-${option.value}-${i}`}
+					/>
+				</div>
+			{/each}
+			<RadioGroup.Input name="spacing" />
+		</RadioGroup.Root>
+	</div>
+	<a href="/calculator/2" class="flex items-center gap-2 rounded-md bg-blue-200 p-4">
+		<p class="mx-4 text-lg font-medium tracking-tighter">Next</p>
+	</a>
+</section>

@@ -1,10 +1,12 @@
 <script>
 	import { Navbar, Footer } from '$components';
+	import { page } from '$app/stores';
 
 	import { onMount } from 'svelte';
 	import '../app.css';
 
 	let { children } = $props();
+	console.log($page.url.pathname);
 </script>
 
 <svelte:head>
@@ -16,7 +18,7 @@
 </svelte:head>
 
 <div class="">
-	<Navbar />
+	<Navbar isCalc={$page.url.pathname == '/calculator'} />
 	{@render children()}
 	<Footer />
 </div>

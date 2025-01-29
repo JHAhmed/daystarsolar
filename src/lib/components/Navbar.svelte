@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 
 	let isOpen = $state(false);
+	let { isCalc = false } = $props();
 
 	function toggleMenu() {
 		isOpen = !isOpen;
@@ -31,7 +32,7 @@
 		{ name: 'Services', href: '/services', icon: ChevronIcon },
 		{ name: 'Gallery', href: '/gallery', icon: ChevronIcon },
 		{ name: 'Blog', href: '/blog', icon: ChevronIcon },
-		{ name: 'About Us', href: '/about', icon: ChevronIcon },
+		{ name: 'About Us', href: '/about', icon: ChevronIcon }
 	];
 
 	let selected = $state(links.findIndex((link) => link.href === $page.url.pathname));
@@ -46,69 +47,81 @@
 	});
 </script>
 
-<nav class="mx-auto my-4 w-full rounded-lg bg-white px-2 lg:px-8">
-	<div class="mx-auto px-2 lg:px-8">
-		<div class="flex h-16 items-center justify-between lg:h-20">
-			<div class="flex-shrink-0">
+{#if !isCalc}
+	<nav class="mx-auto my-4 w-full rounded-lg bg-white px-2 lg:px-8">
+		<div class="mx-auto px-2 lg:px-8">
+			<div class="flex h-16 items-center justify-between lg:h-20">
+				<div class="flex-shrink-0">
+					<a href="/" title="" class="flex">
+						<img class="h-10 w-auto lg:h-14" src={logo} alt="Daystar Logo" />
+						<!-- LOGO -->
+					</a>
+				</div>
+
+				<div class="hidden lg:flex lg:items-center lg:justify-end lg:space-x-12">
+					{#each links as link, i}
+						<a
+							href={link.href}
+							title=""
+							class="nav-btn tracking-0 lg:text-md relative inline-block p-4 px-0 font-sans text-sm text-black transition-all duration-200"
+							class:nav-btn-selected={selected === i}>{link.name}</a
+						>
+					{/each}
+					<a
+						href="/contact"
+						title=""
+						class="tracking-0 group/button lg:text-md relative inline-block rounded-full bg-blue-200 p-3 px-6 font-sans text-sm text-black transition-all duration-200 hover:bg-blue-300"
+						>Contact
+						<!-- <div class="absolute group-hover/button:-top-2 group-hover/button:-right-2 bg-black rounded-full p-1 -top-1 -right-1 duration-100"> -->
+						<div class="absolute -right-1 -top-1 rounded-full bg-black p-1 duration-100">
+							<ArrowIcon color="white" className="size-3 stroke-white -rotate-[135deg]" />
+						</div>
+					</a>
+				</div>
+				<div class="lg:hidden">
+					<button
+						onclick={toggleMenu}
+						class="rounded-full bg-gray-200 p-2 text-gray-500 hover:text-gray-600"
+					>
+						<ChevronIcon className="rotate-90" />
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mobile Menu -->
+		{#if isOpen}
+			<div class="lg:hidden">
+				<div class="space-y-1 px-2 pb-3 pt-2">
+					{#each links as link, i}
+						<a
+							href={link.href}
+							onclick={toggleMenu}
+							class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+							>{link.name}</a
+						>
+					{/each}
+					<a
+						href="/contact"
+						onclick={toggleMenu}
+						class="block rounded-md bg-blue-100 px-3 py-2 text-base font-medium text-gray-700 hover:bg-blue-200 hover:text-gray-900"
+						>Contact</a
+					>
+				</div>
+			</div>
+		{/if}
+	</nav>
+{:else}
+	<nav class="mx-auto my-4 w-full rounded-lg bg-white px-2 lg:px-8">
+		<div class="mx-auto px-2 lg:px-8">
+			<div class="flex h-16 items-center justify-center lg:h-20">
 				<a href="/" title="" class="flex">
 					<img class="h-10 w-auto lg:h-14" src={logo} alt="Daystar Logo" />
-					<!-- LOGO -->
 				</a>
 			</div>
-
-			<div class="hidden lg:flex lg:items-center lg:justify-end lg:space-x-12">
-				{#each links as link, i}
-					<a
-						href={link.href}
-						title=""
-						class="nav-btn tracking-0 lg:text-md relative inline-block p-4 px-0 font-sans text-sm text-black transition-all duration-200"
-						class:nav-btn-selected={selected === i}>{link.name}</a
-					>
-				{/each}
-				<a
-					href="/contact"
-					title=""
-					class="tracking-0 group/button lg:text-md relative inline-block rounded-full bg-blue-200 p-3 px-6 font-sans text-sm text-black transition-all duration-200 hover:bg-blue-300"
-					>Contact
-					<!-- <div class="absolute group-hover/button:-top-2 group-hover/button:-right-2 bg-black rounded-full p-1 -top-1 -right-1 duration-100"> -->
-					<div class="absolute -right-1 -top-1 rounded-full bg-black p-1 duration-100">
-						<ArrowIcon color="white" className="size-3 stroke-white -rotate-[135deg]" />
-					</div>
-				</a>
-			</div>
-			<div class="lg:hidden">
-				<button
-					onclick={toggleMenu}
-					class="rounded-full bg-gray-200 p-2 text-gray-500 hover:text-gray-600"
-				>
-					<ChevronIcon className="rotate-90" />
-				</button>
-			</div>
 		</div>
-	</div>
-
-	<!-- Mobile Menu -->
-	{#if isOpen}
-		<div class="lg:hidden">
-			<div class="space-y-1 px-2 pb-3 pt-2">
-				{#each links as link, i}
-					<a
-						href={link.href}
-						onclick={toggleMenu}
-						class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-						>{link.name}</a
-					>
-				{/each}
-				<a
-					href="/contact"
-					onclick={toggleMenu}
-					class="block rounded-md bg-blue-100 px-3 py-2 text-base font-medium text-gray-700 hover:bg-blue-200 hover:text-gray-900"
-					>Contact</a
-				>
-			</div>
-		</div>
-	{/if}
-</nav>
+	</nav>
+{/if}
 
 <style>
 	.nav-btn:after {
