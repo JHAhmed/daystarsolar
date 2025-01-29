@@ -35,7 +35,6 @@
 		"vite": "^5.4.11"
 	},
 	"dependencies": {
-		"@fvilers/heroicons-svelte": "^2.1.5-fix.2",
 		"marked": "^15.0.6",
 		"motion": "^11.15.0",
 		"snarkdown": "^1.0.2",
