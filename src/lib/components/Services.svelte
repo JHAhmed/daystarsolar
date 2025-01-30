@@ -146,10 +146,10 @@
 </script>
 
 <div class="mx-auto max-w-7xl p-4 text-left">
-	<h1 use:animateIn class="mt-8 text-3xl font-semibold tracking-tight opacity-0 md:text-5xl">
+	<h1  class="mt-8 text-3xl font-semibold tracking-tight md:text-5xl">
 		Our Services
 	</h1>
-	<p use:animateIn class="my-4 text-xl font-normal tracking-tight opacity-0 md:text-3xl">
+	<p  class="my-4 text-xl font-normal tracking-tight md:text-3xl">
 		What we offer
 	</p>
 

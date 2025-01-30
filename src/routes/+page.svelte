@@ -220,10 +220,10 @@
 
 	<div use:animateIn={{ blur: 8, duration: 1, delay: 0.100 }} class="opacity-0 flex rounded-lg col-span-2 bg-[#F5F5ED]">
 
-		<img src={landingImage1} class="img-clip w-48 rounded-l-lg" alt="">
+		<img src={sampleImage2} class="img-clip w-48 rounded-l-lg" alt="">
 		<div class="flex items-center justify-center">
 			<!-- Feature 1 -->
-			<div class="text-center p-4">
+			<div use:animateIn={{ blur: 4, delay: 0.2 }} class="opacity-0 text-center p-4">
 			  <p class="text-lg font-medium p-4">
 				Zero pollution with high efficiency for maximum positive impact
 			  </p>
@@ -233,7 +233,7 @@
 			<div class=" h-24 w-px bg-gray-300 " ></div>
 		
 			<!-- Feature 2 -->
-			<div class="text-center p-4">
+			<div use:animateIn={{ blur: 4, delay: 0.6 }} class="opacity-0 text-center p-4">
 			  <p class="text-lg font-medium p-4">
 				100% fully automatic operation in sync with all power sources
 			  </p>
@@ -243,7 +243,7 @@
 			<div class=" h-24 w-px bg-gray-300 " ></div>
 		
 			<!-- Feature 3 -->
-			<div class="text-center p-4">
+			<div use:animateIn={{ blur: 4, delay: 1.0 }} class="opacity-0 text-center p-4">
 			  <p class="text-lg font-medium p-4">
 				Rugged heavy-duty design to produce power for years to come all for free
 			  </p>
@@ -253,7 +253,7 @@
 			<div class=" h-24 w-px bg-gray-300 " ></div>
 		
 			<!-- Feature 4 -->
-			<div class="text-center p-4">
+			<div use:animateIn={{ blur: 4, delay: 1.4 }} class="opacity-0 text-center p-4">
 			  <p class="text-lg font-medium p-4">
 				Built-in Max. Power point tracker (MPPT) & a battery-less system with Zero recurring costs
 			  </p>
@@ -268,35 +268,38 @@
 <section class="mx-auto grid w-full px-32 grid-cols-1 gap-8 py-16 lg:grid-cols-2">
 
 	<!-- Top Row -->
-	<div use:animateIn={{ blur: 8, duration: 1, delay: 0.100 }} class="opacity-0 rounded-lg col-span-2">
+	<div use:animateIn={{ blur: 8, duration: 1, delay: 0.100 }} class="opacity-0 relative rounded-lg col-span-2">
 		<div class="">
-			<img src={landingImage3} class="h-96 w-full object-cover relative" alt="">
-			<div class="absolute inset-0 bg-black opacity-40 z-10 w-full h-full"></div>
-			<div class="absolute bottom-0 p-4 m-4 h-fit z-20 flex backdrop-blur-sm items-center justify-center">
-				<p class="text-xl font-medium text-white">Our panels provide maximum energy output even on cloudy days.</p>
+			<img src={landingImage3} class="h-96 w-full object-cover relative rounded-xl" alt="">
+			<div class="absolute inset-0 bg-black opacity-40 z-10 w-full h-full rounded-xl"></div>
+			<div class="absolute bottom-0 p-4 m-4 h-fit z-20 flex bg-white items-center justify-center rounded-lg">
+			<!-- <div class="absolute bottom-0 p-4 m-4 h-fit z-20 flex backdrop-blur-sm items-center justify-center"> -->
+				<p class="text-lg font-medium text-black">Our panels provide maximum energy output even on cloudy days.</p>
 			</div>
 		</div>
 	</div>
 
 	<!-- Second Row, First Column -->
-	<div use:animateIn={{ blur: 8, duration: 1, delay: 0.500 }} class="opacity-0 rounded-lg">
+	<div use:animateIn={{ blur: 8, duration: 1, delay: 0.500 }} class="opacity-0 relative rounded-lg">
 		<div class="">
-			<img src={landingImage4} class="h-96 w-full object-cover relative" alt="">
-			<div class="absolute inset-0 bg-black opacity-40 z-10 w-full h-full"></div>
-			<div class="absolute bottom-0 p-4 m-4 h-fit z-20 flex backdrop-blur-sm items-center justify-center">
-				<p class="text-xl font-medium text-white">Our solar panels are designed to generate maximum energy output, allowing you to rely less on grid power and more on renewable solar energy.
+			<img src={landingImage4} class="h-96 w-full object-cover relative rounded-xl" alt="">
+			<div class="absolute inset-0 bg-black opacity-40 z-10 w-full h-full rounded-xl"></div>
+			<div class="absolute bottom-0 p-4 m-4 h-fit z-20 flex bg-white items-center justify-center rounded-lg">
+			<!-- <div class="absolute bottom-0 p-4 m-4 h-fit z-20 flex backdrop-blur-sm items-center justify-center"> -->
+				<p class="text-lg font-medium text-black">Our solar panels are designed to generate maximum energy output, allowing you to rely less on grid power and more on renewable solar energy.
 				</p>
 			</div>
 		</div>
 	</div>
 
 	<!-- Second Row, Second Column -->
-	<div use:animateIn={{ blur: 8, duration: 1, delay: 0.900 }} class="opacity-0 rounded-lg">
+	<div use:animateIn={{ blur: 8, duration: 1, delay: 0.900 }} class="opacity-0 relative rounded-lg">
 		<div class="">
-			<img src={landingImage5} class="h-96 w-full object-cover relative" alt="">
-			<div class="absolute inset-0 bg-black opacity-40 z-10 w-full h-full"></div>
-			<div class="absolute bottom-0 p-4 m-4 h-fit z-20 flex backdrop-blur-sm items-center justify-center">
-				<p class="text-xl font-medium text-white">Built to withstand the harshest weather conditions, our solar panels are incredibly durable and come with a 20-year warranty.</p>
+			<img src={landingImage5} class="h-96 w-full object-cover relative rounded-xl" alt="">
+			<div class="absolute inset-0 bg-black opacity-40 z-10 w-full h-full rounded-xl"></div>
+			<div class="absolute bottom-0 p-4 m-4 h-fit z-20 flex bg-white items-center justify-center rounded-lg">
+			<!-- <div class="absolute bottom-0 p-4 m-4 h-fit z-20 flex backdrop-blur-sm items-center justify-center"> -->
+				<p class="text-lg font-medium text-black">Built to withstand the harshest weather conditions, our solar panels are incredibly durable and come with a 20-year warranty.</p>
 			</div>
 		</div>
 	</div>

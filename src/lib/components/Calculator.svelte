@@ -28,78 +28,88 @@
 	}
 </script>
 
-<div class="my-24 grid w-full grid-cols-2 rounded-xl bg-blue-100 p-16">
-	<div class="items-left flex w-full flex-col justify-center space-y-16">
-		<div class="">
-			<p class="text-lg font-medium">Electricty Cost Per kWh</p>
-			<div class="my-2 flex space-x-2">
-				<p class="text-sm font-medium text-black">₹1<span class="text-black/70">/kWh</span></p>
-				<Slider
-					value={[5]}
-					min={1}
-					max={10}
-					step={1}
-					class="max-w-[70%]"
-					onValueChange={(e) => {
-						onSliderChange(e, 'cost');
-					}}
-				></Slider>
-				<p class="text-sm font-medium text-black">₹10<span class="text-black/70">/kWh</span></p>
+<div class="flex flex-col my-24 items-center">
+
+	<!-- <h2 class="text-5xl font-semibold my-4 ">ROI Calculator</h2> -->
+
+	<div class="flex w-full items-center justify-center rounded-xl bg-gray-100 p-16">
+		<div class="items-left flex w-full flex-col justify-center space-y-24">
+			<div class="">
+				<p class="text-lg font-medium">Electricty Cost Per kWh</p>
+				<div class="my-2 flex space-x-4">
+					<p class="text-sm font-medium text-black">₹1<span class="text-black/70">/kWh</span></p>
+					<Slider
+						value={[5]}
+						min={1}
+						max={10}
+						step={1}
+						class="max-w-[70%]"
+						onValueChange={(e) => {
+							onSliderChange(e, 'cost');
+						}}
+					>
+	
+				</Slider>
+					<p class="text-sm font-medium text-black">₹10<span class="text-black/70">/kWh</span></p>
+				</div>
+			</div>
+	
+			<div class="">
+				<p class="text-lg font-medium">Units Consumed Per Month</p>
+				<div class="my-2 flex space-x-4">
+					<p class="text-sm font-medium text-black">50 <span class="text-black/70">kWh</span></p>
+					<Slider
+						value={[150]}
+						min={50}
+						max={500}
+						step={25}
+						class="max-w-[70%]"
+						onValueChange={(e) => {
+							onSliderChange(e, 'units');
+						}}
+					></Slider>
+					<p class="text-sm font-medium text-black">500 <span class="text-black/70">kWh</span></p>
+				</div>
+			</div>
+	
+			<div class="">
+				<p class="text-lg font-medium">No. Of AC Units</p>
+				<div class="my-2 flex space-x-4">
+					<p class="text-sm font-medium text-black">1 <span class="text-black/70">AC</span></p>
+					<Slider
+						value={[3]}
+						min={0}
+						max={10}
+						step={1}
+						class="max-w-[70%]"
+						onValueChange={(e) => {
+							onSliderChange(e, 'ac');
+						}}
+					></Slider>
+					<p class="text-sm font-medium text-black">10 <span class="text-black/70">AC</span></p>
+				</div>
 			</div>
 		</div>
+	
+		<div class=" h-96 w-[2px] bg-gray-300 " ></div>
 
-		<div class="">
-			<p class="text-lg font-medium">Units Consumed Per Month</p>
-			<div class="my-2 flex space-x-2">
-				<p class="text-sm font-medium text-black">50 <span class="text-black/70">kWh</span></p>
-				<Slider
-					value={[150]}
-					min={50}
-					max={500}
-					step={25}
-					class="max-w-[70%]"
-					onValueChange={(e) => {
-						onSliderChange(e, 'units');
-					}}
-				></Slider>
-				<p class="text-sm font-medium text-black">500 <span class="text-black/70">kWh</span></p>
+
+		<div class="flex w-full flex-col items-center justify-center space-y-8">
+			<div class="flex grow flex-col items-center justify-center space-y-8">
+				<p class="text-md font-light uppercase tracking-[0.25em]">Annual Savings</p>
+				<h1 class="text-8xl font-semibold">
+					<span class="font-medium text-black/80">₹</span>{formatNumber(savings)}
+				</h1>
 			</div>
-		</div>
-
-		<div class="">
-			<p class="text-lg font-medium">No. Of AC Units</p>
-			<div class="my-2 flex space-x-2">
-				<p class="text-sm font-medium text-black">1 <span class="text-black/70">AC</span></p>
-				<Slider
-					value={[3]}
-					min={0}
-					max={10}
-					step={1}
-					class="max-w-[70%]"
-					onValueChange={(e) => {
-						onSliderChange(e, 'ac');
-					}}
-				></Slider>
-				<p class="text-sm font-medium text-black">10 <span class="text-black/70">AC</span></p>
-			</div>
-		</div>
-	</div>
-
-	<div class="flex w-full flex-col items-center justify-center space-y-4">
-		<div class="flex grow flex-col items-center justify-center space-y-4">
-			<p class="text-md font-light uppercase tracking-[0.25em]">Annual Savings</p>
-			<h1 class="text-8xl font-semibold">
-				<span class="font-medium text-black/80">₹</span>{formatNumber(savings)}
-			</h1>
-		</div>
-
-		<div class="flex max-w-md items-center rounded-lg bg-white p-2">
-			<p class="mx-8 grow tracking-tight">Advanced Calculator</p>
-			<button
-				class="flex cursor-pointer items-center justify-center rounded-md bg-black p-2 text-white"
-			>
-				<ChevronIcon />
-			</button>
+	
+			<a href="/calculator" class="flex group/calc max-w-md items-center rounded-lg bg-white p-4">
+				<p class="mx-8 grow tracking-tight text-xl">Advanced Calculator</p>
+				<div
+					class="flex cursor-pointer items-center group-hover/calc:bg-black group-hover/calc:text-white transition-all duration-100 justify-center rounded-md bg-orange-400 p-2 text-black"
+				>
+					<ChevronIcon strokeWidth=3 />
+				</div>
+			</a>
 		</div>
 	</div>
 </div>

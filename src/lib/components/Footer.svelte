@@ -93,7 +93,7 @@
 			class="flex flex-col items-center justify-center space-x-2 text-center text-sm font-medium text-gray-900 lg:flex-row"
 		>
 			<a href="https://wurks.studio/" class="font-normal text-gray-600"
-				>By <span class="font-medium text-purple-600">Wurks</span>.</a
+				>By <span class="font-medium text-purple-600 hover:underline decoration-purple-600 decoration-2 underline-offset-2">Wurks</span>.</a
 			>
 		</div>
 	</div>

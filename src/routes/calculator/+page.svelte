@@ -213,7 +213,12 @@
 		state: '',
 		consumerType: '',
 		residenceTypeValue: '',
-		voltageTypeValue: 'lt'
+		voltageTypeValue: 'lt',
+		sanctionedLoad: '',
+		ebNumber: '',
+		ebRegNumber: '',
+		terraceArea: '',
+		unit: 'sqmt'
 	};
 </script>
 
@@ -434,6 +439,33 @@
 				</RadioGroup.Root>
 			</div>
 		</div>
+	{:else if currentStep == 2}
+		<section class="mx-auto w-full max-w-5xl px-4 py-12">
+			<div class="my-8 max-w-60 space-x-4">
+				<CustomInput
+					bind:value={details.sanctionedLoad}
+					label="Sanctioned Load"
+					hasSuffix
+					placeholder="000"
+				/>
+			</div>
+			<div class="w-1/2 space-y-8">
+				<CustomInput bind:value={details.ebNumber} label="EB Number" placeholder="0000000000" />
+				<CustomInput
+					bind:value={details.ebRegNumber}
+					label="EB Registered Phone Number"
+					hasPrefix
+					placeholder="00000 00000"
+				/>
+				<CustomInput
+					onUnitChange={(e) => (details.unit = e)}
+					bind:value={details.terraceArea}
+					label="Available Terrace Area"
+					showUnits
+					placeholder="000"
+				/>
+			</div>
+		</section>
 	{/if}
 
 	<input
