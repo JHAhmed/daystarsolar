@@ -1,6 +1,8 @@
 <script>
 	import { Label } from '$lib/components/ui/label/index.js';
 	import * as Tabs from '$lib/components/ui/tabs';
+	// import * as Tooltip from "$lib/components/ui/tooltip/index.js";
+	import { Tooltip } from 'bits-ui';
 
 	let {
 		label = 'Name',
@@ -10,6 +12,8 @@
 		hasPrefix = false,
 		hasSuffix = false,
 		required = true,
+		hasTooltip = false,
+		tooltipText = 'Some tooltip text',
 		prefixText = '+91',
 		suffixText = 'kW/Units',
 		onUnitChange = (e) => {},
@@ -39,6 +43,27 @@
 				? 'rounded-r-none'
 				: ''}"
 		/>
+		{#if hasTooltip}
+			<Tooltip.Root openDelay={100}>
+				<Tooltip.Trigger class="">
+					<p
+						class=" m-2 inline-flex size-6 items-center justify-center rounded-full bg-gray-300 p-2 text-xs text-black"
+					>
+						i
+					</p>
+				</Tooltip.Trigger>
+				<Tooltip.Content>
+					<div class="bg-background">
+						<Tooltip.Arrow class="border-dark-10 rounded-[2px] border-l border-t" />
+					</div>
+					<div
+						class="border-dark-10 flex items-center justify-center rounded-lg border bg-background p-3 text-sm font-medium shadow-popover outline-none"
+					>
+						{tooltipText}
+					</div>
+				</Tooltip.Content>
+			</Tooltip.Root>
+		{/if}
 		{#if hasSuffix}
 			<p
 				class="inline-flex h-14 w-fit items-center justify-center text-nowrap rounded-r-md border border-l-0 bg-gray-200 px-2 text-sm tracking-wider"

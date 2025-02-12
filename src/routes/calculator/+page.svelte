@@ -1,6 +1,7 @@
 <script>
 	import { blur } from 'svelte/transition';
 	import { Toaster, toast } from 'svelte-sonner';
+	import { Tooltip } from 'bits-ui';
 	import {
 		HomeIcon,
 		ChevronRightIcon,
@@ -18,30 +19,19 @@
 	let currentStep = 0;
 
 	function nextStep() {
-		let name = details.fullName;
-		let phoneNumber = details.phoneNumber;
-		const formData = { name, phoneNumber };
 
-		fetch("https://script.google.com/macros/s/AKfycbxY9fw-aQBZgU7FGcfXLlR-n0r5UNVxl33R-LG75S8zgf-dzYHWN_kbFMD_gwkJjvYTTQ/exec", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(formData),
-		}).then(() => {
-			alert("Form submitted successfully!");
-			name = phoneNumber = "";
-		}).catch(error => console.error("Error:", error));
-		// if (currentStep < 2) {
-		// 	if (validate()) {
-		// 		steps[currentStep].isActive = false;
-		// 		currentStep++;
-		// 		steps[currentStep].isActive = true;
-		// 		console.log(steps);
-		// 	} else {
-		// 		toast.warning('Please fill in all details properly!');
-		// 	}
-		// } else {
-		// 	alert('Form submitted');
-		// }
+		if (currentStep < 2) {
+			if (validate()) {
+				steps[currentStep].isActive = false;
+				currentStep++;
+				steps[currentStep].isActive = true;
+				console.log(steps);
+			} else {
+				toast.warning('Please fill in all details properly!');
+			}
+		} else {
+			alert('Form submitted');
+		}
 	}
 
 	function prevStep() {
@@ -103,6 +93,13 @@
 		{ value: 'puducherry', label: 'Puducherry' }
 	];
 
+	const terraceTypes = [
+		{ value: 'shed', label: 'Shed' },
+		{ value: 'ground-mount', label: 'Ground Mount' },
+		{ value: 'low-rise-REC', label: 'Low Rise (REC)' },
+		{ value: 'high-rise-REC', label: 'High Rise (REC)' },
+	]
+
 	const residenceType = [
 		{
 			name: 'House (Own)',
@@ -153,13 +150,9 @@
 			value: 'commercial'
 		},
 		{
-			label: 'Industrial (Private)',
-			value: 'industrial-private'
+			label: 'Institutional (Public/Private)',
+			value: 'institutional'
 		},
-		{
-			label: 'Industrial (Public)',
-			value: 'industrial-public'
-		}
 	];
 
 	const steps = [
@@ -184,17 +177,20 @@
 		{
 			name: 'Net Metering',
 			value: 'net-metering',
-			icon: BoltIcon
+			icon: BoltIcon,
+			tooltipText: "Under net metering mechanism, solar generation is used to meet your electricity demand; any excess solar generation exported to the grid is balanced against import of electricity from the grid during the billing period. Any excess generation still remaining at the end of the month is treated as per existing regulations in your state."
 		},
 		{
 			name: 'Net Feed-In',
 			value: 'net-feed-in',
-			icon: BoltIcon
+			icon: BoltIcon,
+			tooltipText: "Solar generation is used to meet your electricity demand. However, unlike net metering, any excess generation that is exported to the grid is compensated at a predetermined tariff as per existing regulations in the state"
 		},
 		{
 			name: 'Gross Metering',
 			value: 'gross-metering',
-			icon: BoltIcon
+			icon: BoltIcon,
+			tooltipText: "Gross metering is a combination of net metering and net feed-in. Under gross metering, all solar generation is exported to the grid and compensated at a predetermined tariff as per existing regulations in the state. The consumer continues to import electricity from the grid to meet their electricity demand."
 		}
 	];
 
@@ -202,23 +198,26 @@
 		{
 			name: 'Solar On-Grid',
 			value: 'solar-on-grid',
-			icon: BoltIcon
+			icon: BoltIcon,
+			tooltipText: "Use this  option to determine the size of a grid-interactive solar and battery storage system, which will allow you to store excess solar generation and consume it at a later stage"
 		},
 		{
 			name: 'Solar Off-Grid',
 			value: 'solar-off-grid',
-			icon: BoltIcon
+			icon: BoltIcon,
+			tooltipText: "Use this  option to determine the size (in kW) of a grid-connected solar system for maximum savings on electricity bills. The optimum solar PV size will depend on your electricity consumption, state-specific tariff and rooftop solar regulations."
 		},
 		{
 			name: 'Solar Hybrid',
 			value: 'solar-hybrid',
-			icon: BoltIcon
+			icon: BoltIcon,
+			tooltipText: "Solar hybrid systems are a combination of solar and battery storage systems. The battery storage system allows you to store excess solar generation and consume it at a later stage."
 		}
 	];
 
 	let detailsStep1 = {
 		meteringTypeValue: 'net-metering',
-		technologyValue: 'solar-hybrid'
+		technologyValue: 'solar-off-grid'
 	};
 
 	let details = {
@@ -232,6 +231,7 @@
 		ebNumber: '',
 		ebRegNumber: '',
 		terraceArea: '',
+		terraceTypeValue: '',
 		unit: 'sqmt'
 	};
 
@@ -378,47 +378,30 @@
 						</div>
 					{/each}
 					<RadioGroup.Input name="spacing" />
+					<Tooltip.Root openDelay={100}>
+						<Tooltip.Trigger class="">
+							<p
+								class=" m-2 inline-flex size-6 items-center justify-center rounded-full bg-gray-300 p-2 text-xs text-black"
+							>
+								i
+							</p>
+						</Tooltip.Trigger>
+						<Tooltip.Content>
+							<div class="bg-background">
+								<Tooltip.Arrow class="border-dark-10 rounded-[2px] border-l border-t" />
+							</div>
+							<div
+								class="border-dark-10 max-w-md flex items-center justify-center rounded-lg  border bg-background p-3 text-sm shadow-popover outline-none"
+							>
+							This is the voltage level for your connection: HT means high tension or high voltage and LT means low tension or low voltage. The voltage level at which electricity is supplied depends on the sanctioned (contract) load of the consumer. All domestic consumers come under LT. The tariff in most states are different for LT and HT consumers.
+							</div>
+						</Tooltip.Content>
+					</Tooltip.Root>
 				</RadioGroup.Root>
 			</div>
 		</div>
 	{:else if currentStep == 1}
 		<div class="">
-			<div class="my-8">
-				<Label for="metering-type" class="my-2">Metering Type</Label>
-				<RadioGroup.Root
-					id="metering-type"
-					value={detailsStep1.meteringTypeValue}
-					class="flex items-center justify-between space-x-2"
-					onValueChange={(e) => {
-						detailsStep1.meteringTypeValue = e;
-					}}
-				>
-					{#each meteringType as option, i}
-						<div
-							class="flex w-full items-center space-x-6 rounded-lg border-2 {detailsStep1.meteringTypeValue ==
-							option.value
-								? 'border-orange-400'
-								: 'border-gray-600'} p-4"
-						>
-							<option.icon
-								class="size-6 {detailsStep1.meteringTypeValue == option.value
-									? 'text-orange-400'
-									: ''}"
-							/>
-							<Label class="flex grow cursor-pointer text-gray-800" for={`r-${option.value}-${i}`}
-								>{option.name}</Label
-							>
-							<RadioGroup.Item
-								value={option.value}
-								class={detailsStep1.meteringTypeValue == option.value ? 'text-orange-400' : ''}
-								id={`r-${option.value}-${i}`}
-							/>
-						</div>
-					{/each}
-					<RadioGroup.Input name="spacing" />
-				</RadioGroup.Root>
-			</div>
-
 			<div class="my-8">
 				<Label for="technology-type" class="my-2">Technology Type</Label>
 				<RadioGroup.Root
@@ -449,14 +432,89 @@
 								class={detailsStep1.technologyValue == option.value ? 'text-orange-400' : ''}
 								id={`r-${option.value}-${i}`}
 							/>
+							<Tooltip.Root openDelay={100}>
+								<Tooltip.Trigger class="">
+									<p
+										class=" m-2 inline-flex size-6 items-center justify-center rounded-full bg-gray-300 p-2 text-xs text-black"
+									>
+										i
+									</p>
+								</Tooltip.Trigger>
+								<Tooltip.Content>
+									<div class="bg-background">
+										<Tooltip.Arrow class="border-dark-10 rounded-[2px] border-l border-t" />
+									</div>
+									<div
+										class="border-dark-10 max-w-md flex items-center justify-center rounded-lg  border bg-background p-3 text-sm shadow-popover outline-none"
+									>
+									{option.tooltipText}
+								</div>
+								</Tooltip.Content>
+							</Tooltip.Root>
 						</div>
 					{/each}
 					<RadioGroup.Input name="spacing" />
 				</RadioGroup.Root>
 			</div>
+
+			<div class="my-8 {detailsStep1.technologyValue === 'solar-off-grid' ? 'hidden' : ''}">
+				<Label for="metering-type" class="my-2">Metering Type</Label>
+				<RadioGroup.Root
+					id="metering-type"
+					value={detailsStep1.meteringTypeValue}
+					class="flex items-center justify-between space-x-2"
+					onValueChange={(e) => {
+						detailsStep1.meteringTypeValue = e;
+					}}
+				>
+					{#each meteringType as option, i}
+						<div
+							class="flex w-full items-center space-x-6 rounded-lg border-2 {detailsStep1.meteringTypeValue ==
+							option.value
+								? 'border-orange-400'
+								: 'border-gray-600'} p-4"
+						>
+							<option.icon
+								class="size-6 {detailsStep1.meteringTypeValue == option.value
+									? 'text-orange-400'
+									: ''}"
+							/>
+							<Label class="flex grow cursor-pointer text-gray-800" for={`r-${option.value}-${i}`}
+								>{option.name}</Label
+							>
+							<RadioGroup.Item
+								value={option.value}
+								class={detailsStep1.meteringTypeValue == option.value ? 'text-orange-400' : ''}
+								id={`r-${option.value}-${i}`}
+							/>
+							<Tooltip.Root openDelay={100}>
+								<Tooltip.Trigger class="">
+									<p
+										class=" m-2 inline-flex size-6 items-center justify-center rounded-full bg-gray-300 p-2 text-xs text-black"
+									>
+										i
+									</p>
+								</Tooltip.Trigger>
+								<Tooltip.Content>
+									<div class="bg-background">
+										<Tooltip.Arrow class="border-dark-10 rounded-[2px] border-l border-t" />
+									</div>
+									<div
+										class="border-dark-10 max-w-md flex items-center justify-center rounded-lg  border bg-background p-3 text-sm shadow-popover outline-none"
+									>
+									{option.tooltipText}
+								</div>
+								</Tooltip.Content>
+							</Tooltip.Root>
+						</div>
+					{/each}
+					<RadioGroup.Input name="spacing" />
+
+				</RadioGroup.Root>
+			</div>
 		</div>
 	{:else if currentStep == 2}
-		<section class="">
+		<section class="my-8">
 			<div class="my-8 max-w-60 space-x-4">
 				<CustomInput
 					bind:value={details.sanctionedLoad}
@@ -479,6 +537,12 @@
 					label="Available Terrace Area"
 					showUnits
 					placeholder="000"
+				/>
+				<CustomDropdown
+					bind:value={details.terraceTypeValue}
+					label="Terrace Type"
+					placeholder="Select terrace type"
+					options={terraceTypes}
 				/>
 			</div>
 		</section>
