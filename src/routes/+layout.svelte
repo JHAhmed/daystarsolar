@@ -18,7 +18,10 @@
 </svelte:head>
 
 <div class="">
-	<Navbar isCalc={$page.url.pathname == '/calculator'} />
+		<Navbar isCalc={$page.url.pathname == '/calculator'} />
+	<!-- <div class="relative">
+		<Navbar isCalc={$page.url.pathname == '/calculator'} />
+	</div> -->
 	{@render children()}
 	<Footer />
 </div>

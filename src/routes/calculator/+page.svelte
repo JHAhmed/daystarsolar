@@ -3,6 +3,7 @@
 	import { Toaster, toast } from 'svelte-sonner';
 	import {
 		HomeIcon,
+		ChevronRightIcon,
 		BuildingOfficeIcon,
 		BuildingOffice2Icon,
 		BoltIcon
@@ -17,18 +18,30 @@
 	let currentStep = 0;
 
 	function nextStep() {
-		if (currentStep < 2) {
-			if (validate()) {
-				steps[currentStep].isActive = false;
-				currentStep++;
-				steps[currentStep].isActive = true;
-				console.log(steps);
-			} else {
-				toast.warning('Please fill in all details properly!');
-			}
-		} else {
-			alert('Form submitted');
-		}
+		let name = details.fullName;
+		let phoneNumber = details.phoneNumber;
+		const formData = { name, phoneNumber };
+
+		fetch("https://script.google.com/macros/s/AKfycbxY9fw-aQBZgU7FGcfXLlR-n0r5UNVxl33R-LG75S8zgf-dzYHWN_kbFMD_gwkJjvYTTQ/exec", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(formData),
+		}).then(() => {
+			alert("Form submitted successfully!");
+			name = phoneNumber = "";
+		}).catch(error => console.error("Error:", error));
+		// if (currentStep < 2) {
+		// 	if (validate()) {
+		// 		steps[currentStep].isActive = false;
+		// 		currentStep++;
+		// 		steps[currentStep].isActive = true;
+		// 		console.log(steps);
+		// 	} else {
+		// 		toast.warning('Please fill in all details properly!');
+		// 	}
+		// } else {
+		// 	alert('Form submitted');
+		// }
 	}
 
 	function prevStep() {
@@ -184,6 +197,7 @@
 			icon: BoltIcon
 		}
 	];
+
 	const technologyType = [
 		{
 			name: 'Solar On-Grid',
@@ -220,18 +234,20 @@
 		terraceArea: '',
 		unit: 'sqmt'
 	};
+
+
 </script>
 
 <Toaster richColors expand={true} />
 
-<div class="absolute right-12 top-12 h-48 w-96 rounded-lg bg-gray-600 p-4 font-medium text-white">
+<!-- <div class="absolute right-12 top-12 h-48 w-96 rounded-lg bg-gray-600 p-4 font-medium text-white">
 	<p>Name: {details.fullName}</p>
 	<p>Phone: {details.phoneNumber}</p>
 	<p>State: {details.state}</p>
 	<p>Consumer Type: {details.consumerType}</p>
 	<p>Residence Type: {details.residenceTypeValue}</p>
 	<p>Voltage Type: {details.voltageTypeValue}</p>
-</div>
+</div> -->
 
 <section class="mx-auto w-full max-w-4xl px-4 py-12">
 	<div class="mb-12 text-center">
@@ -366,7 +382,7 @@
 			</div>
 		</div>
 	{:else if currentStep == 1}
-		<div class="mx-auto w-full max-w-5xl px-4 py-12">
+		<div class="">
 			<div class="my-8">
 				<Label for="metering-type" class="my-2">Metering Type</Label>
 				<RadioGroup.Root
@@ -440,7 +456,7 @@
 			</div>
 		</div>
 	{:else if currentStep == 2}
-		<section class="mx-auto w-full max-w-5xl px-4 py-12">
+		<section class="">
 			<div class="my-8 max-w-60 space-x-4">
 				<CustomInput
 					bind:value={details.sanctionedLoad}
@@ -468,9 +484,28 @@
 		</section>
 	{/if}
 
-	<input
+	<!-- <input
 		type="submit"
 		class="cursor-pointer rounded-full bg-blue-300 p-4 px-8 text-lg font-medium tracking-tight text-black"
 		value="Next"
-	/>
+	/> -->
+<div class="flex space-x-4">
+	
+		<button on:click={prevStep} type="button" class="flex group/calc max-w-md items-center rounded-lg bg-white border-2 hover:bg-gray-200 p-3 px-4 shadow-soft">
+			<div
+				class="flex cursor-pointer items-center  transition-all duration-100 justify-center rounded-md bg-white p-1 text-black"
+			>
+				<ChevronRightIcon class="size-5 font-semibold rotate-180"/>
+			</div>
+			<p class="mx-6 grow tracking-tight text-lg">Back</p>
+		</button>
+		<button type="submit" class="flex group/calc max-w-md items-center rounded-lg bg-orange-400 hover:bg-orange-500 p-3 px-4 shadow-soft">
+			<p class="mx-6 grow tracking-tight text-lg">Next</p>
+			<div
+				class="flex cursor-pointer items-center  transition-all duration-100 justify-center rounded-md bg-white p-1 text-black"
+			>
+				<ChevronRightIcon class="size-5 font-semibold"/>
+			</div>
+		</button>
+</div>
 </form>

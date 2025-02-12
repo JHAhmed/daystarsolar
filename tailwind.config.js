@@ -15,6 +15,9 @@ const config = {
 			}
 		},
 		extend: {
+			boxShadow: {
+				"soft": "box-shadow: 4px 4px 24px 0px rgba(214,214,214,0.25);"
+			},
 			colors: {
 				darkgray: '#1F232C', 
 				border: "hsl(var(--border) / <alpha-value>)",

@@ -27,6 +27,8 @@ export { default as solarImage2 } from './assets/images/solar-panels.jpg';
 export { default as solarImage3 } from './assets/images/street-lights.jpg';
 export { default as solarImage4 } from './assets/images/distribution-boxes.jpg';
 
+export { default as bgImage } from './assets/images/hero-background.jpg';
+
 export { default as CTABG } from './assets/images/cta-bg.jpg';
 
 export function animateIn(element, args = {}) {
