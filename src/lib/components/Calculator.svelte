@@ -4,22 +4,75 @@
 	import { UnitToggle } from '$components';
 
 	// let cost = 5;
-	let cost = $state(10);
+	let cost = $state(10000);
 	let units = $state(10);
+	let type = $state('domestic');
+	let cycle = $state('bimonthly');
 	// let savings = 35000;
 
+	
+
+	let sliderValues = $derived.by(() => {
+
+		let min = 0;
+		let max = 0;
+		let step = 0;
+		let value = 0;
+
+		if (type === 'domestic') {
+			min = 6000;
+			max = 50000;
+			step = 2000;
+			value = 10000;
+		} else if (type === 'commercial') {
+			min = 15000;
+			max = 100000;
+			step = 5000;
+			value = 50000;
+		} else if (type === 'industrial') {
+			min = 50000;
+			max = 500000;
+			step = 20000;
+			value = 100000;
+		}
+			return { min: min, max: max, step: step, value: value };
+		}
+	);
+	
 	let savings = $derived.by(() => {
 
-		let unitPerDay = Math.ceil(units / 4);
-		let costPerDay = cost * unitPerDay;
-		let total = costPerDay * 365;
+		let unitCost = 0;
+		if (type === 'domestic') {
+			unitCost = 11;
+		} else if (type === 'commercial') {
+			unitCost = 10;
+		} else if (type === 'industrial') {
+			unitCost = 8;
+		}
+
+		let days = cycle === 'bimonthly' ? 60 : 30;
+
+		let costPerDay = (cost / days)	;
+
+		// let unitPerDay = Math.ceil(units / 4);
+		// let costPerDay = cost * unitPerDay;
+		// let total = costPerDay * 365;
 		// console.log(total);
-		return total;
+		return Math.round(costPerDay * 100);
 	}
 	);
 
 	function formatNumber(num) {
 		return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+	}
+
+	function onToggleChange(e, value) {
+		// if (value === 'bimonthly') {
+		// 	console.log('bimonthly');
+		// } else if (value === 'monthly') {
+		// 	console.log('monthly');
+		// }
+		type = e;
 	}
 
 	function onSliderChange(e, value) {
@@ -33,9 +86,9 @@
 	}
 </script>
 
-<div class="flex flex-col my-24 items-center">
+<div class="flex flex-col my-12 items-center">
 
-	<!-- <h2 class="text-5xl font-semibold my-4 ">ROI Calculator</h2> -->
+	<h2 class="text-2xl leading-tight tracking-[-0.06em] md:text-3xl lg:text-4xl">Maximize Your Savings – Calculate Your Benefits Instantly</h2>
 
 	<!-- <div class="flex w-full items-center justify-center rounded-xl bg-gray-100 p-16">
 		<div class="items-left flex w-full flex-col justify-center space-y-24">
@@ -129,7 +182,7 @@
 
 			</div>
 	
-			<div class="">
+			<!-- <div class="">
 				<p class="text-lg font-medium">Cost per Unit</p>
 				<div class="my-2 flex space-x-4">
 					<p class="text-sm font-medium text-black">₹6<span class="text-black/70"></span></p>
@@ -145,23 +198,40 @@
 					></Slider>
 					<p class="text-sm font-medium text-black">₹20<span class="text-black/70"></span></p>
 				</div>
-			</div>
-	
+			</div> -->
+
 			<div class="">
-				<p class="text-lg font-medium">Units Consumped Per Day</p>
+				<!-- <p class="text-lg font-medium">Consumer Type</p> -->
 				<div class="my-2 flex space-x-4">
-					<p class="text-sm font-medium text-black">4 <span class="text-black/70">Units</span></p>
+					<div class="flex items-center justify-center">
+						<UnitToggle
+						text="Consumer Type"
+						onUnitChange={(e) => {
+							onToggleChange(e, 'type');
+						}}
+						triggers={{'domestic': 'Domestic', 'commercial': 'Commercial', 'industrial': 'Industrial' }}
+						className="w-full"
+						/>
+		
+					</div>
+				</div>
+			</div>
+
+			<div class="">
+				<p class="text-lg font-medium">Bill Amount Per Cycle</p>
+				<div class="my-2 flex space-x-4">
+					<!-- <p class="text-sm font-medium text-black">4 <span class="text-black/70">Units</span></p> -->
 					<Slider
-						value={[10]}
-						min={4}
-						max={20}
-						step={1}
+						value={[sliderValues.value]}
+						min={sliderValues.min}
+						max={sliderValues.max}
+						step={sliderValues.step}
 						class="max-w-[70%]"
 						onValueChange={(e) => {
-							onSliderChange(e, 'units');
+							onSliderChange(e, 'cost');
 						}}
 					></Slider>
-					<p class="text-sm font-medium text-black">20 <span class="text-black/70">Units</span></p>
+					<p class="text-md font-medium text-black">= <span class="text-black/80">{cost}</span></p>
 				</div>
 			</div>
 		</div>
@@ -174,14 +244,14 @@
 				</h1>
 			</div>
 	
-			<a href="/calculator" class="flex group/calc max-w-md items-center rounded-lg bg-white p-4 shadow-soft">
+			<!-- <a href="/calculator" class="flex group/calc max-w-md items-center rounded-lg bg-white p-4 shadow-soft">
 				<p class="mx-8 grow tracking-tight text-xl">Advanced Calculator</p>
 				<div
 					class="flex cursor-pointer items-center group-hover/calc:bg-black group-hover/calc:text-white  transition-all duration-100 justify-center rounded-md bg-orange-400 p-2 text-black"
 				>
 					<ChevronIcon strokeWidth=3 />
 				</div>
-			</a>
+			</a> -->
 		</div>
 
 	</div>

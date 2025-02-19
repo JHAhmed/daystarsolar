@@ -1,7 +1,7 @@
 <script>
 	import * as Tabs from '$lib/components/ui/tabs';
 	let {
-        text = 'Unit',
+        text = 'Billing Cycle',
         vertical = false,
 		required = true,
         triggers = {'sqmt': 'Sq. M', 'sqft': 'Sq. Ft' },
