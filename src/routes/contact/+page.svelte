@@ -7,7 +7,11 @@
 		ArrowIcon,
 		LocationIcon,
 		PhoneIcon,
-		MobileIcon
+		MobileIcon,
+		LinkedinIcon,
+		FacebookIcon,
+		InstagramIcon,
+		YoutubeIcon
 	} from '$icons';
 
 	import { animate, inView } from 'motion';
@@ -17,6 +21,13 @@
 	let lastName = '';
 	let email = '';
 	let message = '';
+
+	const socials = [
+		{ icon: InstagramIcon, text: 'Instagram', link: 'https://www.instagram.com', class: 'bg-[#FF0069]' },
+		{ icon: LinkedinIcon, text: 'LinkedIn', link: 'https://www.instagram.com', class: 'bg-[#0A66C2]' },
+		{ icon: YoutubeIcon, text: 'YouTube', link: 'https://www.instagram.com', class: 'bg-[#FF0000]' },
+		{ icon: FacebookIcon, text: 'Facebook', link: 'https://www.instagram.com', class: 'bg-[#0866FF]' }
+	];
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -166,6 +177,34 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<div class="mx-auto max-w-7xl px-4 py-6 md:py-12">
+	<div use:animateIn={{ delay: 0.2 }} class="mb-16 text-center opacity-0">
+		<h2 class="mb-8 text-center text-2xl md:text-3xl">Follow Our Socials</h2>
+	</div>
+
+	<div use:animateIn={{ delay: 0.2, y: 10, blur: 4 }}  class="opacity-0 flex flex-col items-center justify-center gap-4 md:flex-row">
+
+
+		{#each socials as social, i}
+			
+			<a use:animateIn={{ delay: i/3, y: 10, blur: 4, rotate: 5 }} href={social.link} class="opacity-0 ">
+				<div
+					class="flex items-center gap-3 rounded-full border px-3 py-2 transition-colors hover:border-gray-300"
+				>
+					<div class="flex size-12 items-center justify-center rounded-full {social.class}">
+						<svelte:component this={social.icon} className="size-5 text-white" />
+					</div>
+					<span class="mx-3 text-sm">{social.text}</span>
+				</div>
+			</a>
+			
+		{/each}
+
+
+	</div>
+
 </div>
 
 <div use:animateIn class="mx-auto max-w-7xl px-4 py-8 opacity-0 md:py-16">

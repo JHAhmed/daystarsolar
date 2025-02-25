@@ -15,6 +15,12 @@
 
 	let calculator;
 
+	const stats = [
+		{ number: '30', label: 'Customers Served' },
+		{ number: '13k', label: 'Kilowatts Generated' },
+		{ number: '10', label: 'Years Experience' }
+	];
+
 	function scrollToView() {
 		if (browser) {
 			calculator.scrollIntoView({ behavior: 'smooth' });
@@ -149,6 +155,18 @@
 				</figcaption>
 			</figure>
 		</div>
+	</div>
+
+	<div class="grid grid-cols-1 gap-8 my-24 divide-x-2 md:grid-cols-3">
+		{#each stats as stat, i}
+			<div
+				use:animateIn={{ y: 10, blur: 4, delay: i / 3 }}
+				class="flex items-center justify-center space-x-4 text-center opacity-0"
+			>
+				<p class="text-7xl">{stat.number}<span class="text-blue-400 font-light">+</span></p>
+				<p class="max-w-24 text-left text-xl font-light text-gray-700">{stat.label}</p>
+			</div>
+		{/each}
 	</div>
 
 	<div class=" opacity-0" use:animateIn={{ y: 25 }} bind:this={calculator}>
