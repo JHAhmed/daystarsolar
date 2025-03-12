@@ -1,5 +1,7 @@
 import puppeteer from 'puppeteer';
 import OpenAI from 'openai';
+// import chromium from 'chrome-aws-lambda';
+
 // import { OPENAI_API_KEY } from '$env/dynamic/private';
 import { env } from '$env/dynamic/private'; 
 
@@ -56,6 +58,12 @@ async function getCaptcha(page) {
 export async function POST({ request }) {
 	const { consumerNumber, ebRegNumber, captcha } = await request.json();
     const sleep = ms => new Promise(res => setTimeout(res, ms));
+
+	// const browser = await puppeteer.launch({
+	// 	args: chromium.args,
+	// 	executablePath: await chromium.executablePath,
+	// 	headless: chromium.headless,
+	//   });
 
 	const browser = await puppeteer.launch({
 		headless: true,
