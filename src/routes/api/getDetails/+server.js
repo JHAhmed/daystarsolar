@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer';
 import OpenAI from 'openai';
-import { OPENAI_API_KEY } from '$env/dynamic/private';
-import { ChartNoAxesColumnDecreasing } from 'lucide-svelte';
+// import { OPENAI_API_KEY } from '$env/dynamic/private';
+import { env } from '$env/dynamic/private'; 
 
 function splitNumber(num) {
 	let str = num.toString().padStart(10, '0'); // Ensure it's 10 digits
@@ -15,7 +15,7 @@ function splitNumber(num) {
 }
 
 async function getCaptcha(page) {
-	const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
+	const openai = new OpenAI({ apiKey: env.OPENAI_API_KEY });
 
 	const captchaElement = await page.$('#imgCaptchaId');
 	const captchaBuffer = await captchaElement.screenshot({ encoding: 'base64' });
