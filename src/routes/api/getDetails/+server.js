@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer';
 import OpenAI from 'openai';
-import { OPENAI_API_KEY } from '$env/static/private';
+import { OPENAI_API_KEY } from '$env/dynamic/private';
 import { ChartNoAxesColumnDecreasing } from 'lucide-svelte';
 
 function splitNumber(num) {
