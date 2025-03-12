@@ -36,6 +36,7 @@
 	},
 	"dependencies": {
 		"@fvilers/heroicons-svelte": "^2.1.5-fix.2",
+		"@sparticuz/chromium": "^133.0.0",
 		"axios": "^1.8.2",
 		"chart.js": "^4.4.8",
 		"cheerio": "^1.0.0",
