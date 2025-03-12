@@ -246,7 +246,7 @@
 	
 			<p class="text-xl leading-tight tracking-[-0.06em] md:text-xl lg:text-2xl">Get A Detailed Report With One Click!</p>
 
-			<a href="/calculator" class="flex group/calc max-w-md items-center rounded-lg bg-white p-4 shadow-soft">
+			<a id="advanced-calculator-button" data-umami-event="Advanced Calculator Button" href="/calculator" class="flex group/calc max-w-md items-center rounded-lg bg-white p-4 shadow-soft">
 				<p class="mx-8 grow tracking-tight text-xl">Advanced Calculator</p>
 				<div
 					class="flex cursor-pointer items-center group-hover/calc:bg-black group-hover/calc:text-white  transition-all duration-100 justify-center rounded-md bg-orange-400 p-2 text-black"

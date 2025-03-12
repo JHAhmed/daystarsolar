@@ -23,10 +23,10 @@
 	let message = '';
 
 	const socials = [
-		{ icon: InstagramIcon, text: 'Instagram', link: 'https://www.instagram.com', class: 'bg-[#FF0069]' },
-		{ icon: LinkedinIcon, text: 'LinkedIn', link: 'https://www.instagram.com', class: 'bg-[#0A66C2]' },
-		{ icon: YoutubeIcon, text: 'YouTube', link: 'https://www.instagram.com', class: 'bg-[#FF0000]' },
-		{ icon: FacebookIcon, text: 'Facebook', link: 'https://www.instagram.com', class: 'bg-[#0866FF]' }
+		{ icon: InstagramIcon, text: 'Instagram', link: 'https://www.instagram.com/daystarsolar_official/', class: 'bg-[#FF0069]' },
+		{ icon: LinkedinIcon, text: 'LinkedIn', link: 'https://in.linkedin.com/company/daystar-solar', class: 'bg-[#0A66C2]' },
+		{ icon: YoutubeIcon, text: 'YouTube', link: 'https://www.youtube.com/@DaystarSolarOfficial/', class: 'bg-[#FF0000]' },
+		{ icon: FacebookIcon, text: 'Facebook', link: 'https://www.facebook.com/daystarsolarindia/', class: 'bg-[#0866FF]' }
 	];
 
 	const handleSubmit = (e) => {

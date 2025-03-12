@@ -36,9 +36,20 @@
 	},
 	"dependencies": {
 		"@fvilers/heroicons-svelte": "^2.1.5-fix.2",
+		"axios": "^1.8.2",
+		"chart.js": "^4.4.8",
+		"cheerio": "^1.0.0",
+		"decap-cms-app": "^3.6.2",
+		"formidable": "^3.5.2",
+		"html2canvas": "^1.4.1",
+		"jspdf": "^3.0.0",
 		"marked": "^15.0.6",
 		"motion": "^11.15.0",
+		"openai": "^4.86.2",
+		"puppeteer": "^24.4.0",
+		"puppeteer-core": "^24.4.0",
 		"snarkdown": "^1.0.2",
-		"svelte-sonner": "^0.3.28"
+		"svelte-sonner": "^0.3.28",
+		"tweakpane": "^4.0.5"
 	}
 }

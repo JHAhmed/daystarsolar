@@ -22,9 +22,14 @@ export { default as aboutImage1 } from './assets/images/about-1.png';
 export { default as aboutImage2 } from './assets/images/about-2.png';
 export { default as aboutImage3 } from './assets/images/about-3.png';
 
+export { default as servicesImage1 } from './assets/images/servicesImage1.jpg';
+export { default as servicesImage2 } from './assets/images/servicesImage2.jpg';
+export { default as servicesImage3 } from './assets/images/servicesImage3.jpg';
+
 export { default as solarImage1 } from './assets/images/others.jpg';
 export { default as solarImage2 } from './assets/images/solar-panels.jpg';
-export { default as solarImage3 } from './assets/images/street-lights.jpg';
+// export { default as solarImage3 } from './assets/images/street-lights.jpg';
+export { default as solarImage3 } from './assets/images/bos.jpg';
 export { default as solarImage4 } from './assets/images/distribution-boxes.jpg';
 
 export { default as bgImage } from './assets/images/hero-background.jpg';
@@ -85,3 +90,4 @@ export function animateIn(element, args = {}) {
 		);
 	}
 }
+

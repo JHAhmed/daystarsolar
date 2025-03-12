@@ -24,3 +24,5 @@ export { default as ToolsIcon } from './Tools.svelte';
 export { default as UserIcon } from './User.svelte';
 export { default as LocationIcon } from './Location.svelte';
 export { default as MobileIcon } from './Mobile.svelte';
+export { default as StarIcon } from './Star.svelte';
+export { default as GoogleIcon } from './Google.svelte';

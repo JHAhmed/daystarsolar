@@ -4,44 +4,108 @@
 	import { onMount } from 'svelte';
 	import { animateIn } from '$lib';
 
+	import {
+		BoltIcon,
+		UserGroupIcon,
+		MapIcon,
+		PencilSquareIcon,
+		TruckIcon,
+		CheckBadgeIcon,
+		AcademicCapIcon,
+		ChartBarIcon,
+		WrenchScrewdriverIcon
+	} from '@fvilers/heroicons-svelte/24/outline';
+
 	let scrollContainer;
+	const stepsNew = [
+	{
+		title: 'Client Interaction',
+		description: 'Identify pain points and offer tailored solutions.',
+		
+	},
+	{
+		title: 'Site Digitisation',
+		description: 'Visit sites to gather data for accurate simulation.',
+		
+	},
+	{
+		title: 'Design & Approvals',
+		description: 'Draft cost-effective designs and secure approvals.',
+		
+	},
+	{
+		title: 'Procurement & Installation',
+		description: 'Source materials and install with precision.',
+		
+	},
+	{
+		title: 'Testing & Commissioning',
+		description: 'Ensure safety and functionality through testing.',
+		
+	},
+	{
+		title: 'Handover & Training',
+		description: 'Deliver the plant and provide operational guidance.',
+		
+	},
+	{
+		title: 'Performance Monitoring',
+		description: 'Track performance remotely and via inspections.',
+		
+	},
+	{
+		title: 'Service & Support',
+		description: 'Ensure long-term efficiency with ongoing support.',
+		
+	}
+];
+
+
 	const steps = [
 		{
 			title: 'Customer Interaction',
+			icon: UserGroupIcon,
 			description: 'Understand pain points and offer tailored solutions to meet client needs.'
 		},
 		{
 			title: 'Site Digitisation',
+			icon: MapIcon,
 			description:
 				'Conduct site visits to gather parameters for precise simulation and performance verification.'
 		},
 		{
 			title: 'Design and Approvals',
+			icon: PencilSquareIcon,
 			description:
 				'Create initial designs based on site data, balancing cost and design challenges. Obtain statutory approvals and permissions within a clear timeline.'
 		},
 		{
 			title: 'Procurement and Installation',
+			icon: TruckIcon,
 			description:
 				'Procure materials and validate designs before starting the installation with precision and efficiency.'
 		},
 		{
 			title: 'Testing and Commissioning',
+			icon: CheckBadgeIcon,
 			description:
 				'Perform rigorous testing, wiring, and structural integrity checks to ensure seamless commissioning.'
 		},
 		{
 			title: 'Handover and Training',
+			icon: AcademicCapIcon,
 			description:
 				'Deliver the completed plant and provide operational support during a dedicated “hand-holding” period.'
 		},
 		{
 			title: 'Performance Monitoring',
+			icon: ChartBarIcon,
 			description:
 				'Track plant performance remotely and through inspections, ensuring peak operation and maintenance schedules.'
 		},
 		{
 			title: 'Service and Support',
+			icon: WrenchScrewdriverIcon,
 			description:
 				'Offer ongoing service and reliable after-sales support to keep your plant efficient for years.'
 		}
@@ -77,7 +141,7 @@
 
 <ServicesCards />
 
-<section class="mx-auto max-w-7xl p-8">
+<section class="mx-32 p-8">
 	<h2
 		use:animateIn
 		class="my-8 text-left text-3xl font-semibold tracking-tighter opacity-0 md:text-5xl"
@@ -91,13 +155,18 @@
 				use:animateIn={{ delay: index / 3, blur: 8, amount: 0.1, inView: false }}
 				class="relative opacity-0"
 			>
-				<div class="opac my-4 flex items-center">
+				<div class="my-4 flex items-center">
 					<div class=" step-point size-3 rounded-full bg-gray-900"></div>
 					<div class="absolute mx-6 h-0.5 w-5/6 bg-gray-300 md:w-full"></div>
 				</div>
 
 				<div class="px-1">
-					<h3 class="mb-3 text-xl font-semibold tracking-tighter md:text-2xl">{step.title}</h3>
+					<div class="flex items-center mb-3 space-x-2">
+						<div class="bg-slate-900 size-8 rounded-lg p-2">
+							<step.icon class=" text-white" />
+						</div>
+						<h3 class="text-xl font-semibold tracking-tighter md:text-2xl">{step.title}</h3>
+					</div>
 					<p class="text-xs leading-snug tracking-tight text-gray-600 md:text-sm">
 						{step.description}
 					</p>
@@ -105,6 +174,28 @@
 			</div>
 		{/each}
 	</div>
+
+	<!-- <div bind:this={scrollContainer} class="flex">
+		{#each steps as step, index}
+			<div
+				use:animateIn={{ delay: index / 3, blur: 8, amount: 0.1, inView: false }}
+				class="relative opacity-0 w-full"
+			>
+			
+			<div class="my-4 flex items-center justify-start">
+				<div class=" step-point size-3 rounded-full bg-gray-900"></div>
+				<div class="absolute mx-4 w-5/6 h-0.5 bg-gray-300 "></div>
+			</div>
+
+			<div class="px-1 flex flex-col">
+					<h3 class="mb-3 text-xl font-semibold tracking-tighter md:text-2xl ">{step.title}</h3>
+					<p class="text-xs leading-snug tracking-tight text-gray-600 grow md:text-sm">
+						{step.description}
+					</p>
+				</div>
+			</div>
+		{/each}
+	</div> -->
 </section>
 
 <CTA />

@@ -5,10 +5,10 @@
 
 	const products = [
 		{
-			title: 'Solar Street Lights',
-			image: solarImage3,
-			byds: true,
-			alt: 'Solar powered street light against blue cloudy sky'
+			title: 'Panels & Inverters',
+			image: solarImage2,
+			byds: false,
+			alt: 'Large solar panel array in a field during cloudy day'
 		},
 		{
 			title: 'Solar Distribution Boxes',
@@ -17,10 +17,10 @@
 			alt: 'Solar distribution box mounted on red brick wall'
 		},
 		{
-			title: 'Solar Panels',
-			image: solarImage2,
-			byds: false,
-			alt: 'Large solar panel array in a field during cloudy day'
+			title: 'Balance of System',
+			image: solarImage3,
+			byds: true,
+			alt: 'Solar powered street light against blue cloudy sky'
 		},
 		{
 			title: 'Others',

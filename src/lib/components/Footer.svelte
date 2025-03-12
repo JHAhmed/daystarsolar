@@ -1,6 +1,7 @@
 <script>
 	import { ChevronIcon } from '$icons';
 	import { logoSmall, twitterLogo, facebookLogo, linkedinLogo } from '$lib';
+	import { InstagramIcon, YoutubeIcon } from '$icons';
 	import { onMount } from 'svelte';
 </script>
 
@@ -76,6 +77,12 @@
 			</a>
 			<a href="https://in.linkedin.com/company/daystar-solar">
 				<img class="h-3 w-auto lg:h-4" src={linkedinLogo} alt="LinkedIn Logo" />
+			</a>
+			<a href="https://www.instagram.com/daystarsolar_official/">
+				<InstagramIcon className="h-3 lg:h-4 w-fit"/> 
+			</a>
+			<a href="https://www.youtube.com/@DaystarSolarOfficial/">
+				<YoutubeIcon className="h-3 lg:h-4 w-fit"/> 
 			</a>
 		</div>
 

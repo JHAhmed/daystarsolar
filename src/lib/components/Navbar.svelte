@@ -28,11 +28,12 @@
 
 	let links = [
 		{ name: 'Home', href: '/', icon: ChevronIcon },
+		{ name: 'About Us', href: '/about', icon: ChevronIcon },
+		{ name: 'Projects', href: '/projects', icon: ChevronIcon },
 		{ name: 'Products', href: '/products', icon: ChevronIcon },
 		{ name: 'Services', href: '/services', icon: ChevronIcon },
 		{ name: 'Gallery', href: '/gallery', icon: ChevronIcon },
 		{ name: 'Blog', href: '/blog', icon: ChevronIcon },
-		{ name: 'About Us', href: '/about', icon: ChevronIcon }
 	];
 
 	let selected = $state(links.findIndex((link) => link.href === $page.url.pathname));
@@ -58,7 +59,7 @@
 					</a>
 				</div>
 
-				<div class="hidden lg:flex lg:items-center lg:justify-end lg:space-x-12">
+				<div class="hidden lg:flex lg:items-center lg:justify-end lg:space-x-10">
 					{#each links as link, i}
 						<a
 							href={link.href}

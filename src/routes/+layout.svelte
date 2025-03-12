@@ -15,6 +15,7 @@
 		name="description"
 		content="Daystar Solar is a leading solar energy solutions provider in South India. We offer solar panels, street lights, and distribution boxes for residential and commercial use."
 	/>
+	
 </svelte:head>
 
 <div class="">
