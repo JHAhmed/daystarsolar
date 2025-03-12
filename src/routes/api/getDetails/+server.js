@@ -88,7 +88,7 @@ export async function POST({ request }) {
 	const page = await browser.newPage();
 
 	await page.setBypassCSP(true);
-	await page.setDefaultNavigationTimeout(60000); // Increase timeout to 60 seconds
+	await page.setDefaultNavigationTimeout(10000); // Increase timeout to 60 seconds
 	await page.setExtraHTTPHeaders({
 		'Upgrade-Insecure-Requests': '1'
 	});
@@ -107,7 +107,7 @@ export async function POST({ request }) {
 		console.log('Loaded website!');
 
 
-        await sleep(5000);
+        await sleep(2000);
 		console.log('Loaded website 2!');
 
         try {
