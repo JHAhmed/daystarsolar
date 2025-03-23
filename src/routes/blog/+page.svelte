@@ -1,6 +1,6 @@
 <script>
 	import { CTA } from '$components';
-	import { animateIn, aboutImage1, aboutImage2, aboutImage3 } from '$lib';
+	import { animateIn, aboutImage1 } from '$lib';
 
 	import {
 		CheckBadgeIcon,
@@ -13,29 +13,8 @@
 		WrenchIcon
 	} from '@fvilers/heroicons-svelte/24/solid';
 
-	const blogs = [
-		{
-			title: 'The Benefits of Solar Energy',
-			date: 'June 1, 2021',
-			image: aboutImage1,
-			excerpt:
-				'Solar energy is a renewable and sustainable source of power that can help reduce your electricity bills and carbon footprint.'
-		},
-		{
-			title: 'How Solar Panels Work',
-			date: 'June 15, 2021',
-			image: aboutImage2,
-			excerpt:
-				'Solar panels convert sunlight into electricity through the photovoltaic effect. Learn how this process works.'
-		},
-		{
-			title: 'The Future of Solar Energy',
-			date: 'July 1, 2021',
-			image: aboutImage3,
-			excerpt:
-				'Solar energy is becoming more affordable and efficient, making it a viable alternative to traditional power sources.'
-		}
-	];
+	let { data } = $props();
+	let blogs = $state(data.blogs);
 </script>
 
 <svelte:head>
@@ -76,11 +55,11 @@
 				<div class="mt-4">
 					<p class="text-sm text-gray-500">{blog.date}</p>
 					<h2 class="mt-2 text-lg font-semibold">{blog.title}</h2>
-					<p class="mt-2 text-gray-600">{blog.excerpt}</p>
+					<p class="mt-2 text-gray-600">{blog.summary}</p>
 				</div>
 
 				<div class="mt-4">
-					<a href="/blog/{blog.title}" class="text-blue-500">Read More</a>
+					<a href="/blog/{blog.slug}?id={blog.id}" class="text-blue-500">Read More</a>
 				</div>
 			</div>
 		{/each}

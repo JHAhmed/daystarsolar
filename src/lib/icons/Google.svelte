@@ -1,9 +1,5 @@
 <script>
     import { cn } from '$lib/utils/tw-merge'
-
-    export let strokeWidth = 1.5;
-    export let color = "currentColor";
-
     export let className = "";
 </script>
 

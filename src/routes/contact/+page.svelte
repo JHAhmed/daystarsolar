@@ -11,11 +11,13 @@
 		LinkedinIcon,
 		FacebookIcon,
 		InstagramIcon,
-		YoutubeIcon
+		YoutubeIcon,
+		PintrestIcon,
+		TwitterIcon
 	} from '$icons';
 
 	import { animate, inView } from 'motion';
-	import { animateIn } from '$lib';
+	import { animateIn, twitterLogo } from '$lib';
 
 	let firstName = '';
 	let lastName = '';
@@ -26,7 +28,9 @@
 		{ icon: InstagramIcon, text: 'Instagram', link: 'https://www.instagram.com/daystarsolar_official/', class: 'bg-[#FF0069]' },
 		{ icon: LinkedinIcon, text: 'LinkedIn', link: 'https://in.linkedin.com/company/daystar-solar', class: 'bg-[#0A66C2]' },
 		{ icon: YoutubeIcon, text: 'YouTube', link: 'https://www.youtube.com/@DaystarSolarOfficial/', class: 'bg-[#FF0000]' },
-		{ icon: FacebookIcon, text: 'Facebook', link: 'https://www.facebook.com/daystarsolarindia/', class: 'bg-[#0866FF]' }
+		{ icon: FacebookIcon, text: 'Facebook', link: 'https://www.facebook.com/daystarsolarindia/', class: 'bg-[#0866FF]' },
+		{ icon: TwitterIcon, text: 'X (Twitter)', link: 'https://x.com/DaystarSolar/', class: 'bg-[#000000]' },
+		{ icon: PintrestIcon, text: 'Pintrest', link: 'https://www.pinterest.com/fawaz05583438/', class: 'bg-[#E60023]' }
 	];
 
 	const handleSubmit = (e) => {
@@ -211,6 +215,31 @@
 	<h2 class="mb-8 text-center text-2xl md:text-3xl">Prefer to mail instead?</h2>
 
 	<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+
+		<!-- Sales Card -->
+		<div
+			class="motion-preset-focus flex flex-col items-center justify-center rounded-2xl border-2 border-gray-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[700ms] hover:border-gray-300 hover:shadow-lg"
+		>
+			<BuildingIcon className="size-6 stroke-1 my-4" />
+			<h3 class="mb-4 font-medium">Sales</h3>
+			<div class="space-y-2 text-center text-sm text-gray-600">
+				<a href="mailto:sales@daystarsolar.co.in">sales@daystarsolar.co.in</a>
+				<a href="mailto:support@daystarsolar.co.in">support@daystarsolar.co.in</a>
+			</div>
+		</div>
+		
+		<!-- Service Card -->
+		<div
+			class="motion-preset-focus flex flex-col items-center justify-center rounded-2xl border-2 border-amber-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[500ms] hover:border-amber-300 hover:shadow-lg"
+		>
+			<ToolsIcon className="size-6 stroke-1 my-4" />
+			<h3 class="mb-4 font-medium">Service</h3>
+			<div class="space-y-2 text-center text-sm text-gray-600">
+				<a href="mailto:projects@daystarsolar.co.in">projects@daystarsolar.co.in</a>
+				<a href="mailto:installation@daystarsolar.co.in">installation@daystarsolar.co.in</a>
+			</div>
+		</div>
+
 		<!-- Procurement Card -->
 		<div
 			class="motion-preset-focus flex flex-col items-center justify-center rounded-2xl border-2 border-teal-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[100ms] hover:border-teal-300 hover:shadow-lg"
@@ -235,28 +264,5 @@
 			</div>
 		</div>
 
-		<!-- Service Card -->
-		<div
-			class="motion-preset-focus flex flex-col items-center justify-center rounded-2xl border-2 border-amber-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[500ms] hover:border-amber-300 hover:shadow-lg"
-		>
-			<ToolsIcon className="size-6 stroke-1 my-4" />
-			<h3 class="mb-4 font-medium">Service</h3>
-			<div class="space-y-2 text-center text-sm text-gray-600">
-				<a href="mailto:projects@daystarsolar.co.in">projects@daystarsolar.co.in</a>
-				<a href="mailto:installation@daystarsolar.co.in">installation@daystarsolar.co.in</a>
-			</div>
-		</div>
-
-		<!-- Sales Card -->
-		<div
-			class="motion-preset-focus flex flex-col items-center justify-center rounded-2xl border-2 border-gray-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[700ms] hover:border-gray-300 hover:shadow-lg"
-		>
-			<BuildingIcon className="size-6 stroke-1 my-4" />
-			<h3 class="mb-4 font-medium">Sales</h3>
-			<div class="space-y-2 text-center text-sm text-gray-600">
-				<a href="mailto:sales@daystarsolar.co.in">sales@daystarsolar.co.in</a>
-				<a href="mailto:support@daystarsolar.co.in">support@daystarsolar.co.in</a>
-			</div>
-		</div>
 	</div>
 </div>

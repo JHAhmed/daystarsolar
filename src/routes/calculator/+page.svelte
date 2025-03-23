@@ -24,14 +24,14 @@
 
 	import { dataState, nameState } from '$lib/state.svelte.js';
 
-    let fullName = '';
-    let phoneNumber = '';
-    let consumerNumber = '';
-    let ebRegNumber = '';
-    // let fullName = 'Jamal Haneef';
-    // let phoneNumber = '9500044487';
-    // let consumerNumber = '0114505470';
-    // let ebRegNumber = '9500044487';
+    // let fullName = '';
+    // let phoneNumber = '';
+    // let consumerNumber = '';
+    // let ebRegNumber = '';
+    let fullName = 'Jamal Haneef';
+    let phoneNumber = '9500044487';
+    let consumerNumber = '0114505470';
+    let ebRegNumber = '9500044487';
     let captcha = '';
     let billData = [];
     let errorMessage = '';
@@ -48,7 +48,6 @@
 
 		
         const data = await res.json();
-		console.log("Calc Log: ", data.data[0]);
 
 		nameState.name = fullName;
 		data.data.forEach(element => {
@@ -98,7 +97,7 @@
 				<CustomInput bind:value={fullName} label="Full Name" maxlength="20" />
 				<CustomInput
 					bind:value={phoneNumber}
-					label="Phone Number"
+					label="Contact Number"
 					hasPrefix
 					placeholder="00000 00000"
 				/>
@@ -108,14 +107,14 @@
 
                 <CustomInput
 					bind:value={consumerNumber}
-					label="EB/TANGEDCO Number"
+					label="TNEB Consumer Number"
 				
 					placeholder="00000000"
 				/>
 
                 <CustomInput
 					bind:value={ebRegNumber}
-					label="EB Reg. Phone Number"
+					label="TNEB Registered Phone Number"
 					hasPrefix
 					placeholder="00000 00000"
 				/>

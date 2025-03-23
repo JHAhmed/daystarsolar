@@ -17,6 +17,8 @@ export { default as FacebookIcon } from './Facebook.svelte';
 export { default as LinkedinIcon } from './Linkedin.svelte';
 export { default as InstagramIcon } from './Instagram.svelte';
 export { default as YoutubeIcon } from './Youtube.svelte';
+export { default as PintrestIcon } from './Pintrest.svelte';
+export { default as TwitterIcon } from './Twitter.svelte';
 export { default as PhoneIcon } from './Phone.svelte';
 export { default as CircleArrowIcon } from './CircleArrow.svelte';
 export { default as BuildingIcon } from './Building.svelte';

@@ -10,6 +10,7 @@ const config = {
 			$components: 'src/lib/components',
 			$icons: 'src/lib/icons',
 			$shadcn: 'src/lib/ui',
+			$report: 'src/lib/report',
 		},
 	},
 	preprocess: vitePreprocess(),

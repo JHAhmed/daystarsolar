@@ -7,7 +7,9 @@ export const dataState = $state({
 });
 
 export let dataOld = $state(
-    [
+  
+    {
+      data: [
         {
           assessmentDate: '08/03/2025',
           consumptionUnits: '1635',
@@ -69,5 +71,6 @@ export let dataOld = $state(
           totalCharges: '31190'
         },
       ]
+    }
 );
 

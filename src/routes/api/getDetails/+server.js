@@ -1,4 +1,5 @@
-import puppeteer from 'puppeteer-core';
+// import puppeteer from 'puppeteer-core';
+import puppeteer from 'puppeteer';
 import OpenAI from 'openai';
 import chromium from "@sparticuz/chromium";
 
@@ -59,31 +60,31 @@ export async function POST({ request }) {
 	const { consumerNumber, ebRegNumber, captcha } = await request.json();
     const sleep = ms => new Promise(res => setTimeout(res, ms));
 
-    const browser = await puppeteer.launch({
-        args: [
-            ...chromium.args,
-            "--ignore-certificate-errors",
-            "--no-sandbox",
-            "--disable-setuid-sandbox",
-            "--disable-web-security",
-            "--allow-running-insecure-content"
-        ],
-        executablePath: await chromium.executablePath(),
-        headless: chromium.headless,
-        ignoreHTTPSErrors: true
-    });
+    // const browser = await puppeteer.launch({
+    //     args: [
+    //         ...chromium.args,
+    //         "--ignore-certificate-errors",
+    //         "--no-sandbox",
+    //         "--disable-setuid-sandbox",
+    //         "--disable-web-security",
+    //         "--allow-running-insecure-content"
+    //     ],
+    //     executablePath: await chromium.executablePath(),
+    //     headless: chromium.headless,
+    //     ignoreHTTPSErrors: true
+    // });
 
-	// const browser = await puppeteer.launch({
-	// 	headless: true,
-	// 	ignoreHTTPSErrors: true,
-	// 	args: [
-	// 		'--ignore-certificate-errors',
-	// 		'--no-sandbox',
-	// 		'--disable-setuid-sandbox',
-	// 		'--disable-web-security',
-	// 		'--allow-running-insecure-content'
-	// 	]
-	// });
+	const browser = await puppeteer.launch({
+		headless: true,
+		ignoreHTTPSErrors: true,
+		args: [
+			'--ignore-certificate-errors',
+			'--no-sandbox',
+			'--disable-setuid-sandbox',
+			'--disable-web-security',
+			'--allow-running-insecure-content'
+		]
+	});
 
 	const page = await browser.newPage();
 
@@ -98,14 +99,36 @@ export async function POST({ request }) {
     let tempData = [];
 
 	try {
-		const details = splitNumber(consumerNumber);
-		const url = `http://tneb.tnebnet.org/newlt/detconws.php?rsno=${details.rsno}&reg=${details.reg}&sec=${details.sec}&dist=${details.dist}&serno=${details.serno}`;
-		await page.goto(url, {
-			waitUntil: 'domcontentloaded' // Ensures the page fully loads
+		// const details = splitNumber(consumerNumber);
+		// const url = `http://tneb.tnebnet.org/newlt/detconws.php?rsno=${details.rsno}&reg=${details.reg}&sec=${details.sec}&dist=${details.dist}&serno=${details.serno}`;
+		// await page.goto(url, {
+		// 	waitUntil: 'domcontentloaded' 
+		// });
+
+
+		await page.goto('https://www.tnebltd.gov.in/BillStatus/billstatus.xhtml', {
+			waitUntil: 'networkidle2' // Ensures the page fully loads
 		});
+        await sleep(1000);
 
 		console.log('Loaded website!');
 
+		const newCaptcha = await getCaptcha(page);
+
+		await page.type('#serviceno', consumerNumber);
+		await page.type('#mob', ebRegNumber);
+		await page.type('#cap', newCaptcha || '111111');
+
+		await page.click('#submit3');
+
+		console.log('Clicked!');
+		await page.waitForNavigation({ waitUntil: 'networkidle2' });
+		console.log('New Page URL:', page.url());
+
+		if (page.url().includes('chrome-error')) {
+			await page.click('#proceed-button');
+			console.log('Clicked Proceed!');
+		}
 
         await sleep(2000);
 		console.log('Loaded website 2!');

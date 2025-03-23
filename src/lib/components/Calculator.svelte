@@ -172,7 +172,7 @@
 
 	<div class="grid w-full grid-cols-1 md:grid-cols-2 gap-8 p-16">
 
-		<div class="items-left flex w-full flex-col rounded-xl justify-center bg-gray-100 border p-12 space-y-20">
+		<div class="items-left flex w-full flex-col rounded-xl justify-center bg-gray-100 border-2 border-black p-12 space-y-20">
 			<div class="flex items-center justify-center">
 				<UnitToggle
 				onUnitChange={(e) => {console.log(e);}}

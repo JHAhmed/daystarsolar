@@ -1,34 +1,11 @@
 <script>
 	import { CTA, ProjectCard } from '$components';
+	import { ArrowIcon } from '$icons';
 	import { animateIn } from '$lib';
 
-	const imageFiles = import.meta.glob('/src/lib/images/projects/**/*.{png,jpg,jpeg,webp}', {
-		eager: true
-	});
+	let { data } = $props();
+	let projects = $state(data.projects);
 
-	const images = Object.entries(imageFiles).map(([path, module]) => {
-		const filename = path.split('/').pop().split('.')[0];
-		return {
-			title: filename.replace(/-/g, ' '),
-			image: module.default
-		};
-	});
-
-	const projects = [
-		{
-			title: 'Marina Mall, OMR',
-			description: 'A short description on the project. Location, amount of KWh, and such maybe.',
-			image: images[0].image,
-			link: '/projects/marina-mall'
-		},
-		{
-			title: 'Vestas, Chromepet',
-			description: 'A short description on the project. Location, amount of KWh, and such maybe.',
-			image: images[4].image,
-			link: '/projects/vestas'
-		},
-
-	];
 </script>
 
 <svelte:head>
@@ -51,18 +28,30 @@
 
 	<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 		{#each projects as project}
-			<ProjectCard
-				title={project.title}
-				description={project.description}
-				image={project.image}
-				link={project.link}
-			/>
+
+		<div class="flex w-full max-w-4xl flex-col overflow-hidden rounded-2xl bg-gray-100 md:flex-row">
+			<div class="flex flex-col justify-center p-8 md:w-1/2 space-y-8">
+				<h2 class="text-4xl font-normal tracking-tighter">{project.title}</h2>
+		
+				<p class="text-gray-700">{project.summary}</p>
+		
+				<div>
+					<a href="/projects/{project.slug}?id={project.id}" class="inline-flex items-center rounded-lg bg-white p-3">
+						<span class="mr-6 ml-2 tracking-tighter">View More</span>
+						<span class="flex items-center justify-center rounded-lg bg-orange-400 p-2 drop-shadow-md">
+							<ArrowIcon className="-rotate-90 size-4 text-white" strokeWidth=2/>
+						</span> 
+					</a>
+				</div>
+			</div>
+		
+			<!-- Image Section -->
+			<div class="md:w-1/2 p-4">
+				<img src={project.image} alt={project.title} class="h-full w-full object-cover rounded-lg" />
+			</div>
+		</div>
+
+
 		{/each}
-		<!-- <ProjectCard
-			title="Marina Mall"
-			description="A short description on the project. Location, amount of KWh, and such maybe."
-			image={aboutImage1}
-			link="/projects/marina-mall"
-		/> -->
 	</div>
 </section>

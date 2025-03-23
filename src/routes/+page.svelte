@@ -5,7 +5,7 @@
 	import { ArrowIcon, ChevronIcon, StarIcon, GoogleIcon } from '$icons';
 	import { Calculator, HeroButton } from '$components';
 
-	import { sampleImage1, sampleImage2, sampleImage3 } from '$lib';
+	import { sampleImage1, sampleImage2, sampleImage3, animateIn } from '$lib';
 	import {
 		landingImage1,
 		landingImage2,
@@ -55,31 +55,6 @@
 		}
 	}
 
-	function animateIn(
-		element,
-		args = { duration: 0.5, delay: 0, scale: 1, x: 0, y: 0, blur: 0, amount: 0.5 }
-	) {
-		inView(
-			element,
-			() => {
-				const animation = animate(
-					element,
-					{
-						opacity: 1,
-						scale: [args.scale, 1],
-						x: [args.x, 0],
-						y: [args.y, 0],
-						filter: [`blur(${args.blur}px)`, 'blur(0px)'] // Add blur animation
-					},
-					{
-						duration: args.duration,
-						delay: args.delay
-					}
-				);
-			},
-			{ amount: args.amount }
-		);
-	}
 </script>
 
 <!-- <div class="flex flex-col h-screen space-y-8 items-center justify-center">
@@ -245,7 +220,7 @@
 	</div>
 </section>
 
-<div class=" my-16 w-full bg-darkgray p-24">
+<div class=" my-16 w-full bg-green-600 p-24">
 	<p class="mx-auto text-center text-2xl font-extralight tracking-tight text-white">
 		<span class="font-light">We specialize in end-to-end solar power plant projects</span>, covering
 		consulting, innovative concepts, detailed design, flawless execution, and ongoing maintenance.
