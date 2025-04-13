@@ -1,6 +1,8 @@
 <script>
 	import { cn } from '$lib/utils/tw-merge';
 	export let className = '';
+	export let color = "currentColor";
+
 </script>
 
 <svg role="img" viewBox="0 0 24 24" fill={color} xmlns="http://www.w3.org/2000/svg" class={cn('size-12', className)}>

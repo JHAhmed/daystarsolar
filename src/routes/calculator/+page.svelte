@@ -40,10 +40,11 @@
 
     async function fetchBillData() {
 		loading = true;
-        const res = await fetch('/api/getDetails', {
+        const res = await fetch('/api/getNumber', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ consumerNumber, ebRegNumber, captcha })
+            // body: JSON.stringify({ consumerNumber, ebRegNumber, captcha })
+            body: JSON.stringify({ consumerNumber })
         });
 
 		

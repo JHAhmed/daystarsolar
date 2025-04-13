@@ -1,18 +1,16 @@
 <script>
 	import { onMount } from 'svelte';
-	import { logo } from '$lib';
 	import Chart from 'chart.js/auto';
-	import html2canvas from 'html2canvas';
-	import jsPDF from 'jspdf';
+	import { logo } from '$lib';
 
 	// import { nameState } from '$lib/state.svelte.js';
 
-    export let data = [];
+	export let data = [];
 	// let name = nameState.name;
 	let name = 'nameState.name';
 
 	let chartCanvas1;
-	let reportContainer1;
+	export let reportContainer1;
 
 	const consumptionUnits = data.map((entry) => parseInt(entry.consumptionUnits));
 	const totalCharges = data.map((entry) => parseInt(entry.totalCharges));
@@ -23,6 +21,11 @@
 	const perUnitCost = totalCost / totalUnits;
 	const perUnitSavings = Math.ceil(totalUnits / 8);
 	const yearlySavings = perUnitCost * perUnitSavings;
+
+	const formattedAmount = `₹${yearlySavings.toLocaleString('en-IN', {
+		maximumFractionDigits: 0,
+		style: 'decimal'
+	})}`;
 
 	onMount(() => {
 		let labels = [];
@@ -46,7 +49,6 @@
 				]
 			}
 		});
-
 	});
 
 	function formatDate(date) {
@@ -70,16 +72,20 @@
 </script>
 
 <div
+	id="Page1"
 	bind:this={reportContainer1}
-	class="mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-8 border p-8 text-base text-gray-800"
+	class="reportContainer mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-8 border p-8 text-base text-gray-800"
 >
 	<img src={logo} alt="logo" class="mx-auto my-8 h-20" />
 	<p class="my-8 ml-auto">{currentDate}</p>
 
 	<h1 class="text-2xl font-bold">Hey {name},</h1>
 	<p class=" text-base">
-		Based on our analysis, if you had switched to solar energy two years back, you could have saved
-		<strong class="text-orange-400">₹{yearlySavings.toFixed(0)}</strong> 
+		Based on our analysis, if you had switched to solar energy two years back, you could have saved,
+		<!-- <strong class="text-orange-400">{formattedAmount}</strong> -->
+	</p>
+	<p class="text-center text-5xl font-light">
+		<strong class="text-orange-400">{formattedAmount}</strong>
 	</p>
 	<p class="">
 		Please find enclosed with this letter a case study report of your premises’ energy consumption.
@@ -93,14 +99,12 @@
 	</p>
 	<canvas bind:this={chartCanvas1} id="chart" class=""></canvas>
 
-	<div class="grow flex flex-col">
+	<div class="flex grow flex-col">
 		<div class="grow"></div>
 		<p class=" border-t p-2 text-center text-sm italic">
 			Registered office at H-5, Second Floor, Third Avenue, Anna Nagar East, Chennai - 600102, Tamil
 			Nadu <br />
-			sales@daystarsolar.co.in, +91-44-43531021
+			info@daystarsolar.co.in, +91 91766 68617/30/34/50/51/57/64
 		</p>
 	</div>
 </div>
-
-

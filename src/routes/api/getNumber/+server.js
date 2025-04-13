@@ -22,7 +22,7 @@ function splitNumber(num) {
 async function getCaptcha(page) {
     const openai = new OpenAI({ apiKey: env.OPENAI_API_KEY });
 
-    const captchaElement = await page.$('#nscapp:imgCaptchaId');
+    const captchaElement = await page.$('#nscapp\\:imgCaptchaId');
     const captchaBuffer = await captchaElement.screenshot({ encoding: 'base64' });
 
     console.log('Got Screenshot!');
@@ -53,9 +53,30 @@ async function getCaptcha(page) {
         ]
     });
     console.log('Got Response!');
-    const captchaText = response.choices[0].message.content.trim();
+    const captchaText = await response.choices[0].message.content.trim();
     console.log('Captcha:', captchaText);
     return captchaText || '';
+}
+
+async function repeatDetails(page, consumerNumber, newCaptcha) {
+
+    await page.waitForSelector('#nscapp\\:acno', { visible: true });
+    await page.type('#nscapp\\:acno', consumerNumber);
+    console.log('Typed Consumer Number!');  
+
+    // Wait for the email input to be available
+    await page.waitForSelector('#nscapp\\:j_idt15', { visible: true });
+    await page.type('#nscapp\\:j_idt15', "jhaclashroyale@gmail.com");
+    console.log('Typed Email!');
+
+    // Wait for the captcha input to be available
+    await page.waitForSelector('#nscapp\\:imgCaptchaId', { visible: true });
+    await page.type('#nscapp\\:imgCaptchaId', newCaptcha || '111111');
+    console.log('Typed Captcha!');
+
+    await page.keyboard.press('Enter');
+    console.log('Pressed Enter!');
+
 }
 
 export async function POST({ request }) {
@@ -77,7 +98,7 @@ export async function POST({ request }) {
     // });
 
     const browser = await puppeteer.launch({
-        headless: true,
+        headless: false,
         ignoreHTTPSErrors: true,
         args: [
             '--ignore-certificate-errors',
@@ -102,22 +123,31 @@ export async function POST({ request }) {
 
     try {
         await page.goto('https://www.tnebltd.gov.in/usrp/applyncfa.xhtml', {
-            waitUntil: 'networkidle2' // Ensures the page fully loads
-            // waitUntil: 'domcontentloaded' // Ensures the page fully loads
+            // waitUntil: 'networkidle2' // Ensures the page fully loads
+            waitUntil: 'domcontentloaded' // Ensures the page fully loads
         });
-        await sleep(1000);
+        await sleep(500);
 
         console.log('Loaded website!');
+        
+        const element1 = await page.$('#nscapp\\:imgCaptchaId');  
+        if (element1) {
+            let newCaptcha1 = await getCaptcha(page);
+            console.log('Got Captcha!');
+            await repeatDetails(page, consumerNumber, newCaptcha1);
+            console.log('Repeated Details Once!');
+        }
 
-        const newCaptcha = await getCaptcha(page);
+        const element2 = await page.$('#nscapp\\:imgCaptchaId');  
+        if (element2) {
+            let newCaptcha2 = await getCaptcha(page);
+            console.log('Got Captcha!');
+            await repeatDetails(page, consumerNumber, newCaptcha2);
+            console.log('Repeated Details Twice!');
+        }
 
-        await page.type('#nscapp:acno', consumerNumber);
-        await page.type('#nscapp:j_idt15', "jhaclashroyale@gmail.com");
-        await page.type('#nscapp:imgCaptchaId', newCaptcha || '111111');
+        await sleep(5000);
 
-        await page.click('#nscapp:j_idt22');
-
-        console.log('Clicked!');
         await page.waitForNavigation({ waitUntil: 'networkidle2' });
         console.log('New Page URL:', page.url());
 
@@ -131,6 +161,25 @@ export async function POST({ request }) {
 
         try {
             console.log('Loaded website 3!');
+
+            
+            const xp = '::-p-xpath(/html/body/section[2]/div/div/form/div[2]/div[2]/div[2]/div/input[2])';
+
+            await page.waitForSelector(xp, {
+                timeout: 30000,
+                visible: true
+            });
+            
+            const inputValue = await page.evaluate(() => {
+                return document.querySelector('#nscapp\\:j_idt15').value;
+            });
+
+            console.log("FINAL");
+            console.log(inputValue);
+
+            await sleep(5000);
+
+
         } catch (error) {
             console.error('Error:', error);
         }
@@ -143,7 +192,8 @@ export async function POST({ request }) {
     } 
     
     catch (error) {
-        await browser.close();
+        console.error('Error:', error);
+        // await browser.close();
         return new Response(JSON.stringify({ data: tempData }), { status: 500 });
     }
 }
