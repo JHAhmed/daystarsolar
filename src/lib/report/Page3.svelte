@@ -73,11 +73,11 @@
 			values.push(element.consumptionUnits);
 		});
 
-		let labels1 = labels.slice(0, 6);
-		let values1 = values.slice(0, 6);
+		let labels1 = labels.slice(0, labels.length / 2);
+		let values1 = values.slice(0, labels.length / 2);
 
-		let labels2 = labels.slice(6);
-		let values2 = values.slice(6);
+		let labels2 = labels.slice(labels.length / 2);
+		let values2 = values.slice(labels.length / 2);
 
 		new Chart(chartCanvas3, {
 			type: 'pie',

@@ -9,13 +9,10 @@
 
 	const consumptionUnits = data.map((entry) => parseInt(entry.consumptionUnits));
 	const totalCharges = data.map((entry) => parseInt(entry.totalCharges));
-
-	// const totalUnitsAmount = data.reduce((sum, row) => sum + row.consumptionUnits, 0);
-	// const totalCostAmount = data.reduce((sum, row) => sum + row.totalCharges, 0);
-	// const totalSavingsAmount = data.reduce(
-	// 	(sum, row) => sum + Math.round(row.totalCharges - row.consumptionUnits * 4),
-	// 	0
-	// );
+	const totalSavingsAmount = data.reduce(
+		(sum, row) => sum + Math.round(row.totalCharges - row.consumptionUnits * 4),
+		0
+	);
 
 	function formatNumber(num) {
 		const numStr = Math.floor(num).toString();
@@ -123,87 +120,14 @@
 		});
 	});
 
-
-	// Function to parse the date and standardize format
-	function parseDate(dateStr) {
-		const [day, month, year] = dateStr.split('/');
-		return new Date(`${year}-${month}-${day}`);
-	}
-
-	// Augment data with parsed dates and quarters
-	const augmentedData = data.map((item) => {
-		const date = parseDate(item.assessmentDate);
-		return {
-			...item,
-			date,
-			year: date.getFullYear(),
-			quarter: Math.floor(date.getMonth() / 3) + 1,
-			consumptionUnits: parseInt(item.consumptionUnits),
-			totalCharges: parseInt(item.totalCharges)
-		};
-	});
-
-	// Group by year and quarter
-	const quarterlyData = {};
-	augmentedData.forEach((item) => {
-		const key = `${item.year}-Q${item.quarter}`;
-		if (!quarterlyData[key]) {
-			quarterlyData[key] = {
-				period: key,
-				consumptionUnits: 0,
-				totalCharges: 0,
-				count: 0
-			};
-		}
-		quarterlyData[key].consumptionUnits += item.consumptionUnits;
-		quarterlyData[key].totalCharges += item.totalCharges;
-		quarterlyData[key].count += 1;
-	});
-
-	// Convert to array and sort by period
-	const quarterlyArray = Object.values(quarterlyData);
-	quarterlyArray.sort((a, b) => {
-		// Sort in descending order (most recent first)
-		return b.period.localeCompare(a.period);
-	});
-
-	// Take the 12 most recent quarters
-	const condensedData = quarterlyArray.slice(0, 12);
-
-	// Calculate average rate per unit for each period
-	condensedData.forEach((item) => {
-		item.avgUnitRate = (item.totalCharges / item.consumptionUnits).toFixed(2);
-	});
-
-	// Format for display
-	const formattedData = condensedData.map((item) => ({
-		Period: item.period,
-		ConsumptionUnits: item.consumptionUnits.toLocaleString(),
-		TotalCharges: `$${item.totalCharges.toLocaleString()}`,
-		AvgRate: `$${item.avgUnitRate}`,
-		Records: item.count
-	}));
-
-	// console.table(formattedData);
-
-	// The final condensed dataset to use in your 12-row report
-	const finalData = condensedData.map((item) => ({
-		Period: item.period,
-		ConsumptionUnits: item.consumptionUnits,
-		TotalCharges: item.totalCharges
-	}));
-
-	const totalUnitsAmount = finalData.reduce((sum, row) => sum + row.ConsumptionUnits, 0);
-	const totalCostAmount = finalData.reduce((sum, row) => sum + row.TotalCharges, 0);
-	const totalSavingsAmount = finalData.reduce(
-		(sum, row) => sum + Math.round(row.TotalCharges - row.ConsumptionUnits * 4),
-		0
-	);</script>
+	const totalUnitsAmount = data.reduce((sum, row) => sum + row.consumptionUnits, 0);
+	const totalCostAmount = data.reduce((sum, row) => sum + row.totalCharges, 0);
+</script>
 
 <div
 	id="Page2"
 	bind:this={reportContainer2}
-	class="reportContainer mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-8 p-8 text-base text-gray-800"
+	class="reportContainer mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-8  p-8 text-base text-gray-800"
 >
 	<p class="">
 		Below is a comparison of power consumption in KwH (units) versus the cost incurred. Notice how
@@ -227,12 +151,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				{#each finalData as row, i}
+				{#each data as row, i}
 					<tr class={i % 2 === 0 ? 'bg-orange-100' : 'bg-orange-50'}>
-						<td class="p-1">{row.Period}</td>
-						<td class="p-1 text-right">{row.ConsumptionUnits}</td>
-						<td class="p-1 text-right">{row.TotalCharges}</td>
-						<td class="p-1 text-right">{Math.round(row.TotalCharges - row.ConsumptionUnits * 4)}</td
+						<td class="p-1">{row.formattedDate}</td>
+						<td class="p-1 text-right">{row.consumptionUnits}</td>
+						<td class="p-1 text-right">{row.totalCharges}</td>
+						<td class="p-1 text-right">{Math.round(row.totalCharges - row.consumptionUnits * 4)}</td
 						>
 					</tr>
 				{/each}
