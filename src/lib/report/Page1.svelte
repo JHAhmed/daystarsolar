@@ -74,10 +74,10 @@
 <div
 	id="Page1"
 	bind:this={reportContainer1}
-	class="reportContainer mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-8  p-8 text-base text-gray-800"
+	class="reportContainer mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-6  p-8 text-base text-gray-800"
 >
 	<img src={logo} alt="logo" class="mx-auto my-6 h-18" />
-	<p class="my-8 ml-auto">{currentDate}</p>
+	<p class="my-6 ml-auto">{currentDate}</p>
 
 	<h1 class="text-2xl font-bold">Hey {name},</h1>
 	<p class=" text-base">

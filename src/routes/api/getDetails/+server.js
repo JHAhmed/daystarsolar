@@ -101,7 +101,7 @@ async function extractBillData(page) {
 			);
 
 			return rows
-				.slice(0, -1) // Exclude the last row (verify this assumption)
+				.slice(1, -1) // Exclude the first and last rows
 				.map(row => {
 					const cells = row.querySelectorAll('td');
 					// if (cells.length < 15) return null; // Optional: Add validation based on cell count

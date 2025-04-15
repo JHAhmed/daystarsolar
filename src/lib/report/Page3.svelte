@@ -6,10 +6,14 @@
 
 	let chartCanvas3;
 	let chartCanvas4;
+	
 	export let reportContainer3;
 
-	let data1 = data.slice(0, 6);
-	let data2 = data.slice(6);
+    if (data.length % 2 !== 0) data.pop();
+
+    let mid = data.length / 2;
+    let data1 = data.slice(0, mid);
+    let data2 = data.slice(mid);
 
 	function formatNumber(num) {
 		const numStr = Math.floor(num).toString();
@@ -77,6 +81,9 @@
 
 		new Chart(chartCanvas3, {
 			type: 'pie',
+			options: {
+				animation: false
+			},
 			data: {
 				labels: labels1,
 				datasets: [
@@ -98,6 +105,9 @@
 
 		new Chart(chartCanvas4, {
 			type: 'pie',
+			options: {
+				animation: false
+			},
 			data: {
 				labels: labels2,
 				datasets: [
@@ -122,7 +132,7 @@
 <div
 	id="Page3"
 	bind:this={reportContainer3}
-	class="reportContainer mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-8  p-8 text-base text-gray-800"
+	class="reportContainer mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-8 p-8 text-base text-gray-800"
 >
 	<p>
 		The data consists of energy consumption during the past 24 months. The aim of this table is to
