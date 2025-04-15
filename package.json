@@ -39,6 +39,7 @@
 		"@fvilers/heroicons-svelte": "^2.1.5-fix.2",
 		"@google/model-viewer": "^4.1.0",
 		"@sparticuz/chromium": "^133.0.0",
+		"@supabase/supabase-js": "^2.49.4",
 		"@sveltejs/adapter-vercel": "^5.6.3",
 		"axios": "^1.8.2",
 		"chart.js": "^4.4.8",

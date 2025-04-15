@@ -1,22 +1,22 @@
 <script>
+	import { Page1, Page2, Page3, Page4 } from '$lib/report';
+	import { dataState } from '$lib/state.svelte.js'; // Real data for prod
+	import { dataOld } from '$lib/state.svelte.js'; // Dummy data for testing
+	import { dev } from '$app/environment';
+	import { supabase } from '$lib/supabaseClient';
 	import { onMount } from 'svelte';
-	import { logo } from '$lib';
-	import Chart from 'chart.js/auto';
-	import html2canvas from 'html2canvas';
-	import jsPDF from 'jspdf';
-	import { browser } from '$app/environment';
-	import { Page1, Page2, Page3, Page4 } from '$report';
 
-	// import { dataState, nameState } from '$lib/state.svelte.js';
-	import { dataOld } from '$lib/state.svelte.js';
+	export let data;
+	let userName = data.report.name;
+	let reportId= data.report.id;
+	data = data.report.data;
 
-	// let data = dataState.data;
-	let data = dataOld.data;
+	let isGeneratingPDF = false;
 
-    let reportContainer1;
-    let reportContainer2;
-    let reportContainer3;
-    let reportContainer4;
+	let reportContainer1;
+	let reportContainer2;
+	let reportContainer3;
+	let reportContainer4;
 
 	data.forEach((entry) => {
 		entry.consumptionUnits = parseInt(entry.consumptionUnits);
@@ -38,54 +38,52 @@
 		};
 	});
 
-    function downloadPDF() {
-        const pdf = new jsPDF('p', 'pt', 'a4'); // A4 page size (595pt x 842pt)
+	async function downloadPDF() {
+		try {
+			isGeneratingPDF = true;
 
-        // First container
-        html2canvas(reportContainer1, { scale: 2 }).then((canvas1) => {
-            const imgData1 = canvas1.toDataURL('image/png');
-            const imgWidth = 595;
-            const imgHeight = (canvas1.height * imgWidth) / canvas1.width;
+			// Make a request to the server-side PDF generation endpoint
+			const response = await fetch(`/api/generate-pdf?id=${reportId}`);
 
-            pdf.addImage(imgData1, 'PNG', 0, 0, imgWidth, imgHeight);
+			if (!response.ok) {
+				const errorData = await response.json();
+				throw new Error(`PDF generation failed: ${errorData.error || 'Unknown error'}`);
+			}
 
-            // Second container
-            html2canvas(reportContainer2, { scale: 2 }).then((canvas2) => {
-                const imgData2 = canvas2.toDataURL('image/png');
+			// Get the PDF as a blob
+			const blob = await response.blob();
 
-                pdf.addPage(); // Add a new page for the second div
-                pdf.addImage(imgData2, 'PNG', 0, 0, imgWidth, imgHeight);
-
-                // Continue with other containers...
-                html2canvas(reportContainer3, { scale: 2 }).then((canvas3) => {
-                    // Similar process for third container
-                    pdf.addPage();
-                    const imgData3 = canvas3.toDataURL('image/png');
-                    const imgHeight3 = (canvas3.height * imgWidth) / canvas3.width;
-                    pdf.addImage(imgData3, 'PNG', 0, 0, imgWidth, imgHeight3);
-
-                    html2canvas(reportContainer4, { scale: 2 }).then((canvas4) => {
-                        // Similar process for fourth container
-                        pdf.addPage();
-                        const imgData4 = canvas4.toDataURL('image/png');
-                        const imgHeight4 = (canvas4.height * imgWidth) / canvas4.width;
-                        pdf.addImage(imgData4, 'PNG', 0, 0, imgWidth, imgHeight4);
-
-                        pdf.save('report.pdf');
-                    });
-                });
-            });
-        });
-    }
+			// Create a download link and trigger the download
+			const url = URL.createObjectURL(blob);
+			const a = document.createElement('a');
+			a.href = url;
+			a.download = 'solar-report.pdf';
+			document.body.appendChild(a);
+			a.click();
+			document.body.removeChild(a);
+			URL.revokeObjectURL(url);
+		} catch (error) {
+			console.error('Error downloading PDF:', error);
+			alert('Failed to generate PDF. Please try again.');
+		} finally {
+			isGeneratingPDF = false;
+		}
+	}
 </script>
 
 <div class="mx-auto flex max-w-2xl flex-col p-4 text-gray-800">
-	<button on:click={downloadPDF} class="mt-6 rounded bg-blue-500 px-4 py-2 text-white">
-		Download PDF
+	<button
+		on:click={downloadPDF}
+		class="mt-6 rounded bg-blue-500 px-4 py-2 text-white disabled:opacity-50"
+		disabled={isGeneratingPDF}
+	>
+		{isGeneratingPDF ? 'Generating PDF...' : 'Download PDF'}
 	</button>
 </div>
 
-<Page1 bind:reportContainer1={reportContainer1} data={formattedData} />
-<Page2 bind:reportContainer2={reportContainer2} data={formattedData} />
-<Page3 bind:reportContainer3={reportContainer3} data={formattedData} />
-<Page4 bind:reportContainer4={reportContainer4} data={formattedData} />
+<div class="font-report">
+	<Page1 bind:reportContainer1 data={formattedData} name={userName} />
+	<Page2 bind:reportContainer2 data={formattedData} />
+	<Page3 bind:reportContainer3 data={formattedData} />
+	<Page4 bind:reportContainer4 data={formattedData} />
+</div>

@@ -57,12 +57,6 @@
 
 </script>
 
-<!-- <div class="flex flex-col h-screen space-y-8 items-center justify-center">
-	<h2 class="font-sans text-5xl font-extralight">Hi, there!</h2>
-	<a href="/arjs" class="px-4 py-2 border-2 bg-white rounded-full border-black">AR.js Preview</a>
-	<a href="/aframe" class="px-4 py-2 border-2 bg-white rounded-full border-black">A-Frame Preview</a>
-</div> -->
-
 <svelte:head>
 	<title>Daystar Solar - Solar Energy Solutions Provider in South India</title>
 	<meta
@@ -84,14 +78,6 @@
 
 				<HeroButton button={true} action={scrollToView} />
 				
-				<!-- <button on:click={scrollToView} id="calculator-button" data-umami-event="Calculator Button" class="flex items-center gap-2 rounded-md bg-blue-200 p-4">
-					<p class="mx-4 text-lg font-medium tracking-tighter">Solar Calculator</p>
-					<div
-						class="flex cursor-pointer items-center justify-center rounded-md bg-white p-2 text-black"
-					>
-						<ArrowIcon className="size-5 stroke-2" />
-					</div>
-				</button> -->
 
 			</div>
 			<div class="mb-12 mt-24 max-w-md border-l-4 bg-gray-50 p-6">

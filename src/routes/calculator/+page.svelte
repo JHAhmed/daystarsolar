@@ -1,5 +1,7 @@
 <script>
-	import { blur } from 'svelte/transition';
+	import { dev } from '$app/environment';
+	import { browser } from '$app/environment';
+	import { goto } from '$app/navigation';
 	import { Toaster, toast } from 'svelte-sonner';
 	import { Tooltip } from 'bits-ui';
 	import {
@@ -15,121 +17,142 @@
 	import { Input } from '$lib/components/ui/input/index.js';
 	import { CustomInput } from '$components';
 	import CustomDropdown from '$components/CustomDropdown.svelte';
-	import { browser } from '$app/environment';
-	import { goto } from '$app/navigation';
-
-	// function submitForm() {
-    //     toast.warning('Please fill in all details properly!');
-	// }
-
 	import { dataState, nameState } from '$lib/state.svelte.js';
 
-    // let fullName = '';
-    // let phoneNumber = '';
-    // let consumerNumber = '';
-    // let ebRegNumber = '';
-    let fullName = 'Jamal Haneef';
-    let phoneNumber = '9500044487';
-    let consumerNumber = '0114505470';
-    let ebRegNumber = '9500044487';
-    let captcha = '';
-    let billData = [];
-    let errorMessage = '';
+	// Form fields
+	let fullName = '';
+	let phoneNumber = '';
+	let consumerNumber = '';
+	let ebRegNumber = '';
+	let captcha = '';
 
+	// State variables
 	let loading = false;
+	let errorMessage = '';
 
-    async function fetchBillData() {
-		loading = true;
-        const res = await fetch('/api/getNumber', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            // body: JSON.stringify({ consumerNumber, ebRegNumber, captcha })
-            body: JSON.stringify({ consumerNumber })
-        });
+	// Prefill data for development environment
+	if (dev) {
+		fullName = 'Jamal Haneef';
+		phoneNumber = '9500044487';
+		consumerNumber = '0114505470';
+		ebRegNumber = '9500044487';
+	}
 
-		
-        const data = await res.json();
+	// Form submission handler
+	async function fetchBillData() {
+		// Validate form
+		if (!fullName || !phoneNumber || !consumerNumber || !ebRegNumber) {
+			toast.warning('Please fill in all details properly!');
+			return;
+		}
 
-		nameState.name = fullName;
-		data.data.forEach(element => {
-			dataState.data.push(element);
-		});
-		
-		goto('/report');
+		try {
+			loading = true;
 
-    }
+			const res = await fetch('/api/getDetails', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					fullName,
+					consumerNumber,
+					ebRegNumber,
+					captcha
+				})
+			});
 
+			if (!res.ok) {
+				throw new Error('Failed to fetch data');
+			}
 
+			const data = await res.json();
+
+			// Update state
+			nameState.name = fullName;
+
+			// Clear existing data before pushing new data
+			dataState.data = [];
+			data.data.forEach((element) => {
+				dataState.data.push(element);
+			});
+
+			// Navigate to report page
+			goto(`/report?id=${data.id}`);
+		} catch (error) {
+			console.error('Error fetching bill data:', error);
+			errorMessage = 'Failed to retrieve bill data. Please try again.';
+			toast.error(errorMessage);
+		} finally {
+			loading = false;
+		}
+	}
 </script>
 
 <Toaster richColors expand={true} />
-
-<!-- <div class="absolute right-12 top-12 h-48 w-96 rounded-lg bg-gray-600 p-4 font-medium text-white">
-	<p>Name: {fullName}</p>
-	<p>Phone: {phoneNumber}</p>
-	<p>State: {state}</p>
-	<p>EB Number: {consumerNumber}</p>
-	<p>EB Reg. Number: {ebRegNumber}</p>
-</div> -->
 
 <section class="mx-auto w-full max-w-4xl px-4 py-8">
 	<div class="mb-12 text-center">
 		<h1 class="mb-4 text-5xl font-medium tracking-tight">Solar Calculator</h1>
 		<p class="text-xl text-gray-600">Calculate your cost, savings, ROI, and more!</p>
 	</div>
-
 </section>
 
 {#if loading}
-	<div class="w-screen h-screen absolute inset-0 backdrop-blur-sm flex items-center justify-center">
-		<div class="size-48 bg-white rounded-xl absolute border-2 border-black tracking-tight flex items-center justify-center">
-			<!-- Spinner -->
-			<div class="flex flex-col items-center justify-center gap-2">
-				<div class="w-12 h-12 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
-				<p class="">Loading...</p>
-			</div>
+	<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm">
+		<div
+			class="flex flex-col items-center justify-center gap-2 rounded-xl border-2 border-black bg-white p-6"
+		>
+			<div
+				class="h-12 w-12 animate-spin rounded-full border-4 border-orange-500 border-t-transparent"
+			></div>
+			<p class="font-medium">Loading...</p>
 		</div>
 	</div>
 {/if}
 
-<form on:submit|preventDefault={fetchBillData} class="mx-auto w-full max-w-5xl px-4 py-8 mb-12">
-		<div class="">
-			<div class="my-8 flex w-full space-x-4">
-				<CustomInput bind:value={fullName} label="Full Name" maxlength="20" />
-				<CustomInput
-					bind:value={phoneNumber}
-					label="Contact Number"
-					hasPrefix
-					placeholder="00000 00000"
-				/>
-			</div>
-
-            <div class="my-8 flex w-full space-x-4">
-
-                <CustomInput
-					bind:value={consumerNumber}
-					label="TNEB Consumer Number"
-				
-					placeholder="00000000"
-				/>
-
-                <CustomInput
-					bind:value={ebRegNumber}
-					label="TNEB Registered Phone Number"
-					hasPrefix
-					placeholder="00000 00000"
-				/>
-			</div>
-
+<form on:submit|preventDefault={fetchBillData} class="mx-auto mb-12 w-full max-w-5xl px-4 py-8">
+	<div class="space-y-8">
+		<div class="flex w-full space-x-4">
+			<CustomInput bind:value={fullName} label="Full Name" maxlength="20" required />
+			<CustomInput
+				bind:value={phoneNumber}
+				label="Contact Number"
+				hasPrefix
+				placeholder="00000 00000"
+				required
+			/>
 		</div>
-	
-		<button type="submit" class="flex group/calc max-w-md items-center rounded-lg bg-orange-400 hover:bg-orange-500 p-3 px-4 shadow-soft">
-			<p class="mx-6 grow tracking-tight text-lg">Submit</p>
-			<div
-				class="flex cursor-pointer items-center  transition-all duration-100 justify-center rounded-md bg-white p-1 text-black"
-			>
-				<ChevronRightIcon class="size-5 font-semibold"/>
-			</div>
-		</button>
 
+		<div class="flex w-full space-x-4">
+			<CustomInput
+				bind:value={consumerNumber}
+				label="TNEB Consumer Number"
+				placeholder="00000000"
+				required
+			/>
+			<CustomInput
+				bind:value={ebRegNumber}
+				label="TNEB Registered Phone Number"
+				hasPrefix
+				placeholder="00000 00000"
+				required
+			/>
+		</div>
+
+		{#if errorMessage}
+			<div class="rounded-md bg-red-50 p-3 text-red-600">
+				{errorMessage}
+			</div>
+		{/if}
+	</div>
+
+	<button
+		type="submit"
+		class="group/calc shadow-soft mt-8 flex max-w-md items-center rounded-lg bg-orange-400 p-3 px-4 transition-colors hover:bg-orange-500 disabled:opacity-50"
+		disabled={loading}
+	>
+		<p class="mx-6 grow text-lg tracking-tight">Submit</p>
+		<div class="flex items-center justify-center rounded-md bg-white p-1 text-black">
+			<ChevronRightIcon class="size-5 font-semibold" />
+		</div>
+	</button>
 </form>

@@ -14,6 +14,19 @@
 		0
 	);
 
+	function formatNumber(num) {
+		const numStr = Math.floor(num).toString();
+
+		if (numStr.length <= 3) return numStr;
+
+		let lastThree = numStr.substring(numStr.length - 3);
+		let remaining = numStr.substring(0, numStr.length - 3);
+
+		remaining = remaining.replace(/\B(?=(\d{2})+(?!\d))/g, ',');
+
+		return remaining + ',' + lastThree;
+	}
+
 	onMount(() => {
 		let labels = [];
 		let values = [];
@@ -114,7 +127,7 @@
 <div
 	id="Page2"
 	bind:this={reportContainer2}
-	class="reportContainer mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-8 border p-8 text-base text-gray-800"
+	class="reportContainer mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-8  p-8 text-base text-gray-800"
 >
 	<p class="">
 		Below is a comparison of power consumption in KwH (units) versus the cost incurred. Notice how
@@ -143,16 +156,15 @@
 						<td class="p-1">{row.formattedDate}</td>
 						<td class="p-1 text-right">{row.consumptionUnits}</td>
 						<td class="p-1 text-right">{row.totalCharges}</td>
-						<!-- <td class="p-1 text-right">{Math.round((row.totalCharges / row.consumptionUnits * 4))}</td> -->
 						<td class="p-1 text-right">{Math.round(row.totalCharges - row.consumptionUnits * 4)}</td
 						>
 					</tr>
 				{/each}
 				<tr class="bg-orange-200 font-bold">
 					<td class="p-1">Totals</td>
-					<td class="p-1 text-right">{totalUnitsAmount}</td>
-					<td class="p-1 text-right">{totalCostAmount}</td>
-					<td class="p-1 text-right">{totalSavingsAmount}</td>
+					<td class="p-1 text-right">{formatNumber(totalUnitsAmount)}</td>
+					<td class="p-1 text-right">₹{formatNumber(totalCostAmount)}</td>
+					<td class="p-1 text-right">₹{formatNumber(totalSavingsAmount)}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -163,7 +175,7 @@
 		<p class=" border-t p-2 text-center text-sm italic">
 			Registered office at H-5, Second Floor, Third Avenue, Anna Nagar East, Chennai - 600102, Tamil
 			Nadu <br />
-			info@daystarsolar.co.in, +91 91766 68617/30/34/50/51/57/64
+			info@daystarsolar.co.in or +91 91766 68617/30/34/50/51/57/64
 		</p>
 	</div>
 </div>

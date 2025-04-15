@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte';
-	import Chart from 'chart.js/auto';
 
 	export let data = [];
 	export let reportContainer4;
@@ -13,28 +12,16 @@
 			labels.push(element.formattedDate);
 			values.push(element.consumptionUnits);
 		});
-
-		let labels1 = labels.slice(0, 6);
-		let values1 = values.slice(0, 6);
-
-		let labels2 = labels.slice(6);
-		let values2 = values.slice(6);
 	});
 
 	let avgConsumption = data.reduce((acc, val) => acc + val.consumptionUnits, 0) / data.length || 0;
 	let avgKWHr = avgConsumption / 60 / 4;
 </script>
 
-<!-- <div class="mx-auto flex max-w-2xl flex-col p-4 text-gray-800">
-	<button on:click={download} class="mt-6 rounded bg-blue-500 px-4 py-2 text-white">
-		Download PDF
-	</button>
-</div> -->
-
 <div
 	id="Page4"
 	bind:this={reportContainer4}
-	class="reportContainer mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-8 border p-8 text-base text-gray-800"
+	class="reportContainer mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-8  p-8 text-base text-gray-800"
 >
 	<p>
 		<strong>Conclusion & Recommendation</strong> <br />
@@ -69,8 +56,13 @@
 
 	<p>
 		We are always available for any queries or clarifications you may require. Please feel free to
-		contact us at <span class="text-blue-600">info@daystarsolar.co.in</span> or
-		<span class="text-blue-600">+91 91766 68617/30/34/50/51/57/64</span>.
+		contact us at <a href="mailto:info@daystarsolar.co.in"
+			><span class="text-blue-600">info@daystarsolar.co.in</span></a
+		>
+		or
+		<a href="tel:+91 91766 68617">
+			<span class="text-blue-600">+91 91766 68617/30/34/50/51/57/64</span>.
+		</a>
 	</p>
 
 	<div class="flex grow flex-col">
@@ -84,7 +76,7 @@
 		<p class=" border-t p-2 text-center text-sm italic">
 			Registered office at H-5, Second Floor, Third Avenue, Anna Nagar East, Chennai - 600102, Tamil
 			Nadu <br />
-			info@daystarsolar.co.in, +91 91766 68617/30/34/50/51/57/64
+			info@daystarsolar.co.in or +91 91766 68617/30/34/50/51/57/64
 		</p>
 	</div>
 </div>

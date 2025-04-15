@@ -6,8 +6,8 @@
 	// import { nameState } from '$lib/state.svelte.js';
 
 	export let data = [];
-	// let name = nameState.name;
-	let name = 'nameState.name';
+	
+	export let name = "there!";
 
 	let chartCanvas1;
 	export let reportContainer1;
@@ -74,9 +74,9 @@
 <div
 	id="Page1"
 	bind:this={reportContainer1}
-	class="reportContainer mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-8 border p-8 text-base text-gray-800"
+	class="reportContainer mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-8  p-8 text-base text-gray-800"
 >
-	<img src={logo} alt="logo" class="mx-auto my-8 h-20" />
+	<img src={logo} alt="logo" class="mx-auto my-6 h-18" />
 	<p class="my-8 ml-auto">{currentDate}</p>
 
 	<h1 class="text-2xl font-bold">Hey {name},</h1>
@@ -104,7 +104,7 @@
 		<p class=" border-t p-2 text-center text-sm italic">
 			Registered office at H-5, Second Floor, Third Avenue, Anna Nagar East, Chennai - 600102, Tamil
 			Nadu <br />
-			info@daystarsolar.co.in, +91 91766 68617/30/34/50/51/57/64
+			info@daystarsolar.co.in or +91 91766 68617/30/34/50/51/57/64
 		</p>
 	</div>
 </div>

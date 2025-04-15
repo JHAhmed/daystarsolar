@@ -15,14 +15,19 @@
 		name="description"
 		content="Daystar Solar is a leading solar energy solutions provider in South India. We offer solar panels, street lights, and distribution boxes for residential and commercial use."
 	/>
-	
 </svelte:head>
 
-<div class="">
+{#if $page.url.pathname == '/report-view' || $page.url.pathname == "/ar"}
+	<div class="">
+		{@render children()}
+	</div>
+{:else}
+	<div class="">
 		<Navbar isCalc={$page.url.pathname == '/calculator'} />
-	<!-- <div class="relative">
+		<!-- <div class="relative">
 		<Navbar isCalc={$page.url.pathname == '/calculator'} />
 	</div> -->
-	{@render children()}
-	<Footer />
-</div>
+		{@render children()}
+		<Footer />
+	</div>
+{/if}
