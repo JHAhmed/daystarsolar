@@ -32,10 +32,17 @@
 
 	// Prefill data for development environment
 	if (dev) {
-		fullName = 'Jamal Haneef';
-		phoneNumber = '9500044487';
-		consumerNumber = '0114505470';
-		ebRegNumber = '9500044487';
+		// Test 1
+		// fullName = 'Jamal Haneef';
+		// phoneNumber = '9500044487';
+		// consumerNumber = '0114505470';
+		// ebRegNumber = '9500044487';
+
+		// Test 2
+		fullName = 'Subramaniya';
+		phoneNumber = '9841106264';
+		consumerNumber = '0107301616';
+		ebRegNumber = '9841106264';
 	}
 
 	// Form submission handler
@@ -65,18 +72,26 @@
 			}
 
 			const data = await res.json();
-
-			// Update state
 			nameState.name = fullName;
-
-			// Clear existing data before pushing new data
 			dataState.data = [];
 			data.data.forEach((element) => {
 				dataState.data.push(element);
 			});
-
-			// Navigate to report page
 			goto(`/report?id=${data.id}`);
+
+
+			// const res = await fetch(`/api/getNumber?cno=${consumerNumber}`);
+
+			// if (!res.ok) {
+			// 	throw new Error('Failed to fetch data');
+			// }
+
+			// const data = await res.json();
+			// console.log(data);
+			// console.log(data.consumerNumber);
+
+
+
 		} catch (error) {
 			console.error('Error fetching bill data:', error);
 			errorMessage = 'Failed to retrieve bill data. Please try again.';

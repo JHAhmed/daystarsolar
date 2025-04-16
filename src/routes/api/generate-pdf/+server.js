@@ -89,7 +89,6 @@ export async function GET({ url, request }) {
 		// --- Page Setup and Navigation ---
 		await page.setViewport(VIEWPORT_OPTIONS);
 
-		console.log('Navigating to report page...');
 		await page.goto(reportUrl, {
 			waitUntil: 'networkidle2', // Keeping as per original code
 			timeout: 60000 // Add a generous navigation timeout
@@ -126,11 +125,10 @@ export async function GET({ url, request }) {
 		return svelteKitError(statusCode, `${message} (ID: ${id})`); // Include ID for context
 	} finally {
 		// --- Cleanup ---
-		// const response = await supabase.from('countries').delete().eq('id', id);
+		const response = await supabase.from('reports').delete().eq('id', id);
 
 		// --- Browser Cleanup ---
 		if (browser) {
-			console.log('Closing browser...');
 			await browser.close();
 			console.log('Browser closed.');
 		}

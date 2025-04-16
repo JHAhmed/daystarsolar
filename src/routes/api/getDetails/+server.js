@@ -1,13 +1,11 @@
 import { json, error as svelteKitError } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 import { dev } from '$app/environment';
-import { supabase } from '$lib/supabaseClient'; 
+import { supabase } from '$lib/supabaseClient';
 import OpenAI from 'openai';
 import chromium from '@sparticuz/chromium';
 
-const puppeteer = dev
-	? await import('puppeteer')
-	: await import('puppeteer-core');
+const puppeteer = dev ? await import('puppeteer') : await import('puppeteer-core');
 
 const TNEB_BILL_STATUS_URL = 'https://www.tnebltd.gov.in/BillStatus/billstatus.xhtml';
 const BROWSER_ARGS = [
@@ -20,29 +18,42 @@ const BROWSER_ARGS = [
 	// '--single-process', // Maybe uncomment for Docker/Lambda, but test
 	'--disable-gpu',
 	'--ignore-certificate-errors', // Use with caution
-	'--disable-web-security',       // Use with caution
+	'--disable-web-security', // Use with caution
 	'--allow-running-insecure-content' // Use with caution
 ];
 
+async function checkErrorMessage(page) {
+	const errorMessage = await page.$eval(
+		'div.ui-messages-error span.ui-messages-error-summary',
+		(el) => el.textContent
+	);
+
+	return (
+		errorMessage ===
+		'Kindly enter correct registered mobile number for the entered service connection number'
+	);
+}
+
 async function solveCaptcha(page, openai) {
-	console.log('Attempting to find CAPTCHA element...');
-	const captchaElement = await page.waitForSelector('#imgCaptchaId', { visible: true, timeout: 10000 });
+	const captchaElement = await page.waitForSelector('#imgCaptchaId', {
+		visible: true,
+		timeout: 10000
+	});
 	if (!captchaElement) {
 		throw new Error('CAPTCHA image element (#imgCaptchaId) not found.');
 	}
 
-	console.log('Taking CAPTCHA screenshot...');
 	const captchaBuffer = await captchaElement.screenshot({ encoding: 'base64' });
 	console.log('Got CAPTCHA Screenshot!');
 
 	try {
-		console.log('Sending CAPTCHA to OpenAI...');
 		const response = await openai.chat.completions.create({
-			model: 'gpt-4o-mini', 
+			model: 'gpt-4o-mini',
 			messages: [
 				{
 					role: 'system',
-					content: 'You are a highly accurate CAPTCHA solving assistant. Return only the characters visible in the image, with no extra text or explanation.'
+					content:
+						'You are a highly accurate CAPTCHA solving assistant. Return only the characters visible in the image, with no extra text or explanation.'
 				},
 				{
 					role: 'user',
@@ -69,31 +80,27 @@ async function solveCaptcha(page, openai) {
 		}
 
 		if (!/^[a-zA-Z0-9]{4,12}$/.test(captchaText)) {
-		    console.warn(`Potential malformed CAPTCHA from OpenAI: "${captchaText}". Proceeding anyway.`);
+			console.warn(`Potential malformed CAPTCHA from OpenAI: "${captchaText}". Proceeding anyway.`);
 		}
 
 		console.log('OpenAI Response Received! CAPTCHA:', captchaText);
 		return captchaText;
-
 	} catch (err) {
 		console.error('Error during OpenAI CAPTCHA solving:', err);
-		throw new Error(`Failed to solve CAPTCHA: ${err.message}`); 
+		throw new Error(`Failed to solve CAPTCHA: ${err.message}`);
 	}
 }
 
 async function extractBillData(page) {
-	console.log('Looking for results tables with class "ccbills"...');
-
 	const tableSelector = 'table.ccbills';
 	try {
 		await page.waitForSelector(tableSelector, { visible: true, timeout: 30000 });
 		console.log('Found tables with class "ccbills".');
 
-        const tables = await page.$$(tableSelector);
+		const tables = await page.$$(tableSelector);
 		const targetTable = tables[1];
-		console.log('Targeting the second table.');
 
-		const data = await page.evaluate(table => { 
+		const data = await page.evaluate((table) => {
 			if (!table) return [];
 
 			const rows = Array.from(
@@ -101,8 +108,8 @@ async function extractBillData(page) {
 			);
 
 			return rows
-				// .slice(1, -1) // Exclude the first and last rows
-				.map(row => {
+				.slice(0, -1) // Exclude the last row
+				.map((row) => {
 					const cells = row.querySelectorAll('td');
 					// if (cells.length < 15) return null; // Optional: Add validation based on cell count
 					return {
@@ -110,7 +117,8 @@ async function extractBillData(page) {
 						consumptionUnits: cells[7]?.innerText.trim() ?? '',
 						totalCharges: cells[14]?.innerText.trim() ?? ''
 					};
-				}).filter(item => item !== null); // Filter out nulls if using the cell count check
+				})
+				.filter((item) => item !== null); // Filter out nulls if using the cell count check
 		}, targetTable); // Pass the ElementHandle 'targetTable' here
 
 		if (!data || data.length === 0) {
@@ -120,20 +128,22 @@ async function extractBillData(page) {
 			console.log(`Extracted ${data.length} rows. First row:`, data[0]);
 		}
 		return data;
-
 	} catch (err) {
-        // Catch errors from waitForSelector, $$ or evaluate
+		// Catch errors from waitForSelector, $$ or evaluate
 		console.error('Error during bill data extraction:', err);
-        // Re-throw or handle as needed. If it's one of our specific throws, just re-throw.
-        if (err.message.startsWith('TNEB site reported an error:') || err.message.startsWith('Could not find the required results table')) {
-            throw err;
-        }
+		// Re-throw or handle as needed. If it's one of our specific throws, just re-throw.
+		if (
+			err.message.startsWith('TNEB site reported an error:') ||
+			err.message.startsWith('Could not find the required results table')
+		) {
+			throw err;
+		}
 		// Otherwise, wrap it
 		throw new Error(`Failed to extract bill data: ${err.message}`);
 	}
 }
 
-export async function POST({ request }) {
+export async function POST({ request, fetch }) {
 	const { fullName, consumerNumber, ebRegNumber } = await request.json();
 
 	if (!fullName || !consumerNumber || !ebRegNumber) {
@@ -149,85 +159,84 @@ export async function POST({ request }) {
 			args: BROWSER_ARGS,
 			executablePath: executablePath,
 			headless: dev ? true : chromium.headless, // Use chromium.headless in prod
-			ignoreHTTPSErrors: true,
+			ignoreHTTPSErrors: true
 		});
 
-        const sleep = ms => new Promise(res => setTimeout(res, ms));
+		const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
 		const page = await browser.newPage();
 		await page.setDefaultNavigationTimeout(60000); // Increased timeout
-        
+
 		// Setting viewport might help with element visibility sometimes
 		await page.setViewport({ width: 1280, height: 800 });
-        // No need for setBypassCSP, setExtraHTTPHeaders unless specifically required and tested
+		// No need for setBypassCSP, setExtraHTTPHeaders unless specifically required and tested
 
-        const openai = new OpenAI({ apiKey: env.OPENAI_API_KEY });
+		const openai = new OpenAI({ apiKey: env.OPENAI_API_KEY });
 
 		console.log(`Navigating to ${TNEB_BILL_STATUS_URL}...`);
 		await page.goto(TNEB_BILL_STATUS_URL, { waitUntil: 'networkidle0' }); // networkidle0 might be more reliable
-		console.log('Page loaded.');
 
-
-        sleep(500)
+		sleep(500);
 		const captchaText = await solveCaptcha(page, openai);
+		const response = await fetch(`/api/getNumber?cno=${consumerNumber}`);
+
+		const data = await response.json();
+		let newEbRegNumber = data.ebRegNumber || ebRegNumber;
 
 		// --- Form Filling and Submission ---
-		console.log('Filling form...');
 		await page.type('#serviceno', consumerNumber);
-		await page.type('#mob', ebRegNumber);
+		await page.type('#mob', newEbRegNumber);
 		await page.type('#cap', captchaText); // Use the solved CAPTCHA
 
 		console.log('Submitting form...');
 		// Use Promise.all for simultaneous click and navigation waiting
 		await Promise.all([
-		    page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 45000 }), // Wait for navigation to complete
-		    page.click('#submit3'),                                                 // Trigger the navigation
+			page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 45000 }), // Wait for navigation to complete
+			page.click('#submit3') // Trigger the navigation
 		]);
 
 		console.log('Navigation complete. New Page URL:', page.url());
 
-        // Note: The 'chrome-error' handling for certificates might not be needed
-        // in production if the server environment trusts the site's cert.
-        // If it *is* needed, keep it, but it's often a sign of local dev issues.
+		// Note: The 'chrome-error' handling for certificates might not be needed
+		// in production if the server environment trusts the site's cert.
+		// If it *is* needed, keep it, but it's often a sign of local dev issues.
 		if (page.url().includes('chrome-error://')) {
 			console.warn('Certificate error page detected, attempting to proceed...');
 			// This might not always work depending on the exact error page structure
-            const proceedButton = await page.$('#proceed-button'); // Or the correct selector
-            if (proceedButton) {
-			    await Promise.all([
-                    page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 45000 }),
-                    proceedButton.click(),
-                ]);
-			    console.log('Clicked Proceed button.');
-            } else {
-                throw new Error('Certificate error page encountered, but could not find proceed button.');
-            }
+			const proceedButton = await page.$('#proceed-button'); // Or the correct selector
+			if (proceedButton) {
+				await Promise.all([
+					page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 45000 }),
+					proceedButton.click()
+				]);
+			} else {
+				throw new Error('Certificate error page encountered, but could not find proceed button.');
+			}
 		}
 
 		// --- Data Extraction ---
 		const scrapedData = await extractBillData(page);
 
-        if (scrapedData.length === 0) {
-            console.log('No bill data found for the provided details.');
-            // Return a specific response indicating no data, maybe 200 OK but with a message
-            return json({ message: 'No bill data found.', data: [] }, { status: 200 });
-        }
+		if (scrapedData.length === 0) {
+			console.log('No bill data found for the provided details.');
+			// Return a specific response indicating no data, maybe 200 OK but with a message
+			return json({ message: 'No bill data found.', data: [] }, { status: 200 });
+		}
 
 		// --- Database Storage ---
 		console.log('Saving data to Supabase...');
 		const { data: supabaseResult, error: supabaseError } = await supabase
 			.from('reports') // Ensure 'reports' table exists with 'name' (text) and 'data' (jsonb) columns
 			.insert([{ name: fullName, data: scrapedData }])
-			.select(); 
+			.select();
 
 		if (supabaseError) {
 			console.error('Supabase insert error:', supabaseError);
 			throw new Error(`Failed to save report to database: ${supabaseError.message}`);
 		}
-        const id = supabaseResult[0].id;
+		const id = supabaseResult[0].id;
 
 		// --- Success Response ---
 		return json({ data: scrapedData, id: id }, { status: 200 });
-
 	} catch (err) {
 		// --- Centralized Error Handling ---
 		console.error('An error occurred during the scraping process:', err);
@@ -242,16 +251,14 @@ export async function POST({ request }) {
 		// 	}
 		// }
 
-        // Provide specific error messages based on caught error type if possible
-        let statusCode = 500;
-        let message = 'An internal server error occurred during scraping.';
+		// Provide specific error messages based on caught error type if possible
+		let statusCode = 500;
+		let message = 'An internal server error occurred during scraping.';
 
 		// Use SvelteKit's error helper for standard error responses
 		return svelteKitError(statusCode, message);
-
 	} finally {
 		if (browser) {
-			console.log('Closing browser...');
 			await browser.close();
 			console.log('Browser closed.');
 		}
