@@ -12,6 +12,15 @@
 		name="description"
 		content="View the latest solar installations and projects from Daystar Solar, a leading solar energy solutions provider in South India."
 	/>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "CollectionPage",
+			"url": "https://daystarsolar.co.in/projects",
+			"name": "Our Projects",
+			"description": "A showcase of successful solar installations across residential and commercial sectors."
+		}
+	</script>
 </svelte:head>
 
 <section class="my-18 mx-auto mt-8 max-w-7xl px-4 py-12">
@@ -27,12 +36,12 @@
 	<div class="grid grid-cols-1 gap-2 md:gap-6 lg:grid-cols-2">
 		{#each projects as project}
 			<div
-				class="flex w-full max-w-4xl flex-col overflow-hidden rounded-lg md:rounded-2xl bg-gray-100 md:flex-row"
+				class="flex w-full max-w-4xl flex-col overflow-hidden rounded-lg bg-gray-100 md:flex-row md:rounded-2xl"
 			>
-				<div class="flex flex-col justify-center space-y-4 md:space-y-8 p-4 md:p-6 md:w-1/2">
-					<h2 class="text-2xl md:text-4xl font-normal tracking-tighter">{project.title}</h2>
+				<div class="flex flex-col justify-center space-y-4 p-4 md:w-1/2 md:space-y-8 md:p-6">
+					<h2 class="text-2xl font-normal tracking-tighter md:text-4xl">{project.title}</h2>
 
-					<p class="text-sm md:text-base text-gray-700">{project.summary}</p>
+					<p class="text-sm text-gray-700 md:text-base">{project.summary}</p>
 
 					<div>
 						<a

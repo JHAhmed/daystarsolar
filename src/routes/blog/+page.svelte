@@ -13,10 +13,18 @@
 		name="description"
 		content="Read the latest blogs and articles from Daystar Solar, a leading solar energy solutions provider in South India."
 	/>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Blog",
+			"url": "https://daystarsolar.co.in/blog",
+			"name": "Daystar Solar Blog",
+			"description": "Latest news, insights, and tips about solar energy, sustainability, and our projects."
+		}
+	</script>
 </svelte:head>
 
 <section class="my-18 mx-auto mt-8 max-w-7xl px-4 py-12">
-
 	<div class="mx-4 mb-16 text-left">
 		<p
 			use:animateIn={{ delay: 0.5 }}
@@ -39,7 +47,7 @@
 				use:animateIn={{ delay: 0.7 + i / 4, blur: 8, y: 10, rotate: 1 }}
 				class="flex flex-col rounded-xl bg-gray-50 p-2 opacity-0"
 			>
-				<div class="md:aspect-square aspect-video overflow-hidden">
+				<div class="aspect-video overflow-hidden md:aspect-square">
 					<img
 						src={blog.image}
 						alt="Solar panels on various buildings"
@@ -48,8 +56,8 @@
 				</div>
 				<div class="my-4 grow">
 					<p class="text-sm text-gray-500">{blog.date}</p>
-					<h2 class="mt-2 text-base md:text-lg font-semibold">{blog.title}</h2>
-					<p class="mt-2 text-sm md:text-base text-gray-600">{blog.summary}</p>
+					<h2 class="mt-2 text-base font-semibold md:text-lg">{blog.title}</h2>
+					<p class="mt-2 text-sm text-gray-600 md:text-base">{blog.summary}</p>
 				</div>
 
 				<div>

@@ -33,6 +33,7 @@ export { default as solarImage3 } from './assets/images/bos.jpg';
 export { default as solarImage4 } from './assets/images/distribution-boxes.jpg';
 
 export { default as bgImage } from './assets/images/hero-background.jpg';
+export { default as metaHome } from './assets/meta-home.jpg';
 
 export { default as CTABG } from './assets/images/cta-bg.jpg';
 

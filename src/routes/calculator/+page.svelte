@@ -33,10 +33,12 @@
 
 	async function validateForm() {
 		// Validate form
-		if (fullName.length < 5 
-			|| phoneNumber.length < 5
-			|| consumerNumber.length < 5 
-			|| ebRegNumber.length < 5) {
+		if (
+			fullName.length < 5 ||
+			phoneNumber.length < 5 ||
+			consumerNumber.length < 5 ||
+			ebRegNumber.length < 5
+		) {
 			toast.warning('Please fill in all details properly!');
 			return;
 		}
@@ -50,7 +52,6 @@
 	}
 
 	async function fetchBillData() {
-
 		try {
 			loading = true;
 
@@ -60,7 +61,7 @@
 				body: JSON.stringify({
 					fullName,
 					consumerNumber,
-					ebRegNumber,
+					ebRegNumber
 				})
 			});
 
@@ -78,12 +79,10 @@
 			});
 
 			goto(`/report?id=${data.id}`);
-
 		} catch (error) {
 			console.error('Error fetching bill data:', error);
 			errorMessage = 'Failed to retrieve bill data. Please try again.';
 			toast.error(errorMessage);
-
 		} finally {
 			loading = false;
 		}
@@ -91,6 +90,24 @@
 </script>
 
 <Toaster richColors expand={true} />
+
+<svelte:head>
+	<title>Calculator | Daystar Solar</title>
+	<meta
+		name="description"
+		content="Estimate your solar savings with our easy-to-use solar ROI calculator."
+	/>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebApplication",
+			"url": "https://daystarsolar.co.in/calculator",
+			"name": "Solar Savings Calculator",
+			"applicationCategory": "UtilitiesApplication",
+			"description": "Estimate your solar savings with our easy-to-use solar ROI calculator."
+		}
+	</script>
+</svelte:head>
 
 <section class="mx-auto w-full max-w-4xl px-4 py-8">
 	<div class="mb-12 text-center">

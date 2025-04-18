@@ -3,7 +3,7 @@ import { env } from '$env/dynamic/private';
 import { json } from '@sveltejs/kit';
 
 export async function POST({ request }) {
-	const { emailId } = await request.json();
+	const { email } = await request.json();
 
 	try {
 		const client = contentfulManagement.createClient({
@@ -16,7 +16,7 @@ export async function POST({ request }) {
 		const entry = await environment.createEntry('mailingList', {
 			fields: {
 				emailId: {
-					'en-US': emailId
+					'en-US': email
 				}
 			}
 		});

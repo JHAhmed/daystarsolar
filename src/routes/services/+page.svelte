@@ -97,6 +97,15 @@
 		name="description"
 		content="Daystar Solar offers a wide range of solar services including consultation, installation, and maintenance for residential and commercial clients."
 	/>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebPage",
+			"url": "https://daystarsolar.co.in/services",
+			"name": "Solar Services",
+			"description": "Discover our full range of solar services including installation, maintenance, and consultation."
+		}
+	</script>
 </svelte:head>
 
 <Services />
@@ -123,7 +132,9 @@
 				<div class="my-4 flex items-center">
 					<div class="step-point size-3 shrink-0 rounded-full bg-gray-900"></div>
 					{#if index !== steps.length - 1}
-						<div class="absolute left-3 top-[calc(1rem+0.375rem)] h-0.5 w-[calc(100%-1rem)] bg-gray-300 md:top-auto md:left-5 md:right-0 md:w-auto"></div>
+						<div
+							class="absolute left-3 top-[calc(1rem+0.375rem)] h-0.5 w-[calc(100%-1rem)] bg-gray-300 md:left-5 md:right-0 md:top-auto md:w-auto"
+						></div>
 					{/if}
 				</div>
 
@@ -143,14 +154,14 @@
 			</div>
 		{/each}
 	</div>
-
-	</section>
+</section>
 
 <CTA />
 
 <style>
 	/* Optional: Hide the connecting line on smaller screens if the grid stacks */
-	@media (max-width: 639px) { /* Corresponds to Tailwind's 'sm' breakpoint */
+	@media (max-width: 639px) {
+		/* Corresponds to Tailwind's 'sm' breakpoint */
 		.grid > div:not(:last-child) .absolute.h-0\.5 {
 			/* display: none; */ /* Uncomment this line if you want to hide the line entirely on single-column layout */
 		}
@@ -166,7 +177,7 @@
 		.grid > div:nth-child(4n) .absolute.h-0\.5 {
 			/* display: none; */ /* Uncomment this to hide line on the last item of 4-col rows */
 		}
-        /* Ensure line does not show on last item overall */
+		/* Ensure line does not show on last item overall */
 		.grid > div:last-child .absolute.h-0\.5 {
 			display: none;
 		}

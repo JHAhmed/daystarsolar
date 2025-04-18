@@ -8,7 +8,6 @@
 		await import('@google/model-viewer');
 		modelViewerLoaded = true;
 	});
-
 </script>
 
 {#if modelViewerLoaded}
@@ -58,7 +57,7 @@
 
 	.update-bar {
 		background-color: dodgerblue;
-		width: 0%; 
+		width: 0%;
 		height: 10px;
 	}
 </style>

@@ -116,7 +116,7 @@
 			use:animateIn={{ delay: 0.2 }}
 			class="text-5xl leading-tight tracking-[-0.07em] opacity-0 md:text-6xl lg:text-7xl"
 		>
-		FAQ
+			FAQ
 		</h1>
 
 		<p class="uppercase tracking-wider text-gray-500">Frequently Asked Questions</p>

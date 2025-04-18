@@ -8,7 +8,7 @@
 
 	export let data;
 	let userName = data.report.name;
-	let reportId= data.report.id;
+	let reportId = data.report.id;
 	data = data.report.data;
 
 	let isGeneratingPDF = false;

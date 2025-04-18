@@ -37,6 +37,15 @@
 		name="description"
 		content="Daystar Solar offers a wide range of solar products including street lights, distribution boxes, and solar panels for residential and commercial use."
 	/>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "CollectionPage",
+			"url": "https://daystarsolar.co.in/products",
+			"name": "Solar Products",
+			"description": "Explore our range of high-efficiency solar panels, inverters, batteries, and accessories."
+		}
+	</script>
 </svelte:head>
 
 <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
@@ -64,7 +73,9 @@
 					/>
 				</div>
 
-				<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+				<div
+					class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"
+				></div>
 
 				<div class="absolute inset-0 flex flex-col justify-between p-4 sm:p-6">
 					<div class="flex justify-end">
@@ -86,7 +97,9 @@
 							{product.title}
 						</h3>
 						{#if product.byds}
-							<p class="mb-3 pl-px text-sm text-white/80 sm:mb-4 hidden lg:block sm:text-base">By Daystar Solar</p>
+							<p class="mb-3 hidden pl-px text-sm text-white/80 sm:mb-4 sm:text-base lg:block">
+								By Daystar Solar
+							</p>
 						{/if}
 
 						<div class="my-2 flex flex-wrap gap-2 sm:my-4 sm:gap-3">
