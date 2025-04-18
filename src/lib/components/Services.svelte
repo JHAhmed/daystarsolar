@@ -145,18 +145,18 @@
 	}
 </script>
 
-<div class="mx-auto max-w-7xl p-4 text-left">
-	<h1  class="mt-8 text-3xl font-semibold tracking-tight md:text-5xl">
+<div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8 text-left">
+	<h1  class="mt-8 text-5xl leading-tight tracking-[-0.07em] md:text-6xl lg:text-7xl">
 		Our Services
 	</h1>
 	<p  class="my-4 text-xl font-normal tracking-tight md:text-3xl">
 		What we offer
 	</p>
 
-	<section class="my-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+	<section class="my-6 md:my-12 grid grid-cols-1 gap-1 md:gap-6 md:grid-cols-2">
 		{#each services as { title, description }, i}
 			<article use:animateIn={{ delay: i / 5, blur: 8, y: 20, amount: 0.1 }} class="opacity-0">
-				<Accordion.Root class="w-full p-4 bg-white rounded-md">
+				<Accordion.Root class="w-full p-2 md:p-4 bg-white rounded-md">
 					<Accordion.Item class="w-full" value={`item-${i}`}>
 						<Accordion.Trigger class="w-full text-left text-lg font-semibold tracking-tight md:text-2xl">
 							{title}

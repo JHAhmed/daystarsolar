@@ -110,7 +110,15 @@
 
 <div class="mx-auto max-w-7xl px-4 py-6 md:py-12">
 	<div class="text-center">
-		<h1 class="mb-4 text-5xl font-medium text-orange-300 md:text-6xl">FAQ</h1>
+		<!-- <h1 class="mb-4 text-5xl font-medium text-orange-300 md:text-6xl">FAQ</h1> -->
+
+		<h1
+			use:animateIn={{ delay: 0.2 }}
+			class="text-5xl leading-tight tracking-[-0.07em] opacity-0 md:text-6xl lg:text-7xl"
+		>
+		FAQ
+		</h1>
+
 		<p class="uppercase tracking-wider text-gray-500">Frequently Asked Questions</p>
 	</div>
 </div>

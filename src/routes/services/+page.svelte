@@ -1,11 +1,11 @@
 <script>
 	import { CTA, ServicesCards, Services } from '$components';
-	import { animate, inView, stagger, scroll } from 'motion';
+	import { animate, inView, stagger } from 'motion'; // Removed 'scroll' as it wasn't used
 	import { onMount } from 'svelte';
 	import { animateIn } from '$lib';
 
 	import {
-		BoltIcon,
+		BoltIcon, // This seems unused, but kept it just in case
 		UserGroupIcon,
 		MapIcon,
 		PencilSquareIcon,
@@ -17,49 +17,8 @@
 	} from '@fvilers/heroicons-svelte/24/outline';
 
 	let scrollContainer;
-	const stepsNew = [
-	{
-		title: 'Client Interaction',
-		description: 'Identify pain points and offer tailored solutions.',
-		
-	},
-	{
-		title: 'Site Digitisation',
-		description: 'Visit sites to gather data for accurate simulation.',
-		
-	},
-	{
-		title: 'Design & Approvals',
-		description: 'Draft cost-effective designs and secure approvals.',
-		
-	},
-	{
-		title: 'Procurement & Installation',
-		description: 'Source materials and install with precision.',
-		
-	},
-	{
-		title: 'Testing & Commissioning',
-		description: 'Ensure safety and functionality through testing.',
-		
-	},
-	{
-		title: 'Handover & Training',
-		description: 'Deliver the plant and provide operational guidance.',
-		
-	},
-	{
-		title: 'Performance Monitoring',
-		description: 'Track performance remotely and via inspections.',
-		
-	},
-	{
-		title: 'Service & Support',
-		description: 'Ensure long-term efficiency with ongoing support.',
-		
-	}
-];
 
+	// Removed the unused 'stepsNew' array
 
 	const steps = [
 		{
@@ -112,20 +71,23 @@
 	];
 
 	onMount(() => {
-		inView(scrollContainer, () => {
-			const animation = animate(
-				'.step-point',
-				{
-					backgroundColor: ['#000', '#f6ad55'],
-					scale: [0.5, 1],
-					filter: ['drop-shadow(0 0 0px #fdba74)', 'drop-shadow(0 0 10px #fdba74)']
-				},
-				{
-					duration: 0.1,
-					delay: stagger(0.5, { startDelay: 0.5 })
-				}
-			);
-		});
+		// Added a check for scrollContainer existence
+		if (scrollContainer) {
+			inView(scrollContainer, () => {
+				animate(
+					'.step-point',
+					{
+						backgroundColor: ['#1f2937', '#f6ad55'], // Adjusted start color to match bg-gray-900/slate-900 potentially
+						scale: [0.5, 1],
+						filter: ['drop-shadow(0 0 0px #fdba74)', 'drop-shadow(0 0 10px #fdba74)']
+					},
+					{
+						duration: 0.1,
+						delay: stagger(0.5, { startDelay: 0.5 })
+					}
+				);
+			});
+		}
 	});
 </script>
 
@@ -141,31 +103,38 @@
 
 <ServicesCards />
 
-<section class="mx-32 p-8">
+<section class="px-4 py-8 sm:px-8 md:px-16 lg:px-24 xl:px-32">
 	<h2
 		use:animateIn
-		class="my-8 text-left text-3xl font-semibold tracking-tighter opacity-0 md:text-5xl"
+		class="my-8 text-left text-3xl font-semibold tracking-tighter opacity-0 sm:text-4xl md:text-5xl"
 	>
 		Our Process
 	</h2>
 
-	<div bind:this={scrollContainer} class="grid gap-8 gap-y-12 md:grid-cols-4 md:gap-y-16">
+	<div
+		bind:this={scrollContainer}
+		class="grid grid-cols-1 gap-8 gap-y-12 sm:grid-cols-2 md:grid-cols-4 md:gap-y-16"
+	>
 		{#each steps as step, index}
 			<div
 				use:animateIn={{ delay: index / 3, blur: 8, amount: 0.1, inView: false }}
 				class="relative opacity-0"
 			>
 				<div class="my-4 flex items-center">
-					<div class=" step-point size-3 rounded-full bg-gray-900"></div>
-					<div class="absolute mx-6 h-0.5 w-5/6 bg-gray-300 md:w-full"></div>
+					<div class="step-point size-3 shrink-0 rounded-full bg-gray-900"></div>
+					{#if index !== steps.length - 1}
+						<div class="absolute left-3 top-[calc(1rem+0.375rem)] h-0.5 w-[calc(100%-1rem)] bg-gray-300 md:top-auto md:left-5 md:right-0 md:w-auto"></div>
+					{/if}
 				</div>
 
 				<div class="px-1">
-					<div class="flex items-center mb-3 space-x-2">
-						<div class="bg-slate-900 size-8 rounded-lg p-2">
-							<step.icon class=" text-white" />
+					<div class="mb-2 flex items-center space-x-2">
+						<div class="size-7 shrink-0 rounded-lg bg-slate-900 p-1.5 sm:size-8 sm:p-2">
+							<svelte:component this={step.icon} class="text-white" />
 						</div>
-						<h3 class="text-xl font-semibold tracking-tighter md:text-2xl">{step.title}</h3>
+						<h3 class="text-lg font-semibold tracking-tighter sm:text-xl md:text-2xl">
+							{step.title}
+						</h3>
 					</div>
 					<p class="text-xs leading-snug tracking-tight text-gray-600 md:text-sm">
 						{step.description}
@@ -175,27 +144,31 @@
 		{/each}
 	</div>
 
-	<!-- <div bind:this={scrollContainer} class="flex">
-		{#each steps as step, index}
-			<div
-				use:animateIn={{ delay: index / 3, blur: 8, amount: 0.1, inView: false }}
-				class="relative opacity-0 w-full"
-			>
-			
-			<div class="my-4 flex items-center justify-start">
-				<div class=" step-point size-3 rounded-full bg-gray-900"></div>
-				<div class="absolute mx-4 w-5/6 h-0.5 bg-gray-300 "></div>
-			</div>
-
-			<div class="px-1 flex flex-col">
-					<h3 class="mb-3 text-xl font-semibold tracking-tighter md:text-2xl ">{step.title}</h3>
-					<p class="text-xs leading-snug tracking-tight text-gray-600 grow md:text-sm">
-						{step.description}
-					</p>
-				</div>
-			</div>
-		{/each}
-	</div> -->
-</section>
+	</section>
 
 <CTA />
+
+<style>
+	/* Optional: Hide the connecting line on smaller screens if the grid stacks */
+	@media (max-width: 639px) { /* Corresponds to Tailwind's 'sm' breakpoint */
+		.grid > div:not(:last-child) .absolute.h-0\.5 {
+			/* display: none; */ /* Uncomment this line if you want to hide the line entirely on single-column layout */
+		}
+	}
+	/* Hide line on the last item of the 2-column row (sm breakpoint) */
+	@media (min-width: 640px) and (max-width: 767px) {
+		.grid > div:nth-child(2n) .absolute.h-0\.5 {
+			/* display: none; */ /* Uncomment this to hide line on the last item of 2-col rows */
+		}
+	}
+	/* Hide line on the last item of the 4-column row (md breakpoint) */
+	@media (min-width: 768px) {
+		.grid > div:nth-child(4n) .absolute.h-0\.5 {
+			/* display: none; */ /* Uncomment this to hide line on the last item of 4-col rows */
+		}
+        /* Ensure line does not show on last item overall */
+		.grid > div:last-child .absolute.h-0\.5 {
+			display: none;
+		}
+	}
+</style>

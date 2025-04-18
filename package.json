@@ -15,6 +15,7 @@
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
+		"@tailwindcss/typography": "^0.5.16",
 		"autoprefixer": "^10.4.20",
 		"bits-ui": "^0.22.0",
 		"clsx": "^2.1.1",
@@ -29,6 +30,7 @@
 		"prettier-plugin-svelte": "^3.2.6",
 		"prettier-plugin-tailwindcss": "^0.6.9",
 		"svelte": "^5.0.0",
+		"svelte-cloudinary": "^2.3.0",
 		"tailwind-merge": "^2.6.0",
 		"tailwind-variants": "^0.3.0",
 		"tailwindcss": "^3.4.9",
@@ -36,6 +38,7 @@
 		"vite": "^5.4.11"
 	},
 	"dependencies": {
+		"@contentful/rich-text-html-renderer": "^17.0.0",
 		"@fvilers/heroicons-svelte": "^2.1.5-fix.2",
 		"@google/model-viewer": "^4.1.0",
 		"@sparticuz/chromium": "^133.0.0",
@@ -43,6 +46,7 @@
 		"@sveltejs/adapter-vercel": "^5.6.3",
 		"axios": "^1.8.2",
 		"chart.js": "^4.4.8",
+		"cloudinary": "^2.6.0",
 		"contentful": "^11.5.10",
 		"contentful-management": "^11.52.1",
 		"html2canvas": "^1.4.1",
@@ -52,6 +56,7 @@
 		"openai": "^4.86.2",
 		"puppeteer": "^24.4.0",
 		"puppeteer-core": "^24.4.0",
+		"resend": "^4.3.0",
 		"snarkdown": "^1.2.2",
 		"svelte-sonner": "^0.3.28",
 		"tweakpane": "^4.0.5"

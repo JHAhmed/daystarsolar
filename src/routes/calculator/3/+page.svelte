@@ -85,12 +85,12 @@
 
 <section class="mx-auto w-full max-w-5xl px-4 py-12">
 	<div class="my-8 max-w-60 space-x-4">
-		<CustomInput
+		<!-- <CustomInput
 			bind:value={details.sanctionedLoad}
 			label="Sanctioned Load"
 			hasSuffix
 			placeholder="000"
-		/>
+		/> -->
 	</div>
 	<div class="w-1/2 space-y-8">
 		<CustomInput bind:value={details.ebNumber} label="EB Number" placeholder="0000000000" />

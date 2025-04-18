@@ -8,9 +8,9 @@ export { default as twitterLogo } from './assets/x.svg';
 export { default as facebookLogo } from './assets/facebook.svg';
 export { default as linkedinLogo } from './assets/linkedin.svg';
 
-export { default as sampleImage1 } from './assets/images/sample-1.jpeg';
-export { default as sampleImage2 } from './assets/images/sample-2.jpeg';
-export { default as sampleImage3 } from './assets/images/sample-3.jpeg';
+export { default as sampleImage1 } from './assets/images/sample-1.webp';
+export { default as sampleImage2 } from './assets/images/sample-2.webp';
+export { default as sampleImage3 } from './assets/images/sample-3.webp';
 
 export { default as landingImage1 } from './assets/images/landingImage1.jpg';
 export { default as landingImage2 } from './assets/images/landingImage2.jpg';

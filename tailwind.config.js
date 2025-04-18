@@ -60,7 +60,9 @@ const config = {
 				sm: "calc(var(--radius) - 4px)"
 			},
 			fontFamily: {
-				sans: ["Poppins", ...fontFamily.sans]
+				sans: ["Poppins", ...fontFamily.sans],
+				report: ['Satoshi', ...fontFamily.sans],
+				handwriting: ['Caveat', ...fontFamily.sans],
 			},
 			animation: {
 				"loop-scroll": "loop-scroll 5s linear infinite"
@@ -73,7 +75,7 @@ const config = {
 			}
 		}
 	},
-	plugins: [require('tailwindcss-motion')],
+	plugins: [require('tailwindcss-motion'), require('@tailwindcss/typography')],
 };
 
 export default config;

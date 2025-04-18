@@ -23,7 +23,7 @@ export async function POST({ request }) {
 			projectType: response.fields.projectType ?? '',
 			image: response.fields.image?.fields?.file?.url
 				? `https:${response.fields.image.fields.file.url}`
-				: '/fallback-image.jpg' // Handle missing images
+				: '' // Handle missing images
 		};
 	} catch (error) {
 		console.error('Error fetching blog posts:', error);
@@ -34,7 +34,7 @@ export async function POST({ request }) {
 			summary: 'An error occurred while fetching blog posts. Please try again later.',
 			content: 'An error occurred while fetching blog posts. Please try again later.',
 			date: new Date().toISOString(),
-			image: '/fallback-image.jpg',
+			image: '',
 			slug: '/404'
 		};
 	}

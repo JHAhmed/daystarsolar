@@ -1,260 +1,142 @@
 <script>
 	import { ChevronIcon } from '$icons';
-	import { Slider } from '$lib/components/ui/slider/index.js';
-	import { UnitToggle } from '$components';
 
-	// let cost = 5;
-	let cost = $state(10000);
-	let units = $state(10);
-	let type = $state('domestic');
-	let cycle = $state('bimonthly');
-	// let savings = 35000;
+	let monthlyBill = 10000; 
+	let consumerType = 'domestic'; 
+	let electricityRate = 8; 
 
-	
-
-	let sliderValues = $derived.by(() => {
-
-		let min = 0;
-		let max = 0;
-		let step = 0;
-		let value = 0;
-
-		if (type === 'domestic') {
-			min = 6000;
-			max = 50000;
-			step = 2000;
-			value = 10000;
-		} else if (type === 'commercial') {
-			min = 15000;
-			max = 100000;
-			step = 5000;
-			value = 50000;
-		} else if (type === 'industrial') {
-			min = 50000;
-			max = 500000;
-			step = 20000;
-			value = 100000;
-		}
-			return { min: min, max: max, step: step, value: value };
-		}
-	);
-	
-	let savings = $derived.by(() => {
-
-		let unitCost = 0;
-		if (type === 'domestic') {
-			unitCost = 11;
-		} else if (type === 'commercial') {
-			unitCost = 10;
-		} else if (type === 'industrial') {
-			unitCost = 8;
-		}
-
-		let days = cycle === 'bimonthly' ? 60 : 30;
-
-		let costPerDay = (cost / days)	;
-
-		// let unitPerDay = Math.ceil(units / 4);
-		// let costPerDay = cost * unitPerDay;
-		// let total = costPerDay * 365;
-		// console.log(total);
-		return Math.round(costPerDay * 100);
-	}
+	$: annualSavings = calculateSavings(
+		monthlyBill,
+		consumerType,
+		electricityRate
 	);
 
-	function formatNumber(num) {
-		return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-	}
+	function calculateSavings(bill, type, rate) {
 
-	function onToggleChange(e, value) {
-		// if (value === 'bimonthly') {
-		// 	console.log('bimonthly');
-		// } else if (value === 'monthly') {
-		// 	console.log('monthly');
-		// }
-		type = e;
-	}
-
-	function onSliderChange(e, value) {
-		if (value === 'cost') {
-			cost = e;
-		} else if (value === 'units') {
-			units = e;
+		if (type === 'domestic') {
+			rate = 11;
+		} else if (type === 'commercial') {
+			rate = 10;
+		} else if (type === 'industrial') {
+			rate = 8;
 		}
 
-		console.log(savings);
+		let units = bill / rate;
+
+		let cycle = type === 'domestic' ? 6 : 12;
+		let annualSavings = units * rate * cycle;
+
+		return Math.round(annualSavings);
+	}
+
+	function formatIndianNumber(num) {
+		return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 	}
 </script>
 
-<div class="flex flex-col my-12 items-center">
+<div class="mx-auto w-full max-w-7xl p-2 sm:p-3 md:p-4">
+	<div class="flex flex-col gap-4 sm:gap-5 md:gap-6 lg:flex-row">
+		<!-- Left side - Options and controls -->
+		<div class="w-full rounded-lg border-2 border-black p-4 sm:p-6 md:p-8 lg:p-12 bg-white tracking-tight shadow-sm space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 lg:w-1/2">
+			<h2 class="text-xl sm:text-2xl font-medium text-gray-800">Solar Savings Calculator</h2>
 
-	<h2 class="text-2xl leading-tight tracking-[-0.06em] md:text-3xl lg:text-4xl">Maximize Your Savings – Calculate Your Benefits Instantly</h2>
-
-	<!-- <div class="flex w-full items-center justify-center rounded-xl bg-gray-100 p-16">
-		<div class="items-left flex w-full flex-col justify-center space-y-24">
+			<!-- Monthly Electricity Bill -->
 			<div class="">
-				<p class="text-lg font-medium">Electricty Cost Per kWh</p>
-				<div class="my-2 flex space-x-4">
-					<p class="text-sm font-medium text-black">₹1<span class="text-black/70">/kWh</span></p>
-					<Slider
-						value={[5]}
-						min={1}
-						max={10}
-						step={1}
-						class="max-w-[70%]"
-						onValueChange={(e) => {
-							onSliderChange(e, 'cost');
-						}}
-					>
-	
-				</Slider>
-					<p class="text-sm font-medium text-black">₹10<span class="text-black/70">/kWh</span></p>
-				</div>
-			</div>
-	
-			<div class="">
-				<p class="text-lg font-medium">Units Consumed Per Month</p>
-				<div class="my-2 flex space-x-4">
-					<p class="text-sm font-medium text-black">50 <span class="text-black/70">kWh</span></p>
-					<Slider
-						value={[150]}
-						min={50}
-						max={500}
-						step={25}
-						class="max-w-[70%]"
-						onValueChange={(e) => {
-							onSliderChange(e, 'units');
-						}}
-					></Slider>
-					<p class="text-sm font-medium text-black">500 <span class="text-black/70">kWh</span></p>
-				</div>
-			</div>
-	
-			<div class="">
-				<p class="text-lg font-medium">No. Of AC Units</p>
-				<div class="my-2 flex space-x-4">
-					<p class="text-sm font-medium text-black">1 <span class="text-black/70">AC</span></p>
-					<Slider
-						value={[3]}
-						min={0}
-						max={10}
-						step={1}
-						class="max-w-[70%]"
-						onValueChange={(e) => {
-							onSliderChange(e, 'ac');
-						}}
-					></Slider>
-					<p class="text-sm font-medium text-black">10 <span class="text-black/70">AC</span></p>
-				</div>
-			</div>
-		</div>
-	
-		<div class=" h-96 w-[2px] bg-gray-300 " ></div>
-
-		<div class="flex w-full flex-col items-center justify-center space-y-8">
-			<div class="flex grow flex-col items-center justify-center space-y-8">
-				<p class="text-md font-light uppercase tracking-[0.25em]">Annual Savings</p>
-				<h1 class="text-8xl font-semibold">
-					<span class="font-medium text-black/80">₹</span>{formatNumber(savings)}
-				</h1>
-			</div>
-	
-			<a href="/calculator" class="flex group/calc max-w-md items-center rounded-lg bg-white p-4">
-				<p class="mx-8 grow tracking-tight text-xl">Advanced Calculator</p>
-				<div
-					class="flex cursor-pointer items-center group-hover/calc:bg-black group-hover/calc:text-white transition-all duration-100 justify-center rounded-md bg-orange-400 p-2 text-black"
+				<label for="electricity-bill" class="mb-1 sm:mb-2 block font-medium text-gray-700 text-sm sm:text-base"
+					>Electricity Bill (₹)</label
 				>
-					<ChevronIcon strokeWidth=3 />
-				</div>
-			</a>
-		</div>
-	</div> -->
-
-	<div class="grid w-full grid-cols-1 md:grid-cols-2 gap-8 p-16">
-
-		<div class="items-left flex w-full flex-col rounded-xl justify-center bg-gray-100 border-2 border-black p-12 space-y-20">
-			<div class="flex items-center justify-center">
-				<UnitToggle
-				onUnitChange={(e) => {console.log(e);}}
-				triggers={{'bimonthly': 'Bimonthly', 'monthly': 'Monthly' }}
-				className="w-full"
+				<input
+					id="electricity-bill"
+					type="range"
+					min="5000"
+					max="30000"
+					step="1000"
+					bind:value={monthlyBill}
+					class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200"
 				/>
-
+				<div class="mt-1 flex justify-between">
+					<span class="text-xs sm:text-sm text-gray-500">₹5,000</span>
+					<span class="text-xs sm:text-sm font-medium text-blue-600">₹{formatIndianNumber(monthlyBill)}</span>
+					<span class="text-xs sm:text-sm text-gray-500">₹30,000</span>
+				</div>
 			</div>
-	
-			<!-- <div class="">
-				<p class="text-lg font-medium">Cost per Unit</p>
-				<div class="my-2 flex space-x-4">
-					<p class="text-sm font-medium text-black">₹6<span class="text-black/70"></span></p>
-					<Slider
-						value={[10]}
-						min={6}
-						max={20}
-						step={1}
-						class="max-w-[70%]"
-						onValueChange={(e) => {
-							onSliderChange(e, 'cost');
-						}}
-					></Slider>
-					<p class="text-sm font-medium text-black">₹20<span class="text-black/70"></span></p>
+
+			<!-- Consumer Type -->
+			<div class="">
+				<label for="consumer-type" class="mb-1 sm:mb-2 block font-medium text-gray-700 text-sm sm:text-base"
+					>Type of Consumer</label
+				>
+				<div id="consumer-type" class="grid grid-cols-3 gap-1 sm:gap-2">
+					<button
+						class={`rounded-md px-2 sm:px-3 py-1 sm:py-2 text-center text-xs sm:text-sm transition ${consumerType === 'domestic' ? 'border border-blue-300 bg-blue-100 text-blue-700' : 'border border-gray-200 bg-gray-100 text-gray-700'}`}
+						on:click={() => (consumerType = 'domestic')}
+					>
+						Domestic
+					</button>
+					<button
+						class={`rounded-md px-2 sm:px-3 py-1 sm:py-2 text-center text-xs sm:text-sm transition ${consumerType === 'commercial' ? 'border border-blue-300 bg-blue-100 text-blue-700' : 'border border-gray-200 bg-gray-100 text-gray-700'}`}
+						on:click={() => (consumerType = 'commercial')}
+					>
+						Commercial
+					</button>
+					<button
+						class={`rounded-md px-2 sm:px-3 py-1 sm:py-2 text-center text-xs sm:text-sm transition ${consumerType === 'industrial' ? 'border border-blue-300 bg-blue-100 text-blue-700' : 'border border-gray-200 bg-gray-100 text-gray-700'}`}
+						on:click={() => (consumerType = 'industrial')}
+					>
+						Industrial
+					</button>
+				</div>
+			</div>
+
+			<!-- Electricity Rate - Commented out as in original code -->
+			<!-- <div class="mb-6">
+				<label for="electricity-cost" class="mb-2 block font-medium text-gray-700"
+					>Electricity Rate (₹ per unit)</label
+				>
+				<input
+					id="electricity-cost"
+					type="range"
+					min="5"
+					max="15"
+					step="0.5"
+					bind:value={electricityRate}
+					class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200"
+				/>
+				<div class="mt-1 flex justify-between">
+					<span class="text-sm text-gray-500">₹5</span>
+					<span class="text-sm font-medium text-blue-600">₹{electricityRate}</span>
+					<span class="text-sm text-gray-500">₹15</span>
 				</div>
 			</div> -->
 
-			<div class="">
-				<!-- <p class="text-lg font-medium">Consumer Type</p> -->
-				<div class="my-2 flex space-x-4">
-					<div class="flex items-center justify-center">
-						<UnitToggle
-						text="Consumer Type"
-						onUnitChange={(e) => {
-							onToggleChange(e, 'type');
-						}}
-						triggers={{'domestic': 'Domestic', 'commercial': 'Commercial', 'industrial': 'Industrial' }}
-						className="w-full"
-						/>
-		
+		</div>
+
+		<!-- Right side - Results -->
+		<div class="flex w-full flex-col items-center justify-center rounded-lg border-2 border-orange-400 bg-gray-50 p-4 sm:p-6 md:p-8 lg:p-12 lg:w-1/2">
+			<div class="text-center">
+				<p class="mb-1 sm:mb-2 text-xs sm:text-sm uppercase tracking-wider text-gray-600">ANNUAL SAVINGS</p>
+				<div class="flex items-center justify-center">
+					<span class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">₹</span>
+					<span
+						class="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter text-transparent"
+					>
+						{formatIndianNumber(annualSavings)}
+					</span>
+				</div>
+			</div>
+
+			<div class="mt-6 sm:mt-8 md:mt-10 space-y-4 sm:space-y-5 md:space-y-6 text-center">
+				<p class="text-base sm:text-lg md:text-xl leading-tight tracking-[-0.06em]">Get A Detailed Report With One Click!</p>
+
+				<a id="advanced-calculator-button" data-umami-event="Advanced Calculator Button" href="/calculator" class="flex group/calc max-w-md items-center rounded-lg bg-white p-3 sm:p-4 shadow-soft">
+					<p class="mx-4 sm:mx-6 md:mx-8 grow tracking-tight text-base sm:text-lg md:text-xl">Advanced Calculator</p>
+					<div
+						class="flex cursor-pointer items-center group-hover/calc:bg-black group-hover/calc:text-white transition-all duration-100 justify-center rounded-md bg-orange-400 p-1 sm:p-2 text-black"
+					>
+						<ChevronIcon strokeWidth=3 />
 					</div>
-				</div>
-			</div>
-
-			<div class="">
-				<p class="text-lg font-medium">Bill Amount Per Cycle</p>
-				<div class="my-2 flex space-x-4">
-					<!-- <p class="text-sm font-medium text-black">4 <span class="text-black/70">Units</span></p> -->
-					<Slider
-						value={[sliderValues.value]}
-						min={sliderValues.min}
-						max={sliderValues.max}
-						step={sliderValues.step}
-						class="max-w-[70%]"
-						onValueChange={(e) => {
-							onSliderChange(e, 'cost');
-						}}
-					></Slider>
-					<p class="text-md font-medium text-black">= <span class="text-black/80">{cost}</span></p>
-				</div>
+				</a>
 			</div>
 		</div>
-	
-		<div class="flex w-full flex-col items-center rounded-xl justify-center bg-gray-100 p-16 space-y-8 border-2 border-orange-400">
-			<div class="flex grow flex-col items-center justify-center space-y-8">
-				<p class="text-md font-light uppercase tracking-[0.25em]">Annual Savings</p>
-				<h1 class="text-8xl font-semibold text-transparent bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text" >
-					<span class="font-medium text-black/80">₹</span>{formatNumber(savings)}
-				</h1>
-			</div>
-	
-			<p class="text-xl leading-tight tracking-[-0.06em] md:text-xl lg:text-2xl">Get A Detailed Report With One Click!</p>
-
-			<a id="advanced-calculator-button" data-umami-event="Advanced Calculator Button" href="/calculator" class="flex group/calc max-w-md items-center rounded-lg bg-white p-4 shadow-soft">
-				<p class="mx-8 grow tracking-tight text-xl">Advanced Calculator</p>
-				<div
-					class="flex cursor-pointer items-center group-hover/calc:bg-black group-hover/calc:text-white  transition-all duration-100 justify-center rounded-md bg-orange-400 p-2 text-black"
-				>
-					<ChevronIcon strokeWidth=3 />
-				</div>
-			</a>
-		</div>
-
 	</div>
 </div>

@@ -89,7 +89,7 @@ async function extractNumber(page) {
 		const xp = '::-p-xpath(/html/body/section[2]/div/div/form/div[2]/div[2]/div[2]/div/input[2])';
 
 		await page.waitForSelector(xp, {
-			timeout: 30000,
+			timeout: 5000,
 			visible: true
 		});
 
@@ -203,7 +203,6 @@ export async function GET({ url, request }) {
 		return svelteKitError(statusCode, message);
 	} finally {
 		if (browser) {
-			console.log('Closing browser...');
 			await browser.close();
 			console.log('Browser closed.');
 		}

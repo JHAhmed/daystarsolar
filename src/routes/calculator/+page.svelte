@@ -1,22 +1,10 @@
 <script>
 	import { dev } from '$app/environment';
-	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
 	import { Toaster, toast } from 'svelte-sonner';
-	import { Tooltip } from 'bits-ui';
-	import {
-		HomeIcon,
-		ChevronRightIcon,
-		BuildingOfficeIcon,
-		BuildingOffice2Icon,
-		BoltIcon
-	} from '@fvilers/heroicons-svelte/24/outline';
+	import { ChevronRightIcon } from '@fvilers/heroicons-svelte/24/outline';
 
-	import * as RadioGroup from '$lib/components/ui/radio-group/index.js';
-	import { Label } from '$lib/components/ui/label/index.js';
-	import { Input } from '$lib/components/ui/input/index.js';
 	import { CustomInput } from '$components';
-	import CustomDropdown from '$components/CustomDropdown.svelte';
 	import { dataState, nameState } from '$lib/state.svelte.js';
 
 	// Form fields
@@ -24,13 +12,11 @@
 	let phoneNumber = '';
 	let consumerNumber = '';
 	let ebRegNumber = '';
-	let captcha = '';
 
 	// State variables
 	let loading = false;
 	let errorMessage = '';
 
-	// Prefill data for development environment
 	if (dev) {
 		// Test 1
 		// fullName = 'Jamal Haneef';
@@ -45,13 +31,25 @@
 		ebRegNumber = '9841106264';
 	}
 
-	// Form submission handler
-	async function fetchBillData() {
+	async function validateForm() {
 		// Validate form
-		if (!fullName || !phoneNumber || !consumerNumber || !ebRegNumber) {
+		if (fullName.length < 5 
+			|| phoneNumber.length < 5
+			|| consumerNumber.length < 5 
+			|| ebRegNumber.length < 5) {
 			toast.warning('Please fill in all details properly!');
 			return;
 		}
+
+		if (isNaN(phoneNumber) || isNaN(consumerNumber)) {
+			toast.warning('Please fill in numbers properly!');
+			return;
+		}
+
+		fetchBillData();
+	}
+
+	async function fetchBillData() {
 
 		try {
 			loading = true;
@@ -63,11 +61,12 @@
 					fullName,
 					consumerNumber,
 					ebRegNumber,
-					captcha
 				})
 			});
 
 			if (!res.ok) {
+				toast.error('Error!');
+				loading = false;
 				throw new Error('Failed to fetch data');
 			}
 
@@ -77,25 +76,14 @@
 			data.data.forEach((element) => {
 				dataState.data.push(element);
 			});
+
 			goto(`/report?id=${data.id}`);
-
-
-			// const res = await fetch(`/api/getNumber?cno=${consumerNumber}`);
-
-			// if (!res.ok) {
-			// 	throw new Error('Failed to fetch data');
-			// }
-
-			// const data = await res.json();
-			// console.log(data);
-			// console.log(data.consumerNumber);
-
-
 
 		} catch (error) {
 			console.error('Error fetching bill data:', error);
 			errorMessage = 'Failed to retrieve bill data. Please try again.';
 			toast.error(errorMessage);
+
 		} finally {
 			loading = false;
 		}
@@ -124,7 +112,7 @@
 	</div>
 {/if}
 
-<form on:submit|preventDefault={fetchBillData} class="mx-auto mb-12 w-full max-w-5xl px-4 py-8">
+<form on:submit|preventDefault={validateForm} class="mx-auto mb-12 w-full max-w-5xl px-4 py-8">
 	<div class="space-y-8">
 		<div class="flex w-full space-x-4">
 			<CustomInput bind:value={fullName} label="Full Name" maxlength="20" required />

@@ -1,17 +1,7 @@
 <script>
 	import { CTA } from '$components';
 	import { animateIn, aboutImage1 } from '$lib';
-
-	import {
-		CheckBadgeIcon,
-		CogIcon,
-		CubeIcon,
-		GlobeAmericasIcon,
-		LightBulbIcon,
-		ShieldCheckIcon,
-		SunIcon,
-		WrenchIcon
-	} from '@fvilers/heroicons-svelte/24/solid';
+	import { ArrowIcon } from '$icons';
 
 	let { data } = $props();
 	let blogs = $state(data.blogs);
@@ -26,6 +16,7 @@
 </svelte:head>
 
 <section class="my-18 mx-auto mt-8 max-w-7xl px-4 py-12">
+
 	<div class="mx-4 mb-16 text-left">
 		<p
 			use:animateIn={{ delay: 0.5 }}
@@ -44,22 +35,35 @@
 
 	<div class="mt-6 grid grid-cols-1 gap-6 p-4 md:grid-cols-3">
 		{#each blogs as blog, i}
-			<div use:animateIn={{ delay: 0.7 + i / 4, blur: 8, y: 10, rotate: 1 }} class="opacity-0">
-				<div class="aspect-square overflow-hidden">
+			<div
+				use:animateIn={{ delay: 0.7 + i / 4, blur: 8, y: 10, rotate: 1 }}
+				class="flex flex-col rounded-xl bg-gray-50 p-2 opacity-0"
+			>
+				<div class="md:aspect-square aspect-video overflow-hidden">
 					<img
 						src={blog.image}
 						alt="Solar panels on various buildings"
 						class="h-full w-full rounded-xl object-cover"
 					/>
 				</div>
-				<div class="mt-4">
+				<div class="my-4 grow">
 					<p class="text-sm text-gray-500">{blog.date}</p>
-					<h2 class="mt-2 text-lg font-semibold">{blog.title}</h2>
-					<p class="mt-2 text-gray-600">{blog.summary}</p>
+					<h2 class="mt-2 text-base md:text-lg font-semibold">{blog.title}</h2>
+					<p class="mt-2 text-sm md:text-base text-gray-600">{blog.summary}</p>
 				</div>
 
-				<div class="mt-4">
-					<a href="/blog/{blog.slug}?id={blog.id}" class="text-blue-500">Read More</a>
+				<div>
+					<a
+						href="/blog/{blog.slug}?id={blog.id}"
+						class="mt-auto inline-flex w-full items-center justify-center rounded-lg bg-gray-100 p-3"
+					>
+						<span class="ml-2 mr-6 tracking-tighter">Read More</span>
+						<span
+							class="flex items-center justify-center rounded-lg bg-orange-400 p-2 drop-shadow-md"
+						>
+							<ArrowIcon className="-rotate-90 size-4 text-white" strokeWidth="2" />
+						</span>
+					</a>
 				</div>
 			</div>
 		{/each}

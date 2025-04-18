@@ -179,6 +179,11 @@ export async function POST({ request, fetch }) {
 		const captchaText = await solveCaptcha(page, openai);
 		const response = await fetch(`/api/getNumber?cno=${consumerNumber}`);
 
+		if (!response.ok) {
+			console.error('Error fetching EB Reg Number:', response.statusText);
+			throw new Error(`Failed to fetch EB Reg Number: ${response.statusText}`);
+		}
+
 		const data = await response.json();
 		let newEbRegNumber = data.ebRegNumber || ebRegNumber;
 

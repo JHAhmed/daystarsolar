@@ -68,7 +68,7 @@
 	</div>
 
 	<div class="relative mx-auto my-4 flex items-center justify-center px-4 lg:px-8">
-		<div class="mr-[6.5rem] flex space-x-6">
+		<div class="mr-[6.5rem] flex space-x-4 lg:space-x-6">
 			<a href="https://twitter.com/DaystarSolar">
 				<img class="h-3 w-auto lg:h-4" src={twitterLogo} alt="Twitter Logo" />
 			</a>
@@ -99,7 +99,7 @@
 		<div
 			class="flex flex-col items-center justify-center space-x-2 text-center text-sm font-medium text-gray-900 lg:flex-row"
 		>
-			<a href="https://wurks.studio/" class="font-normal text-gray-600"
+			<a href="https://wurks.studio/" target="_blank" class="font-normal text-gray-600"
 				>By <span class="font-medium text-purple-600 hover:underline decoration-purple-600 decoration-2 underline-offset-2">Wurks</span>.</a
 			>
 		</div>

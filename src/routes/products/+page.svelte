@@ -39,10 +39,8 @@
 	/>
 </svelte:head>
 
-<section class="mx-auto max-w-7xl px-4 py-16">
-
-	<div class="mx-4 mb-16 text-left">
-
+<section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+	<div class="mb-10 text-left md:mb-12 lg:mb-16">
 		<h1
 			use:animateIn={{ delay: 0.2 }}
 			class="text-5xl leading-tight tracking-[-0.07em] opacity-0 md:text-6xl lg:text-7xl"
@@ -55,46 +53,60 @@
 		{#each products as product, i}
 			<div
 				use:animateIn={{ blur: 8, delay: i / 4 }}
-				class="group relative h-96 overflow-hidden rounded-2xl opacity-0"
+				class="group relative overflow-hidden rounded-2xl opacity-0"
 			>
-				<img
-					src={product.image}
-					alt={product.alt}
-					class="h-full w-full object-cover"
-					loading="lazy"
-				/>
+				<div class="aspect-[4/3] sm:aspect-video lg:aspect-[3/2]">
+					<img
+						src={product.image}
+						alt={product.alt}
+						class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+						loading="lazy"
+					/>
+				</div>
 
-				<div class="absolute inset-0 bg-black/40"></div>
+				<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
 
-				<div class="absolute -inset-4 flex flex-col justify-between p-8">
+				<div class="absolute inset-0 flex flex-col justify-between p-4 sm:p-6">
 					<div class="flex justify-end">
-						<a href="/" class="group/arrow rounded-full bg-white p-2">
+						<a
+							href="/"
+							aria-label="View product details"
+							class="group/arrow rounded-full bg-white/80 p-1.5 backdrop-blur-sm transition hover:bg-white sm:p-2"
+						>
 							<ArrowIcon
-								className="h-4 w-4 group-hover/arrow:text-blue-600 text-black -rotate-[135deg]"
+								className="h-3 w-3 text-black transition duration-300 group-hover/arrow:text-blue-600 group-hover/arrow:-rotate-[135deg] sm:h-4 sm:w-4"
 							/>
 						</a>
 					</div>
 
-					<div class="p-4">
-						<h3 class="my-2 text-5xl font-semibold tracking-tight text-white">{product.title}</h3>
+					<div>
+						<h3
+							class="my-1 text-2xl font-semibold tracking-tight text-white sm:my-2 md:text-3xl lg:text-5xl"
+						>
+							{product.title}
+						</h3>
 						{#if product.byds}
-							<p class="text-md mb-4 pl-1 text-white/80">By Daystar Solar</p>
+							<p class="mb-3 pl-px text-sm text-white/80 sm:mb-4 hidden lg:block sm:text-base">By Daystar Solar</p>
 						{/if}
 
-						<div class="my-4 flex gap-3">
-							<button
-								class="flex items-center gap-2 rounded-full border-2 border-white bg-white/20 px-2 py-2 backdrop-blur-sm"
+						<div class="my-2 flex flex-wrap gap-2 sm:my-4 sm:gap-3">
+							<a
+								href="https://www.amazon.in/stores/DaystarSolar/page/EEE44EC4-A6FA-4DDA-B319-B5711BA870CD/"
+								target="_blank"
+								class="flex items-center gap-1.5 rounded-full border border-white/50 bg-white/20 px-3 py-1.5 text-xs backdrop-blur-sm transition hover:bg-white/30 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
 							>
-								<AmazonLogo />
-								<span class="mx-2 text-sm text-white">Amazon</span>
-							</button>
+								<AmazonLogo class="h-4 w-auto sm:h-5" />
+								<span class="text-white">Amazon</span>
+							</a>
 
-							<button
-								class="flex items-center gap-2 rounded-full border-2 border-white bg-white/20 px-2 py-2 backdrop-blur-sm"
+							<a
+								href="https://www.indiamart.com/daystarsolar/"
+								target="_blank"
+								class="flex items-center gap-1.5 rounded-full border border-white/50 bg-white/20 px-3 py-1.5 text-xs backdrop-blur-sm transition hover:bg-white/30 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
 							>
-								<IndiaMartLogo />
-								<span class="mx-2 text-sm text-white">IndiaMART</span>
-							</button>
+								<IndiaMartLogo class="h-4 w-auto sm:h-5" />
+								<span class="text-white">IndiaMART</span>
+							</a>
 						</div>
 					</div>
 				</div>

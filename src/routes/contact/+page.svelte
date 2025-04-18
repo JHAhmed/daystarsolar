@@ -36,6 +36,16 @@
 	const handleSubmit = (e) => {
 		e.preventDefault();
 	};
+
+	let phoneNumbers = [
+		'17',
+		'32',
+		'45',
+		'50',
+		'51',
+		'57',
+		'64',
+	]
 </script>
 
 <svelte:head>
@@ -52,15 +62,15 @@
 		<p class="uppercase tracking-wider text-gray-500">Let's talk</p>
 	</div>
 
-	<div use:animateIn={{ delay: 0.2, y: 10, blur: 4 }}  class="opacity-0 flex flex-col items-center justify-center gap-4 md:flex-row">
+	<div use:animateIn={{ delay: 0.2, y: 10, blur: 4 }}  class="opacity-0 flex flex-col items-center justify-center gap-4 flex-wrap md:flex-row">
 		<a href="tel:04443531021" class="">
 			<div
 				class="flex items-center gap-3 rounded-full border px-3 py-2 transition-colors hover:border-gray-300"
 			>
-				<div class="flex size-12 items-center justify-center rounded-full bg-blue-100">
-					<PhoneIcon className="size-5 text-blue-500" />
+				<div class="flex size-8 md:size-12 items-center justify-center rounded-full bg-blue-100">
+					<PhoneIcon className="size4 md:size-5 text-blue-500" />
 				</div>
-				<span class="mx-3 text-sm">044 4353 1021</span>
+				<span class="mx-3 text-xs md:text-sm">044 4353 1021</span>
 			</div>
 		</a>
 
@@ -68,32 +78,29 @@
 			<div
 				class="flex items-center gap-3 rounded-full border px-3 py-2 transition-colors hover:border-gray-300"
 			>
-				<div class="flex size-12 items-center justify-center rounded-full bg-green-100">
-					<ChatIcon className="size-5 text-green-500" />
+				<div class="flex size-8 md:size-12 items-center justify-center rounded-full bg-green-100">
+					<ChatIcon className="size4 md:size-5 text-green-500" />
 				</div>
-				<span class="mx-3 text-sm">WhatsApp</span>
+				<span class="mx-3 text-xs md:text-sm">WhatsApp</span>
 			</div>
 		</a>
 
+		{#each phoneNumbers as number}
 		<a href="tel:+919176668617" class="">
 			<div
 				class="flex items-center gap-3 rounded-full border px-3 py-2 transition-colors hover:border-gray-300"
 			>
-				<div class="flex size-12 items-center justify-center rounded-full bg-green-100">
-					<MobileIcon className="size-5 text-green-500" />
+				<div class="flex size-8 md:size-12 items-center justify-center rounded-full bg-green-100">
+					<MobileIcon className="size4 md:size-5 text-green-500" />
 				</div>
-				<span class="mx-3 text-sm"
+				<span class="mx-3 flex flex-wrap text-xs md:text-sm"
 					>+91 91766 686
-					<span class="text-gray-500">17</span>/
-					<span class="text-gray-500">32</span>/
-					<span class="text-gray-500">45</span>/
-					<span class="text-gray-500">50</span>/
-					<span class="text-gray-500">51</span>/
-					<span class="text-gray-500">57</span>/
-					<span class="text-gray-500">64</span></span
+					<span class="text-gray-500 mx-0.5">{number}</span>
+				</span
 				>
 			</div>
 		</a>
+		{/each}
 	</div>
 
 </div>
@@ -188,17 +195,17 @@
 		<h2 class="mb-8 text-center text-2xl md:text-3xl">Follow Our Socials</h2>
 	</div>
 
-	<div use:animateIn={{ delay: 0.2, y: 10, blur: 4 }}  class="opacity-0 flex flex-col items-center justify-center gap-4 md:flex-row">
+	<div use:animateIn={{ delay: 0.2, y: 10, blur: 4 }}  class="opacity-0 flex flex-wrap items-center justify-center gap-4 md:flex-row">
 
 
 		{#each socials as social, i}
 			
 			<a use:animateIn={{ delay: i/3, y: 10, blur: 4, rotate: 5 }} href={social.link} class="opacity-0 ">
 				<div
-					class="flex items-center gap-3 rounded-full border px-3 py-2 transition-colors hover:border-gray-300"
+					class="flex items-center gap-3 rounded-full border px-2 md:px-3 py-2 transition-colors hover:border-gray-300"
 				>
-					<div class="flex size-12 items-center justify-center rounded-full {social.class}">
-						<svelte:component this={social.icon} className="size-5 text-white" />
+					<div class="flex size-10 md:size-12 items-center justify-center rounded-full {social.class}">
+						<svelte:component this={social.icon} className="size-4 md:size-5 text-white" />
 					</div>
 					<span class="mx-3 text-sm">{social.text}</span>
 				</div>
@@ -223,7 +230,7 @@
 			<BuildingIcon className="size-6 stroke-1 my-4" />
 			<h3 class="mb-4 font-medium">Sales</h3>
 			<div class="space-y-2 text-center text-sm text-gray-600">
-				<a href="mailto:sales@daystarsolar.co.in">sales@daystarsolar.co.in</a>
+				<a href="mailto:sales@daystarsolar.co.in">sales@daystarsolar.co.in</a> <br>
 				<a href="mailto:support@daystarsolar.co.in">support@daystarsolar.co.in</a>
 			</div>
 		</div>
@@ -235,7 +242,7 @@
 			<ToolsIcon className="size-6 stroke-1 my-4" />
 			<h3 class="mb-4 font-medium">Service</h3>
 			<div class="space-y-2 text-center text-sm text-gray-600">
-				<a href="mailto:projects@daystarsolar.co.in">projects@daystarsolar.co.in</a>
+				<a href="mailto:projects@daystarsolar.co.in">projects@daystarsolar.co.in</a> <br>
 				<a href="mailto:installation@daystarsolar.co.in">installation@daystarsolar.co.in</a>
 			</div>
 		</div>
@@ -247,7 +254,7 @@
 			<ChatIcon className="size-6 stroke-1 my-4" />
 			<h3 class="mb-4 font-medium">Procurement</h3>
 			<div class="space-y-2 text-center text-sm text-gray-600">
-				<a href="mailto:procure@daystarsolar.co.in">procure@daystarsolar.co.in</a>
+				<a href="mailto:procure@daystarsolar.co.in">procure@daystarsolar.co.in</a> <br>
 				<a href="mailto:service@daystarsolar.co.in">service@daystarsolar.co.in</a>
 			</div>
 		</div>
@@ -259,7 +266,7 @@
 			<UserIcon className="size-6 stroke-1 my-4" />
 			<h3 class="mb-4 font-medium">Admin</h3>
 			<div class="space-y-2 text-center text-sm text-gray-600">
-				<a href="mailto:hussain@daystarsolar.co.in">hussain@daystarsolar.co.in</a>
+				<a href="mailto:hussain@daystarsolar.co.in">hussain@daystarsolar.co.in</a> <br>
 				<a href="mailto:coo@daystarsolar.co.in">coo@daystarsolar.co.in</a>
 			</div>
 		</div>
