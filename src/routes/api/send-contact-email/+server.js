@@ -38,7 +38,7 @@ export async function POST({ request }) {
 
 		const { data, error } = await resend.emails.send({
 			from: 'Wurks Studio <updates@wurks.studio>',
-			to: 'jamalhascientist@gmail.com',
+			to: ['info@daystarsolar.co.in', 'jamalhascientist@gmail.com'],
 			subject: 'New Message Received',
 			html: emailHtml,
 		});
