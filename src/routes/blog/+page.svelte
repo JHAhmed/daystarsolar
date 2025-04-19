@@ -44,7 +44,7 @@
 	<div class="mt-6 grid grid-cols-1 gap-6 p-4 md:grid-cols-3">
 		{#each blogs as blog, i}
 			<div
-				use:animateIn={{ delay: 0.7 + i / 4, blur: 8, y: 10, rotate: 1 }}
+				use:animateIn={{ delay: 0.7 + i / 4, blur: 8, y: 10, rotate: 1, inView: false }}
 				class="flex flex-col rounded-xl bg-gray-50 p-2 opacity-0"
 			>
 				<div class="aspect-video overflow-hidden md:aspect-square">

@@ -14,9 +14,9 @@
 	} from '@fvilers/heroicons-svelte/24/solid';
 
 	const stats = [
-		{ number: '30', label: 'Customers Served' },
-		{ number: '13k', label: 'Kilowatts Generated' },
-		{ number: '10', label: 'Years Experience' }
+		{ number: '1000', label: 'Customers Served' },
+		{ number: '13k', label: 'Megawatt Hours Generated' },
+		{ number: '14', label: 'Years Experience' }
 	];
 
 	let features = [

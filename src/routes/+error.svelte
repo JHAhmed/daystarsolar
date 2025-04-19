@@ -1,4 +1,6 @@
 <script>
+	import { ArrowIcon } from '$icons';
+
 </script>
 
 <svelte:head>

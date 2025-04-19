@@ -1,6 +1,7 @@
 import { env } from '$env/dynamic/private';
 import { json } from '@sveltejs/kit';
 import { Resend } from 'resend';
+import { supabase } from '$lib/supabaseClient.js';
 
 export async function POST({ request }) {
 	const { firstName, lastName, email, number, message } = await request.json();
@@ -41,12 +42,23 @@ export async function POST({ request }) {
 		const { data, error } = await resend.emails.send({
 			from: 'Daystar Solar <updates@daystarsolar.co.in>',
 			// to: ['products@daystarsolar.co.in', 'jamalhascientist@gmail.com'],
-			to: ['products@daystarsolar.co.in', 'info@daystarsolar.co.in', 'accounts@daystarsolar.co.in', 'jamalhascientist@gmail.com'],
-			subject: 'Final Test (Automated/Prod) 3/3',
+			to: ['products@daystarsolar.co.in', 'info@daystarsolar.co.in'],
+			subject: 'New Message Received from Contact Form',
 			html: emailHtml,
             text: emailText,
 		});
-        console.log('Email sent successfully:', data);
+        // console.log('Email sent successfully:', data);
+
+        const { data: supabaseResult, error: supabaseError } = await supabase
+            .from('contact_form') // Ensure 'reports' table exists with 'name' (text) and 'data' (jsonb) columns
+            .insert([{ name: `${firstName} ${lastName}`, email: email, phone_no: number, message: message }])
+            .select();
+
+        if (supabaseError) {
+            console.error('Supabase insert error:', supabaseError);
+            throw new Error(`Failed to save report to database: ${supabaseError.message}`);
+        }
+
 		return json({ success: true, message: 'Message sent successfully' });
 	} catch (error) {
 		console.error('Error sending message:', error);

@@ -23,9 +23,9 @@
 	let calculator;
 
 	const stats = [
-		{ number: '30', label: 'Customers Served' },
-		{ number: '13k', label: 'Kilowatts Generated' },
-		{ number: '10', label: 'Years Experience' }
+		{ number: '1000', label: 'Customers Served' },
+		{ number: '13k', label: 'Megawatt Hours Generated' },
+		{ number: '14', label: 'Years Experience' }
 	];
 
 	const reviews = [
@@ -257,17 +257,20 @@
 		<div class=" w-fit rounded-full bg-yellow-100 p-3">
 			<img src={quotationMark} class="size-4 text-green-800" alt="" />
 		</div>
-		<h1 class="text-xl font-medium md:text-3xl lg:text-5xl">
+		<h1 class="text-xl text-center font-medium md:text-3xl lg:text-5xl">
 			Ignite your future with
 			<span class="text-orange-400">solar</span> energy
 		</h1>
+		<div class=" w-fit rounded-full ml-auto bg-yellow-100 p-3">
+			<img src={quotationMark} class="size-4 rotate-180 text-green-800" alt="" />
+		</div>
 	</div>
 
 	<!-- Right Column -->
 	<div use:animateIn={{ blur: 8, duration: 0.5, delay: 0.9 }} class="space-y-8 opacity-0">
 		<div class="relative overflow-hidden rounded-2xl">
 			<img loading="lazy" 
-				src={landingImage2}
+				src={landingImage3}
 				alt="Solar panel array on hillside surrounded by trees, demonstrating environmental integration"
 				class="h-[200px] w-full object-cover md:h-[300px]"
 			/>
@@ -286,7 +289,7 @@
 		class="col-span-2 flex flex-col rounded-lg bg-[#F5F5ED] opacity-0 md:flex-row"
 	>
 		<img loading="lazy" 
-			src={sampleImage2}
+			src={sampleImage1}
 			class="img-clip hidden w-full rounded-t-lg object-cover md:w-48 md:rounded-l-lg md:rounded-tr-none lg:block"
 			alt=""
 		/>

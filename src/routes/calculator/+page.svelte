@@ -60,6 +60,7 @@
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
 					fullName,
+					phoneNumber,
 					consumerNumber,
 					ebRegNumber
 				})

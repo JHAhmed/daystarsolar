@@ -81,6 +81,7 @@
 						<input
 							bind:value={email}
 							type="email"
+							aria-label="Newsletter Signup"
 							placeholder="Email"
 							class="w-full border-none p-2 text-base outline-none focus:ring-transparent"
 						/>

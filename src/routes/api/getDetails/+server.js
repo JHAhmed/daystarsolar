@@ -144,10 +144,10 @@ async function extractBillData(page) {
 }
 
 export async function POST({ request, fetch }) {
-	const { fullName, consumerNumber, ebRegNumber } = await request.json();
+	const { fullName, consumerNumber, phoneNumber, ebRegNumber } = await request.json();
 
-	if (!fullName || !consumerNumber || !ebRegNumber) {
-		return svelteKitError(400, 'Missing required fields: fullName, consumerNumber, ebRegNumber');
+	if (!fullName || !consumerNumber || !phoneNumber || !ebRegNumber) {
+		return svelteKitError(400, 'Missing required fields: fullName, consumerNumber, phoneNumber, ebRegNumber');
 	}
 
 	let browser = null; // Initialize browser variable
@@ -231,7 +231,7 @@ export async function POST({ request, fetch }) {
 		console.log('Saving data to Supabase...');
 		const { data: supabaseResult, error: supabaseError } = await supabase
 			.from('reports') // Ensure 'reports' table exists with 'name' (text) and 'data' (jsonb) columns
-			.insert([{ name: fullName, data: scrapedData }])
+			.insert([{ name: fullName, data: scrapedData, phone_no: phoneNumber }])
 			.select();
 
 		if (supabaseError) {
