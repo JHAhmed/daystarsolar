@@ -1,7 +1,7 @@
 <script>
 	import { Navbar, Footer } from '$components';
 	import { page } from '$app/stores';
-
+	import { injectAnalytics } from '@vercel/analytics/sveltekit'
 	import { metaHome } from '$lib';
 
 	import { onMount } from 'svelte';

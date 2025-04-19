@@ -15,7 +15,7 @@
 
 		<div use:animateIn={{ delay: 0.0, duration: 0.5, blur: 8, rotate: 2 }} class="rounded-xl origin-top-left opacity-0 bg-gray-50 text-center md:text-left motion">
 			<div class="mx-auto flex items-center justify-center">
-                <img src={servicesImage1} class="w-full rounded-t-lg h-48 object-cover" alt="">
+                <img loading="lazy" src={servicesImage1} class="w-full rounded-t-lg h-48 object-cover" alt="">
 			</div>
 
 			<div class="p-6 md:p-8">
@@ -33,7 +33,7 @@
 
 		<div use:animateIn={{ delay: 0.2, duration: 0.5, blur: 8, rotate: 2 }} class="rounded-xl origin-top-left opacity-0 bg-gray-50 text-center md:text-left motion">
 			<div class="mx-auto flex items-center justify-center">
-                <img src={servicesImage2} class="w-full rounded-t-lg h-48 object-cover" alt="">
+                <img loading="lazy" src={servicesImage2} class="w-full rounded-t-lg h-48 object-cover" alt="">
 			</div>
 
 			<div class="p-6 md:p-8">
@@ -51,7 +51,7 @@
 		<div use:animateIn={{ delay: 0.4, duration: 0.5, blur: 8, rotate: 2 }} class="rounded-xl origin-top-left opacity-0 bg-gray-50 text-center md:text-left motion">
 			
 			<div class="mx-auto flex items-center justify-center">
-                <img src={servicesImage3} class="w-full rounded-t-lg h-48 object-cover" alt="">
+                <img loading="lazy" src={servicesImage3} class="w-full rounded-t-lg h-48 object-cover" alt="">
 			</div>
 
 			<div class="p-6 md:p-8">

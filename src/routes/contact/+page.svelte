@@ -15,10 +15,11 @@
 		PintrestIcon,
 		TwitterIcon
 	} from '$icons';
-
+	
 	import { animate, inView } from 'motion';
 	import { animateIn, twitterLogo } from '$lib';
 	import { Toaster, toast } from 'svelte-sonner';
+	import { dev } from '$app/environment';
 	import { goto } from '$app/navigation';
 
 	let firstName = '';
@@ -26,6 +27,14 @@
 	let email = '';
 	let number = '';
 	let message = '';
+
+	if (dev) {
+		firstName = 'Jamal';
+		lastName = 'Haneef';
+		email = 'jamalhaneefahmed@gmail.com';
+		number = '9345211256';
+		message = 'Hey there, I want to enquire about solar panels.\n -- THIS IS A TEST MAIL --';
+	}
 
 	let loading = false;
 	let formIsValid = true; // Let's track validation status
@@ -113,6 +122,8 @@
 
 		if (!res.ok) {
 			toast.error('Error!');
+			loading = false;
+			goto('/404');
 			throw new Error('Failed to fetch data');
 		}
 

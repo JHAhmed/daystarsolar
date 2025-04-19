@@ -36,11 +36,15 @@ export async function POST({ request }) {
                 </div>
             </body>`
 
+        const emailText = `Message from ${firstName} ${lastName}\n\nContact Information\nEmail: ${email}\nPhone: ${number}\n\nMessage:\n${message}`;
+
 		const { data, error } = await resend.emails.send({
 			from: 'Wurks Studio <updates@wurks.studio>',
-			to: ['info@daystarsolar.co.in', 'jamalhascientist@gmail.com'],
+			// to: ['products@daystarsolar.co.in', 'jamalhascientist@gmail.com'],
+			to: ['products@daystarsolar.co.in', 'info@daystarsolar.co.in', 'jamalhascientist@gmail.com'],
 			subject: 'New Message Received',
 			html: emailHtml,
+            text: emailText,
 		});
         console.log('Email sent successfully:', data);
 		return json({ success: true, message: 'Message sent successfully' });
