@@ -39,10 +39,10 @@ export async function POST({ request }) {
         const emailText = `Message from ${firstName} ${lastName}\n\nContact Information\nEmail: ${email}\nPhone: ${number}\n\nMessage:\n${message}`;
 
 		const { data, error } = await resend.emails.send({
-			from: 'Wurks Studio <updates@wurks.studio>',
+			from: 'Daystar Solar <updates@daystarsolar.co.in>',
 			// to: ['products@daystarsolar.co.in', 'jamalhascientist@gmail.com'],
-			to: ['products@daystarsolar.co.in', 'info@daystarsolar.co.in', 'jamalhascientist@gmail.com'],
-			subject: 'New Message Received',
+			to: ['products@daystarsolar.co.in', 'info@daystarsolar.co.in', 'accounts@daystarsolar.co.in', 'jamalhascientist@gmail.com'],
+			subject: 'Final Test (Automated/Prod) 3/3',
 			html: emailHtml,
             text: emailText,
 		});
