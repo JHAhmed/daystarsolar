@@ -28,7 +28,7 @@
 		fullName = 'Subramaniya';
 		phoneNumber = '9841106264';
 		consumerNumber = '0107301616';
-		ebRegNumber = '9841106264';
+		ebRegNumber = '7871925242';
 	}
 
 	async function validateForm() {
@@ -73,12 +73,7 @@
 			}
 
 			const data = await res.json();
-			nameState.name = fullName;
-			dataState.data = [];
-			data.data.forEach((element) => {
-				dataState.data.push(element);
-			});
-
+			console.log(data);
 			goto(`/report?id=${data.id}`);
 		} catch (error) {
 			console.error('Error fetching bill data:', error);
@@ -145,6 +140,7 @@
 
 		<div class="flex w-full space-x-4">
 			<CustomInput
+				maxlength={15}
 				bind:value={consumerNumber}
 				label="TNEB Consumer Number"
 				placeholder="00000000"

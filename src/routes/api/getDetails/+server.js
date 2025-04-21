@@ -8,6 +8,7 @@ import chromium from '@sparticuz/chromium';
 const puppeteer = dev ? await import('puppeteer') : await import('puppeteer-core');
 
 const TNEB_BILL_STATUS_URL = 'https://www.tnebltd.gov.in/BillStatus/billstatus.xhtml';
+// const TNEB_BILL_STATUS_URL = 'https://www.tnebltd.gov.in/BillStatus/billstatus.xhtml;SESSIONID=DD194A2EF0704D7036BCD441F0AE83E1';
 const BROWSER_ARGS = [
 	'--no-sandbox',
 	'--disable-setuid-sandbox',
@@ -17,9 +18,9 @@ const BROWSER_ARGS = [
 	'--no-zygote',
 	// '--single-process', // Maybe uncomment for Docker/Lambda, but test
 	'--disable-gpu',
-	'--ignore-certificate-errors', // Use with caution
-	'--disable-web-security', // Use with caution
-	'--allow-running-insecure-content' // Use with caution
+	// '--ignore-certificate-errors', // Use with caution
+	// '--disable-web-security', // Use with caution
+	// '--allow-running-insecure-content' // Use with caution
 ];
 
 async function checkErrorMessage(page) {
@@ -177,15 +178,17 @@ export async function POST({ request, fetch }) {
 
 		sleep(500);
 		const captchaText = await solveCaptcha(page, openai);
-		const response = await fetch(`/api/getNumber?cno=${consumerNumber}`);
+		// const response = await fetch(`/api/getNumber?cno=${consumerNumber}`);
 
-		if (!response.ok) {
-			console.error('Error fetching EB Reg Number:', response.statusText);
-			throw new Error(`Failed to fetch EB Reg Number: ${response.statusText}`);
-		}
+		// if (!response.ok) {
+		// 	console.error('Error fetching EB Reg Number:', response.statusText);
+		// 	throw new Error(`Failed to fetch EB Reg Number: ${response.statusText}`);
+		// }
 
-		const data = await response.json();
-		let newEbRegNumber = data.ebRegNumber || ebRegNumber;
+		// const data = await response.json();
+		// let newEbRegNumber = data.ebRegNumber || ebRegNumber;
+
+		let newEbRegNumber = ebRegNumber; // Fallback to provided ebRegNumber if fetch fails
 
 		// --- Form Filling and Submission ---
 		await page.type('#serviceno', consumerNumber);

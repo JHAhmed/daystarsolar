@@ -137,6 +137,10 @@
 		goto('/message-sent');
 	}
 
+	function openLink(link) {
+		window.open(`mailto:${link}`, '_blank');
+	}
+
 	let phoneNumbers = ['17', '32', '45', '50', '51', '57', '64'];
 </script>
 
@@ -351,52 +355,57 @@
 
 	<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
 		<!-- Sales Card -->
-		<div
+		<button
+		 on:click={() => {openLink("products@daystarsolar.co.in")}}
 			class="motion-preset-focus flex flex-col items-center justify-center rounded-2xl border-2 border-gray-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[700ms] hover:border-gray-300 hover:shadow-lg"
 		>
 			<BuildingIcon className="size-6 stroke-1 my-4" />
 			<h3 class="mb-4 font-medium">Sales</h3>
-			<div class="space-y-2 text-center text-sm text-gray-600">
-				<a href="mailto:sales@daystarsolar.co.in">sales@daystarsolar.co.in</a> <br />
-				<a href="mailto:support@daystarsolar.co.in">support@daystarsolar.co.in</a>
+			<div class="space-y-2 text-center text-sm md:text-md text-gray-600">
+				<!-- <a href="mailto:sales@daystarsolar.co.in">sales@daystarsolar.co.in</a> <br /> -->
+				<a href="mailto:products@daystarsolar.co.in">products@daystarsolar.co.in</a>
 			</div>
-		</div>
+		</button>
 
 		<!-- Service Card -->
-		<div
+		<button
+		 on:click={() => {openLink("info@daystarsolar.co.in")}}
 			class="motion-preset-focus flex flex-col items-center justify-center rounded-2xl border-2 border-amber-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[500ms] hover:border-amber-300 hover:shadow-lg"
 		>
 			<ToolsIcon className="size-6 stroke-1 my-4" />
 			<h3 class="mb-4 font-medium">Service</h3>
-			<div class="space-y-2 text-center text-sm text-gray-600">
-				<a href="mailto:projects@daystarsolar.co.in">projects@daystarsolar.co.in</a> <br />
-				<a href="mailto:installation@daystarsolar.co.in">installation@daystarsolar.co.in</a>
+			<div class="space-y-2 text-center text-sm md:text-md text-gray-600">
+				<a href="mailto:info@daystarsolar.co.in">info@daystarsolar.co.in</a> <br />
+				<!-- <a href="mailto:projects@daystarsolar.co.in">projects@daystarsolar.co.in</a> <br /> -->
+				<!-- <a href="mailto:installation@daystarsolar.co.in">installation@daystarsolar.co.in</a> -->
 			</div>
-		</div>
+		</button>
 
 		<!-- Procurement Card -->
-		<div
+		<button
+		 on:click={() => {openLink("procurement@daystarsolar.co.in")}}
 			class="motion-preset-focus flex flex-col items-center justify-center rounded-2xl border-2 border-teal-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[100ms] hover:border-teal-300 hover:shadow-lg"
 		>
 			<ChatIcon className="size-6 stroke-1 my-4" />
 			<h3 class="mb-4 font-medium">Procurement</h3>
-			<div class="space-y-2 text-center text-sm text-gray-600">
-				<a href="mailto:procure@daystarsolar.co.in">procure@daystarsolar.co.in</a> <br />
-				<a href="mailto:service@daystarsolar.co.in">service@daystarsolar.co.in</a>
+			<div class="space-y-2 text-center text-sm md:text-md text-gray-600">
+				<!-- <a href="mailto:procure@daystarsolar.co.in">procure@daystarsolar.co.in</a> <br /> -->
+				<a href="mailto:service@daystarsolar.co.in">procurement@daystarsolar.co.in</a>
 			</div>
-		</div>
+		</button>
 
 		<!-- Admin Card -->
-		<div
+		<button
+		 on:click={() => {openLink("coo@daystarsolar.co.in")}}
 			class="motion-preset-focus flex flex-col items-center justify-center rounded-2xl border-2 border-red-200 bg-gray-50/50 p-6 transition-colors motion-duration-700 motion-delay-[300ms] hover:border-red-300 hover:shadow-lg"
 		>
 			<UserIcon className="size-6 stroke-1 my-4" />
 			<h3 class="mb-4 font-medium">Admin</h3>
-			<div class="space-y-2 text-center text-sm text-gray-600">
-				<a href="mailto:hussain@daystarsolar.co.in">hussain@daystarsolar.co.in</a> <br />
+			<div class="space-y-2 text-center text-sm md:text-md text-gray-600">
+				<!-- <a href="mailto:hussain@daystarsolar.co.in">hussain@daystarsolar.co.in</a> <br /> -->
 				<a href="mailto:coo@daystarsolar.co.in">coo@daystarsolar.co.in</a>
 			</div>
-		</div>
+		</button>
 	</div>
 </div>
 

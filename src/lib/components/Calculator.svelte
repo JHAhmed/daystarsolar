@@ -11,6 +11,23 @@
 		electricityRate
 	);
 
+	function calcualteKW(bill, type, rate) {
+
+		// KW Needed = (Monthly electricity bill in ₹) / (Electricity rate ₹/kWh × Avg. solar generation per kW per month)
+		// kwneeded = bill / (rate * 120)
+
+		if (type === 'domestic') {
+			rate = 11;
+		} else if (type === 'commercial') {
+			rate = 10;
+		} else if (type === 'industrial') {
+			rate = 8;
+		}
+
+		let kwneeded = bill / (rate * 120)
+		return Math.round(kwneeded);
+	}
+
 	function calculateSavings(bill, type, rate) {
 
 		if (type === 'domestic') {

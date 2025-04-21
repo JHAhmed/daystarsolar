@@ -57,11 +57,12 @@
 </script>
 
 <svelte:head>
-	<title>Daystar Solar - Solar Energy Solutions Provider in South India</title>
+	<title>Solar Energy Solutions in South India | Daystar Solar</title>
 	<meta
 		name="description"
 		content="Daystar Solar is a leading solar energy solutions provider in South India. We offer solar panels, street lights, and distribution boxes for residential and commercial use."
 	/>
+	<link rel="canonical" href="https://daystar.co.in/" />
 	<script type="application/ld+json">
 		{
 			"@context": "http://schema.org",
@@ -257,11 +258,11 @@
 		<div class=" w-fit rounded-full bg-yellow-100 p-3">
 			<img src={quotationMark} class="size-4 text-green-800" alt="" />
 		</div>
-		<h1 class="text-xl text-center font-medium md:text-3xl lg:text-5xl">
+		<h1 class="text-center text-xl font-medium md:text-3xl lg:text-5xl">
 			Ignite your future with
 			<span class="text-orange-400">solar</span> energy
 		</h1>
-		<div class=" w-fit rounded-full ml-auto bg-yellow-100 p-3">
+		<div class=" ml-auto w-fit rounded-full bg-yellow-100 p-3">
 			<img src={quotationMark} class="size-4 rotate-180 text-green-800" alt="" />
 		</div>
 	</div>
@@ -269,7 +270,8 @@
 	<!-- Right Column -->
 	<div use:animateIn={{ blur: 8, duration: 0.5, delay: 0.9 }} class="space-y-8 opacity-0">
 		<div class="relative overflow-hidden rounded-2xl">
-			<img loading="lazy" 
+			<img
+				loading="lazy"
 				src={landingImage3}
 				alt="Solar panel array on hillside surrounded by trees, demonstrating environmental integration"
 				class="h-[200px] w-full object-cover md:h-[300px]"
@@ -288,7 +290,8 @@
 		use:animateIn={{ blur: 8, duration: 0.5, delay: 0.1 }}
 		class="col-span-2 flex flex-col rounded-lg bg-[#F5F5ED] opacity-0 md:flex-row"
 	>
-		<img loading="lazy" 
+		<img
+			loading="lazy"
 			src={sampleImage1}
 			class="img-clip hidden w-full rounded-t-lg object-cover md:w-48 md:rounded-l-lg md:rounded-tr-none lg:block"
 			alt=""
@@ -355,7 +358,12 @@
 		class="relative col-span-2 rounded-lg opacity-0"
 	>
 		<div class="">
-			<img src={landingImage3} class="relative h-96 w-full rounded-xl object-cover" alt=""  loading="lazy" />
+			<img
+				src={landingImage3}
+				class="relative h-96 w-full rounded-xl object-cover"
+				alt=""
+				loading="lazy"
+			/>
 			<div class="absolute inset-0 z-10 h-full w-full rounded-xl bg-black opacity-40"></div>
 			<div
 				class="absolute bottom-0 z-20 m-4 flex h-fit items-center justify-center rounded-lg bg-white p-4"
@@ -374,7 +382,12 @@
 		class="relative col-span-2 rounded-lg opacity-0 lg:col-span-1"
 	>
 		<div class="">
-			<img src={landingImage4} class="relative h-96 w-full rounded-xl object-cover" alt=""  loading="lazy" />
+			<img
+				src={landingImage4}
+				class="relative h-96 w-full rounded-xl object-cover"
+				alt=""
+				loading="lazy"
+			/>
 			<div class="absolute inset-0 z-10 h-full w-full rounded-xl bg-black opacity-40"></div>
 			<div
 				class="absolute bottom-0 z-20 m-4 flex h-fit items-center justify-center rounded-lg bg-white p-4"
@@ -394,7 +407,12 @@
 		class="relative col-span-2 rounded-lg opacity-0 lg:col-span-1"
 	>
 		<div class="">
-			<img src={landingImage5} class="relative h-96 w-full rounded-xl object-cover" alt=""  loading="lazy" />
+			<img
+				src={landingImage5}
+				class="relative h-96 w-full rounded-xl object-cover"
+				alt=""
+				loading="lazy"
+			/>
 			<div class="absolute inset-0 z-10 h-full w-full rounded-xl bg-black opacity-40"></div>
 			<div
 				class="absolute bottom-0 z-20 m-4 flex h-fit items-center justify-center rounded-lg bg-white p-4"
