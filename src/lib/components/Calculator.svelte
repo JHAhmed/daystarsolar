@@ -1,11 +1,18 @@
 <script>
 	import { ChevronIcon } from '$icons';
+	import { Separator } from "bits-ui";
 
 	let monthlyBill = 10000; 
 	let consumerType = 'domestic'; 
 	let electricityRate = 8; 
 
 	$: annualSavings = calculateSavings(
+		monthlyBill,
+		consumerType,
+		electricityRate
+	);
+
+	$: requiredkw = calcualteKW(
 		monthlyBill,
 		consumerType,
 		electricityRate
@@ -130,16 +137,40 @@
 
 		<!-- Right side - Results -->
 		<div class="flex w-full flex-col items-center justify-center rounded-lg border-2 border-orange-400 bg-gray-50 p-4 sm:p-6 md:p-8 lg:p-12 lg:w-1/2">
-			<div class="text-center">
-				<p class="mb-1 sm:mb-2 text-xs sm:text-sm uppercase tracking-wider text-gray-600">ANNUAL SAVINGS</p>
-				<div class="flex items-center justify-center">
-					<span class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">₹</span>
-					<span
-						class="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter text-transparent"
-					>
-						{formatIndianNumber(annualSavings)}
-					</span>
+			<div class="text-center flex space-x-4">
+
+				<div class="">
+					<p class="mb-1 sm:mb-2 text-xs sm:text-sm uppercase tracking-wider text-gray-600">ANNUAL SAVINGS</p>
+					<div class="flex items-center justify-center">
+						<span class="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-700">₹</span>
+						<span
+							class="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-transparent"
+						>
+							{formatIndianNumber(annualSavings)}
+						</span>
+					</div>
 				</div>
+
+				<!-- <div class="h-full mt-auto  w-px bg-gray-600"></div> -->
+
+				<Separator.Root
+				orientation="vertical"
+				class="bg-border my-auto shrink-0 data-[orientation=horizontal]:h-px data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-[2px]"
+			  />
+
+				<div class="">
+					<p class="mb-1 sm:mb-2 text-xs sm:text-sm uppercase tracking-wider text-gray-600">REQUIRED KW</p>
+					<div class="flex items-center justify-center">
+						<span
+							class="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-transparent"
+						>
+							{requiredkw}
+						</span>
+						<span class="text-2xl sm:text-3xl md:text-4xl mt-auto mb-1 ml-1 font-medium text-gray-700">kW</span>
+
+					</div>
+				</div>
+
 			</div>
 
 			<div class="mt-6 sm:mt-8 md:mt-10 space-y-4 sm:space-y-5 md:space-y-6 text-center">
