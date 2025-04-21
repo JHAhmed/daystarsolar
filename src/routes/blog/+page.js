@@ -1,5 +1,5 @@
 export async function load({ fetch, params }) {
-	const res = await fetch(`/api/getEntries`, {
+	const res = await fetch(`/api/get-entries`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'

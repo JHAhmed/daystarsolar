@@ -62,7 +62,7 @@
 
 				<div>
 					<a
-						href="/blog/{blog.slug}?id={blog.id}"
+						href="/blog/{blog.slug}"
 						class="mt-auto inline-flex w-full items-center justify-center rounded-lg bg-gray-100 p-3"
 					>
 						<span class="ml-2 mr-6 tracking-tighter">Read More</span>

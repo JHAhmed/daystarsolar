@@ -37,8 +37,8 @@
 	<div class="grid grid-cols-1 gap-2 md:gap-6 lg:grid-cols-2">
 		{#each projects as project, i}
 			<div
-			use:animateIn={{ delay: 0.7 + i / 4, blur: 8, y: 10, rotate: 1, inView: false }}
-				class="flex w-full max-w-4xl flex-col opacity-0 overflow-hidden rounded-lg bg-gray-100 md:flex-row md:rounded-2xl"
+				use:animateIn={{ delay: 0.7 + i / 4, blur: 8, y: 10, rotate: 1, inView: false }}
+				class="flex w-full max-w-4xl flex-col overflow-hidden rounded-lg bg-gray-100 opacity-0 md:flex-row md:rounded-2xl"
 			>
 				<div class="flex flex-col justify-center space-y-4 p-4 md:w-1/2 md:space-y-8 md:p-6">
 					<h2 class="text-2xl font-normal tracking-tighter md:text-4xl">{project.title}</h2>
@@ -47,7 +47,7 @@
 
 					<div>
 						<a
-							href="/projects/{project.slug}?id={project.id}"
+							href="/projects/{project.slug}"
 							class="inline-flex items-center rounded-lg bg-white p-2"
 						>
 							<span class="ml-2 mr-6 tracking-tighter">View More</span>

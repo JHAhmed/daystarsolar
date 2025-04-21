@@ -19,25 +19,24 @@
 
 	if (dev) {
 		// Test 1
-		// fullName = 'Jamal Haneef';
-		// phoneNumber = '9500044487';
-		// consumerNumber = '0114505470';
+		fullName = 'Jamal Haneef';
+		phoneNumber = '9500044487';
+		consumerNumber = '0114505470';
 		// ebRegNumber = '9500044487';
 
 		// Test 2
-		fullName = 'Subramaniya';
-		phoneNumber = '9841106264';
-		consumerNumber = '0107301616';
-		ebRegNumber = '7871925242';
+		// fullName = 'Subramaniya';
+		// phoneNumber = '9841106264';
+		// consumerNumber = '0107301616';
+		// ebRegNumber = '7871925242'; // actual number
 	}
 
 	async function validateForm() {
 		// Validate form
 		if (
 			fullName.length < 4 ||
-			phoneNumber.length < 5 ||
-			consumerNumber.length < 5 ||
-			ebRegNumber.length < 5
+			phoneNumber.length < 8 ||
+			consumerNumber.length < 6 		
 		) {
 			toast.warning('Please fill in all details properly!');
 			return;
@@ -55,7 +54,7 @@
 		try {
 			loading = true;
 
-			const res = await fetch('/api/getDetails', {
+			const res = await fetch('/api/get-details', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
@@ -146,13 +145,15 @@
 				placeholder="00000000"
 				required
 			/>
-			<CustomInput
-				bind:value={ebRegNumber}
-				label="TNEB Registered Phone Number"
-				hasPrefix
-				placeholder="00000 00000"
-				required
-			/>
+			<div class="w-full" name="eg-reg-number">
+				<CustomInput
+					bind:value={ebRegNumber}
+					label="TNEB Registered Phone Number"
+					hasPrefix
+					placeholder="00000 00000"
+				/>
+				<label for="eg-reg-number" class="my-1 text-xs text-gray-700 font-medium leading-none">Enter for faster report generation!</label>
+			</div>
 		</div>
 
 		{#if errorMessage}

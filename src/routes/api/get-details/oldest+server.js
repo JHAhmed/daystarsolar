@@ -1,7 +1,6 @@
 import puppeteer from 'puppeteer';
 import OpenAI from 'openai';
 import { OPENAI_API_KEY } from '$env/static/private';
-import { ChartNoAxesColumnDecreasing } from 'lucide-svelte';
 
 function splitNumber(num) {
     let str = num.toString().padStart(10, '0'); // Ensure it's 10 digits
@@ -157,8 +156,6 @@ export async function POST({ request }) {
         const response = new Response(JSON.stringify(data), { status: 200 });
 
         return response;
-        console.log('Closing browser...');
-        await browser.close();  // Close browser after preparing response
     
 
     } 

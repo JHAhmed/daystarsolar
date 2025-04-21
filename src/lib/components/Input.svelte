@@ -7,7 +7,7 @@
 		placeholder = 'John Doe',
 		hasPrefix = false,
 		hasSuffix = false,
-		required = true,
+		required = false,
 		prefixText = '+91',
 		onUnitChange = (e) => {},
 		value = $bindable()
@@ -15,7 +15,12 @@
 </script>
 
 <div class="w-full">
-	<Label for="custom-input" class="my-1 text-xs md:text-sm">{label}</Label>
+	<div class="flex">
+		<Label for="custom-input" class="my-1 text-xs md:text-sm">{label}</Label>
+		{#if required}
+			<div class="w-1 h-1 text-red-600">*</div>
+		{/if}
+	</div>
 	<div id="custom-input" class="flex items-center justify-center">
 		{#if hasPrefix}
 			<p

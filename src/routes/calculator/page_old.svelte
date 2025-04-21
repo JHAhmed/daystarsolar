@@ -49,7 +49,7 @@
 		try {
 			loading = true;
 
-			const res = await fetch('/api/getDetails', {
+			const res = await fetch('/api/get-details', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({

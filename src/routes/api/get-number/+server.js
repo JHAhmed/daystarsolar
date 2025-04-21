@@ -35,7 +35,6 @@ async function solveCaptcha(page, openai) {
 	}
 
 	const captchaBuffer = await captchaElement.screenshot({ encoding: 'base64' });
-	console.log('Got CAPTCHA Screenshot!');
 
 	try {
 		const response = await openai.chat.completions.create({
@@ -74,7 +73,7 @@ async function solveCaptcha(page, openai) {
 			console.warn(`Potential malformed CAPTCHA from OpenAI: "${captchaText}". Proceeding anyway.`);
 		}
 
-		console.log('OpenAI Response Received! CAPTCHA:', captchaText);
+		console.log('CAPTCHA for ebRegNumber:', captchaText);
 		return captchaText;
 	} catch (err) {
 		console.error('Error during OpenAI CAPTCHA solving:', err);
@@ -83,8 +82,6 @@ async function solveCaptcha(page, openai) {
 }
 
 async function extractNumber(page) {
-	console.log('Looking for number in input value...');
-
 	try {
 		const xp = '::-p-xpath(/html/body/section[2]/div/div/form/div[2]/div[2]/div[2]/div/input[2])';
 
@@ -115,7 +112,7 @@ export async function GET({ url, request }) {
 
 	let browser = null;
 	try {
-		console.log('Launching browser...');
+		console.log('Launching browser for ebRegNumber...');
 		const executablePath = dev ? undefined : await chromium.executablePath();
 		browser = await puppeteer.launch({
 			args: BROWSER_ARGS,
@@ -131,13 +128,12 @@ export async function GET({ url, request }) {
 
 		const openai = new OpenAI({ apiKey: env.OPENAI_API_KEY });
 
-		console.log(`Navigating to ${TNEB_NUMBER_URL}...`);
 		await page.goto(TNEB_NUMBER_URL, { waitUntil: 'networkidle0' });
 
-		sleep(2000);
+		await sleep(1000);
 
 		await page.keyboard.press('Enter');
-		await sleep(1000);
+		await sleep(500);
 
 		const captchaText = await solveCaptcha(page, openai);
 
@@ -147,14 +143,12 @@ export async function GET({ url, request }) {
 		await page.keyboard.press('Tab');
 		await page.type('#nscapp\\:imgCaptchaId', captchaText);
 
-		console.log('Submitting form...');
+		console.log('Submitting ebRegNumber form...');
 		// Use Promise.all for simultaneous click and navigation waiting
 		await Promise.all([
 			page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 45000 }), // Wait for navigation to complete
 			page.click('input[name="nscapp:j_idt22"]') // Click the submit button
 		]);
-
-		console.log('Navigation complete. New Page URL:', page.url());
 
 		if (page.url().includes('chrome-error://')) {
 			console.warn('Certificate error page detected, attempting to proceed...');
@@ -182,24 +176,10 @@ export async function GET({ url, request }) {
 		// --- Success Response ---
 		return json({ ebRegNumber: scrapedData }, { status: 200 });
 	} catch (err) {
-		// --- Centralized Error Handling ---
 		console.error('An error occurred during the scraping process:', err);
-
-		// Log page content on error for debugging (optional, can be large)
-		// if (page) {
-		// 	try {
-		// 		const pageContent = await page.content();
-		// 		console.error("Page content on error:\n", pageContent.substring(0, 2000)); // Log first 2KB
-		// 	} catch (contentError) {
-		// 		console.error("Could not get page content on error:", contentError);
-		// 	}
-		// }
-
-		// Provide specific error messages based on caught error type if possible
 		let statusCode = 500;
 		let message = 'An internal server error occurred during scraping.';
 
-		// Use SvelteKit's error helper for standard error responses
 		return svelteKitError(statusCode, message);
 	} finally {
 		if (browser) {
