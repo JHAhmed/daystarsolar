@@ -1,5 +1,11 @@
 {
-    "env": {
-      "PUPPETEER_CACHE_DIR": "/tmp/puppeteer"
-    }
-  }
+	"env": {
+		"PUPPETEER_CACHE_DIR": "/tmp/puppeteer"
+	},
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*\\.php$", "status": 410 },
+    { "src": "/wp-.*", "status": 410 }
+  ]
+}
+

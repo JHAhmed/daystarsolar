@@ -29,6 +29,7 @@
 		{ icon: SunIcon, text: 'Adopting cutting-edge solar technologies' },
 		{ icon: ShieldCheckIcon, text: 'Committed to safe & eco-friendly practices' }
 	];
+
 </script>
 
 <svelte:head>

@@ -4,3 +4,5 @@ Allow: /
 Disallow: /api
 Disallow: /*.js$
 Disallow: /*.json
+Disallow: /wp-*
+Disallow: /*.php$

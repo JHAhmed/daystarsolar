@@ -34,7 +34,7 @@
 	async function validateForm() {
 		// Validate form
 		if (
-			fullName.length < 5 ||
+			fullName.length < 4 ||
 			phoneNumber.length < 5 ||
 			consumerNumber.length < 5 ||
 			ebRegNumber.length < 5

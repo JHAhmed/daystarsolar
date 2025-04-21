@@ -7,8 +7,8 @@
 	<title>404 | Daystar Solar</title>
 </svelte:head>
 
-<div class="flex h-screen items-center justify-center">
-	<h1 class="text-6xl font-light text-black">
+<div class="flex flex-col h-screen items-center justify-center space-y-8 p-4">
+	<h1 class="text-3xl text-center md:text-6xl font-light text-black ">
 		This page does not <span class="text-red-400">exist</span>!
 	</h1>
 	<a

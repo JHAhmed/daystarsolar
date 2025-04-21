@@ -18,8 +18,8 @@
 	import { animate, inView } from 'motion';
 	import { on } from 'svelte/events';
 
-	import LogoCloud from '$components/LogoCloud.svelte';
-
+	import ScrollingReviews from '$components/ScrollingReviews.svelte';
+	
 	let calculator;
 
 	const stats = [

@@ -31,7 +31,11 @@
 			rate = 8;
 		}
 
-		let kwneeded = bill / (rate * 120)
+		let cycle = type === 'domestic' ? 60 : 30;
+		let cost = bill / cycle;
+		let units = cost / rate;
+
+		let kwneeded = Math.round(units) / 4;
 		return Math.round(kwneeded);
 	}
 
