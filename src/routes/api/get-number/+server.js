@@ -170,7 +170,7 @@ export async function GET({ url, request }) {
 		if (!scrapedData) {
 			console.log('Number not found.');
 			// Return a specific response indicating no data, maybe 200 OK but with a message
-			return json({ message: 'No number found.', data: false }, { status: 200 });
+			return json({ message: 'No number found.', data: false }, { status: 500 });
 		}
 
 		// --- Success Response ---

@@ -112,6 +112,7 @@
 			console.error('Error fetching bill data:', error);
 			errorMessage = 'Failed to retrieve bill data. Please try again.';
 			toast.error(errorMessage);
+			goto('/report-error')
 		} finally {
 			loading = false;
 		}

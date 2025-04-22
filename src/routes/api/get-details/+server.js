@@ -245,7 +245,7 @@ export async function POST({ request, fetch }) {
 		if (scrapedData.length === 0) {
 			console.log('No bill data found for the provided details.');
 			// Return a specific response indicating no data, maybe 200 OK but with a message
-			return json({ message: 'No bill data found.', data: [] }, { status: 200 });
+			return json({ message: 'No bill data found.', data: [], id: undefined }, { status: 200 });
 		}
 
 		// --- Database Storage ---
