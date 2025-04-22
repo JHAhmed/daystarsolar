@@ -91,6 +91,12 @@ async function solveCaptcha(page, openai) {
 }
 
 async function extractBillData(page) {
+
+	// const fullName = await page.$eval("table td", el => {
+	// 	return el.innerText.split(":").pop().trim();
+	//   });
+	// console.log("Full Name:", fullName);
+
 	const tableSelector = 'table.ccbills';
 	try {
 		await page.waitForSelector(tableSelector, { visible: true, timeout: 30000 });

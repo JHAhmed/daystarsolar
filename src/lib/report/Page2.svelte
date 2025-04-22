@@ -206,7 +206,7 @@
 	class="reportContainer mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-8 p-8 text-base text-gray-800"
 >
 	<p class="">
-		Below is a comparison of power consumption in KwH (units) versus the cost incurred. Notice how
+		Below is a comparison of power consumption in KWh (units) versus the cost incurred. Notice how
 		cost increases a lot more in relation to a small increase in consumption.
 	</p>
 	<canvas bind:this={chartCanvas2} id="chart2" class=""></canvas>

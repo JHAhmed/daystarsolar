@@ -9,6 +9,9 @@ export { default as CustomInput } from './Input.svelte';
 export { default as CustomDropdown } from './CustomDropdown.svelte';
 export { default as UnitToggle } from './UnitToggle.svelte';
 export { default as HeroButton } from './HeroButton.svelte';
+export { default as RegionTable } from './RegionTable.svelte';
+export { default as ScrollingReviews } from './ScrollingReviews.svelte';
+export { default as Carousel } from './Carousel.svelte';
 
 export { default as IndiaMartLogo } from '$lib/assets/IndiaMartLogo.svelte';
 export { default as AmazonLogo } from '$lib/assets/AmazonLogo.svelte';

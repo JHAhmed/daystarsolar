@@ -43,7 +43,7 @@
 				</p>
 			</div>
 			<p class="my-4 hidden text-xs text-gray-500 md:block">
-				© 2024 Daystar Solar • All rights reserved
+				© 2012 - 2025 Daystar Solar • All rights reserved
 			</p>
 		</div>
 
@@ -95,7 +95,7 @@
 			</div>
 		</div>
 		<p class="my-2 text-center text-xs text-gray-500 md:hidden">
-			© 2025 Daystar Solar • All rights reserved
+			© 2012 - 2025 Daystar Solar • All rights reserved
 		</p>
 	</div>
 

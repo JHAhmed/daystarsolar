@@ -2,10 +2,10 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 
-	import { ArrowIcon, ChevronIcon, StarIcon, GoogleIcon } from '$icons';
-	import { Calculator, HeroButton } from '$components';
+	import { ArrowIcon, StarIcon, GoogleIcon } from '$icons';
+	import { Calculator, HeroButton, CTA, ScrollingReviews, Carousel } from '$components';
 
-	import { sampleImage1, sampleImage2, sampleImage3, animateIn } from '$lib';
+	import { sampleImage1, animateIn } from '$lib';
 	import {
 		landingImage1,
 		landingImage2,
@@ -16,10 +16,7 @@
 	} from '$lib';
 
 	import { animate, inView } from 'motion';
-	import { on } from 'svelte/events';
 
-	import ScrollingReviews from '$components/ScrollingReviews.svelte';
-	
 	let calculator;
 
 	const stats = [
@@ -54,6 +51,28 @@
 			calculator.scrollIntoView({ behavior: 'smooth' });
 		}
 	}
+
+	const imageModules = import.meta.glob('/src/lib/images/hero-images/*.webp', {
+		eager: true,
+		query: '?url', // Use query instead of as
+		import: 'default' // Import the default export (the URL string)
+	});
+
+	const heroProjects = Object.entries(imageModules).map(([path, src]) => {
+		const pathSegments = path.split('/');
+		let text = pathSegments.length > 2 ? pathSegments[pathSegments.length - 1] : null;
+
+		const projectSegments = path.split('/');
+		let href = projectSegments.length > 2 ? projectSegments[projectSegments.length - 1] : null;
+
+		text = text
+			.split('.')[0]
+			.replace(/-/g, ' ')
+			.replace(/\b\w/g, (c) => c.toUpperCase());
+		href = '/projects/' + href.split('.')[0];
+
+		return { src, text, href };
+	});
 </script>
 
 <svelte:head>
@@ -83,76 +102,17 @@
 
 				<HeroButton button={true} action={scrollToView} />
 			</div>
-			<div class="mb-12 mt-24 max-w-md border-l-4 bg-gray-50 p-6">
-				<h6 class="mb-4 font-medium">What We Do</h6>
-				<p class="text-gray-600">
+			<div class="my-8 max-w-md border-l-4 bg-gray-50 p-6 lg:mb-12 lg:mt-24">
+				<h6 class="mb-4 text-sm font-medium md:text-base">What We Do</h6>
+				<p class="text-sm text-gray-600 md:text-base">
 					Sustainable development is the creed that underpins Daystar Solar's bespoke initiatives to
 					protect the environment, strengthen communities and propel responsible growth.
 				</p>
 			</div>
 		</div>
 
-		<div class="col-span-12 grid gap-4 lg:col-span-7 lg:grid-cols-3">
-			<figure
-				class="motion-preset-focus relative my-2 py-4 motion-duration-1000 motion-delay-[200ms] md:my-8"
-			>
-				<a
-					href="/projects/marina-mall?id=53aDknlFVpSnJg6QAz7ozZ"
-					class="absolute -right-4 top-0 transform rounded-full bg-white p-4 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:translate-x-1"
-				>
-					<ArrowIcon className="size-4 rotate-[-135deg]" />
-				</a>
-				<img
-					src={sampleImage1}
-					alt="Modern house with solar panels installed on sloped roof with blue windows"
-					class="h-[90%] w-full rounded-md object-cover"
-					loading="lazy"
-				/>
-				<figcaption class="text-md my-4 text-center font-light uppercase tracking-widest">
-					Marina Mall, OMR
-				</figcaption>
-			</figure>
-
-			<figure
-				class="motion-preset-focus relative my-2 py-4 motion-duration-1000 motion-delay-[500ms] md:my-8"
-			>
-				<a
-					href="/projects/sana-school?id=3o9jHuaSgHyYmq3EZ7x4qM"
-					class="absolute -bottom-0 -right-4 transform rounded-full bg-white p-4 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:translate-x-1"
-				>
-					<ArrowIcon className="size-4 rotate-[-135deg]" />
-				</a>
-				<p class="text-md my-4 text-center font-light uppercase tracking-widest">
-					Sana School, Egmore
-				</p>
-				<img
-					src={sampleImage2}
-					alt="Solar-powered street light against cloudy sky with modern design"
-					class="h-[90%] w-full rounded-md object-cover"
-					loading="lazy"
-				/>
-			</figure>
-
-			<figure
-				class="motion-preset-focus relative my-2 py-4 motion-duration-1000 motion-delay-[800ms] md:my-8"
-			>
-				<a
-					href="/projects/trove?id=2TPzHsTRKMhtm4Jyz1KQWP"
-					class="absolute -right-4 top-0 transform rounded-full bg-white p-4 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:translate-x-1"
-				>
-					<ArrowIcon className="size-4 rotate-[-135deg]" />
-				</a>
-
-				<img
-					src={sampleImage3}
-					alt="Residential brick house with solar panels installed on roof and outdoor seating area"
-					class="h-[90%] w-full rounded-md object-cover"
-					loading="lazy"
-				/>
-				<figcaption class="text-md my-4 text-center font-light uppercase tracking-widest">
-					Trove, Central
-				</figcaption>
-			</figure>
+		<div class="col-span-12 lg:col-span-7">
+			<Carousel {heroProjects} />
 		</div>
 	</div>
 
@@ -426,6 +386,8 @@
 		</div>
 	</div>
 </section>
+
+<CTA />
 
 <style>
 	.img-clip {

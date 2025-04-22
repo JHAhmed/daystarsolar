@@ -49,12 +49,12 @@
 </script>
 
 {#if !isCalc}
-	<nav class="mx-auto my-4 w-full rounded-lg bg-white px-2 lg:px-8 z-10">
+	<nav class="mx-auto my-8 w-full rounded-lg bg-white px-4 lg:px-16 z-10">
 		<div class="mx-auto px-2 lg:px-8">
 			<div class="flex h-16 items-center justify-between lg:h-20">
 				<div class="flex-shrink-0">
 					<a href="/" title="" class="flex">
-						<img class="h-12 w-auto lg:h-16" src={logo} alt="Daystar Logo" />
+						<img class="h-12 w-auto lg:h-20" src={logo} alt="Daystar Logo" />
 						<!-- LOGO -->
 					</a>
 				</div>
