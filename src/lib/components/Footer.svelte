@@ -36,8 +36,8 @@
 <footer class="mx-auto w-full">
 	<div class=" grid h-full w-full grid-cols-1 gap-2 bg-darkgray p-8 lg:grid-cols-3">
 		<div class="items-left flex h-full w-full flex-col px-4 text-center lg:text-left">
-			<div class="items-cen flex grow flex-col justify-center mx-auto">
-				<p class="text-md max-w-md font-light text-white">
+			<div class="items-start flex grow flex-col justify-center md:items-center">
+				<p class="text-md max-w-md font-light text-white lg:text-left text-center mx-auto">
 					<span class="font-normal">Daystar Solar</span> was formed with the intention of consulting;
 					procuring, supplying and installing solar power plants for commercial and domestic use.
 				</p>

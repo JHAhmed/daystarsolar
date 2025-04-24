@@ -11,6 +11,8 @@
 		{ text: 'Project 4', src: sampleImage2, href: '/projects/project-4' }
 	];
 
+	heroProjects = heroProjects.sort(() => .5 - Math.random());
+	
 	const breakpoints = { md: 768, lg: 1024 };
 	const itemsPerBreakpoint = { default: 1, md: 2, lg: 3 };
 	const transitionDuration = 500; // ms
@@ -75,6 +77,7 @@
 			if (intervalId) clearInterval(intervalId);
 		};
 	});
+
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />

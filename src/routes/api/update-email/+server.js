@@ -1,28 +1,21 @@
-import contentfulManagement from 'contentful-management';
-import { env } from '$env/dynamic/private';
 import { json } from '@sveltejs/kit';
+import { env } from '$env/dynamic/private';
+import { supabase } from '$lib/supabaseClient';
 
 export async function POST({ request }) {
 	const { email } = await request.json();
 
 	try {
-		const client = contentfulManagement.createClient({
-			accessToken: env.CONTENTFUL_CMA_TOKEN
-		});
+		const { data: supabaseResult, error: supabaseError } = await supabase
+			.from('mailing_list')
+			.insert([{ email: email }])
+			.select()
+			.single();
 
-		const space = await client.getSpace(env.CONTENTFUL_SPACE_ID);
-		const environment = await space.getEnvironment('master');
-
-		const entry = await environment.createEntry('mailingList', {
-			fields: {
-				emailId: {
-					'en-US': email
-				}
-			}
-		});
-
-		await entry.publish();
-
+		if (supabaseError) {
+			console.error('Supabase insert error:', supabaseError);
+			throw new Error(`Failed to save report to database: ${supabaseError.message}`);
+		}
 		return json({ success: true, message: 'Email added successfully' });
 	} catch (error) {
 		console.error('Error updating mailing list:', error);
@@ -32,3 +25,4 @@ export async function POST({ request }) {
 		);
 	}
 }
+

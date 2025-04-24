@@ -144,38 +144,7 @@
 		<h2 class="mb-12 text-center text-2xl tracking-[-0.07em] md:text-4xl">
 			What Our Customers Say
 		</h2>
-
-		<div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-			{#each reviews as review, i}
-				<a
-					href={review.link}
-					target="_blank"
-					use:animateIn={{ y: 10, blur: 4, delay: i / 3 }}
-					class="group/link relative flex h-full flex-col space-y-4 rounded-xl border-2 border-black bg-white p-6 opacity-0 hover:bg-green-50 md:space-y-8 md:p-8"
-				>
-					<div
-						class="absolute -right-2 -top-2 transform rounded-full bg-green-500 p-1 duration-100 group-hover/link:-translate-y-1 group-hover/link:translate-x-1"
-					>
-						<ArrowIcon color="white" className="size-4 stroke-black -rotate-[135deg]" />
-					</div>
-
-					<div class="mb-4 flex items-center justify-between">
-						<div class="flex">
-							{#each Array(review.rating) as _, i}
-								<StarIcon className="size-4 md:size-6 text-yellow-400 stroke stroke-black" />
-							{/each}
-						</div>
-						<GoogleIcon className="size-4 md:size-6" />
-					</div>
-
-					<p class="mb-6 flex-grow text-xs text-gray-700 md:text-sm">{review.text}</p>
-
-					<div class="mt-auto">
-						<p class="font-semibold text-gray-800">{review.name}</p>
-					</div>
-				</a>
-			{/each}
-		</div>
+		<ScrollingReviews/>
 	</div>
 </section>
 
