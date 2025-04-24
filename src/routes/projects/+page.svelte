@@ -13,6 +13,9 @@
 		name="description"
 		content="View the latest solar installations and projects from Daystar Solar, a leading solar energy solutions provider in South India."
 	/>
+	<meta property="og:title" content="Projects | Daystar Solar" />
+	<meta property="og:description" content="View the latest solar installations and projects from Daystar Solar, a leading solar energy solutions provider in South India."/>
+	<meta property="og:image" content="$lib/assets/meta-home.jpg" />
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",

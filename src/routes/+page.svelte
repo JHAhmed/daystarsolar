@@ -90,6 +90,14 @@
 			"url": "https://daystar.co.in"
 		}
 	</script>
+
+	<meta property="og:title" content="Daystar Solar" />
+	<meta
+		property="og:description"
+		content="Daystar Solar is a leading solar energy solutions provider in South India. We offer solar panels, street lights, and distribution boxes for residential and commercial use."
+	/>
+	<meta property="og:image" content="$lib/assets/meta-home.jpg" />
+
 </svelte:head>
 
 <section class="mx-auto px-6 py-6 pb-0 md:px-16 md:py-16 md:pb-0 lg:px-32">

@@ -37,6 +37,9 @@
 		name="description"
 		content="Daystar Solar offers a wide range of solar products including street lights, distribution boxes, and solar panels for residential and commercial use."
 	/>
+	<meta property="og:title" content="Products | Daystar Solar" />
+	<meta property="og:description" content="Explore our range of high-efficiency solar panels, inverters, batteries, and accessories."/>
+	<meta property="og:image" content="$lib/assets/meta-home.jpg" />
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",

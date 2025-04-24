@@ -1,13 +1,10 @@
 <script>
 	import { Navbar, Footer } from '$components';
 	import { page } from '$app/stores';
-	import { metaHome } from '$lib';
-
 	import { onMount } from 'svelte';
 	import '../app.css';
 
 	let { children } = $props();
-	console.log($page.url.pathname);
 </script>
 
 <!-- svelte-ignore a11y_missing_attribute -->
@@ -19,13 +16,12 @@
 	/>
 	<meta name="robots" content="index, follow" />
 
-	<!-- Open Graph tags for social sharing -->
 	<meta property="og:title" content="Daystar Solar" />
 	<meta
 		property="og:description"
 		content="Daystar Solar is a leading solar energy solutions provider in South India. We offer solar panels, street lights, and distribution boxes for residential and commercial use."
 	/>
-	<meta property="og:image" content={metaHome} />
+	<meta property="og:image" content="$lib/assets/meta-home.jpg" />
 
 	<script
 		defer

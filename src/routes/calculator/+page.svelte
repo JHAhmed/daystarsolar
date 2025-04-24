@@ -23,17 +23,16 @@
 
 	let funFacts = [
 		"Solar energy is the Earth's most abundant energy resource; the sun provides more energy in an hour than the world consumes in a year.",
-		"Solar panels can generate electricity using daylight, not just direct sunlight, including on cloudy days or in the shade.",
-		"Solar energy prices have dropped significantly, making it cheaper than gas power in places like the U.S.",
-		"The principle behind solar energy (the photovoltaic effect) was discovered nearly 200 years ago, with the first solar cell created in the 1800s.",
-		"The typical energy efficiency of most commercial solar panels is between 11% and 15%.",
-		"Solar energy helps reduce climate change as it generates electricity without producing emissions or pollution.",
-		"Installing solar panels can increase the resale value of a home.",
-		"Most solar panels are made from silicon, a semiconductor material used in photovoltaic cells.",
-		"Technology is being developed to harness solar energy in space and wirelessly transmit it back to Earth.",
+		'Solar panels can generate electricity using daylight, not just direct sunlight, including on cloudy days or in the shade.',
+		'Solar energy prices have dropped significantly, making it cheaper than gas power in places like the U.S.',
+		'The principle behind solar energy (the photovoltaic effect) was discovered nearly 200 years ago, with the first solar cell created in the 1800s.',
+		'The typical energy efficiency of most commercial solar panels is between 11% and 15%.',
+		'Solar energy helps reduce climate change as it generates electricity without producing emissions or pollution.',
+		'Installing solar panels can increase the resale value of a home.',
+		'Most solar panels are made from silicon, a semiconductor material used in photovoltaic cells.',
+		'Technology is being developed to harness solar energy in space and wirelessly transmit it back to Earth.',
 		"It is forecasted that solar panels could supply 25% of the world's electricity needs by the year 2050."
-	]
-
+	];
 
 	if (dev) {
 		// Test 1
@@ -102,17 +101,16 @@
 
 			const data = await res.json();
 
-			if (!isNaN(data.id)){
+			if (!isNaN(data.id)) {
 				goto(`/report?id=${data.id}`);
-			}
-			else {
-				goto('/report-error')
+			} else {
+				goto('/report-error');
 			}
 		} catch (error) {
 			console.error('Error fetching bill data:', error);
 			errorMessage = 'Failed to retrieve bill data. Please try again.';
 			toast.error(errorMessage);
-			goto('/report-error')
+			goto('/report-error');
 		} finally {
 			loading = false;
 		}
@@ -137,6 +135,9 @@
 		name="description"
 		content="Estimate your solar savings with our easy-to-use solar ROI calculator."
 	/>
+	<meta property="og:title" content="Calculator | Daystar Solar" />
+	<meta property="og:description" content="Estimate your solar savings with our easy-to-use solar calculator and generate a report."/>
+	<meta property="og:image" content="$lib/assets/meta-home.jpg" />
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
@@ -159,16 +160,17 @@
 {#if loading}
 	<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm">
 		<div
-			class="flex flex-col items-center justify-center gap-2 rounded-xl border-2 border-black bg-white p-6 w-1/4"
+			class="flex w-1/4 flex-col items-center justify-center gap-2 rounded-xl border-2 border-black bg-white p-6"
 		>
-		
 			<div
 				class="h-12 w-12 animate-spin rounded-full border-4 border-orange-500 border-t-transparent"
 			></div>
 
-			<p class="font-medium mt-4">Your report is being generated...</p>
-			
-			<p class="text-gray-600 text-sm text-center">Fun fact: {funFacts[Math.floor(Math.random() * 10)]}</p>
+			<p class="mt-4 font-medium">Your report is being generated...</p>
+
+			<p class="text-center text-sm text-gray-600">
+				Fun fact: {funFacts[Math.floor(Math.random() * 10)]}
+			</p>
 		</div>
 	</div>
 {/if}
