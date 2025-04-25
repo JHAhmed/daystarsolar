@@ -38,6 +38,13 @@
 		name="description"
 		content="Daystar Solar is a leading solar energy solutions provider in South India. We offer solar panels, street lights, and distribution boxes for residential and commercial use."
 	/>
+	<meta property="og:title" content="About Us | Daystar Solar" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://daystar.co.in/about" />
+	<meta
+		property="og:description"
+		content="Daystar Solar is a leading solar energy solutions provider in South India. We offer solar panels, street lights, and distribution boxes for residential and commercial use."
+	/>
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",

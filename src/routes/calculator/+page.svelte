@@ -36,16 +36,16 @@
 
 	if (dev) {
 		// Test 1
-		fullName = 'Jamal Haneef';
-		phoneNumber = '9500044487';
-		consumerNumber = '0114505470';
+		// fullName = 'Jamal Haneef';
+		// phoneNumber = '9500044487';
+		// consumerNumber = '0114505470';
 		// ebRegNumber = '9500044487';
 
 		// Test 2
-		// fullName = 'Subramaniya';
-		// phoneNumber = '9841106264';
-		// consumerNumber = '0107301616';
-		// ebRegNumber = '7871925242'; // actual number
+		fullName = 'Subramaniya';
+		phoneNumber = '9841106264';
+		consumerNumber = '0107301616';
+		ebRegNumber = '7871925242'; // actual number
 	}
 
 	async function validateForm() {
@@ -136,8 +136,13 @@
 		content="Estimate your solar savings with our easy-to-use solar ROI calculator."
 	/>
 	<meta property="og:title" content="Calculator | Daystar Solar" />
-	<meta property="og:description" content="Estimate your solar savings with our easy-to-use solar calculator and generate a report."/>
-	<meta property="og:image" content="$lib/assets/meta-home.jpg" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://daystar.co.in/calculator" />
+	<meta
+		property="og:description"
+		content="Estimate your solar savings with our easy-to-use solar ROI calculator."
+	/>
+	<meta property="og:image" content="https://daystarsolar.co.in/images/calculator.png" />
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",

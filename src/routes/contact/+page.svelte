@@ -151,8 +151,12 @@
 		content="Get in touch with Daystar Solar for all your solar energy needs. Contact us for procurement, admin, service, and sales queries."
 	/>
 	<meta property="og:title" content="Contact Us | Daystar Solar" />
-	<meta property="og:description" content="Get in touch with Daystar Solar for all your solar energy needs. Contact us for procurement, admin, service, and sales queries."/>
-	<meta property="og:image" content="$lib/assets/meta-home.jpg" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://daystar.co.in/contact" />
+	<meta
+		property="og:description"
+		content="Get in touch with Daystar Solar for all your solar energy needs. Contact us for procurement, admin, service, and sales queries."
+	/>
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",

@@ -16,12 +16,8 @@
 	/>
 	<meta name="robots" content="index, follow" />
 
-	<meta property="og:title" content="Daystar Solar" />
-	<meta
-		property="og:description"
-		content="Daystar Solar is a leading solar energy solutions provider in South India. We offer solar panels, street lights, and distribution boxes for residential and commercial use."
-	/>
-	<meta property="og:image" content="$lib/assets/meta-home.jpg" />
+	<meta property="og:site_name" content="Daystar Solar" />
+	<meta property="og:image" content="/meta-image.jpg" />
 
 	<script
 		defer

@@ -17,9 +17,6 @@
 	} from '@fvilers/heroicons-svelte/24/outline';
 
 	let scrollContainer;
-
-	// Removed the unused 'stepsNew' array
-
 	const steps = [
 		{
 			title: 'Customer Interaction',
@@ -97,6 +94,13 @@
 		name="description"
 		content="Daystar Solar offers a wide range of solar services including consultation, installation, and maintenance for residential and commercial clients."
 	/>
+	<meta property="og:title" content="Servies | Daystar Solar" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://daystar.co.in/services" />
+	<meta
+		property="og:description"
+		content="Daystar Solar offers a wide range of solar services including consultation, installation, and maintenance for residential and commercial clients."
+	/>
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
@@ -106,6 +110,7 @@
 			"description": "Discover our full range of solar services including installation, maintenance, and consultation."
 		}
 	</script>
+
 </svelte:head>
 
 <Services />

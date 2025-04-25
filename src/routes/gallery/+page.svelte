@@ -47,13 +47,20 @@
 		name="description"
 		content="View the latest solar installations and projects from Daystar Solar, a leading solar energy solutions provider in South India."
 	/>
+	<meta property="og:title" content="Gallery | Daystar Solar" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://daystar.co.in/gallery" />
+	<meta
+		property="og:description"
+		content="Browse our visual portfolio of completed solar installations and projects showcasing the best of solar energy solutions."
+	/>
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
 			"@type": "CollectionPage",
 			"url": "https://daystarsolar.co.in/gallery",
 			"name": "Gallery",
-			"description": "Browse our visual portfolio of completed solar installations and projects."
+			"description": "Browse our visual portfolio of completed solar installations and projects showcasing the best of solar energy solutions."
 		}
 	</script>
 </svelte:head>

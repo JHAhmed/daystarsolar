@@ -107,8 +107,12 @@
 		content="Find answers to frequently asked questions about solar energy, solar power plants, and solar panels from Daystar Solar."
 	/>
 	<meta property="og:title" content="FAQ | Daystar Solar" />
-	<meta property="og:description" content="Find answers to frequently asked questions about solar energy, solar power plants, and solar panels from Daystar Solar."/>
-	<meta property="og:image" content="$lib/assets/meta-home.jpg" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://daystar.co.in/faq" />
+	<meta
+		property="og:description"
+		content="Find answers to frequently asked questions about solar energy, solar power plants, and solar panels from Daystar Solar."
+	/>
 </svelte:head>
 
 <div class="mx-auto max-w-7xl px-4 py-6 md:py-12">
