@@ -133,14 +133,14 @@
 	<title>Calculator | Daystar Solar</title>
 	<meta
 		name="description"
-		content="Estimate your solar savings with our easy-to-use solar ROI calculator."
+		content="Generate a report to estimate your solar savings using our solar calculator."
 	/>
 	<meta property="og:title" content="Calculator | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystar.co.in/calculator" />
 	<meta
 		property="og:description"
-		content="Estimate your solar savings with our easy-to-use solar ROI calculator."
+		content="Generate a report to estimate your solar savings using our solar calculator."
 	/>
 	<meta property="og:image" content="https://daystarsolar.co.in/images/calculator.png" />
 	<script type="application/ld+json">
@@ -150,7 +150,7 @@
 			"url": "https://daystarsolar.co.in/calculator",
 			"name": "Solar Savings Calculator",
 			"applicationCategory": "UtilitiesApplication",
-			"description": "Estimate your solar savings with our easy-to-use solar ROI calculator."
+			"description": "Generate a report to estimate your solar savings using our solar calculator."
 		}
 	</script>
 </svelte:head>

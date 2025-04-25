@@ -73,6 +73,12 @@
 
 		return { src, text, href };
 	});
+
+	let vid;
+
+	function toggle() {
+		vid.paused ? vid.play() : vid.pause();
+	}
 </script>
 
 <svelte:head>
@@ -98,7 +104,6 @@
 		property="og:description"
 		content="Daystar Solar is a leading solar energy solutions provider in South India. We offer solar panels, street lights, and distribution boxes for residential and commercial use."
 	/>
-
 </svelte:head>
 
 <section class="mx-auto px-6 py-6 pb-0 md:px-16 md:py-16 md:pb-0 lg:px-32">
@@ -153,7 +158,7 @@
 		<h2 class="mb-12 text-center text-2xl tracking-[-0.07em] md:text-4xl">
 			What Our Customers Say
 		</h2>
-		<ScrollingReviews/>
+		<ScrollingReviews />
 	</div>
 </section>
 
@@ -288,7 +293,7 @@
 </section>
 
 <section
-	class="mx-auto grid w-full grid-cols-1 gap-8 px-6 py-16 text-sm md:px-16 md:text-lg lg:grid-cols-2 lg:px-32"
+	class="mx-auto grid w-full grid-cols-1 gap-8 px-6 py-8 text-sm md:px-16 md:text-lg lg:grid-cols-2 lg:px-32"
 >
 	<!-- Top Row -->
 	<div
@@ -363,6 +368,25 @@
 			</div>
 		</div>
 	</div>
+</section>
+
+<section class="mx-auto px-4 py-2 md:px-6 md:py-6">
+	<video
+		bind:this={vid}
+		autoplay
+		muted
+		playsinline
+		loop
+		preload="metadata"
+		on:click={toggle}
+		poster="/preview.jpg"
+		class="h-auto cursor-pointer rounded-xl mx-auto object-cover"
+	>
+		<source
+			src="https://res.cloudinary.com/dlq8wuvji/video/upload/v1745575578/Daystar_Projects_Showreel_esvxpw.mp4"
+			type="video/mp4"
+		/>
+	</video>
 </section>
 
 <CTA />
