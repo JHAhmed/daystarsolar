@@ -17,7 +17,7 @@
 	<meta name="robots" content="index, follow" />
 
 	<meta property="og:site_name" content="Daystar Solar" />
-	<meta property="og:image" content="https://daystarsolar.co.in/oghome.png" />
+	<!-- <meta property="og:image" content="https://daystarsolar.co.in/oghome.png" /> -->
 
 	<script
 		defer
