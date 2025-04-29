@@ -15,7 +15,7 @@
 	/>
 	<meta property="og:title" content="Projects | Daystar Solar" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://daystar.co.in/projects" />
+	<meta property="og:url" content="https://daystarsolar.co.in/projects" />
 	<meta
 		property="og:description"
 		content="View the latest solar installations and projects from Daystar Solar, a leading solar energy solutions provider in South India."

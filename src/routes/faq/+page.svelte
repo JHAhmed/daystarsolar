@@ -108,7 +108,7 @@
 	/>
 	<meta property="og:title" content="FAQ | Daystar Solar" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://daystar.co.in/faq" />
+	<meta property="og:url" content="https://daystarsolar.co.in/faq" />
 	<meta
 		property="og:description"
 		content="Find answers to frequently asked questions about solar energy, solar power plants, and solar panels from Daystar Solar."

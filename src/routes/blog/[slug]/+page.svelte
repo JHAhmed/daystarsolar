@@ -25,14 +25,14 @@
 	<meta name="description" content={post.summary} />
 	<meta property="og:title" content={post.title} />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content={`https://daystar.co.in/blog/${post.slug}`} />
+	<meta property="og:url" content={`https://daystarsolar.co.in/blog/${post.slug}`} />
 	<meta property="og:description" content={post.summary} />
 	<script type="application/ld+json">
 		{`
 			{
 				"@context": "https://schema.org",
 				"@type": "BlogPosting",
-				"url": "https://daystar.co.in/blog/${post.slug}",
+				"url": "https://daystarsolar.co.in/blog/${post.slug}",
 				"name": "${post.title}",
 				"description": "${post.summary}"
 			}

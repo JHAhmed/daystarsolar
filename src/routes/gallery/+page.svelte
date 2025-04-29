@@ -49,7 +49,7 @@
 	/>
 	<meta property="og:title" content="Gallery | Daystar Solar" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://daystar.co.in/gallery" />
+	<meta property="og:url" content="https://daystarsolar.co.in/gallery" />
 	<meta
 		property="og:description"
 		content="Browse our visual portfolio of completed solar installations and projects showcasing the best of solar energy solutions."

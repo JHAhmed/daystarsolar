@@ -137,7 +137,7 @@
 	/>
 	<meta property="og:title" content="Calculator | Daystar Solar" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://daystar.co.in/calculator" />
+	<meta property="og:url" content="https://daystarsolar.co.in/calculator" />
 	<meta
 		property="og:description"
 		content="Generate a report to estimate your solar savings using our solar calculator."

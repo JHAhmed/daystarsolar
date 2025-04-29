@@ -152,7 +152,7 @@
 	/>
 	<meta property="og:title" content="Contact Us | Daystar Solar" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://daystar.co.in/contact" />
+	<meta property="og:url" content="https://daystarsolar.co.in/contact" />
 	<meta
 		property="og:description"
 		content="Get in touch with Daystar Solar for all your solar energy needs. Contact us for procurement, admin, service, and sales queries."

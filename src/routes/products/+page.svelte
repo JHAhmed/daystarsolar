@@ -39,7 +39,7 @@
 	/>
 	<meta property="og:title" content="Products | Daystar Solar" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://daystar.co.in/products" />
+	<meta property="og:url" content="https://daystarsolar.co.in/products" />
 	<meta
 		property="og:description"
 		content="Daystar Solar offers a wide range of solar products including street lights, distribution boxes, and solar panels for residential and commercial use."

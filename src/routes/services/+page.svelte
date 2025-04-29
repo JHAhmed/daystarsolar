@@ -96,7 +96,7 @@
 	/>
 	<meta property="og:title" content="Servies | Daystar Solar" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://daystar.co.in/services" />
+	<meta property="og:url" content="https://daystarsolar.co.in/services" />
 	<meta
 		property="og:description"
 		content="Daystar Solar offers a wide range of solar services including consultation, installation, and maintenance for residential and commercial clients."

@@ -23,7 +23,7 @@
 	<meta name="description" content={post.summary} />
 	<meta property="og:title" content={post.title} />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content={`https://daystar.co.in/projects/${post.slug}`} />
+	<meta property="og:url" content={`https://daystarsolar.co.in/projects/${post.slug}`} />
 	<meta property="og:description" content={post.summary} />
 	<script type="application/ld+json">
 		{`
