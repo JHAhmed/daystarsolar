@@ -15,6 +15,8 @@
 	/>
 	<meta property="og:title" content="Projects | Daystar Solar" />
 	<meta property="og:type" content="website" />
+	<meta property="og:image" content="https://daystarsolar.co.in/ogprojects.png" />
+
 	<meta property="og:url" content="https://daystarsolar.co.in/projects" />
 	<meta
 		property="og:description"

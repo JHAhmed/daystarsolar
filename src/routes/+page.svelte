@@ -99,6 +99,7 @@
 
 	<meta property="og:title" content="Daystar Solar" />
 	<meta property="og:type" content="website" />
+	<meta property="og:image" content="https://daystarsolar.co.in/oghome.png" />
 	<meta property="og:url" content="https://daystarsolar.co.in/" />
 	<meta
 		property="og:description"

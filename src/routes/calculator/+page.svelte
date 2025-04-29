@@ -138,11 +138,12 @@
 	<meta property="og:title" content="Calculator | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/calculator" />
+	<meta property="og:image" content="https://daystarsolar.co.in/ogcalculator.png" />
+
 	<meta
 		property="og:description"
 		content="Generate a report to estimate your solar savings using our solar calculator."
 	/>
-	<meta property="og:image" content="https://daystarsolar.co.in/images/calculator.png" />
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
