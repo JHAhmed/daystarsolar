@@ -198,7 +198,7 @@ export async function POST({ request, fetch }) {
 		await sleep(500);
 		const captchaText = await solveCaptcha(page, openai);
 
-        if (!ebRegNumber) {
+        // if (!ebRegNumber) {
             console.log('EB Reg Number not provided, extracting from TNEB...');
 
             const response = await fetch(`/api/get-number?cno=${consumerNumber}`);
@@ -210,7 +210,7 @@ export async function POST({ request, fetch }) {
     
             const data = await response.json();
             ebRegNumber = data.ebRegNumber || ebRegNumber;
-        }
+        // }
 
 		// --- Form Filling and Submission ---
 		await page.type('#serviceno', consumerNumber);

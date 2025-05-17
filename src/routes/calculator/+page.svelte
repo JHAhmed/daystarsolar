@@ -42,10 +42,10 @@
 		// ebRegNumber = '9500044487';
 
 		// Test 2
-		fullName = 'Subramaniya';
-		phoneNumber = '9841106264';
-		consumerNumber = '0107301616';
-		ebRegNumber = '7871925242'; // actual number
+		fullName = 'Hariharan Test';
+		phoneNumber = '9150755731';
+		consumerNumber = '09259018612';
+		ebRegNumber = '9150755731'; // actual number
 	}
 
 	async function validateForm() {
@@ -172,7 +172,7 @@
 				class="h-12 w-12 animate-spin rounded-full border-4 border-orange-500 border-t-transparent"
 			></div>
 
-			<p class="mt-4 font-medium">Your report is being generated...</p>
+			<p class="mt-4 font-medium text-center">Your report is being generated... <br> This process can take 10-20 seconds</p>
 
 			<p class="text-center text-sm text-gray-600">
 				Fun fact: {funFacts[Math.floor(Math.random() * 10)]}
@@ -195,7 +195,7 @@
 		</div>
 
 		<div class="flex w-full space-x-4">
-			<div class="w-full" name="consumer-number">
+			<div class="w-1/2 pr-2" name="consumer-number">
 				<CustomInput
 					maxlength={15}
 					bind:value={consumerNumber}
@@ -211,7 +211,7 @@
 					>
 				</label>
 			</div>
-			<div class="w-full" name="eg-reg-number">
+			<!-- <div class="w-full" name="eg-reg-number">
 				<CustomInput
 					bind:value={ebRegNumber}
 					label="TNEB Registered Phone Number"
@@ -221,7 +221,7 @@
 				<label for="eg-reg-number" class="my-1 text-xs font-medium leading-none text-gray-700"
 					>Enter for faster report generation!</label
 				>
-			</div>
+			</div> -->
 		</div>
 
 		<!-- <div class="flex w-full space-x-4">
