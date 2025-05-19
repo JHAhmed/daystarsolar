@@ -5,7 +5,7 @@ const config = {
 	kit: {
 		// inlineStyleThreshold: Infinity,
 		adapter: adapter({
-			maxDuration: 30,
+			maxDuration: 55,
 		  }),
 		alias: {
 			$components: 'src/lib/components',

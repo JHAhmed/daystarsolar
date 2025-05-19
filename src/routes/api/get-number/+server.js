@@ -130,7 +130,7 @@ export async function GET({ url, request }) {
 
 		await page.goto(TNEB_NUMBER_URL, { waitUntil: 'networkidle0' });
 
-		await sleep(1000);
+		await sleep(500);
 
 		await page.keyboard.press('Enter');
 		await sleep(500);
