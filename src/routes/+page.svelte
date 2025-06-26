@@ -16,6 +16,7 @@
 	} from '$lib';
 
 	import { animate, inView } from 'motion';
+	import { goto } from '$app/navigation';
 
 	let calculator;
 
@@ -115,8 +116,10 @@
 					Effective <span class="text-orange-400">solar</span> energy made simple
 				</h1>
 
-				<HeroButton button={true} action={scrollToView} />
-			</div>
+				<div class="space-y-2">
+					<HeroButton button={true} action={scrollToView} />
+					<HeroButton button={true} text="View in AR" alt={true} href="/ar2" />
+				</div></div>
 			<div class="my-8 max-w-md border-l-4 bg-gray-50 p-6 lg:mb-12 lg:mt-24">
 				<h6 class="mb-4 text-sm font-medium md:text-base">What We Do</h6>
 				<p class="text-sm text-gray-600 md:text-base">

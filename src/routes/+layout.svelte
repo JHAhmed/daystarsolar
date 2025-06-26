@@ -63,7 +63,8 @@
 	>
 </svelte:head>
 
-{#if $page.url.pathname == '/report-view' || $page.url.pathname == '/ar'}
+<!-- {#if $page.url.pathname == '/report-view' || $page.url.pathname == '/ar'} -->
+{#if $page.url.pathname == '/report-view'}
 	<div class="">
 		{@render children()}
 	</div>

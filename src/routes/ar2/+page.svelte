@@ -1,54 +1,64 @@
 <script>
-	import model from '$lib/solar_panel.glb';
-	import iosmodel from '$lib/solar_panel.glb';
-	import { SmartCubeIcon } from '$icons';
+	import { onMount } from 'svelte';
+	// import modelUrl from '$lib/solar_panel.glb';
+	import modelUrl from '$lib/solar_module.glb';
+
+	let modelViewerLoaded = false;
+
+	onMount(async () => {
+		await import('@google/model-viewer');
+		modelViewerLoaded = true;
+	});
 </script>
 
-<svelte:head>
-	<script
-		type="module"
-		src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-	></script>
-</svelte:head>
-
-<!-- ar-scale="fixed" -->
-<model-viewer
-	src={model}
-	ios-src={iosmodel}
-	ar
-	ar-modes="scene-viewer quick-look webxr"
-	camera-controls
-	shadow-intensity="1"
-	environment-image="neutral"
-	style="width: 100%; height: 400px;"
-	alt="3D model of solar panel"
-	xr-environment
-	auto-rotate
-	interaction-prompt="none"
->
-	<!-- Fallback content -->
-	<!-- <div slot="ar-button">👆 Tap to place solar panel in AR</div> -->
-
-	<button
-		slot="ar-button"
-		class="mx-auto flex items-center justify-center space-x-4 rounded-full border bg-white px-4 text-sm leading-9 text-[#4285f4] drop-shadow-md"
+{#if modelViewerLoaded}
+	<model-viewer
+		src={modelUrl}
+		ios-src=""
+		alt="Interactive 3D model of a solar panel"
+		ar
+		ar-modes="webxr scene-viewer quick-look"
+		ar-placement="floor"
+		camera-controls
+		touch-action="pan-y"
+		shadow-intensity="1"
+		style="width: 100%; height: 400px; border-radius: 8px;"
 	>
-		<span class="mr-2"><SmartCubeIcon /></span>
-		View in AR
-	</button>
-</model-viewer>
+		<button
+			slot="ar-button"
+			style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; "
+		>
+			Activate AR 🤳
+		</button>
 
-<!-- <button
-	slot="ar-button"
-	class="absolute bottom-[132px] left-1/2 h-9 -translate-x-1/2 transform rounded-full border border-[#DADCE0] bg-white py-0 pl-10 pr-4 font-sans text-sm leading-9 text-[#4285f4]"
->
-	View in AR
-</button> -->
+		<div slot="progress-bar" class="progress-bar">
+			<div class="update-bar"></div>
+		</div>
+	</model-viewer>
+{:else}
+	<div
+		style="width: 100%; height: 400px; display: flex; justify-content: center; align-items: center; background-color: #eee; border-radius: 8px;"
+	>
+		Loading 3D Viewer...
+	</div>
+{/if}
 
-<!-- <button
-	slot="ar-button"
-	class="flex items-center justify-center space-x-4 rounded-full border drop-shadow-md bg-white px-4 mx-auto text-sm leading-9 text-[#4285f4]"
->
-	<span class="mr-2"><SmartCubeIcon/></span>
-	View in AR
-</button> -->
+<style>
+	.progress-bar {
+		display: block;
+		width: 100%;
+		height: 10px;
+		max-height: 10px;
+		overflow: hidden;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+
+	.update-bar {
+		background-color: dodgerblue;
+		width: 0%;
+		height: 10px;
+	}
+</style>

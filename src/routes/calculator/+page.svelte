@@ -166,15 +166,15 @@
 {#if loading}
 	<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm">
 		<div
-			class="flex w-1/4 flex-col items-center justify-center gap-2 rounded-xl border-2 border-black bg-white p-6"
+			class="flex lg:w-1/4 mx-8 flex-col items-center justify-center gap-2 rounded-xl border-2 border-black bg-white p-6"
 		>
 			<div
 				class="h-12 w-12 animate-spin rounded-full border-4 border-orange-500 border-t-transparent"
 			></div>
 
-			<p class="mt-4 font-medium text-center">Your report is being generated... <br> This process can take 10-20 seconds</p>
+			<p class="mt-4 font-medium  text-sm md:text-base text-center">Your report is being generated... <br> This process can take 10-20 seconds</p>
 
-			<p class="text-center text-sm text-gray-600">
+			<p class="text-center text-xs md:text-sm text-gray-600">
 				Fun fact: {funFacts[Math.floor(Math.random() * 10)]}
 			</p>
 		</div>
