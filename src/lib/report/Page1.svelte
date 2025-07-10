@@ -73,6 +73,13 @@
 	let currentDate = formatDate(new Date());
 
 	console.log(data)
+
+	let avgConsumption = data.reduce((acc, val) => acc + val.consumptionUnits, 0) / data.length || 0;
+	let avgKWHr = (avgConsumption / 60 / 4) * 2; // Adjusted for the average KWHr calculation
+
+	let formattedAvgKWHr = Math.ceil(avgKWHr).toFixed(0);
+
+
 </script>
 
 <div
@@ -90,6 +97,13 @@
 	</p>
 	<p class="text-center text-5xl font-light">
 		<strong class="text-orange-400">{formattedAmount}</strong>
+	</p>
+	<p class=" text-base">
+		And your requirement for solar is,
+		<!-- <strong class="text-orange-400">{formattedAmount}</strong> -->
+	</p>
+	<p class="text-center text-3xl font-medium">
+		<strong class="text-slate-800">{formattedAvgKWHr} kW</strong>
 	</p>
 	<p class="">
 		Please find enclosed with this letter a case study report of your premises’ energy consumption.
