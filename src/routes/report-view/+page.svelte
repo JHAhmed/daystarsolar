@@ -36,7 +36,7 @@
 	<title>Solar Energy Report</title>
 </svelte:head>
 
-<div class="pdf-container">
+<div class="pdf-container font-report">
 	<Page1 data={formattedData} name={userName} />
 	<Page2 data={formattedData} />
 	<Page3 data={formattedData} />
