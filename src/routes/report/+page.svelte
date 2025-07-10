@@ -9,6 +9,7 @@
 	export let data;
 	let userName = data.report.name;
 	let reportId = data.report.id;
+	const reportType = data.report.type;
 	data = data.report.data;
 
 	let isGeneratingPDF = false;
@@ -82,8 +83,8 @@
 </div>
 
 <div class="font-report">
-	<Page1 bind:reportContainer1 data={formattedData} name={userName} />
-	<Page2 bind:reportContainer2 data={formattedData} />
-	<Page3 bind:reportContainer3 data={formattedData} />
-	<Page4 bind:reportContainer4 data={formattedData} />
+	<Page1 bind:reportContainer1 data={formattedData} {reportType} name={userName} />
+	<Page2 bind:reportContainer2 data={formattedData} {reportType} />
+	<Page3 bind:reportContainer3 data={formattedData} {reportType} />
+	<Page4 bind:reportContainer4 data={formattedData} {reportType} />
 </div>

@@ -15,7 +15,7 @@
 	});
 
 	let avgConsumption = data.reduce((acc, val) => acc + val.consumptionUnits, 0) / data.length || 0;
-	let avgKWHr = avgConsumption / 60 / 4;
+	let avgKWHr = (avgConsumption / 60 / 4) * 2; // Adjusted for the average KWHr calculation
 </script>
 
 <div

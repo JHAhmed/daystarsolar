@@ -1,64 +1,70 @@
+<!-- src/routes/ar-js/+page.svelte -->
 <script>
-	import { onMount } from 'svelte';
-	// import modelUrl from '$lib/solar_panel.glb';
-	import modelUrl from '$lib/solar_module.glb';
+	import model from '$lib/solar.glb';
 
-	let modelViewerLoaded = false;
+	let libsReady = false;   // we load A-Frame & AR.js only once
+	let sceneVisible = false;
 
-	onMount(async () => {
-		await import('@google/model-viewer');
-		modelViewerLoaded = true;
-	});
+	/* ----------------------------------------------------------- */
+	/*  Lazy-loader for external scripts so that SSR never fails   */
+	/* ----------------------------------------------------------- */
+	function loadScript(src) {
+		return new Promise((resolve, reject) => {
+			// don’t load twice
+			if (document.querySelector(`script[src="${src}"]`)) return resolve();
+
+			const el = document.createElement('script');
+			el.src = src;
+			el.onload = () => resolve();
+			el.onerror = () => reject();
+			document.head.appendChild(el);
+		});
+	}
+
+	/* ----------------------------------------------------------- */
+	/*  Called when the user presses the button                    */
+	/* ----------------------------------------------------------- */
+	async function openCamera() {
+		if (!libsReady) {
+			// 1. core A-Frame
+			await loadScript('https://aframe.io/releases/1.5.0/aframe.min.js');
+			// 2. A-Frame build of AR.js (marker + location support)
+			await loadScript(
+				'https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'
+			);
+			libsReady = true;
+		}
+		sceneVisible = true;
+	}
 </script>
 
-{#if modelViewerLoaded}
-	<model-viewer
-		src={modelUrl}
-		ios-src=""
-		alt="Interactive 3D model of a solar panel"
-		ar
-		ar-modes="webxr scene-viewer quick-look"
-		ar-placement="floor"
-		camera-controls
-		touch-action="pan-y"
-		shadow-intensity="1"
-		style="width: 100%; height: 400px; border-radius: 8px;"
-	>
-		<button
-			slot="ar-button"
-			style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; "
-		>
-			Activate AR 🤳
-		</button>
-
-		<div slot="progress-bar" class="progress-bar">
-			<div class="update-bar"></div>
-		</div>
-	</model-viewer>
-{:else}
-	<div
-		style="width: 100%; height: 400px; display: flex; justify-content: center; align-items: center; background-color: #eee; border-radius: 8px;"
-	>
-		Loading 3D Viewer...
-	</div>
-{/if}
-
 <style>
-	.progress-bar {
-		display: block;
-		width: 100%;
-		height: 10px;
-		max-height: 10px;
-		overflow: hidden;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		background-color: rgba(0, 0, 0, 0.1);
-	}
-
-	.update-bar {
-		background-color: dodgerblue;
-		width: 0%;
-		height: 10px;
+	/* make the camera feed cover the whole viewport */
+	a-scene {
+		position: fixed;
+		inset: 0;
 	}
 </style>
+
+<button disabled={sceneVisible} on:click={openCamera}>
+	Open camera
+</button>
+
+{#if sceneVisible}
+	<!-- Classic AR.js marker-based scene (cf. official example[5]) -->
+	<a-scene
+		embedded
+		vr-mode-ui="enabled: false"
+		renderer="logarithmicDepthBuffer: true"
+		arjs="sourceType: webcam; debugUIEnabled: false"
+	>
+		<!-- Replace 'hiro' with your own .patt if you need to -->
+		<a-marker preset="hiro">
+			<!-- Import path emitted by Vite is injected here -->
+			<!-- Loading a glTF/GLB in AR.js is identical to A-Frame usage[4] -->
+			<a-entity gltf-model={model} scale="0.2 0.2 0.2"></a-entity>
+		</a-marker>
+
+		<a-entity camera></a-entity>
+	</a-scene>
+{/if}

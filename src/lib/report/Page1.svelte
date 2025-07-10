@@ -7,6 +7,8 @@
 
 	export let data = [];
 	
+	export let reportType = "domestic"; // Default to domestic if not provided
+
 	export let name = "there!";
 
 	let chartCanvas1;
@@ -69,6 +71,8 @@
 	}
 
 	let currentDate = formatDate(new Date());
+
+	console.log(data)
 </script>
 
 <div
@@ -95,7 +99,7 @@
 	</p>
 
 	<p class="">
-		Below is a chart detailing your consumption over the last 24 months, in bimonthly cycles.
+		Below is a chart detailing your consumption over the last 24 months, in {reportType == "domestic" ? "bimonthly" : "monthly"} cycles.
 	</p>
 	<canvas bind:this={chartCanvas1} id="chart" class=""></canvas>
 
