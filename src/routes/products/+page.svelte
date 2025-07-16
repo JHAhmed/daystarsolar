@@ -67,7 +67,7 @@
 	<div class="grid gap-6 md:grid-cols-2">
 		{#each products as product, i}
 			<div
-				use:animateIn={{ blur: 8, delay: i / 4 }}
+				use:animateIn={{ blur: 8, delay: i / 4, inView: false }}
 				class="group relative overflow-hidden rounded-2xl opacity-0"
 			>
 				<div class="aspect-[4/3] sm:aspect-video lg:aspect-[3/2]">

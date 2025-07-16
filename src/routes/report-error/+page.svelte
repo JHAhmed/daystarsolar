@@ -1,5 +1,8 @@
 <script>
 	import { ArrowIcon } from '$icons';
+
+	let data = $props(); 
+	console.log(data.data.solar);
 </script>
 
 <svelte:head>
@@ -7,11 +10,20 @@
 </svelte:head>
 
 <div class="flex flex-col h-screen items-center justify-center space-y-8 p-4 text-center">
-	<h1 class="text-3xl md:text-5xl font-light text-black">
-		Oops! <span class="text-black">Report generation failed</span>.
+	<h1 class="text-3xl md:text-5xl font-light text-black max-w-5xl">
+		{#if data.data.solar}
+			Good news! <span class="text-black">You already have a solar net metering service</span>.
+		{:else}
+			Oops! <span class="text-black">Report generation failed</span>.
+		{/if}
+		
 	</h1>
 	<p class="text-gray-600 max-w-md">
-		Data not found for report. But we’ve got your back, reach out to us! 
+		{#if data.data.solar}
+			It seems you already have a solar net metering service. Contact us for further assistance.
+		{:else}
+			Data not found for report. But we’ve got your back, reach out to us! 
+		{/if}
 	</p>
 	<a
 		href="contact/"

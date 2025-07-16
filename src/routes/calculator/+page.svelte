@@ -103,9 +103,12 @@
 
 			if (!isNaN(data.id)) {
 				goto(`/report?id=${data.id}`);
+			} else if (data.solar) {
+				goto('/report-error?solar=true');
 			} else {
 				goto('/report-error');
 			}
+
 		} catch (error) {
 			console.error('Error fetching bill data:', error);
 			errorMessage = 'Failed to retrieve bill data. Please try again.';

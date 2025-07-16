@@ -90,6 +90,34 @@ async function solveCaptcha(page, openai) {
 	}
 }
 
+async function checkExistingSolar(page) {
+
+	const tableSelector = 'table';
+	try {
+		await page.waitForSelector(tableSelector, { visible: true, timeout: 30000 });
+
+		const tables = await page.$$(tableSelector);
+		const targetTable = tables[5];
+
+		const isSolar = await page.evaluate((table) => {
+			if (!table) return false;
+			const rows = Array.from(table.querySelectorAll('tr'));
+			return rows.some((row) => {
+				const cells = Array.from(row.querySelectorAll('td'));
+				return cells.some((cell) => cell.textContent.includes("SOLAR NET METERING SERVICE"));
+			});
+		}, targetTable);
+
+		return isSolar;
+
+	} catch (err) {
+		console.error('Error during bill data extraction:', err);
+		throw new Error(`Failed to extract bill data: ${err.message}`);
+	}
+
+
+}
+
 async function extractBillData(page) {
 
 	// const fullName = await page.$eval("table td", el => {
@@ -240,6 +268,20 @@ export async function POST({ request, fetch }) {
 			}
 		}
 
+		const isSolar = await checkExistingSolar(page);
+		if (isSolar) {
+			console.log('Solar Net Metering Service found. No further action needed.');
+
+			const { data: updateData, error: updateError } = await supabase
+				.from('reports') // Ensure 'reports' table exists with 'name' (text) and 'data' (jsonb) columns
+				.update({ data: { message: 'Solar Net Metering Service found. No further action needed.' } })
+				.eq('id', id)
+				.single();
+
+			return json({ message: 'Solar Net Metering Service found. No further action needed.', solar: true }, { status: 200 });
+		}
+
+
 		const scrapedData = await extractBillData(page);
 
 		if (scrapedData.length === 0) {
@@ -250,7 +292,7 @@ export async function POST({ request, fetch }) {
 
 		// --- Database Storage ---
 		console.log('Saving data to Supabase...');
-		console.log('Saving initial data to Supabase...');
+		console.log('Saving secondary data to Supabase...');
 		const { data: updateData, error: updateError } = await supabase
 			.from('reports') // Ensure 'reports' table exists with 'name' (text) and 'data' (jsonb) columns
 			.update({ data: scrapedData })
