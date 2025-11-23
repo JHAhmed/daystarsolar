@@ -20,12 +20,12 @@
 
 	let calculator;
 
-const usps = [
-        "₹78k Subsidy Support",
-        "Free Site Inspection",
-        "0% EMI Options",
-        "25-Year Panel Warranty"
-    ];
+	const usps = [
+		'₹78k Subsidy Support',
+		'Free Site Inspection',
+		'0% EMI Options',
+		'25-Year Panel Warranty'
+	];
 
 	const stats = [
 		{ number: '1000', label: 'Customers Served' },
@@ -116,13 +116,142 @@ const usps = [
 			"@type": "LocalBusiness",
 			"name": "Daystar Solar",
 			"description": "Solar power plant integrator in Chennai",
+			"image": "https://daystarsolar.co.in/oghome.png",
+			"url": "https://daystarsolar.co.in/",
+			"priceRange": "₹₹",
 			"address": {
 				"@type": "PostalAddress",
 				"streetAddress": "H-5, Second floor, Third avenue, Anna nagar east",
 				"addressLocality": "Chennai",
-				"postalCode": "600102"
+				"postalCode": "600102",
+				"addressCountry": "IN"
 			},
-			"telephone": "+91 91766 68617"
+			"telephone": "+91 91766 68617",
+			"openingHoursSpecification": {
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+				"opens": "09:30",
+				"closes": "18:30"
+			},
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "4.9",
+				"reviewCount": "120"
+			},
+			"review": [
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Abdul Gani"
+					},
+					"reviewBody": "I had a great experience with Daystar for my home solar installation. The team was professional, the process was smooth, and the system is working perfectly. Highly recommend them for both home and commercial solar solutions.",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"url": "https://maps.app.goo.gl/FMAS3THVZiBGdDpy7"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Ramesh Kothandapany"
+					},
+					"reviewBody": "I have installed 3.2 kv capacity solar panels through Daystar Solar team. They have provided good support in inspecting, recommending appropriate installation design, completed the core installation process in 2 to 3 days, and taken care of the end to end process to go via Surya Ghar scheme.",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"url": "https://maps.app.goo.gl/Y7d3TS5oRV3grdsD9"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Bhuvaneshwar C"
+					},
+					"reviewBody": "I had a wonderful experience with Daystar for my solar installation at home. The staff was highly professional, the process was effortless, and the system is running smoothly. I definitely recommend them for both residential and commercial solar needs.",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"url": "https://maps.app.goo.gl/j3aucsbyhs9GDVxNA"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Sujith D"
+					},
+					"reviewBody": "Perfect in everything, especially competitive in costing. Their service is top notch. Genuine people. Actually I thought of adding solar for me and my parents, but by looking at the EB bill, they suggested to take solar only for me (generally no one does this). I was impressed by this behaviour.",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"url": "https://maps.app.goo.gl/jJjuFT6JXm6t5CVv7"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Pradap"
+					},
+					"reviewBody": "I have installed a 3 kW plant from Daystar Solar and was satisfied with their technical expertise and customer support. Keep up the good work.",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"url": "https://maps.app.goo.gl/XuVuwXmeNbirBbXbA"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Lokesh T M"
+					},
+					"reviewBody": "Installation of 3 kW done by them was the best in standards and I got the subsidy of 78k via PM Surya Ghar scheme. Recommending the seller.",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"url": "https://maps.app.goo.gl/siikLWwVQqgzgEN17"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Venki Abi"
+					},
+					"reviewBody": "I have installed a 3.3 kVA solar panel at my home. Daystar team from the beginning provided very good service and very good support and follow up till the subsidy was credited.",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"url": "https://maps.app.goo.gl/95o7GHkHYEZRko9r9"
+				},
+				{
+					"@type": "Review",
+					"author": {
+						"@type": "Person",
+						"name": "Arumugam K"
+					},
+					"reviewBody": "Technically strong and clear communication to customers with very precise information about panels and customer needs. Great customer support, timely completion of all tasks and follow-ups with all departments for the completion. Highly recommended.",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": "5",
+						"bestRating": "5"
+					},
+					"url": "https://maps.app.goo.gl/BGhJd65bqhr7abqy7"
+				}
+			]
 		}
 	</script>
 

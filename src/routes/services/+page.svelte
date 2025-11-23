@@ -89,12 +89,12 @@
 </script>
 
 <svelte:head>
-	<title>Services | Daystar Solar</title>
+	<title>Solar Installation & Maintenance Services Chennai | Daystar Solar</title>
 	<meta
 		name="description"
 		content="Daystar Solar offers a wide range of solar services including consultation, installation, and maintenance for residential and commercial clients."
 	/>
-	<meta property="og:title" content="Servies | Daystar Solar" />
+	<meta property="og:title" content="Solar Installation & Maintenance Services Chennai | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/services" />
 	<meta

@@ -38,9 +38,8 @@
 		<div class="items-left flex h-full w-full flex-col px-4 text-center lg:text-left">
 			<div class="items-start flex grow flex-col justify-center md:items-center">
 				<p class="text-md max-w-md font-light text-white lg:text-left text-center mx-auto">
-					<span class="font-normal">Daystar Solar</span> was formed with the intention of consulting;
-					procuring, supplying and installing solar power plants for commercial and domestic use.
-				</p>
+    <span class="font-normal">Daystar Solar</span> is Chennai's premier solar integrator, delivering sustainable energy solutions for homes and businesses since 2012. We partner with global leaders to ensure quality and reliability.
+</p>
 			</div>
 			<p class="my-4 hidden text-xs text-gray-500 md:block">
 				© 2012 - 2025 Daystar Solar • All rights reserved

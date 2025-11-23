@@ -33,12 +33,12 @@
 </script>
 
 <svelte:head>
-	<title>About Us | Daystar Solar</title>
+	<title>About Daystar Solar | Top Solar Integrator in Chennai</title>
 	<meta
 		name="description"
 		content="Daystar Solar is a leading solar energy solutions provider in South India. We offer solar panels, street lights, and distribution boxes for residential and commercial use."
 	/>
-	<meta property="og:title" content="About Us | Daystar Solar" />
+	<meta property="og:title" content="About Daystar Solar | Top Solar Integrator in Chennai" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/about" />
 	<meta
