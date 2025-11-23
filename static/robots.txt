@@ -6,3 +6,5 @@ Disallow: /*.js$
 Disallow: /*.json
 Disallow: /wp-*
 Disallow: /*.php$
+
+Sitemap: https://daystarsolar.co.in/sitemap.xml

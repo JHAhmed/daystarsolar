@@ -1,4 +1,5 @@
 import adapter from '@sveltejs/adapter-vercel';
+import { enhancedImages } from '@sveltejs/enhanced-img';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -14,6 +15,6 @@ const config = {
 			$report: 'src/lib/report',
 		},
 	},
-	preprocess: vitePreprocess(),
+	preprocess: [enhancedImages(), vitePreprocess()],
 };
 export default config;

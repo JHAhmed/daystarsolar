@@ -141,7 +141,8 @@
 		window.open(`mailto:${link}`, '_blank');
 	}
 
-	let phoneNumbers = ['17', '32', '45', '50', '51', '57', '64'];
+	// let phoneNumbers = ['17', '32', '45', '50', '51', '57', '64'];
+	let phoneNumbers = ['17', '32'];
 </script>
 
 <svelte:head>

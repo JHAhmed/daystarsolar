@@ -113,6 +113,37 @@
 
 </svelte:head>
 
+
+<section class="mx-auto max-w-7xl px-4 pt-16 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl font-semibold font-sans tracking-tight text-gray-900 sm:text-5xl">
+        Complete Solar Solutions in Chennai
+    </h1>
+    <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+        From cozy homes to large factories, we provide end-to-end solar execution.
+    </p>
+    
+    <div class="mt-12 grid gap-8 md:grid-cols-3 text-left">
+        <div class="bg-gray-50 p-6 rounded-2xl">
+            <h2 class="text-xl font-semibold font-sans mb-3 text-orange-500">Residential Rooftop Solar</h2>
+            <p class="text-gray-600 text-sm leading-relaxed">
+                Save up to 90% on electricity bills with our <strong>rooftop solar installation</strong> services. We specialize in 3kW to 10kW systems ideal for villas and apartments in Chennai, fully covered under the <strong>PM Surya Ghar Scheme</strong>.
+            </p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-2xl">
+            <h2 class="text-xl font-semibold font-sans mb-3 text-orange-500">Commercial Solar Systems</h2>
+            <p class="text-gray-600 text-sm leading-relaxed">
+                Reduce your operational costs with our high-efficiency <strong>commercial solar systems</strong>. Perfect for schools, hospitals, and office buildings looking for sustainable power and tax depreciation benefits.
+            </p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-2xl">
+            <h2 class="text-xl font-bold mb-3 text-orange-500">Industrial Solar Projects</h2>
+            <p class="text-gray-600 text-sm leading-relaxed">
+                We design rugged <strong>industrial solar solutions</strong> for factories and warehouses. Our on-grid and hybrid systems ensure power continuity and rapid ROI for high-consumption industries.
+            </p>
+        </div>
+    </div>
+</section>
+
 <Services />
 
 <ServicesCards />

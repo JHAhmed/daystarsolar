@@ -9,10 +9,10 @@
 
 <!-- svelte-ignore a11y_missing_attribute -->
 <svelte:head>
-	<title>Daystar Solar</title>
+	<title>Solar Panel Installation Chennai | Daystar Solar - 13+ Years Experience</title>
 	<meta
 		name="description"
-		content="Daystar Solar is a leading solar energy solutions provider in South India. We offer solar panels, street lights, and distribution boxes for residential and commercial use."
+		content="Daystar Solar - Leading solar panel installer in Chennai since 2012. We provide residential & commercial solar solutions with Panasonic panels, government subsidy support, and 20-year warranties."
 	/>
 	<meta name="robots" content="index, follow" />
 
