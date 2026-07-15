@@ -149,7 +149,7 @@
 	<title>Contact Us | Daystar Solar</title>
 	<meta
 		name="description"
-		content="Get in touch with Daystar Solar for all your solar energy needs. Contact us for procurement, admin, service, and sales queries."
+		content="We're here to help - get expert solar advice tailored to your needs."
 	/>
 	<meta property="og:title" content="Contact Us | Daystar Solar" />
 	<meta property="og:type" content="website" />
@@ -164,7 +164,7 @@
 			"@type": "ContactPage",
 			"url": "https://daystarsolar.co.in/contact",
 			"name": "Contact Us",
-			"description": "Get in touch with Daystar Solar for inquiries, installations, or support."
+			"description": "Get in touch with Daystar Solar for all your solar energy needs. Contact us for procurement, admin, service, and sales queries."
 		}
 	</script>
 </svelte:head>

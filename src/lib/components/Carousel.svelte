@@ -12,11 +12,11 @@
 	];
 
 	heroProjects = heroProjects.sort(() => .5 - Math.random());
-	
+
 	const breakpoints = { md: 768, lg: 1024 };
 	const itemsPerBreakpoint = { default: 1, md: 2, lg: 3 };
-	const transitionDuration = 500; // ms
-	const intervalDuration = 3000; // ms
+	const transitionDuration = 500;
+	const intervalDuration = 3000;
 	const totalItems = heroProjects.length;
 
 	let currentIndex = 0;
@@ -40,7 +40,6 @@
 
 	$: if (browser && visibleItems !== prevVisibleItems) {
 		prevVisibleItems = visibleItems;
-
 		if (trackElement) {
 			currentIndex = 0;
 			trackElement.style.transition = 'none';
@@ -50,18 +49,15 @@
 
 	function advanceCarousel() {
 		if (!trackElement || totalItems === 0 || visibleItems === 0) return;
-
 		currentIndex++;
-
 		trackElement.style.transition = `transform ${transitionDuration}ms ease-in-out`;
 		trackElement.style.transform = `translateX(-${currentIndex * itemWidthPercent}%)`;
-
 		if (currentIndex === totalItems) {
 			setTimeout(() => {
 				if (trackElement) {
 					trackElement.style.transition = 'none';
 					currentIndex = 0;
-					trackElement.style.transform = 'translateX(0%)';
+					trackElement.style.transform = `translateX(0%)`;
 				}
 			}, transitionDuration);
 		}
@@ -72,12 +68,10 @@
 			windowWidth = window.innerWidth;
 			intervalId = setInterval(advanceCarousel, intervalDuration);
 		}
-
 		return () => {
 			if (intervalId) clearInterval(intervalId);
 		};
 	});
-
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -86,41 +80,37 @@
 	<div class="flex h-full" bind:this={trackElement}>
 		{#each duplicatedProjects as project, i (project.text + i)}
 			<div class="h-full flex-shrink-0 px-2" style={`width: ${itemWidthPercent}%`}>
-				<figure class="motion-preset-focus relative my-2 h-full motion-duration-1000 md:my-4">
+				<figure class="relative my-2 h-full md:my-4">
 					{#if i % 2 === 0}
 						<a
 							href={project.href}
-							class="absolute right-1 top-1 z-10 hidden transform rounded-lg border bg-white p-3 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:translate-x-1 lg:block"
-							aria-label={`View project ${project.text}`}
-						>
+							class="absolute right-3 top-3 z-10 hidden h-9 w-9 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm transition hover:bg-white lg:flex"
+							aria-label={`View project ${project.text}`}>
 							<ArrowIcon className="size-3 rotate-[-135deg]" />
 						</a>
 						<img
 							src={project.src}
 							alt={project.text}
-							class="h-[80%] w-full rounded-md object-cover lg:h-[90%]"
-							loading="lazy"
-						/>
-						<p class="text-md my-2 text-center font-light uppercase tracking-widest">
+							class="h-[80%] w-full rounded-xl object-cover lg:h-[90%]"
+							loading="lazy" />
+						<p class="mt-3 text-center text-xs font-medium uppercase tracking-widest text-neutral-400">
 							{project.text}
 						</p>
 					{:else}
 						<a
 							href={project.href}
-							class="absolute right-1 z-10 hidden transform rounded-lg border bg-white p-3 shadow-lg transition-transform duration-300 hover:-translate-y-1 lg:bottom-12 lg:block"
-							aria-label={`View project ${project.text}`}
-						>
+							class="absolute bottom-3 right-3 z-10 hidden h-9 w-9 items-center justify-center rounded-full bg-white/90 backdrop-blur-sm transition hover:bg-white lg:flex"
+							aria-label={`View project ${project.text}`}>
 							<ArrowIcon className="size-3 rotate-[-135deg]" />
 						</a>
-						<p class="text-md my-2 text-center font-light uppercase tracking-widest">
+						<p class="mb-3 text-center text-xs font-medium uppercase tracking-widest text-neutral-400">
 							{project.text}
 						</p>
 						<img
 							src={project.src}
 							alt={project.text}
-							class="h-[80%] w-full rounded-md object-cover lg:h-[90%]"
-							loading="lazy"
-						/>
+							class="h-[80%] w-full rounded-xl object-cover lg:h-[90%]"
+							loading="lazy" />
 					{/if}
 				</figure>
 			</div>

@@ -2,27 +2,14 @@
 	import { ChevronIcon } from '$icons';
 	import { Separator } from "bits-ui";
 
-	let monthlyBill = 10000; 
-	let consumerType = 'domestic'; 
-	let electricityRate = 8; 
+	let monthlyBill = 10000;
+	let consumerType = 'domestic';
+	let electricityRate = 8;
 
-	$: annualSavings = calculateSavings(
-		monthlyBill,
-		consumerType,
-		electricityRate
-	);
-
-	$: requiredkw = calcualteKW(
-		monthlyBill,
-		consumerType,
-		electricityRate
-	);
+	$: annualSavings = calculateSavings(monthlyBill, consumerType, electricityRate);
+	$: requiredkw = calcualteKW(monthlyBill, consumerType, electricityRate);
 
 	function calcualteKW(bill, type, rate) {
-
-		// KW Needed = (Monthly electricity bill in ₹) / (Electricity rate ₹/kWh × Avg. solar generation per kW per month)
-		// kwneeded = bill / (rate * 120)
-
 		if (type === 'domestic') {
 			rate = 11;
 		} else if (type === 'commercial') {
@@ -40,7 +27,6 @@
 	}
 
 	function calculateSavings(bill, type, rate) {
-
 		if (type === 'domestic') {
 			rate = 11;
 		} else if (type === 'commercial') {
@@ -50,7 +36,6 @@
 		}
 
 		let units = bill / rate;
-
 		let cycle = type === 'domestic' ? 6 : 12;
 		let annualSavings = units * rate * cycle;
 
@@ -62,133 +47,153 @@
 	}
 </script>
 
-<div class="mx-auto w-full max-w-7xl p-2 sm:p-3 md:p-4">
-	<div class="flex flex-col gap-4 sm:gap-5 md:gap-6 lg:flex-row">
-		<!-- Left side - Options and controls -->
-		<div class="w-full rounded-lg border-2 border-black p-4 sm:p-6 md:p-8 lg:p-12 bg-white tracking-tight shadow-sm space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 lg:w-1/2">
-			<h2 class="text-xl sm:text-2xl font-medium text-gray-800">Solar Savings Calculator</h2>
+<div class="mx-auto w-full max-w-6xl">
+	<div class="grid grid-cols-1 lg:grid-cols-2">
+		<!-- ─── LEFT: Controls ─── -->
+		<div class="bg-white p-8 md:p-12 lg:p-16">
+			<p class="text-xs font-medium uppercase tracking-widest text-amber-500">Calculator</p>
+			<h2 class="mt-2 text-2xl font-semibold tracking-tight text-neutral-900 md:text-3xl">
+				Solar Savings Calculator
+			</h2>
 
-			<!-- Monthly Electricity Bill -->
-			<div class="">
-				<label for="electricity-bill" class="mb-1 sm:mb-2 block font-medium text-gray-700 text-sm sm:text-base"
-					>Electricity Bill (₹)</label
-				>
-				<input
-					id="electricity-bill"
-					type="range"
-					min="5000"
-					max="30000"
-					step="1000"
-					bind:value={monthlyBill}
-					class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200"
-				/>
-				<div class="mt-1 flex justify-between">
-					<span class="text-xs sm:text-sm text-gray-500">₹5,000</span>
-					<span class="text-xs sm:text-sm font-medium text-blue-600">₹{formatIndianNumber(monthlyBill)}</span>
-					<span class="text-xs sm:text-sm text-gray-500">₹30,000</span>
+			<div class="mt-10 space-y-10">
+				<!-- Bill slider -->
+				<div>
+					<div class="flex items-baseline justify-between mb-3">
+						<label for="electricity-bill" class="text-sm font-medium text-neutral-700">
+							Electricity Bill
+						</label>
+						<span class="text-lg font-semibold text-neutral-900">
+							₹{formatIndianNumber(monthlyBill)}
+						</span>
+					</div>
+					<input
+						id="electricity-bill"
+						type="range"
+						min="5000"
+						max="30000"
+						step="1000"
+						bind:value={monthlyBill}
+						class="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-neutral-200"
+					/>
+					<div class="mt-2 flex justify-between">
+						<span class="text-xs text-neutral-400">₹5,000</span>
+						<span class="text-xs text-neutral-400">₹30,000</span>
+					</div>
+				</div>
+
+				<!-- Consumer type -->
+				<div>
+					<label class="mb-3 block text-sm font-medium text-neutral-700">
+						Type of Consumer
+					</label>
+					<div class="grid grid-cols-3 gap-2">
+						<button
+							class={`rounded-lg px-3 py-2.5 text-center text-sm font-medium transition ${
+								consumerType === 'domestic'
+									? 'bg-neutral-900 text-white'
+									: 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+							}`}
+							on:click={() => (consumerType = 'domestic')}>
+							Domestic
+						</button>
+						<button
+							class={`rounded-lg px-3 py-2.5 text-center text-sm font-medium transition ${
+								consumerType === 'commercial'
+									? 'bg-neutral-900 text-white'
+									: 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+							}`}
+							on:click={() => (consumerType = 'commercial')}>
+							Commercial
+						</button>
+						<button
+							class={`rounded-lg px-3 py-2.5 text-center text-sm font-medium transition ${
+								consumerType === 'industrial'
+									? 'bg-neutral-900 text-white'
+									: 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+							}`}
+							on:click={() => (consumerType = 'industrial')}>
+							Industrial
+						</button>
+					</div>
 				</div>
 			</div>
-
-			<!-- Consumer Type -->
-			<div class="">
-				<label for="consumer-type" class="mb-1 sm:mb-2 block font-medium text-gray-700 text-sm sm:text-base"
-					>Type of Consumer</label
-				>
-				<div id="consumer-type" class="grid grid-cols-3 gap-1 sm:gap-2">
-					<button
-						class={`rounded-md px-2 sm:px-3 py-1 sm:py-2 text-center text-xs sm:text-sm transition ${consumerType === 'domestic' ? 'border border-blue-300 bg-blue-100 text-blue-700' : 'border border-gray-200 bg-gray-100 text-gray-700'}`}
-						on:click={() => (consumerType = 'domestic')}
-					>
-						Domestic
-					</button>
-					<button
-						class={`rounded-md px-2 sm:px-3 py-1 sm:py-2 text-center text-xs sm:text-sm transition ${consumerType === 'commercial' ? 'border border-blue-300 bg-blue-100 text-blue-700' : 'border border-gray-200 bg-gray-100 text-gray-700'}`}
-						on:click={() => (consumerType = 'commercial')}
-					>
-						Commercial
-					</button>
-					<button
-						class={`rounded-md px-2 sm:px-3 py-1 sm:py-2 text-center text-xs sm:text-sm transition ${consumerType === 'industrial' ? 'border border-blue-300 bg-blue-100 text-blue-700' : 'border border-gray-200 bg-gray-100 text-gray-700'}`}
-						on:click={() => (consumerType = 'industrial')}
-					>
-						Industrial
-					</button>
-				</div>
-			</div>
-
-			<!-- Electricity Rate - Commented out as in original code -->
-			<!-- <div class="mb-6">
-				<label for="electricity-cost" class="mb-2 block font-medium text-gray-700"
-					>Electricity Rate (₹ per unit)</label
-				>
-				<input
-					id="electricity-cost"
-					type="range"
-					min="5"
-					max="15"
-					step="0.5"
-					bind:value={electricityRate}
-					class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200"
-				/>
-				<div class="mt-1 flex justify-between">
-					<span class="text-sm text-gray-500">₹5</span>
-					<span class="text-sm font-medium text-blue-600">₹{electricityRate}</span>
-					<span class="text-sm text-gray-500">₹15</span>
-				</div>
-			</div> -->
-
 		</div>
 
-		<!-- Right side - Results -->
-		<div class="flex w-full flex-col items-center justify-center rounded-lg border-2 border-orange-400 bg-gray-50 p-4 sm:p-6 md:p-8 lg:p-12 lg:w-1/2">
-			<div class="text-center flex space-x-4">
-
-				<div class="">
-					<p class="mb-1 sm:mb-2 text-xs sm:text-sm uppercase tracking-wider text-gray-600">ANNUAL SAVINGS</p>
-					<div class="flex items-center justify-center">
-						<span class="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-700">₹</span>
-						<span
-							class="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-transparent"
-						>
+		<!-- ─── RIGHT: Results ─── -->
+		<div class="flex flex-col items-center justify-center bg-neutral-900 p-8 md:p-12 lg:p-16">
+			<div class="flex items-stretch gap-8 md:gap-12">
+				<div class="text-center">
+					<p class="text-xs font-medium uppercase tracking-widest text-neutral-500">
+						Annual Savings
+					</p>
+					<div class="mt-3 flex items-baseline justify-center">
+						<span class="text-2xl font-medium text-neutral-400">₹</span>
+						<span class="text-5xl font-semibold tracking-tight text-white md:text-6xl lg:text-7xl">
 							{formatIndianNumber(annualSavings)}
 						</span>
 					</div>
 				</div>
 
-				<!-- <div class="h-full mt-auto  w-px bg-gray-600"></div> -->
-
 				<Separator.Root
-				orientation="vertical"
-				class="bg-border my-auto shrink-0 data-[orientation=horizontal]:h-px data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-[2px]"
-			  />
+					orientation="vertical"
+					class="bg-neutral-700 my-auto shrink-0 data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px"
+				/>
 
-				<div class="">
-					<p class="mb-1 sm:mb-2 text-xs sm:text-sm uppercase tracking-wider text-gray-600">REQUIRED KW</p>
-					<div class="flex items-center justify-center">
-						<span
-							class="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-transparent"
-						>
+				<div class="text-center">
+					<p class="text-xs font-medium uppercase tracking-widest text-neutral-500">
+						Required KW
+					</p>
+					<div class="mt-3 flex items-baseline justify-center">
+						<span class="text-5xl font-semibold tracking-tight text-white md:text-6xl lg:text-7xl">
 							{requiredkw}
 						</span>
-						<span class="text-2xl sm:text-3xl md:text-4xl mt-auto mb-1 ml-1 font-medium text-gray-700">kW</span>
-
+						<span class="ml-1 text-2xl font-medium text-neutral-400">kW</span>
 					</div>
 				</div>
-
 			</div>
 
-			<div class="mt-6 sm:mt-8 md:mt-10 space-y-4 sm:space-y-5 md:space-y-6 text-center">
-				<p class="text-base sm:text-lg md:text-xl leading-tight tracking-[-0.06em]">Get A Detailed Report With One Click!</p>
-
-				<a id="advanced-calculator-button" data-umami-event="Advanced Calculator Button" href="/calculator" class="flex group/calc max-w-md items-center rounded-lg bg-white p-3 sm:p-4 shadow-soft">
-					<p class="mx-4 sm:mx-6 md:mx-8 grow tracking-tight text-base sm:text-lg md:text-xl">Advanced Calculator</p>
+			<div class="mt-12 space-y-5 text-center">
+				<p class="text-base text-neutral-300 md:text-lg">
+					Get a detailed report with one click!
+				</p>
+				<a
+					id="advanced-calculator-button"
+					data-umami-event="Advanced Calculator Button"
+					href="/calculator"
+					class="group flex items-center gap-4 rounded-lg bg-white px-6 py-4 transition hover:bg-neutral-200">
+					<p class="text-base font-medium text-neutral-900 md:text-lg">
+						Advanced Calculator
+					</p>
 					<div
-						class="flex cursor-pointer items-center group-hover/calc:bg-black group-hover/calc:text-white transition-all duration-100 justify-center rounded-md bg-orange-400 p-1 sm:p-2 text-black"
-					>
-						<ChevronIcon strokeWidth=3 />
+						class="flex items-center justify-center rounded-md bg-amber-500 p-2 text-neutral-900 transition group-hover:bg-neutral-900 group-hover:text-white">
+						<ChevronIcon strokeWidth={3} />
 					</div>
 				</a>
 			</div>
 		</div>
 	</div>
 </div>
+
+<style>
+	/* Range slider thumb styling */
+	input[type='range']::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		height: 20px;
+		width: 20px;
+		border-radius: 9999px;
+		background: #ffffff;
+		border: 2px solid #0a0a0a;
+		cursor: pointer;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	}
+	input[type='range']::-moz-range-thumb {
+		height: 20px;
+		width: 20px;
+		border-radius: 9999px;
+		background: #ffffff;
+		border: 2px solid #0a0a0a;
+		cursor: pointer;
+	}
+</style>

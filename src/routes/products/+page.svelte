@@ -32,16 +32,16 @@
 </script>
 
 <svelte:head>
-	<title>Solar Panels & Accessories | Daystar Solar</title>
+	<title>Products | Daystar Solar</title>
 	<meta
 		name="description"
-		content="Buy premium Panasonic solar panels, solar street lights, distribution boxes (ACDB/DCDB), and inverters in Chennai. Authorized dealers with best market prices." />
-	<meta property="og:title" content="Solar Panels & Accessories | Daystar Solar" />
+		content="Premium Panasonic Panels,Inverters,Structures,Distribution Boxes & Cables - Complete Solar Solutions,all in one place." />
+	<meta property="og:title" content="Products | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/products" />
 	<meta
 		property="og:description"
-		content="Buy premium Panasonic solar panels, solar street lights, distribution boxes (ACDB/DCDB), and inverters in Chennai. Authorized dealers with best market prices." />
+		content="Buy premium Panasonic solar panels, solar cables, distribution boxes (ACDB/DCDB), and inverters in chennai. Authorized deale" />
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
@@ -58,7 +58,7 @@
 		<h1
 			use:animateIn={{ delay: 0.2 }}
 			class="text-5xl leading-tight tracking-[-0.07em] opacity-0 md:text-6xl lg:text-7xl">
-			Shop Our Products
+			Our Products
 		</h1>
 		<div class="my-12 max-w-3xl text-lg text-gray-600">
 			<p class="mb-4">

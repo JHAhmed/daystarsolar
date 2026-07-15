@@ -1,0 +1,771 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daystar Solar — Premium Solar Energy, Chennai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+img{max-width:100%;display:block;}
+
+:root{
+  --bg:#F7F7F5;
+  --dark:#0C0C0A;
+  --accent:#FF5100;
+  --accent-warm:#FFF2EB;
+  --text:#1C1C1A;
+  --muted:#79796E;
+  --border:#E5E5DC;
+  --f:'Space Grotesk',sans-serif;
+}
+
+body{
+  font-family:var(--f);
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ─── NAV ─────────────────────────────────────────── */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:999;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.25rem 3rem;
+  background:rgba(12,12,10,.88);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,.04);
+}
+.nav-logo{
+  font-size:.82rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#F7F7F5;text-decoration:none;
+}
+.nav-logo em{color:var(--accent);font-style:normal;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{
+  font-size:.78rem;font-weight:400;letter-spacing:.04em;
+  color:rgba(247,247,245,.4);text-decoration:none;
+  transition:color .2s;
+}
+.nav-links a:hover{color:rgba(247,247,245,.85);}
+.nav-cta{
+  background:var(--accent);color:#fff;
+  padding:.5rem 1.25rem;border-radius:2px;
+  font-size:.78rem;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;text-decoration:none;
+  transition:opacity .2s;
+}
+.nav-cta:hover{opacity:.87;}
+
+/* ─── HERO ────────────────────────────────────────── */
+.hero{
+  background:var(--dark);min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;position:relative;overflow:hidden;
+  padding:6rem 2rem 5rem;text-align:center;
+}
+.sun-wrap{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;
+}
+.ring{
+  position:absolute;border-radius:50%;
+  border:1px solid var(--accent);
+  animation:radiate 5s ease-out infinite;
+}
+.ring:nth-child(1){width:90px;height:90px;animation-delay:0s;}
+.ring:nth-child(2){width:190px;height:190px;animation-delay:.7s;}
+.ring:nth-child(3){width:310px;height:310px;animation-delay:1.4s;}
+.ring:nth-child(4){width:450px;height:450px;animation-delay:2.1s;}
+.ring:nth-child(5){width:610px;height:610px;animation-delay:2.8s;}
+.ring:nth-child(6){width:800px;height:800px;animation-delay:3.5s;}
+@keyframes radiate{
+  0%{transform:scale(.7);opacity:.9;}
+  75%{opacity:.04;}
+  100%{transform:scale(1.15);opacity:0;}
+}
+.sun-core{
+  position:absolute;width:9px;height:9px;border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 22px 6px rgba(255,81,0,.45);
+}
+.hero-eye{
+  font-size:.7rem;font-weight:500;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--accent);
+  position:relative;z-index:1;margin-bottom:2rem;
+}
+.hero-h1{
+  font-size:clamp(6rem,20vw,15rem);font-weight:700;
+  line-height:.88;letter-spacing:-.04em;color:#F7F7F5;
+  position:relative;z-index:1;margin-bottom:2.75rem;
+}
+.hero-sub{
+  font-size:clamp(.88rem,1.4vw,1.05rem);font-weight:300;
+  color:rgba(247,247,245,.42);line-height:1.75;
+  position:relative;z-index:1;margin-bottom:3.25rem;
+  max-width:460px;margin-left:auto;margin-right:auto;
+}
+.hero-btns{
+  display:flex;gap:1rem;justify-content:center;
+  flex-wrap:wrap;position:relative;z-index:1;
+}
+.btn-p{
+  background:var(--accent);color:#fff;
+  padding:.9rem 2.25rem;border:none;border-radius:2px;
+  font-family:var(--f);font-size:.82rem;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;
+  text-decoration:none;display:inline-block;
+  cursor:pointer;transition:opacity .2s;
+}
+.btn-p:hover{opacity:.87;}
+.btn-g{
+  background:transparent;color:rgba(247,247,245,.6);
+  padding:.9rem 2.25rem;border:1px solid rgba(247,247,245,.18);
+  border-radius:2px;font-family:var(--f);font-size:.82rem;
+  font-weight:400;letter-spacing:.04em;
+  text-decoration:none;display:inline-block;
+  transition:border-color .2s,color .2s;
+}
+.btn-g:hover{border-color:rgba(247,247,245,.42);color:rgba(247,247,245,.9);}
+.scroll-cue{
+  position:absolute;bottom:2.5rem;left:50%;
+  transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.6rem;
+  font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(247,247,245,.2);z-index:1;
+}
+.scroll-line{
+  width:1px;height:44px;
+  background:linear-gradient(to bottom,rgba(255,81,0,.55),transparent);
+  animation:breathe 2.2s ease-in-out infinite;
+}
+@keyframes breathe{0%,100%{opacity:.35;}50%{opacity:1;}}
+
+/* ─── TICKER ─────────────────────────────────────── */
+.ticker-wrap{
+  background:var(--dark);overflow:hidden;
+  border-top:1px solid rgba(255,255,255,.05);
+  padding:.9rem 0;
+}
+.ticker-track{
+  display:flex;gap:4rem;
+  animation:tick 24s linear infinite;
+  width:max-content;
+}
+.ticker-item{
+  font-size:.68rem;font-weight:500;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(247,247,245,.28);
+  white-space:nowrap;display:flex;align-items:center;gap:4rem;
+}
+.ticker-item::after{content:'◆';font-size:.3rem;color:var(--accent);opacity:.7;}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ─── STATS ──────────────────────────────────────── */
+.stats-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  max-width:1200px;margin:0 auto;
+}
+.stat-cell{
+  padding:4rem 2rem;text-align:center;
+  border-right:1px solid var(--border);
+  transition:background .25s;cursor:default;
+}
+.stat-cell:last-child{border-right:none;}
+.stat-cell:hover{background:var(--accent-warm);}
+.stat-n{
+  font-size:clamp(2.5rem,5vw,3.75rem);font-weight:700;
+  letter-spacing:-.05em;line-height:1;margin-bottom:.5rem;
+}
+.stat-n em{color:var(--accent);font-style:normal;}
+.stat-l{
+  font-size:.68rem;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);
+}
+
+/* ─── SECTION UTILITIES ──────────────────────────── */
+.s-label{
+  display:block;font-size:.66rem;font-weight:600;
+  letter-spacing:.24em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:2rem;
+}
+.s-title{
+  font-size:clamp(2rem,4vw,3.25rem);font-weight:600;
+  letter-spacing:-.03em;line-height:1.08;
+}
+.s-title-lg{font-size:clamp(2.25rem,4.5vw,3.75rem);}
+
+/* ─── ABOUT ──────────────────────────────────────── */
+.about{background:var(--dark);padding:10rem 2rem;}
+.about-in{max-width:840px;margin:0 auto;text-align:center;}
+.about-text{
+  font-size:clamp(1.35rem,2.6vw,2rem);font-weight:300;
+  color:rgba(247,247,245,.72);line-height:1.55;letter-spacing:-.01em;
+}
+.about-text strong{color:#F7F7F5;font-weight:500;}
+.about-text em{color:var(--accent);font-style:normal;}
+
+/* ─── FEATURES ───────────────────────────────────── */
+.features{padding:8rem 2rem;max-width:1200px;margin:0 auto;}
+.f-head{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;
+  align-items:start;margin-bottom:5rem;
+}
+.f-body{font-size:.95rem;color:var(--muted);line-height:1.8;padding-top:.5rem;}
+.f-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  border:1px solid var(--border);
+}
+.f-card{
+  padding:3rem;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  transition:background .25s;
+}
+.f-card:nth-child(2n){border-right:none;}
+.f-card:nth-last-child(-n+2){border-bottom:none;}
+.f-card:hover{background:var(--accent-warm);}
+.f-bar{width:26px;height:2px;background:var(--accent);margin-bottom:2rem;border-radius:1px;}
+.f-title{font-size:1.05rem;font-weight:600;letter-spacing:-.01em;margin-bottom:.875rem;}
+.f-desc{font-size:.875rem;color:var(--muted);line-height:1.8;}
+
+/* ─── CALCULATOR ─────────────────────────────────── */
+.calc-section{background:var(--accent-warm);padding:8rem 2rem;}
+.calc-in{max-width:1020px;margin:0 auto;}
+.calc-card{
+  background:#fff;border:1px solid var(--border);border-radius:4px;
+  display:grid;grid-template-columns:1fr 1fr;
+  margin-top:4rem;overflow:hidden;
+}
+.calc-left{padding:3.5rem;border-right:1px solid var(--border);}
+.calc-lbl{
+  display:block;font-size:.68rem;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:1.5rem;
+}
+.calc-amt{
+  font-size:3.75rem;font-weight:700;letter-spacing:-.055em;
+  line-height:1;color:var(--text);margin-bottom:2.25rem;
+}
+.calc-slider{
+  width:100%;-webkit-appearance:none;appearance:none;
+  height:3px;background:var(--border);border-radius:2px;
+  outline:none;
+}
+.calc-slider::-webkit-slider-thumb{
+  -webkit-appearance:none;width:18px;height:18px;
+  border-radius:50%;background:var(--accent);cursor:pointer;
+  border:2.5px solid #fff;box-shadow:0 0 0 1px var(--accent);
+}
+.calc-slider::-moz-range-thumb{
+  width:16px;height:16px;border-radius:50%;
+  background:var(--accent);cursor:pointer;border:2.5px solid #fff;
+}
+.calc-range{
+  display:flex;justify-content:space-between;
+  font-size:.72rem;color:var(--muted);margin-top:.75rem;
+}
+.calc-right{background:var(--dark);padding:3.5rem;}
+.r-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:1.25rem 0;border-bottom:1px solid rgba(247,247,245,.06);
+}
+.r-row:first-child{padding-top:0;}
+.r-row:last-child{border-bottom:none;padding-bottom:0;}
+.r-lbl{font-size:.8rem;color:rgba(247,247,245,.4);}
+.r-val{font-size:1.25rem;font-weight:700;letter-spacing:-.03em;color:#F7F7F5;}
+.r-val.accent{color:var(--accent);}
+
+/* ─── PROCESS ────────────────────────────────────── */
+.process{padding:8rem 2rem;max-width:1200px;margin:0 auto;}
+.p-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--border);
+  margin-top:5rem;
+}
+.p-step{padding:3rem 2rem;border-right:1px solid var(--border);}
+.p-step:last-child{border-right:none;}
+.p-step:first-child{padding-left:0;}
+.p-num{
+  font-size:4.5rem;font-weight:700;letter-spacing:-.06em;
+  color:rgba(255,81,0,.1);line-height:1;margin-bottom:1.5rem;
+}
+.p-title{font-size:.95rem;font-weight:600;margin-bottom:.75rem;}
+.p-desc{font-size:.82rem;color:var(--muted);line-height:1.75;}
+
+/* ─── REVIEWS ────────────────────────────────────── */
+.reviews{background:var(--dark);padding:8rem 2rem;}
+.reviews-in{max-width:1200px;margin:0 auto;}
+.r-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.5px;margin-top:5rem;
+  background:rgba(247,247,245,.06);
+}
+.r-card{background:var(--dark);padding:3rem;}
+.r-stars{color:var(--accent);font-size:.78rem;letter-spacing:.25em;margin-bottom:1.5rem;}
+.r-quot{
+  font-family:Georgia,serif;font-size:3rem;color:var(--accent);
+  opacity:.22;line-height:.9;margin-bottom:1.25rem;
+}
+.r-text{font-size:.88rem;color:rgba(247,247,245,.6);line-height:1.8;margin-bottom:2rem;}
+.r-name{
+  font-size:.7rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(247,247,245,.28);
+}
+
+/* ─── FAQ ────────────────────────────────────────── */
+.faq{
+  background:var(--bg);padding:8rem 2rem;
+  border-top:1px solid var(--border);
+}
+.faq-in{max-width:720px;margin:0 auto;}
+.faq-title{
+  font-size:clamp(2rem,4vw,3rem);font-weight:600;
+  letter-spacing:-.03em;line-height:1.1;margin-bottom:4rem;
+}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{
+  width:100%;background:none;border:none;text-align:left;
+  padding:1.75rem 0;font-family:var(--f);font-size:1rem;
+  font-weight:500;color:var(--text);cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:1.5rem;letter-spacing:-.01em;transition:color .2s;
+}
+.faq-q:hover{color:var(--accent);}
+.faq-icon{
+  color:var(--accent);font-size:1.4rem;font-weight:300;
+  line-height:1;flex-shrink:0;transition:transform .3s ease;
+  font-family:monospace;
+}
+.faq-icon.open{transform:rotate(45deg);}
+.faq-body{overflow:hidden;max-height:0;transition:max-height .4s cubic-bezier(.16,1,.3,1);}
+.faq-body.open{max-height:220px;}
+.faq-ans{
+  padding-bottom:1.75rem;font-size:.875rem;
+  color:var(--muted);line-height:1.8;
+}
+.faq-more{
+  display:block;text-align:center;margin-top:3.5rem;
+  font-size:.8rem;font-weight:500;color:var(--accent);
+  text-decoration:none;letter-spacing:.05em;transition:opacity .2s;
+}
+.faq-more:hover{opacity:.65;}
+
+/* ─── CTA ────────────────────────────────────────── */
+.cta{background:var(--accent);padding:10rem 2rem;text-align:center;}
+.cta-h{
+  font-size:clamp(2.75rem,9vw,7rem);font-weight:700;
+  letter-spacing:-.04em;line-height:.9;color:#fff;margin-bottom:2rem;
+}
+.cta-sub{
+  font-size:1rem;font-weight:300;color:rgba(255,255,255,.68);
+  margin-bottom:3rem;letter-spacing:.01em;
+}
+.btn-w{
+  background:#fff;color:var(--accent);
+  padding:1rem 2.75rem;border:none;border-radius:2px;
+  font-family:var(--f);font-size:.82rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;display:inline-block;
+  transition:opacity .2s;cursor:pointer;
+}
+.btn-w:hover{opacity:.9;}
+
+/* ─── FOOTER ─────────────────────────────────────── */
+.footer{
+  background:var(--dark);padding:3.5rem 3rem;
+  border-top:1px solid rgba(255,255,255,.04);
+}
+.footer-in{
+  max-width:1200px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1.5rem;
+}
+.f-logo{
+  font-size:.82rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(247,247,245,.45);
+}
+.f-logo em{color:var(--accent);font-style:normal;}
+.f-addr{
+  font-size:.78rem;color:rgba(247,247,245,.28);
+  line-height:1.7;text-align:right;
+}
+.f-copy{font-size:.7rem;color:rgba(247,247,245,.18);}
+
+/* ─── REVEAL ANIMATION ───────────────────────────── */
+.will-reveal{
+  opacity:0;transform:translateY(18px);
+  transition:opacity .6s ease,transform .6s ease;
+}
+.revealed{opacity:1 !important;transform:translateY(0) !important;}
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+@media(max-width:1024px){
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .stat-cell:nth-child(2){border-right:none;}
+  .stat-cell:nth-child(n+3){border-top:1px solid var(--border);}
+  .p-grid{grid-template-columns:repeat(2,1fr);}
+  .p-step:nth-child(2){border-right:none;}
+  .p-step:nth-child(n+3){border-top:1px solid var(--border);padding-top:3rem;}
+  .p-step:nth-child(3){padding-left:0;}
+  .calc-card{grid-template-columns:1fr;}
+  .calc-left{border-right:none;border-bottom:1px solid var(--border);}
+  .r-grid{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  .nav{padding:1.2rem 1.5rem;}
+  .nav-links,.nav-cta{display:none;}
+  .hero{padding:5.5rem 1.5rem 4rem;}
+  .about{padding:7rem 1.5rem;}
+  .features,.process,.reviews,.faq{padding:6rem 1.5rem;}
+  .f-head{grid-template-columns:1fr;gap:1.5rem;}
+  .f-grid{grid-template-columns:1fr;}
+  .f-card:nth-child(2n){border-right:1px solid var(--border);}
+  .f-card:nth-last-child(-n+2){border-bottom:1px solid var(--border);}
+  .f-card:nth-child(n){border-right:none;}
+  .f-card:last-child{border-bottom:none;}
+  .p-grid{grid-template-columns:1fr;}
+  .p-step{border-right:none;border-bottom:1px solid var(--border);padding:2rem 0;}
+  .p-step:last-child{border-bottom:none;}
+  .p-step:first-child{padding-left:0;}
+  .footer-in{flex-direction:column;align-items:flex-start;}
+  .f-addr{text-align:left;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">Daystar <em>Solar</em></a>
+  <ul class="nav-links">
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#calculator" class="nav-cta">Get Free Quote</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="sun-wrap" aria-hidden="true">
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="ring"></div>
+    <div class="sun-core"></div>
+  </div>
+  <p class="hero-eye">Daystar Solar &nbsp;·&nbsp; Chennai &nbsp;·&nbsp; Est. 2012</p>
+  <h1 class="hero-h1">SOLAR</h1>
+  <p class="hero-sub">
+    Premium residential &amp; commercial solar for Chennai homes and businesses.
+    Panasonic panels · government subsidy support · 25-year warranty.
+  </p>
+  <div class="hero-btns">
+    <a href="#calculator" class="btn-p">Calculate Your Savings</a>
+    <a href="#projects" class="btn-g">View Projects</a>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap" aria-label="Key features">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-cell will-reveal">
+      <p class="stat-n">1000<em>+</em></p>
+      <p class="stat-l">Customers Served</p>
+    </div>
+    <div class="stat-cell will-reveal">
+      <p class="stat-n">13k</p>
+      <p class="stat-l">Megawatt Hours Generated</p>
+    </div>
+    <div class="stat-cell will-reveal">
+      <p class="stat-n">14<em>+</em></p>
+      <p class="stat-l">Years Experience</p>
+    </div>
+    <div class="stat-cell will-reveal">
+      <p class="stat-n">4.9<em>★</em></p>
+      <p class="stat-l">Google Rating</p>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-in">
+    <span class="s-label">Our Mission</span>
+    <p class="about-text">
+      Since <strong>2012</strong>, Daystar Solar has been Chennai's most trusted solar integrator &mdash; partnering with <em>Panasonic Solar</em> for premium panels and top-quality imported inverters. We handle every aspect of your solar journey, from <strong>concept to commissioning</strong>.
+    </p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="f-head">
+    <div>
+      <span class="s-label">Why Daystar</span>
+      <h2 class="s-title">Built for<br>the long run.</h2>
+    </div>
+    <p class="f-body">
+      We refuse to compromise on quality. From site survey to subsidy paperwork, our team handles everything &mdash; so you can start saving from day one. One team, zero hassle, decades of reliable power.
+    </p>
+  </div>
+  <div class="f-grid">
+    <div class="f-card will-reveal">
+      <div class="f-bar"></div>
+      <h3 class="f-title">Government Subsidy Experts</h3>
+      <p class="f-desc">We guide you through the PM Surya Ghar scheme to maximize your savings &mdash; up to ₹78,000 in government subsidies, handled end-to-end.</p>
+    </div>
+    <div class="f-card will-reveal">
+      <div class="f-bar"></div>
+      <h3 class="f-title">Panasonic Authorized Partner</h3>
+      <p class="f-desc">Tier-1 quality panels with a 25-year linear power output warranty. Premium imported inverters. No shortcuts, no substandard components.</p>
+    </div>
+    <div class="f-card will-reveal">
+      <div class="f-bar"></div>
+      <h3 class="f-title">Zero Recurring Costs</h3>
+      <p class="f-desc">Built-in MPPT technology with fully automatic operation synchronized with all power sources. Designed to produce power for decades with no intervention.</p>
+    </div>
+    <div class="f-card will-reveal">
+      <div class="f-bar"></div>
+      <h3 class="f-title">End-to-End Service</h3>
+      <p class="f-desc">From initial consultation and TNEB approvals to installation, commissioning, and lifetime support &mdash; one point of contact through it all.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc-section" id="calculator">
+  <div class="calc-in">
+    <span class="s-label">Savings Estimator</span>
+    <h2 class="s-title">How much could<br>you be saving?</h2>
+    <div class="calc-card">
+      <div class="calc-left">
+        <span class="calc-lbl">Monthly Electricity Bill</span>
+        <p class="calc-amt" id="calcAmt">₹3,000</p>
+        <input class="calc-slider" type="range"
+               min="1000" max="15000" step="500"
+               value="3000" id="billSlider"
+               aria-label="Monthly electricity bill">
+        <div class="calc-range"><span>₹1,000</span><span>₹15,000</span></div>
+      </div>
+      <div class="calc-right" id="calcResults"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <span class="s-label">How It Works</span>
+  <h2 class="s-title">From inquiry to<br>installation in weeks.</h2>
+  <div class="p-grid">
+    <div class="p-step will-reveal">
+      <p class="p-num">01</p>
+      <h3 class="p-title">Site Survey &amp; Consultation</h3>
+      <p class="p-desc">We analyze your roof and energy bills to recommend the perfect system capacity for your specific needs.</p>
+    </div>
+    <div class="p-step will-reveal">
+      <p class="p-num">02</p>
+      <h3 class="p-title">Design &amp; Subsidy Approval</h3>
+      <p class="p-desc">We create structural designs and handle all TNEB and government paperwork on your behalf.</p>
+    </div>
+    <div class="p-step will-reveal">
+      <p class="p-num">03</p>
+      <h3 class="p-title">Installation &amp; Commissioning</h3>
+      <p class="p-desc">Expert team installs panels, inverters, and net metering system &mdash; typically completed in 2&ndash;3 days.</p>
+    </div>
+    <div class="p-step will-reveal">
+      <p class="p-num">04</p>
+      <h3 class="p-title">Lifetime Support</h3>
+      <p class="p-desc">Remote monitoring setup and scheduled maintenance services to keep your system running at peak efficiency.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="reviews-in">
+    <span class="s-label">Customer Stories</span>
+    <h2 class="s-title" style="color:#F7F7F5;">Trusted by 1,000+<br>Chennai homes.</h2>
+    <div class="r-grid">
+      <div class="r-card will-reveal">
+        <p class="r-stars">★★★★★</p>
+        <div class="r-quot">&ldquo;</div>
+        <p class="r-text">I had a great experience with Daystar for my home solar installation. The team was professional, the process was smooth, and the system is working perfectly.</p>
+        <p class="r-name">Abdul Gani</p>
+      </div>
+      <div class="r-card will-reveal">
+        <p class="r-stars">★★★★★</p>
+        <div class="r-quot">&ldquo;</div>
+        <p class="r-text">Excellent support from inspection to installation design. Core installation completed in just 2&ndash;3 days. They handled the entire Surya Ghar scheme process for me.</p>
+        <p class="r-name">Ramesh Kothandapany</p>
+      </div>
+      <div class="r-card will-reveal">
+        <p class="r-stars">★★★★★</p>
+        <div class="r-quot">&ldquo;</div>
+        <p class="r-text">Installation done by them was the best in standards and I got the subsidy of ₹78k via PM Surya Ghar scheme. Highly recommending the entire Daystar team.</p>
+        <p class="r-name">Lokesh T M</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-in">
+    <span class="s-label">FAQ</span>
+    <h2 class="faq-title">Common<br>questions.</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        How much does a 5kW solar system cost in Chennai?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-body" role="region">
+        <p class="faq-ans">A 5kW system generally ranges from ₹2.5L to ₹3.5L depending on panel type and inverter brand. Contact us for a precise quote including your subsidy calculation.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        Is government subsidy available for home solar?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-body" role="region">
+        <p class="faq-ans">Yes. Under the PM Surya Ghar Muft Bijli Yojana, substantial subsidies are available for residential rooftop solar. We handle the entire documentation and approval process for you at no extra charge.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        What warranty is offered on solar panels?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-body" role="region">
+        <p class="faq-ans">We offer a 25-year linear power output warranty on Panasonic solar panels, ensuring your system generates efficient power for decades to come.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        How long does the full installation process take?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-body" role="region">
+        <p class="faq-ans">Most residential installations are completed in 2&ndash;3 days. The full process from initial consultation to commissioning, including subsidy approvals, typically takes 3&ndash;6 weeks.</p>
+      </div>
+    </div>
+
+    <a href="#" class="faq-more">View All FAQs &rarr;</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <span class="s-label" style="color:rgba(255,255,255,.5);">Ready to Switch?</span>
+  <h2 class="cta-h">Start saving on<br>electricity today.</h2>
+  <p class="cta-sub">Free site inspection &nbsp;·&nbsp; ₹78k subsidy guidance &nbsp;·&nbsp; 0% EMI available</p>
+  <a href="tel:+919176668617" class="btn-w">Get Your Free Quote</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-in">
+    <div>
+      <p class="f-logo">Daystar <em>Solar</em></p>
+      <p class="f-copy" style="margin-top:.5rem;">&copy; 2025 Daystar Solar. All rights reserved.</p>
+    </div>
+    <div class="f-addr">
+      <p>H-5, Second Floor, Third Avenue</p>
+      <p>Anna Nagar East, Chennai &ndash; 600102</p>
+      <p>+91 91766 68617</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* — TICKER — */
+  var items=['₹78k Subsidy Support','Free Site Inspection','0% EMI Options','25-Year Panel Warranty','Panasonic Authorized Partner','14+ Years in Chennai','TNEB Approved','1000+ Homes Powered'];
+  var track=document.getElementById('tickerTrack');
+  if(track){
+    var doubled=[].concat(items,items);
+    doubled.forEach(function(u){
+      var s=document.createElement('span');
+      s.className='ticker-item';s.textContent=u;
+      track.appendChild(s);
+    });
+  }
+
+  /* — CALCULATOR — */
+  var slider=document.getElementById('billSlider');
+  var results=document.getElementById('calcResults');
+  function fmt(n){return'₹'+n.toLocaleString('en-IN');}
+  function runCalc(val){
+    var bill=parseInt(val,10);
+    document.getElementById('calcAmt').textContent=fmt(bill);
+    var kw=Math.max(1,Math.ceil(bill/750));
+    var savings=Math.round(bill*0.82);
+    var subsidy=kw<=2?60000:78000;
+    var systemCost=kw*62000;
+    var netCost=Math.max(0,systemCost-subsidy);
+    var payback=(netCost/(savings*12)).toFixed(1);
+    results.innerHTML=
+      '<div class="r-row"><span class="r-lbl">Recommended Capacity</span><span class="r-val">'+kw+' kW</span></div>'+
+      '<div class="r-row"><span class="r-lbl">Monthly Savings</span><span class="r-val">'+fmt(savings)+'</span></div>'+
+      '<div class="r-row"><span class="r-lbl">Government Subsidy</span><span class="r-val accent">'+fmt(subsidy)+'</span></div>'+
+      '<div class="r-row"><span class="r-lbl">Payback Period</span><span class="r-val">'+payback+' yrs</span></div>';
+  }
+  if(slider){slider.addEventListener('input',function(){runCalc(this.value);});runCalc(3000);}
+
+  /* — FAQ — */
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var body=btn.nextElementSibling;
+      var icon=btn.querySelector('.faq-icon');
+      var isOpen=body.classList.contains('open');
+      document.querySelectorAll('.faq-body').forEach(function(b){b.classList.remove('open');});
+      document.querySelectorAll('.faq-icon').forEach(function(i){i.classList.remove('open');});
+      document.querySelectorAll('.faq-q').forEach(function(q){q.setAttribute('aria-expanded','false');});
+      if(!isOpen){
+        body.classList.add('open');
+        icon.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  /* — SCROLL REVEAL — */
+  var ro=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('revealed');
+        ro.unobserve(e.target);
+      }
+    });
+  },{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+
+  document.querySelectorAll('.will-reveal').forEach(function(el,i){
+    var delay=(i%6)*0.08;
+    el.style.transitionDelay=delay+'s';
+    ro.observe(el);
+  });
+})();
+</script>
+</body>
+</html>
