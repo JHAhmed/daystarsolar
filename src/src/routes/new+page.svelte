@@ -277,7 +277,7 @@
 <section class="bg-neutral-50 py-20">
 	<div class="container mx-auto px-4">
 		<h2 class="mb-12 text-center text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-			What Our Customers Say
+			Customer Testimonials
 		</h2>
 		<ScrollingReviews />
 	</div>
@@ -381,7 +381,7 @@
 		<div>
 			<p class="text-xs font-medium uppercase tracking-widest text-amber-500">Why Us</p>
 			<h2 class="mb-8 mt-2 text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-				Why Chennai Chooses Daystar Solar?
+				Why Choose Daystar Solar in Chennai?
 			</h2>
 			<ul class="space-y-6">
 				<li class="flex items-start gap-4">
@@ -506,7 +506,7 @@
 	<div class="mx-auto max-w-3xl">
 		<p class="text-xs font-medium uppercase tracking-widest text-amber-500">FAQ</p>
 		<h2 class="mb-10 mt-2 text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-			Common Questions Regarding Solar
+			Got Questions?
 		</h2>
 		<div class="space-y-4">
 			{#each faqs as faq}

@@ -359,7 +359,7 @@
 </div>
 
 <div use:animateIn class="mx-auto max-w-7xl px-4 py-8 opacity-0 md:py-16">
-	<h2 class="mb-8 text-center text-2xl md:text-3xl">Prefer to mail instead?</h2>
+	<h2 class="mb-8 text-center text-2xl md:text-3xl">Need Expert Assistance?</h2>
 
 	<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
 		<!-- Sales Card -->
