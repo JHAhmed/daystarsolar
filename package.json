@@ -13,7 +13,7 @@
 	"devDependencies": {
 		"@eslint/compat": "^1.2.3",
 		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/kit": "^2.5.27",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"@tailwindcss/typography": "^0.5.16",
 		"autoprefixer": "^10.4.20",
@@ -22,7 +22,7 @@
 		"cmdk-sv": "^0.0.18",
 		"eslint": "^9.7.0",
 		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "^2.36.0",
+		"eslint-plugin-svelte": "^2.45.1",
 		"globals": "^15.0.0",
 		"lucide-svelte": "^0.469.0",
 		"marked": "^15.0.7",
