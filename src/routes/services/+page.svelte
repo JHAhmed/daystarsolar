@@ -119,7 +119,7 @@
         Solar Panel Installation In Chennai
     </h1>
     <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-        From residential homes to large industrial facilities, we deliver complete solar solutions.
+        From cozy homes to large factories, we provide end-to-end solar execution.
     </p>
     
     <div class="mt-12 grid gap-8 md:grid-cols-3 text-left">

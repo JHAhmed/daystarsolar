@@ -321,7 +321,7 @@
 <section class="py-16">
     <div class="container mx-auto px-6 md:px-16 lg:px-32">
         <h2 class="mb-12 text-center text-2xl font-semibold tracking-tight md:text-3xl">
-            What Our Customers Say
+            Customer Testimonials
         </h2>
         <ScrollingReviews />
     </div>
@@ -365,7 +365,7 @@
                 <img src={quotationMark} class="h-4 w-4 text-gray-600" alt="quote" />
             </div>
             <h2 class="mb-8 text-2xl font-semibold md:text-3xl lg:text-4xl">
-                Ignite your future with
+                Power your future with
                 <span class="text-orange-500">solar</span> energy
             </h2>
             <div class="mb-8 rounded-full bg-gray-100 p-4">
@@ -441,7 +441,7 @@
 <section class="py-16">
     <div class="container mx-auto grid grid-cols-1 gap-12 px-6 md:grid-cols-2 md:px-16 lg:px-32">
         <div>
-            <h2 class="mb-8 text-2xl font-semibold">Why Chennai Chooses Daystar Solar?</h2>
+            <h2 class="mb-8 text-2xl font-semibold">Why Choose Daystar Solar In Chennai ?</h2>
             <ul class="space-y-6">
                 <li class="flex items-start gap-4">
                     <span class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gray-100 text-xs font-medium text-gray-700">
@@ -589,7 +589,7 @@
 
 <section class="py-16">
     <div class="container mx-auto px-6 md:px-16 lg:px-32">
-        <h2 class="mb-10 text-center text-2xl font-semibold">Common Questions regarding Solar</h2>
+        <h2 class="mb-10 text-center text-2xl font-semibold">Got Questions ?</h2>
         <div class="mx-auto max-w-3xl space-y-4">
             {#each faqs as faq}
                 <div class="rounded-lg border border-gray-100 p-6">

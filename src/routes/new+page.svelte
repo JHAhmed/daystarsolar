@@ -322,7 +322,7 @@
 			<img src={quotationMark} class="size-4" alt="quote" />
 		</div>
 		<h2 class="text-3xl font-semibold leading-tight tracking-tight text-neutral-900 md:text-4xl lg:text-5xl">
-			Ignite your future with
+			Power your future with
 			<span class="text-amber-500">solar</span> energy
 		</h2>
 		<div class="rotate-180 rounded-full bg-neutral-100 p-4">
@@ -381,7 +381,7 @@
 		<div>
 			<p class="text-xs font-medium uppercase tracking-widest text-amber-500">Why Us</p>
 			<h2 class="mb-8 mt-2 text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-				Why Choose Daystar Solar in Chennai?
+				Why Choose Daystar Solar In Chennai ?
 			</h2>
 			<ul class="space-y-6">
 				<li class="flex items-start gap-4">
@@ -506,7 +506,7 @@
 	<div class="mx-auto max-w-3xl">
 		<p class="text-xs font-medium uppercase tracking-widest text-amber-500">FAQ</p>
 		<h2 class="mb-10 mt-2 text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-			Got Questions?
+			Common Questions Regarding Solar
 		</h2>
 		<div class="space-y-4">
 			{#each faqs as faq}

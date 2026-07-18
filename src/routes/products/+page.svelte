@@ -23,7 +23,7 @@
 			alt: 'Solar powered street light against blue cloudy sky'
 		},
 		{
-			title: 'Others',
+			title: 'Solar Accessories',
 			image: solarImage1,
 			byds: false,
 			alt: 'Worker installing solar panels on a roof'
