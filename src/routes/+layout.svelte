@@ -7,17 +7,29 @@
 	let { children } = $props();
 </script>
 
+<!--
+	NOTE ON SEO TAGS:
+	Do NOT add a default <title> or <meta name="description"> here.
+	Every route must set its own via <svelte:head> in its +page.svelte.
+	Because Svelte merges (not overrides) svelte:head blocks, putting
+	defaults here previously caused every page to ship TWO <title> and
+	TWO <meta name="description"> tags (this one + the page's own),
+	which made search engines pick up the generic homepage title/
+	description instead of each page's unique one.
+	twitter:card is safe to default here (unlike title/description) —
+	Twitter/X falls back to each page's own og:title / og:description /
+	og:image automatically once twitter:card is present, with no
+	duplicate-tag risk. og:image is NOT defaulted here on purpose: 3
+	pages (home, calculator, projects) already set their own og:image,
+	and a sitewide one here would create a second og:image tag on those
+	pages — OG parsers use the first image, so it would silently show
+	the generic homepage image instead of the page's own. Pages without
+	a custom og:image now set one directly in their own svelte:head.
+-->
 <!-- svelte-ignore a11y_missing_attribute -->
 <svelte:head>
-	<title>Solar Panel Installation Chennai | Daystar Solar - 13+ Years Experience</title>
-	<meta
-		name="description"
-		content="Daystar Solar - Leading solar panel installer in Chennai since 2012. We provide residential & commercial solar solutions with Panasonic panels, government subsidy support, and 20-year warranties."
-	/>
-	<meta name="robots" content="index, follow" />
-
 	<meta property="og:site_name" content="Daystar Solar" />
-	<!-- <meta property="og:image" content="https://daystarsolar.co.in/oghome.png" /> -->
+	<meta name="twitter:card" content="summary_large_image" />
 
 	<script
 		defer
@@ -59,7 +71,7 @@
 			width="1"
 			style="display:none"
 			src="https://www.facebook.com/tr?id=1774534922812759&ev=PageView&noscript=1"
-			alt=""
+			alt="Facebook tracking pixel"
 		/></noscript
 	>
 </svelte:head>

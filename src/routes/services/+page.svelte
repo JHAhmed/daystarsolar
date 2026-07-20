@@ -92,11 +92,13 @@
 	<title>Solar Services | Daystar Solar</title>
 	<meta
 		name="description"
-		content="Not just a vendor.Your solar partner for life - from first consultation to last kilowatt."
+		content="Not just a vendor. Your solar partner for life - from first consultation to last kilowatt. Residential, commercial & industrial solar services."
 	/>
 	<meta property="og:title" content="Solar Services | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/services" />
+	<meta property="og:image" content="https://daystarsolar.co.in/oghome.png" />
+	<link rel="canonical" href="https://daystarsolar.co.in/services" />
 	<meta
 		property="og:description"
 		content="Daystar Solar offers a wide range of solar services including consultation, installation, and maintenance for industrial and commercial clients."

@@ -105,10 +105,11 @@
 </script>
 
 <svelte:head>
-    <title>Solar Plant Company Chennai | Daystar Solar</title>
+    <title>Solar Plant Company Chennai | Daystar Solar - 13+ Years Experience</title>
     <meta
         name="description"
-        content="The sun sends the bill. We make it free." />
+        content="The sun sends the bill, we make it free. Daystar Solar installs residential & commercial rooftop solar plants in Chennai with subsidy support." />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://daystarsolar.co.in/" />
     <script type="application/ld+json">
         {
@@ -614,7 +615,7 @@
             loop
             preload="metadata"
             on:click={toggle}
-            poster="/preview.jpg"
+            poster={sampleImage1} aria-label="Daystar Solar projects showreel" title="Daystar Solar projects showreel"
             class="mx-auto h-auto w-full cursor-pointer rounded-lg object-cover">
             <source
                 src="https://res.cloudinary.com/dlq8wuvji/video/upload/v1745575578/Daystar_Projects_Showreel_esvxpw.mp4"

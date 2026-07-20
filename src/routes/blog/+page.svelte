@@ -11,11 +11,13 @@
 	<title>Blog | Daystar Solar</title>
 	<meta
 		name="description"
-		content="Knowledge that powers better decisions - explore our latest solar insights"
+		content="Knowledge that powers better decisions - explore our latest solar insights, guides, and tips from Daystar Solar."
 	/>
 	<meta property="og:title" content="Blogs | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/blog" />
+	<meta property="og:image" content="https://daystarsolar.co.in/oghome.png" />
+	<link rel="canonical" href="https://daystarsolar.co.in/blog" />
 	<meta
 		property="og:description"
 		content="Read the latest blogs and articles from Daystar Solar, a leading solar energy solutions provider in south india"
@@ -26,7 +28,7 @@
 			"@type": "Blog",
 			"url": "https://daystarsolar.co.in/blog",
 			"name": "Daystar Solar Blog",
-			"description": "Read the latest blogs and articles from Daystar Solar, a leading solar energy solutions provider in south india".
+			"description": "Read the latest blogs and articles from Daystar Solar, a leading solar energy solutions provider in south india"
 		}
 	</script>
 </svelte:head>

@@ -45,11 +45,13 @@
 	<title>Gallery | Daystar Solar</title>
 	<meta
 		name="description"
-		content="Proof is in the panels - browse our gallery of powered homes and businesses"
+		content="Proof is in the panels - browse our gallery of powered homes and businesses installed by Daystar Solar across south India."
 	/>
 	<meta property="og:title" content="Gallery | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/gallery" />
+	<meta property="og:image" content="https://daystarsolar.co.in/oghome.png" />
+	<link rel="canonical" href="https://daystarsolar.co.in/gallery" />
 	<meta
 		property="og:description"
 		content="View the latest solar installations and projects from Daystar Solar, a leading solar energy solutions provider in south india."

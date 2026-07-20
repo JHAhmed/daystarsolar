@@ -8,6 +8,19 @@
 </script>
 
 <svelte:head>
+	<title>View Solar Panels in AR | Daystar Solar</title>
+	<meta
+		name="description"
+		content="Preview a Daystar Solar rooftop panel in augmented reality, right from your phone or browser, before you install."
+	/>
+	<meta property="og:title" content="View Solar Panels in AR | Daystar Solar" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://daystarsolar.co.in/ar" />
+	<link rel="canonical" href="https://daystarsolar.co.in/ar" />
+	<meta
+		property="og:description"
+		content="Preview a Daystar Solar rooftop panel in augmented reality, right from your phone or browser, before you install."
+	/>
 	<script
 		type="module"
 		src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"

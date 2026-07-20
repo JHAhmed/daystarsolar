@@ -534,7 +534,7 @@
 		loop
 		preload="metadata"
 		on:click={toggle}
-		poster="/preview.jpg"
+		poster={sampleImage1} aria-label="Daystar Solar projects showreel" title="Daystar Solar projects showreel"
 		class="aspect-video w-full cursor-pointer rounded-2xl object-cover">
 		<source
 			src="https://res.cloudinary.com/dlq8wuvji/video/upload/v1745575578/Daystar_Projects_Showreel_esvxpw.mp4"

@@ -149,11 +149,13 @@
 	<title>Contact Us | Daystar Solar</title>
 	<meta
 		name="description"
-		content="We're here to help - get expert solar advice tailored to your needs."
+		content="We're here to help - get expert solar advice tailored to your needs. Contact Daystar Solar in Chennai for site visits, quotes, and after-sales support."
 	/>
 	<meta property="og:title" content="Contact Us | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/contact" />
+	<meta property="og:image" content="https://daystarsolar.co.in/oghome.png" />
+	<link rel="canonical" href="https://daystarsolar.co.in/contact" />
 	<meta
 		property="og:description"
 		content="Get in touch with Daystar Solar for all your solar energy needs. Contact us for procurement, admin, service, and sales queries."
@@ -297,6 +299,7 @@
 			<a
 				href="https://maps.app.goo.gl/uNk4gDxCLP1v62Aa8"
 				target="_blank"
+				rel="noopener noreferrer"
 				class="group/link relative flex items-center justify-center gap-3 rounded-lg border-2 border-black bg-white p-4 hover:bg-green-50"
 			>
 				<div

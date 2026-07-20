@@ -14,13 +14,13 @@ export { default as sampleImage3 } from './assets/images/sample-3.webp';
 
 export { default as landingImage1 } from './assets/images/landingImage1.jpg';
 export { default as landingImage2 } from './assets/images/landingImage2.jpg';
-export { default as landingImage3 } from './assets/images/landingImage3.jpg';
+export { default as landingImage3 } from './assets/images/landingImage3.webp';
 export { default as landingImage4 } from './assets/images/landingImage4.jpg';
 export { default as landingImage5 } from './assets/images/landingImage5.jpg';
 
-export { default as aboutImage1 } from './assets/images/about-1.png';
-export { default as aboutImage2 } from './assets/images/about-2.png';
-export { default as aboutImage3 } from './assets/images/about-3.png';
+export { default as aboutImage1 } from './assets/images/about-1.webp';
+export { default as aboutImage2 } from './assets/images/about-2.webp';
+export { default as aboutImage3 } from './assets/images/about-3.webp';
 
 export { default as servicesImage1 } from './assets/images/servicesImage1.jpg';
 export { default as servicesImage2 } from './assets/images/servicesImage2.jpg';

@@ -36,11 +36,13 @@
 	<title>About Us | Daystar Solar</title>
 	<meta
 		name="description"
-		content="15+ years,thousands of installations,one mission - clean energy done right"
+		content="15+ years, thousands of installations, one mission - clean energy done right, from Daystar Solar in Chennai."
 	/>
 	<meta property="og:title" content="About Us | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/about" />
+	<meta property="og:image" content="https://daystarsolar.co.in/oghome.png" />
+	<link rel="canonical" href="https://daystarsolar.co.in/about" />
 	<meta
 		property="og:description"
 		content="With 15+ years of experience, Daystar Solar delivers efficient and affordable solar plant installation services for businesses and industries across south india"
