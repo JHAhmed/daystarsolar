@@ -108,7 +108,7 @@
     <title>Solar Plant Company in Chennai | Daystar Solar </title>
     <meta
         name="description"
-        content= Discover Day Star Solar's solar solutions, products, projects, and services for homes, businesses, and industries.
+        content="Discover Day Star Solar's solar solutions, products, projects, and services for homes, businesses, and industries."
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://daystarsolar.co.in/" />
@@ -265,7 +265,7 @@
     <meta property="og:url" content="https://daystarsolar.co.in/" />
     <meta
         property="og:description"
-        content= "The sun sends the bill, we make it free". 
+        content= "The sun sends the bill, we make it free." 
     />
 </svelte:head>
 

@@ -35,7 +35,7 @@
 	<title>Products | Daystar Solar</title>
 	<meta
 		name="description"
-		content= Discover premium Panasonic panels, inverters, mounting structures, distribution boxes, and cables for complete solar solutions.
+		content="Discover premium Panasonic panels, inverters, mounting structures, distribution boxes, and cables for complete solar solutions."
 	/>
 	<meta property="og:title" content="Products | Daystar Solar" />
 	<meta property="og:type" content="website" />

@@ -36,7 +36,7 @@
 	<title>About Us | Daystar Solar</title>
 	<meta
 		name="description"
-		content= Learn about Day Star Solar, our experience, values, and commitment to delivering reliable solar energy solutions.
+		content="Learn about Day Star Solar, our experience, values, and commitment to delivering reliable solar energy solutions."
 	/>
 	<meta property="og:title" content="About Us | Daystar Solar" />
 	<meta property="og:type" content="website" />

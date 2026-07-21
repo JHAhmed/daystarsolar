@@ -45,7 +45,7 @@
 	<title>Gallery | Daystar Solar</title>
 	<meta
 		name="description"
-		content= Proof is in the panels. Browse Day Star Solar's gallery of powered homes and businesses across South India.
+		content="Proof is in the panels. Browse Day Star Solar's gallery of powered homes and businesses across South India."
 	/>
 	<meta property="og:title" content="Gallery | Daystar Solar" />
 	<meta property="og:type" content="website" />

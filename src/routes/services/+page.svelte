@@ -92,7 +92,7 @@
 	<title>Solar Services | Daystar Solar</title>
 	<meta
 		name="description"
-		content= Your solar partner for life, from consultation to installation and beyond, with services for residential, commercial, and industrial needs. 
+		content="Your solar partner for life, from consultation to installation and beyond, with services for residential, commercial, and industrial needs."
 	/>
 	<meta property="og:title" content="Solar Services | Daystar Solar" />
 	<meta property="og:type" content="website" />
