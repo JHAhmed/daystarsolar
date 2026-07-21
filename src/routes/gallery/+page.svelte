@@ -45,7 +45,7 @@
 	<title>Gallery | Daystar Solar</title>
 	<meta
 		name="description"
-		content="Proof is in the panels - browse our gallery of powered homes and businesses installed by Daystar Solar across south India."
+		content= Proof is in the panels. Browse Day Star Solar's gallery of powered homes and businesses across South India.
 	/>
 	<meta property="og:title" content="Gallery | Daystar Solar" />
 	<meta property="og:type" content="website" />
@@ -84,6 +84,7 @@
 	<div class="grid grid-cols-2 gap-2 md:grid-cols-3">
 		{#each galleryItems as image}
 			<button
+				class="block w-full"
 				onclick={() => {
 					viewImage(image);
 				}}
@@ -91,7 +92,7 @@
 				<img
 					src={image.src}
 					alt="Image for project {image.project}"
-					class="rounded-lg"
+					class="h-full w-full rounded-lg object-cover"
 					loading="lazy"
 				/>
 			</button>

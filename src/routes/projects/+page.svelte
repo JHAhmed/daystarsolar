@@ -11,7 +11,7 @@
 	<title>Projects | Daystar Solar</title>
 	<meta
 		name="description"
-		content="Real rooftops, real savings - a portfolio of solar projects built to perform for decades by Daystar Solar."
+		content= View Day Star Solar's completed projects and discover the solar solutions delivered for different customer requirements.
 	/>
 	<meta property="og:title" content="Projects | Daystar Solar" />
 	<meta property="og:type" content="website" />
@@ -21,7 +21,7 @@
 	<link rel="canonical" href="https://daystarsolar.co.in/projects" />
 	<meta
 		property="og:description"
-		content= "Discover our completed solar projects and see how Day Star Solar helps customers achieve clean, cost-effective, and reliable energy solutions"
+		content="Real rooftops, real savings - a portfolio of solar projects built to perform for decades by Daystar Solar".
 	/>
 	<script type="application/ld+json">
 		{

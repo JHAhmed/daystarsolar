@@ -104,7 +104,7 @@
 	<title>FAQ | Daystar Solar</title>
 	<meta
 		name="description"
-		content="Find answers to frequently asked questions about solar energy, solar plants, subsidies, and installation costs from Daystar Solar, Chennai."
+		content= Find answers to frequently asked questions about solar energy, solar plants, subsidies, and installation costs from Daystar Solar, Chennai.
 	/>
 	<meta property="og:title" content="FAQ | Daystar Solar" />
 	<meta property="og:type" content="website" />

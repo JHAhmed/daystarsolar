@@ -149,7 +149,7 @@
 	<title>Contact Us | Daystar Solar</title>
 	<meta
 		name="description"
-		content="We're here to help - get expert solar advice tailored to your needs. Contact Daystar Solar in Chennai for site visits, quotes, and after-sales support."
+		content= We're here to help. Get expert solar advice tailored to your needs. Contact Day Star Solar in Chennai for site visits, quotes, and support.
 	/>
 	<meta property="og:title" content="Contact Us | Daystar Solar" />
 	<meta property="og:type" content="website" />

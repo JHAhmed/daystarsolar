@@ -105,10 +105,11 @@
 </script>
 
 <svelte:head>
-    <title>Solar Plant Company Chennai | Daystar Solar - 13+ Years Experience</title>
+    <title>Solar Plant Company in Chennai | Daystar Solar </title>
     <meta
         name="description"
-        content="The sun sends the bill, we make it free. Daystar Solar installs residential & commercial rooftop solar plants in Chennai with subsidy support." />
+        content= Discover Day Star Solar's solar solutions, products, projects, and services for homes, businesses, and industries.
+    />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://daystarsolar.co.in/" />
     <script type="application/ld+json">
@@ -258,13 +259,14 @@
 
     <meta
         property="og:title"
-        content="Solar Plant Company Chennai | Daystar Solar"/>
+        content="Solar Plant Company in Chennai | Daystar Solar"/>
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://daystarsolar.co.in/oghome.png" />
     <meta property="og:url" content="https://daystarsolar.co.in/" />
     <meta
         property="og:description"
-        content= "Day Star Solar offers commercial and industrial solar plant installation in chennai. Get reliable, cost-effective solar energy solutions today" />
+        content= "The sun sends the bill, we make it free". 
+    />
 </svelte:head>
 
 <section class="mx-auto px-6 py-12 md:px-16 lg:px-32">
@@ -272,7 +274,7 @@
         <div class="col-span-12 lg:col-span-5">
             <div class="mb-16">
                 <h1 class="mb-6 text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl">
-                    Solar Plant Company In <span class="text-orange-500">Chennai</span>
+                    Solar<span class="text-orange-500">Plant</span>Company
                 </h1>
                 <p class="mb-8 text-lg text-gray-600">
                     Premium sustainable energy solutions for homes and businesses.
@@ -621,6 +623,55 @@
                 src="https://res.cloudinary.com/dlq8wuvji/video/upload/v1745575578/Daystar_Projects_Showreel_esvxpw.mp4"
                 type="video/mp4" />
         </video>
+    </div>
+</section>
+
+
+<section class="py-16">
+    <div class="container mx-auto max-w-5xl px-6 md:px-16">
+        <div class="space-y-6 text-center">
+            <h2 class="text-3xl font-semibold">Complete Solar Solutions for Homes and Businesses</h2>
+            <p class="mx-auto max-w-3xl text-gray-600">
+                Daystar Solar provides reliable solar energy solutions for residential, commercial, and industrial
+                customers across Chennai and Tamil Nadu. Our team helps you choose the right solar system based on
+                your electricity consumption, available space, energy goals, and budget.
+            </p>
+            <p class="mx-auto max-w-3xl text-gray-600">
+                From residential rooftop solar installations to large commercial and industrial solar projects, we
+                manage the complete process from consultation and system design to installation, commissioning, and
+                after-sales support. Our solar experts focus on safe installation, efficient system performance, and
+                dependable long-term service.
+            </p>
+            <p class="mx-auto max-w-3xl text-gray-600">
+                A professionally designed solar power system can help reduce dependence on conventional electricity,
+                improve energy efficiency, and support a cleaner future. We provide practical guidance on solar
+                panels, inverters, mounting structures, net metering, government subsidy assistance, and maintenance
+                requirements.
+            </p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+            <div class="rounded-lg border border-gray-100 p-6">
+                <h3 class="mb-3 text-lg font-medium">Residential Rooftop Solar</h3>
+                <p class="text-sm text-gray-600">
+                    Generate clean electricity for your home with a rooftop solar system designed around your
+                    household power consumption and available roof area.
+                </p>
+            </div>
+            <div class="rounded-lg border border-gray-100 p-6">
+                <h3 class="mb-3 text-lg font-medium">Commercial Solar Systems</h3>
+                <p class="text-sm text-gray-600">
+                    Reduce operating costs and improve energy efficiency with scalable solar solutions for offices,
+                    shops, institutions, and commercial buildings.
+                </p>
+            </div>
+            <div class="rounded-lg border border-gray-100 p-6">
+                <h3 class="mb-3 text-lg font-medium">Industrial Solar Projects</h3>
+                <p class="text-sm text-gray-600">
+                    Power large facilities with engineered solar projects designed for high energy demand, reliable
+                    performance, and long-term operational efficiency.
+                </p>
+            </div>
+        </div>
     </div>
 </section>
 

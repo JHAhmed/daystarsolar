@@ -11,7 +11,7 @@
 	<title>Blog | Daystar Solar</title>
 	<meta
 		name="description"
-		content="Knowledge that powers better decisions - explore our latest solar insights, guides, and tips from Daystar Solar."
+		content= Knowledge that powers better decisions. Explore the latest solar insights, guides, and tips from Day Star Solar.
 	/>
 	<meta property="og:title" content="Blogs | Daystar Solar" />
 	<meta property="og:type" content="website" />

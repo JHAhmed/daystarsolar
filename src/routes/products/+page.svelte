@@ -35,7 +35,8 @@
 	<title>Products | Daystar Solar</title>
 	<meta
 		name="description"
-		content="Premium Panasonic panels, inverters, structures, distribution boxes & cables - complete solar solutions, all in one place." />
+		content= Discover premium Panasonic panels, inverters, mounting structures, distribution boxes, and cables for complete solar solutions.
+	/>
 	<meta property="og:title" content="Products | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/products" />
@@ -43,7 +44,8 @@
 	<link rel="canonical" href="https://daystarsolar.co.in/products" />
 	<meta
 		property="og:description"
-		content="Buy premium Panasonic solar panels, solar cables, distribution boxes (ACDB/DCDB), and inverters in chennai. Authorized deale" />
+		content="Buy premium Panasonic solar panels, solar cables, distribution boxes (ACDB/DCDB), and inverters in chennai. Authorized deale."
+	 />
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
