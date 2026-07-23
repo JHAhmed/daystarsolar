@@ -274,7 +274,7 @@
         <div class="col-span-12 lg:col-span-5">
             <div class="mb-16">
                 <h1 class="mb-6 text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl">
-                    Solar<span class="text-orange-500">Plant</span>Company
+                    Solar <span class="text-orange-500">Plant</span> Company
                 </h1>
                 <p class="mb-8 text-lg text-gray-600">
                     Premium sustainable energy solutions for homes and businesses.
