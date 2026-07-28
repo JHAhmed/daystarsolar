@@ -33,8 +33,7 @@
 </script>
 
 <svelte:head>
-	<title>Solar Energy Report | Daystar Solar</title>
-	<meta name="robots" content="noindex, nofollow" />
+	<title>Solar Energy Report</title>
 </svelte:head>
 
 <div class="pdf-container font-report">

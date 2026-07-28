@@ -52,7 +52,7 @@
 	];
 </script>
 
-<div class="flex items-center justify-center overflow-x-auto">
+<div class="flex items-center justify-center">
 	<table
 		class="max-w-5xl  border-collapse bg-white text-left text-xs md:text-sm text-gray-800 mb-16"
 	>

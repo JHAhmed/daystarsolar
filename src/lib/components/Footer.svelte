@@ -100,19 +100,19 @@
 
 	<div class="relative mx-auto my-4 flex items-center justify-center px-4 lg:px-8">
 		<div class="mr-[6.5rem] flex space-x-4 lg:space-x-6">
-			<a href="https://twitter.com/DaystarSolar" target="_blank" rel="noopener noreferrer">
+			<a href="https://twitter.com/DaystarSolar">
 				<img class="h-3 w-auto lg:h-4" src={twitterLogo} alt="Twitter Logo" />
 			</a>
-			<a href="https://www.facebook.com/daystarsolarindia" target="_blank" rel="noopener noreferrer">
+			<a href="https://www.facebook.com/daystarsolarindia">
 				<img class="h-3 w-auto lg:h-4" src={facebookLogo} alt="Facebook Logo" />
 			</a>
-			<a href="https://in.linkedin.com/company/daystar-solar" target="_blank" rel="noopener noreferrer">
+			<a href="https://in.linkedin.com/company/daystar-solar">
 				<img class="h-3 w-auto lg:h-4" src={linkedinLogo} alt="LinkedIn Logo" />
 			</a>
-			<a href="https://www.instagram.com/daystarsolar_official/" target="_blank" rel="noopener noreferrer">
+			<a href="https://www.instagram.com/daystarsolar_official/">
 				<InstagramIcon className="h-3 lg:h-4 w-fit" />
 			</a>
-			<a href="https://www.youtube.com/@DaystarSolarOfficial/" target="_blank" rel="noopener noreferrer">
+			<a href="https://www.youtube.com/@DaystarSolarOfficial/">
 				<YoutubeIcon className="h-3 lg:h-4 w-fit" />
 			</a>
 		</div>
@@ -122,7 +122,7 @@
 		<div
 			class="absolute left-2/4 top-2/4 mx-auto flex -translate-x-2/4 -translate-y-2/4 transform items-center justify-center"
 		>
-			<a href="/" title="Daystar Solar - Home" class="flex items-center justify-center">
+			<a href="/" title="" class="flex items-center justify-center">
 				<img class="h-5 w-auto md:h-6" src={logoSmall} alt="Daystar Logo" />
 			</a>
 		</div>
@@ -130,7 +130,7 @@
 		<div
 			class="flex flex-col items-center justify-center space-x-2 text-center text-sm font-medium text-gray-900 lg:flex-row"
 		>
-			<a href="https://wurks.studio/" target="_blank" rel="noopener noreferrer" class="font-normal text-gray-600"
+			<a href="https://wurks.studio/" target="_blank" class="font-normal text-gray-600"
 				>By <span
 					class="font-medium text-purple-600 decoration-purple-600 decoration-2 underline-offset-2 hover:underline"
 					>Wurks</span

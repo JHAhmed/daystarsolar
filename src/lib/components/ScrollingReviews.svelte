@@ -142,7 +142,6 @@
 				<a
 					href={review.link}
 					target="_blank"
-					rel="noopener noreferrer"
 					class="group/link relative flex flex-col h-full justify-between space-y-4 rounded-xl border-2 border-black bg-white p-6 hover:bg-green-50 md:space-y-8 md:p-8"
 				>
 

@@ -7,7 +7,6 @@
 
 <svelte:head>
 	<title>Error | Daystar Solar</title>
-	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 
 <div class="flex flex-col h-screen items-center justify-center space-y-8 p-4 text-center">

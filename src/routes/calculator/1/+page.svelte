@@ -142,12 +142,6 @@
 	};
 </script>
 
-<svelte:head>
-	<title>Solar Calculator - Step 1: Property Details | Daystar Solar</title>
-	<meta name="robots" content="noindex, follow" />
-	<link rel="canonical" href="https://daystarsolar.co.in/calculator" />
-</svelte:head>
-
 <div class="absolute right-12 top-12 h-48 w-96 rounded-lg bg-gray-600 p-4 font-medium text-white">
 	<p>Name: {details.fullName}</p>
 	<p>Phone: {details.phoneNumber}</p>

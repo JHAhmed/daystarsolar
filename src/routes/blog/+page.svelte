@@ -11,16 +11,14 @@
 	<title>Blog | Daystar Solar</title>
 	<meta
 		name="description"
-		content="Knowledge that powers better decisions. Explore the latest solar insights, guides, and tips from Day Star Solar."
+		content="Read the latest blogs and articles from Daystar Solar, a leading solar energy solutions provider in South India."
 	/>
 	<meta property="og:title" content="Blogs | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/blog" />
-	<meta property="og:image" content="https://daystarsolar.co.in/oghome.png" />
-	<link rel="canonical" href="https://daystarsolar.co.in/blog" />
 	<meta
 		property="og:description"
-		content="Read the latest blogs and articles from Daystar Solar, a leading solar energy solutions provider in south india"
+		content="Read the latest blogs and articles from Daystar Solar, a leading solar energy solutions provider in South India."
 	/>
 	<script type="application/ld+json">
 		{
@@ -28,7 +26,7 @@
 			"@type": "Blog",
 			"url": "https://daystarsolar.co.in/blog",
 			"name": "Daystar Solar Blog",
-			"description": "Read the latest blogs and articles from Daystar Solar, a leading solar energy solutions provider in south india"
+			"description": "Latest news, insights, and tips about solar energy, sustainability, and our projects."
 		}
 	</script>
 </svelte:head>
@@ -45,8 +43,8 @@
 			use:animateIn={{ delay: 0.2 }}
 			class="text-5xl leading-tight tracking-[-0.07em] opacity-0 md:text-6xl lg:text-7xl"
 		>
-			Benefits of<br />
-			Solar Energy
+			Recent Blogs<br />
+			& Articles
 		</h1>
 	</div>
 

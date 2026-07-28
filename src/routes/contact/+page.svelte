@@ -21,12 +21,20 @@
 	import { Toaster, toast } from 'svelte-sonner';
 	import { dev } from '$app/environment';
 	import { goto } from '$app/navigation';
+	import { env as publicEnv } from '$env/dynamic/public';
+
+	// Spam protection: reCAPTCHA v3 site key (set PUBLIC_RECAPTCHA_SITE_KEY in Vercel env vars)
+	const RECAPTCHA_SITE_KEY = publicEnv.PUBLIC_RECAPTCHA_SITE_KEY;
 
 	let firstName = '';
 	let lastName = '';
 	let email = '';
 	let number = '';
 	let message = '';
+
+	// Honeypot field - real users never see or fill this. If it has a value on submit,
+	// the request came from a bot, so we silently drop it server-side.
+	let company = '';
 
 	if (dev) {
 		firstName = 'Jamal';
@@ -100,13 +108,43 @@
 		}
 	];
 
+	function getRecaptchaToken() {
+		return new Promise((resolve, reject) => {
+			if (typeof grecaptcha === 'undefined' || !RECAPTCHA_SITE_KEY) {
+				// If reCAPTCHA hasn't loaded (e.g. blocked or key missing), don't block the user -
+				// the server-side check will just treat this as a missing token.
+				resolve('');
+				return;
+			}
+			grecaptcha.ready(() => {
+				grecaptcha
+					.execute(RECAPTCHA_SITE_KEY, { action: 'contact_form' })
+					.then(resolve)
+					.catch(() => resolve(''));
+			});
+		});
+	}
+
 	async function handleSubmit() {
 		if (!validateForm()) {
 			toast.warning('Please fill in all details properly!');
 			return;
 		}
 
+		// Honeypot: if a bot filled this hidden field, quietly pretend it worked.
+		if (company) {
+			firstName = '';
+			lastName = '';
+			number = '';
+			email = '';
+			message = '';
+			goto('/message-sent');
+			return;
+		}
+
 		loading = true;
+
+		const recaptchaToken = await getRecaptchaToken();
 
 		const res = await fetch('/api/send-contact-email', {
 			method: 'POST',
@@ -116,7 +154,9 @@
 				lastName,
 				number,
 				email,
-				message
+				message,
+				company,
+				recaptchaToken
 			})
 		});
 
@@ -149,13 +189,11 @@
 	<title>Contact Us | Daystar Solar</title>
 	<meta
 		name="description"
-		content="We're here to help. Get expert solar advice tailored to your needs. Contact Day Star Solar in Chennai for site visits, quotes, and support."
+		content="Get in touch with Daystar Solar for all your solar energy needs. Contact us for procurement, admin, service, and sales queries."
 	/>
 	<meta property="og:title" content="Contact Us | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/contact" />
-	<meta property="og:image" content="https://daystarsolar.co.in/oghome.png" />
-	<link rel="canonical" href="https://daystarsolar.co.in/contact" />
 	<meta
 		property="og:description"
 		content="Get in touch with Daystar Solar for all your solar energy needs. Contact us for procurement, admin, service, and sales queries."
@@ -166,9 +204,12 @@
 			"@type": "ContactPage",
 			"url": "https://daystarsolar.co.in/contact",
 			"name": "Contact Us",
-			"description": "Get in touch with Daystar Solar for all your solar energy needs. Contact us for procurement, admin, service, and sales queries."
+			"description": "Get in touch with Daystar Solar for inquiries, installations, or support."
 		}
 	</script>
+	{#if RECAPTCHA_SITE_KEY}
+		<script src="https://www.google.com/recaptcha/api.js?render={RECAPTCHA_SITE_KEY}"></script>
+	{/if}
 </svelte:head>
 
 <Toaster richColors expand={true} />
@@ -247,6 +288,17 @@
 
 	<div class="grid gap-8 md:h-[28rem] md:grid-cols-2">
 		<form on:submit|preventDefault={handleSubmit} class="flex h-full flex-col space-y-4">
+			<!-- Honeypot field: hidden from real users, bots tend to fill every field they see -->
+			<input
+				type="text"
+				name="company"
+				bind:value={company}
+				tabindex="-1"
+				autocomplete="off"
+				style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;"
+				aria-hidden="true"
+			/>
+
 			<div class="grid grid-cols-2 gap-4">
 				<input
 					type="text"
@@ -299,7 +351,6 @@
 			<a
 				href="https://maps.app.goo.gl/uNk4gDxCLP1v62Aa8"
 				target="_blank"
-				rel="noopener noreferrer"
 				class="group/link relative flex items-center justify-center gap-3 rounded-lg border-2 border-black bg-white p-4 hover:bg-green-50"
 			>
 				<div

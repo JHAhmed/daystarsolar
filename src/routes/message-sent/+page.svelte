@@ -32,11 +32,7 @@
 
 <svelte:head>
 	<title>Email Sent! | Daystar Solar</title>
-	<meta
-		name="description"
-		content="Thanks for reaching out to Daystar Solar. Your message has been sent and our team will get back to you shortly."
-	/>
-	<meta name="robots" content="noindex, follow" />
+	<meta name="description" content="" />
 </svelte:head>
 
 <section class="my-18 mx-auto mt-8 max-w-7xl px-4 py-12">

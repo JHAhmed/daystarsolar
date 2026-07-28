@@ -16,16 +16,6 @@
 		const { marked } = await import('marked');
 		mardkdownContent = marked.parse(mardkdownContent);
 	});
-
-	let jsonLd = $derived(
-		JSON.stringify({
-			'@context': 'https://schema.org',
-			'@type': 'CreativeWork',
-			url: `https://daystarsolar.co.in/projects/${post.slug}`,
-			name: post.title,
-			description: post.summary
-		})
-	);
 </script>
 
 <svelte:head>
@@ -34,11 +24,17 @@
 	<meta property="og:title" content={post.title} />
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content={`https://daystarsolar.co.in/projects/${post.slug}`} />
-	<meta property="og:image" content={post.image || 'https://daystarsolar.co.in/oghome.png'} />
-	<link rel="canonical" href={`https://daystarsolar.co.in/projects/${post.slug}`} />
 	<meta property="og:description" content={post.summary} />
 	<script type="application/ld+json">
-		{jsonLd}
+		{`
+			{
+				"@context": "https://schema.org",
+				"@type": "BlogPosting",
+				"url": "https://daystarsolar.co.in/projects/${post.slug}",
+				"name": "${post.title}",
+				"description": "${post.summary}"
+			}
+		`}
 	</script>
 </svelte:head>
 

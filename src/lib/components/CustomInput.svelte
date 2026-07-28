@@ -77,7 +77,7 @@
 					onUnitChange(e);
 				}}
 				value="sqmt"
-				class="w-full max-w-[400px]"
+				class="w-[400px]"
 			>
 				<Tabs.List class="mx-2 p-2">
 					<Tabs.Trigger class="h-full" value="sqmt">Sq. M</Tabs.Trigger>

@@ -33,19 +33,17 @@
 </script>
 
 <svelte:head>
-	<title>About Us | Daystar Solar</title>
+	<title>About Daystar Solar | Top Solar Integrator in Chennai</title>
 	<meta
 		name="description"
-		content="Learn about Day Star Solar, our experience, values, and commitment to delivering reliable solar energy solutions."
+		content="Daystar Solar is a leading solar energy solutions provider in South India. We offer solar panels, street lights, and distribution boxes for residential and commercial use."
 	/>
-	<meta property="og:title" content="About Us | Daystar Solar" />
+	<meta property="og:title" content="About Daystar Solar | Top Solar Integrator in Chennai" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/about" />
-	<meta property="og:image" content="https://daystarsolar.co.in/oghome.png" />
-	<link rel="canonical" href="https://daystarsolar.co.in/about" />
 	<meta
 		property="og:description"
-		content="With 15+ years of experience, Daystar Solar delivers efficient and affordable solar plant installation services for businesses and industries across south india"
+		content="Daystar Solar is a leading solar energy solutions provider in South India. We offer solar panels, street lights, and distribution boxes for residential and commercial use."
 	/>
 	<script type="application/ld+json">
 		{
@@ -70,8 +68,8 @@
 			use:animateIn={{ delay: 0.2 }}
 			class="text-3xl leading-tight tracking-[-0.07em] opacity-0 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
 		>
-			Best Solar<br />
-			Company In <span class="text-orange-400">Chennai</span>
+			The best solutions<br />
+			for <span class="text-orange-400">solar</span> energy
 		</h1>
 	</div>
 

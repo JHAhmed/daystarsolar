@@ -11,17 +11,16 @@
 	<title>Projects | Daystar Solar</title>
 	<meta
 		name="description"
-		content="View Day Star Solar's completed projects and discover the solar solutions delivered for different customer requirements."
+		content="View the latest solar installations and projects from Daystar Solar, a leading solar energy solutions provider in South India."
 	/>
 	<meta property="og:title" content="Projects | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:image" content="https://daystarsolar.co.in/ogprojects.png" />
 
 	<meta property="og:url" content="https://daystarsolar.co.in/projects" />
-	<link rel="canonical" href="https://daystarsolar.co.in/projects" />
 	<meta
 		property="og:description"
-		content="Real rooftops, real savings - a portfolio of solar projects built to perform for decades by Daystar Solar"
+		content="View the latest solar installations and projects from Daystar Solar, a leading solar energy solutions provider in South India."
 	/>
 	<script type="application/ld+json">
 		{
@@ -40,7 +39,7 @@
 			use:animateIn={{ delay: 0.2 }}
 			class="text-5xl leading-tight tracking-[-0.07em] opacity-0 md:text-6xl lg:text-7xl"
 		>
-			Our Projects
+			Projects
 		</h1>
 	</div>
 

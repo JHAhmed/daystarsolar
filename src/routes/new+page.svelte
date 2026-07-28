@@ -277,7 +277,7 @@
 <section class="bg-neutral-50 py-20">
 	<div class="container mx-auto px-4">
 		<h2 class="mb-12 text-center text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-			Customer Testimonials
+			What Our Customers Say
 		</h2>
 		<ScrollingReviews />
 	</div>
@@ -322,7 +322,7 @@
 			<img src={quotationMark} class="size-4" alt="quote" />
 		</div>
 		<h2 class="text-3xl font-semibold leading-tight tracking-tight text-neutral-900 md:text-4xl lg:text-5xl">
-			Power your future with
+			Ignite your future with
 			<span class="text-amber-500">solar</span> energy
 		</h2>
 		<div class="rotate-180 rounded-full bg-neutral-100 p-4">
@@ -381,7 +381,7 @@
 		<div>
 			<p class="text-xs font-medium uppercase tracking-widest text-amber-500">Why Us</p>
 			<h2 class="mb-8 mt-2 text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-				Why Choose Daystar Solar In Chennai ?
+				Why Chennai Chooses Daystar Solar?
 			</h2>
 			<ul class="space-y-6">
 				<li class="flex items-start gap-4">
@@ -534,7 +534,7 @@
 		loop
 		preload="metadata"
 		on:click={toggle}
-		poster={sampleImage1} aria-label="Daystar Solar projects showreel" title="Daystar Solar projects showreel"
+		poster="/preview.jpg"
 		class="aspect-video w-full cursor-pointer rounded-2xl object-cover">
 		<source
 			src="https://res.cloudinary.com/dlq8wuvji/video/upload/v1745575578/Daystar_Projects_Showreel_esvxpw.mp4"
