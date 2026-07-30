@@ -72,6 +72,11 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Your Solar Report | Daystar Solar</title>
+	<meta name="robots" content="noindex, nofollow" />
+</svelte:head>
+
 <div class="mx-auto flex max-w-2xl flex-col p-4 text-gray-800">
 	<button
 		on:click={downloadPDF}

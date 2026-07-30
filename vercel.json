@@ -1,11 +1,15 @@
 {
-	"env": {
-		"PUPPETEER_CACHE_DIR": "/tmp/puppeteer"
-	},
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*\\.php$", "status": 410 },
-    { "src": "/wp-.*", "status": 410 }
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.daystarsolar.co.in"
+        }
+      ],
+      "destination": "https://daystarsolar.co.in/:path*",
+      "permanent": true
+    }
   ]
 }
-

@@ -3,75 +3,8 @@ import { json } from '@sveltejs/kit';
 import { Resend } from 'resend';
 import { supabase } from '$lib/supabaseClient.js';
 
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-// Verifies the reCAPTCHA v3 token with Google. Requires RECAPTCHA_SECRET_KEY env var
-// (from the same reCAPTCHA admin console entry as the public site key).
-async function verifyRecaptcha(token) {
-	if (!env.RECAPTCHA_SECRET_KEY || !token) {
-		return { success: false, score: 0 };
-	}
-	try {
-		const params = new URLSearchParams();
-		params.append('secret', env.RECAPTCHA_SECRET_KEY);
-		params.append('response', token);
-
-		const res = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			body: params
-		});
-		return await res.json();
-	} catch (err) {
-		console.error('reCAPTCHA verification request failed:', err);
-		return { success: false, score: 0 };
-	}
-}
-
 export async function POST({ request }) {
-	const { firstName, lastName, email, number, message, company, recaptchaToken } =
-		await request.json();
-
-	// --- Honeypot check ---
-	// "company" is a hidden field real users never fill in. Bots that auto-fill every
-	// field will trip this. Return a fake success so the bot doesn't learn anything.
-	if (company) {
-		console.warn('Contact form: honeypot triggered, dropping submission silently.');
-		return json({ success: true, message: 'Message sent successfully' });
-	}
-
-	// --- Server-side validation ---
-	// The frontend validates too, but that can be bypassed by anyone posting directly
-	// to this endpoint (which is exactly what most spam bots do).
-	if (
-		!firstName?.trim() ||
-		firstName.trim().length < 2 ||
-		!lastName?.trim() ||
-		!email?.trim() ||
-		!EMAIL_REGEX.test(email) ||
-		!number?.trim() ||
-		number.replace(/\D/g, '').length < 10 ||
-		!message?.trim() ||
-		message.trim().length < 10 ||
-		message.length > 3000
-	) {
-		return json({ success: false, message: 'Invalid form data' }, { status: 400 });
-	}
-
-	// --- reCAPTCHA v3 verification ---
-	// Only enforced if RECAPTCHA_SECRET_KEY is configured, so the form doesn't break
-	// before the developer sets up the Google reCAPTCHA keys.
-	if (env.RECAPTCHA_SECRET_KEY) {
-		const recaptchaResult = await verifyRecaptcha(recaptchaToken);
-		const score = recaptchaResult.score ?? 0;
-		if (!recaptchaResult.success || score < 0.5) {
-			console.warn('Contact form: reCAPTCHA check failed.', recaptchaResult);
-			return json(
-				{ success: false, message: 'Could not verify you are human. Please try again.' },
-				{ status: 400 }
-			);
-		}
-	}
+	const { firstName, lastName, email, number, message } = await request.json();
 
 	try {
 		const resend = new Resend(env.RESEND_API_KEY);

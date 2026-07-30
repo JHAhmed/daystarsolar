@@ -1,4 +1,8 @@
 <!-- src/routes/ar-js/+page.svelte -->
+<svelte:head>
+	<title>AR Viewer (Legacy) | Daystar Solar</title>
+	<meta name="robots" content="noindex, nofollow" />
+</svelte:head>
 <script>
 	import model from '$lib/solar.glb';
 

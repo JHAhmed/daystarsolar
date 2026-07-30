@@ -23,7 +23,7 @@
 			alt: 'Solar powered street light against blue cloudy sky'
 		},
 		{
-			title: 'Others',
+			title: 'Solar Accessories',
 			image: solarImage1,
 			byds: false,
 			alt: 'Worker installing solar panels on a roof'
@@ -32,16 +32,20 @@
 </script>
 
 <svelte:head>
-	<title>Solar Panels & Accessories | Daystar Solar</title>
+	<title>Products | Daystar Solar</title>
 	<meta
 		name="description"
-		content="Buy premium Panasonic solar panels, solar street lights, distribution boxes (ACDB/DCDB), and inverters in Chennai. Authorized dealers with best market prices." />
-	<meta property="og:title" content="Solar Panels & Accessories | Daystar Solar" />
+		content="Discover premium Panasonic panels, inverters, mounting structures, distribution boxes, and cables for complete solar solutions."
+	/>
+	<meta property="og:title" content="Products | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/products" />
+	<meta property="og:image" content="https://daystarsolar.co.in/oghome.png" />
+	<link rel="canonical" href="https://daystarsolar.co.in/products" />
 	<meta
 		property="og:description"
-		content="Buy premium Panasonic solar panels, solar street lights, distribution boxes (ACDB/DCDB), and inverters in Chennai. Authorized dealers with best market prices." />
+		content="Buy premium Panasonic solar panels, solar cables, distribution boxes (ACDB/DCDB), and inverters in chennai. Authorized deale."
+	 />
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
@@ -58,7 +62,7 @@
 		<h1
 			use:animateIn={{ delay: 0.2 }}
 			class="text-5xl leading-tight tracking-[-0.07em] opacity-0 md:text-6xl lg:text-7xl">
-			Shop Our Products
+			Our Products
 		</h1>
 		<div class="my-12 max-w-3xl text-lg text-gray-600">
 			<p class="mb-4">
@@ -115,6 +119,7 @@
 							<a
 								href="https://www.amazon.in/stores/DaystarSolar/page/EEE44EC4-A6FA-4DDA-B319-B5711BA870CD/"
 								target="_blank"
+								rel="noopener noreferrer"
 								class="flex items-center gap-1.5 rounded-full border border-white/50 bg-white/20 px-3 py-1.5 text-xs backdrop-blur-sm transition hover:bg-white/30 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm">
 								<AmazonLogo class="h-4 w-auto sm:h-5" />
 								<span class="text-white">Amazon</span>
@@ -123,6 +128,7 @@
 							<a
 								href="https://www.indiamart.com/daystarsolar/"
 								target="_blank"
+								rel="noopener noreferrer"
 								class="flex items-center gap-1.5 rounded-full border border-white/50 bg-white/20 px-3 py-1.5 text-xs backdrop-blur-sm transition hover:bg-white/30 sm:gap-2 sm:px-4 sm:py-2 sm:text-sm">
 								<IndiaMartLogo class="h-4 w-auto sm:h-5" />
 								<span class="text-white">IndiaMART</span>

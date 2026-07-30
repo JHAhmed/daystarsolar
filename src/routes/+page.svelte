@@ -105,10 +105,12 @@
 </script>
 
 <svelte:head>
-    <title>Solar Panel Installation Chennai | Daystar Solar - 13+ Years Experience</title>
+    <title>Solar Plant Company in Chennai | Daystar Solar </title>
     <meta
         name="description"
-        content="Daystar Solar - Leading solar panel installer in Chennai since 2012. We provide residential & commercial solar solutions with Panasonic panels, government subsidy support, and 20-year warranties." />
+        content="Discover Day Star Solar's solar solutions, products, projects, and services for homes, businesses, and industries."
+    />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://daystarsolar.co.in/" />
     <script type="application/ld+json">
         {
@@ -257,13 +259,14 @@
 
     <meta
         property="og:title"
-        content="Solar Panel Installation Chennai | Daystar Solar - 13+ Years Experience" />
+        content="Solar Plant Company in Chennai | Daystar Solar"/>
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://daystarsolar.co.in/oghome.png" />
     <meta property="og:url" content="https://daystarsolar.co.in/" />
     <meta
         property="og:description"
-        content="Daystar Solar - Leading solar panel installer in Chennai since 2012. We provide residential & commercial solar solutions with Panasonic panels, government subsidy support, and 20-year warranties." />
+        content= "The sun sends the bill, we make it free." 
+    />
 </svelte:head>
 
 <section class="mx-auto px-6 py-12 md:px-16 lg:px-32">
@@ -271,7 +274,7 @@
         <div class="col-span-12 lg:col-span-5">
             <div class="mb-16">
                 <h1 class="mb-6 text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl">
-                    Solar Panel Installation in <span class="text-orange-500">Chennai</span>
+                    Solar <span class="text-orange-500">Plant</span> Company
                 </h1>
                 <p class="mb-8 text-lg text-gray-600">
                     Premium sustainable energy solutions for homes and businesses.
@@ -321,7 +324,7 @@
 <section class="py-16">
     <div class="container mx-auto px-6 md:px-16 lg:px-32">
         <h2 class="mb-12 text-center text-2xl font-semibold tracking-tight md:text-3xl">
-            What Our Customers Say
+            Customer Testimonials
         </h2>
         <ScrollingReviews />
     </div>
@@ -365,7 +368,7 @@
                 <img src={quotationMark} class="h-4 w-4 text-gray-600" alt="quote" />
             </div>
             <h2 class="mb-8 text-2xl font-semibold md:text-3xl lg:text-4xl">
-                Ignite your future with
+                Power your future with
                 <span class="text-orange-500">solar</span> energy
             </h2>
             <div class="mb-8 rounded-full bg-gray-100 p-4">
@@ -441,7 +444,7 @@
 <section class="py-16">
     <div class="container mx-auto grid grid-cols-1 gap-12 px-6 md:grid-cols-2 md:px-16 lg:px-32">
         <div>
-            <h2 class="mb-8 text-2xl font-semibold">Why Chennai Chooses Daystar Solar?</h2>
+            <h2 class="mb-8 text-2xl font-semibold">Why Choose Daystar Solar In Chennai ?</h2>
             <ul class="space-y-6">
                 <li class="flex items-start gap-4">
                     <span class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gray-100 text-xs font-medium text-gray-700">
@@ -589,7 +592,7 @@
 
 <section class="py-16">
     <div class="container mx-auto px-6 md:px-16 lg:px-32">
-        <h2 class="mb-10 text-center text-2xl font-semibold">Common Questions regarding Solar</h2>
+        <h2 class="mb-10 text-center text-2xl font-semibold">Got Questions ?</h2>
         <div class="mx-auto max-w-3xl space-y-4">
             {#each faqs as faq}
                 <div class="rounded-lg border border-gray-100 p-6">
@@ -614,12 +617,61 @@
             loop
             preload="metadata"
             on:click={toggle}
-            poster="/preview.jpg"
+            poster={sampleImage1} aria-label="Daystar Solar projects showreel" title="Daystar Solar projects showreel"
             class="mx-auto h-auto w-full cursor-pointer rounded-lg object-cover">
             <source
                 src="https://res.cloudinary.com/dlq8wuvji/video/upload/v1745575578/Daystar_Projects_Showreel_esvxpw.mp4"
                 type="video/mp4" />
         </video>
+    </div>
+</section>
+
+
+<section class="py-16">
+    <div class="container mx-auto max-w-5xl px-6 md:px-16">
+        <div class="space-y-6 text-center">
+            <h2 class="text-3xl font-semibold">Complete Solar Solutions for Homes and Businesses</h2>
+            <p class="mx-auto max-w-3xl text-gray-600">
+                Daystar Solar provides reliable solar energy solutions for residential, commercial, and industrial
+                customers across Chennai and Tamil Nadu. Our team helps you choose the right solar system based on
+                your electricity consumption, available space, energy goals, and budget.
+            </p>
+            <p class="mx-auto max-w-3xl text-gray-600">
+                From residential rooftop solar installations to large commercial and industrial solar projects, we
+                manage the complete process from consultation and system design to installation, commissioning, and
+                after-sales support. Our solar experts focus on safe installation, efficient system performance, and
+                dependable long-term service.
+            </p>
+            <p class="mx-auto max-w-3xl text-gray-600">
+                A professionally designed solar power system can help reduce dependence on conventional electricity,
+                improve energy efficiency, and support a cleaner future. We provide practical guidance on solar
+                panels, inverters, mounting structures, net metering, government subsidy assistance, and maintenance
+                requirements.
+            </p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+            <div class="rounded-lg border border-gray-100 p-6">
+                <h3 class="mb-3 text-lg font-medium">Residential Rooftop Solar</h3>
+                <p class="text-sm text-gray-600">
+                    Generate clean electricity for your home with a rooftop solar system designed around your
+                    household power consumption and available roof area.
+                </p>
+            </div>
+            <div class="rounded-lg border border-gray-100 p-6">
+                <h3 class="mb-3 text-lg font-medium">Commercial Solar Systems</h3>
+                <p class="text-sm text-gray-600">
+                    Reduce operating costs and improve energy efficiency with scalable solar solutions for offices,
+                    shops, institutions, and commercial buildings.
+                </p>
+            </div>
+            <div class="rounded-lg border border-gray-100 p-6">
+                <h3 class="mb-3 text-lg font-medium">Industrial Solar Projects</h3>
+                <p class="text-sm text-gray-600">
+                    Power large facilities with engineered solar projects designed for high energy demand, reliable
+                    performance, and long-term operational efficiency.
+                </p>
+            </div>
+        </div>
     </div>
 </section>
 

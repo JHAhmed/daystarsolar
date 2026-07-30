@@ -45,14 +45,17 @@
 	<title>Gallery | Daystar Solar</title>
 	<meta
 		name="description"
-		content="View the latest solar installations and projects from Daystar Solar, a leading solar energy solutions provider in South India."
+		content="Proof is in the panels. Browse Day Star Solar's gallery of powered homes and businesses across South India."
 	/>
 	<meta property="og:title" content="Gallery | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/gallery" />
+	<meta property="og:image" content="https://daystarsolar.co.in/oghome.png" />
+	<link rel="canonical" href="https://daystarsolar.co.in/gallery" />
 	<meta
 		property="og:description"
-		content="Browse our visual portfolio of completed solar installations and projects showcasing the best of solar energy solutions."
+		content="View the latest solar installations and projects from Daystar Solar, a leading solar energy solutions provider in south india."
+
 	/>
 	<script type="application/ld+json">
 		{
@@ -60,8 +63,8 @@
 			"@type": "CollectionPage",
 			"url": "https://daystarsolar.co.in/gallery",
 			"name": "Gallery",
-			"description": "Browse our visual portfolio of completed solar installations and projects showcasing the best of solar energy solutions."
-		}
+			"description": 	"View the latest solar installations and projects from Daystar Solar, a leading solar energy solutions provider in south india."
+	}
 	</script>
 </svelte:head>
 
@@ -74,13 +77,14 @@
 			use:animateIn={{ delay: 0.2 }}
 			class="text-5xl leading-tight tracking-[-0.07em] opacity-0 md:text-6xl lg:text-7xl"
 		>
-			Gallery
+			Commercial Solar Installation
 		</h1>
 	</div>
 
 	<div class="grid grid-cols-2 gap-2 md:grid-cols-3">
 		{#each galleryItems as image}
 			<button
+				class="block w-full"
 				onclick={() => {
 					viewImage(image);
 				}}
@@ -88,7 +92,7 @@
 				<img
 					src={image.src}
 					alt="Image for project {image.project}"
-					class="rounded-lg"
+					class="h-full w-full rounded-lg object-cover"
 					loading="lazy"
 				/>
 			</button>

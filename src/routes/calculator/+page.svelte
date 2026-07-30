@@ -141,6 +141,7 @@
 	<meta property="og:title" content="Calculator | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/calculator" />
+	<link rel="canonical" href="https://daystarsolar.co.in/calculator" />
 	<meta property="og:image" content="https://daystarsolar.co.in/ogcalculator.png" />
 
 	<meta
@@ -210,6 +211,7 @@
 					<a
 						href="https://www.tnebltd.gov.in/BillStatus/consguide.html"
 						target="_blank"
+						rel="noopener noreferrer"
 						class="text-blue-800 hover:underline">How to check your consumer number?</a
 					>
 				</label>

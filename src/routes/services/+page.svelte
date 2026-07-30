@@ -89,17 +89,19 @@
 </script>
 
 <svelte:head>
-	<title>Solar Installation & Maintenance Services Chennai | Daystar Solar</title>
+	<title>Solar Services | Daystar Solar</title>
 	<meta
 		name="description"
-		content="Daystar Solar offers a wide range of solar services including consultation, installation, and maintenance for residential and commercial clients."
+		content="Your solar partner for life, from consultation to installation and beyond, with services for residential, commercial, and industrial needs."
 	/>
-	<meta property="og:title" content="Solar Installation & Maintenance Services Chennai | Daystar Solar" />
+	<meta property="og:title" content="Solar Services | Daystar Solar" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://daystarsolar.co.in/services" />
+	<meta property="og:image" content="https://daystarsolar.co.in/oghome.png" />
+	<link rel="canonical" href="https://daystarsolar.co.in/services" />
 	<meta
 		property="og:description"
-		content="Daystar Solar offers a wide range of solar services including consultation, installation, and maintenance for residential and commercial clients."
+		content="Daystar Solar offers a wide range of solar services including consultation, installation, and maintenance for industrial and commercial clients."
 	/>
 	<script type="application/ld+json">
 		{
@@ -116,7 +118,7 @@
 
 <section class="mx-auto max-w-7xl px-4 pt-16 sm:px-6 lg:px-8 text-center">
     <h1 class="text-4xl font-semibold font-sans tracking-tight text-gray-900 sm:text-5xl">
-        Complete Solar Solutions in Chennai
+        Solar Panel Installation In Chennai
     </h1>
     <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
         From cozy homes to large factories, we provide end-to-end solar execution.
