@@ -71,7 +71,7 @@
 			class="text-3xl leading-tight tracking-[-0.07em] opacity-0 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
 		>
 			Best Solar<br />
-			Company In <span class="text-orange-400">Chennai</span>
+			Company <span class="text-orange-400">In</span> Chennai
 		</h1>
 	</div>
 

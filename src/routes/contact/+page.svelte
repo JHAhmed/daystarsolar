@@ -21,12 +21,78 @@
 	import { Toaster, toast } from 'svelte-sonner';
 	import { dev } from '$app/environment';
 	import { goto } from '$app/navigation';
+	import { onMount, onDestroy } from 'svelte';
+	import { env } from '$env/dynamic/public';
 
 	let firstName = '';
 	let lastName = '';
 	let email = '';
 	let number = '';
 	let message = '';
+	let website = ''; // honeypot field — must stay empty; bots tend to fill every input
+
+	// Cloudflare Turnstile CAPTCHA state
+	let turnstileToken = '';
+	let turnstileWidgetId = null;
+	let turnstileContainer;
+	const TURNSTILE_SITE_KEY = env.PUBLIC_TURNSTILE_SITE_KEY;
+
+	function loadTurnstileScript() {
+		return new Promise((resolve, reject) => {
+			if (window.turnstile) {
+				resolve();
+				return;
+			}
+			const existing = document.querySelector('script[data-turnstile]');
+			if (existing) {
+				existing.addEventListener('load', () => resolve());
+				existing.addEventListener('error', reject);
+				return;
+			}
+			const script = document.createElement('script');
+			script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+			script.async = true;
+			script.defer = true;
+			script.dataset.turnstile = 'true';
+			script.onload = () => resolve();
+			script.onerror = reject;
+			document.head.appendChild(script);
+		});
+	}
+
+	onMount(async () => {
+		if (!TURNSTILE_SITE_KEY) {
+			console.error(
+				'PUBLIC_TURNSTILE_SITE_KEY is not set — the CAPTCHA widget will not render.'
+			);
+			return;
+		}
+		try {
+			await loadTurnstileScript();
+			if (window.turnstile && turnstileContainer) {
+				turnstileWidgetId = window.turnstile.render(turnstileContainer, {
+					sitekey: TURNSTILE_SITE_KEY,
+					callback: (token) => {
+						turnstileToken = token;
+					},
+					'expired-callback': () => {
+						turnstileToken = '';
+					},
+					'error-callback': () => {
+						turnstileToken = '';
+					}
+				});
+			}
+		} catch (e) {
+			console.error('Failed to load Turnstile CAPTCHA script:', e);
+		}
+	});
+
+	onDestroy(() => {
+		if (window?.turnstile && turnstileWidgetId !== null) {
+			window.turnstile.remove(turnstileWidgetId);
+		}
+	});
 
 	if (dev) {
 		firstName = 'Jamal';
@@ -56,6 +122,11 @@
 		if (!email.trim() || !emailRegex.test(email)) {
 			formIsValid = false;
 			console.error('A valid email is required!');
+		}
+
+		if (TURNSTILE_SITE_KEY && !turnstileToken) {
+			formIsValid = false;
+			console.error('Please complete the CAPTCHA!');
 		}
 
 		return formIsValid;
@@ -116,9 +187,18 @@
 				lastName,
 				number,
 				email,
-				message
+				message,
+				website,
+				turnstileToken
 			})
 		});
+
+		// A CAPTCHA token can only be used once — always reset the widget after a
+		// submit attempt (success or failure) so the next attempt gets a fresh token.
+		if (window.turnstile && turnstileWidgetId !== null) {
+			window.turnstile.reset(turnstileWidgetId);
+		}
+		turnstileToken = '';
 
 		if (!res.ok) {
 			toast.error('Error!');
@@ -247,6 +327,21 @@
 
 	<div class="grid gap-8 md:h-[28rem] md:grid-cols-2">
 		<form on:submit|preventDefault={handleSubmit} class="flex h-full flex-col space-y-4">
+			<!-- Honeypot field: hidden from real users, but visible to most bots that
+			     auto-fill every input on a page. If this is ever populated, the
+			     submission is treated as spam server-side. -->
+			<div class="absolute left-[-9999px] top-[-9999px]" aria-hidden="true">
+				<label for="website">Website</label>
+				<input
+					type="text"
+					id="website"
+					name="website"
+					bind:value={website}
+					tabindex="-1"
+					autocomplete="off"
+				/>
+			</div>
+
 			<div class="grid grid-cols-2 gap-4">
 				<input
 					type="text"
@@ -283,6 +378,10 @@
 				class="h-full w-full resize-none rounded-lg bg-gray-200 p-4 focus:outline-none focus:ring-2 focus:ring-gray-200"
 			></textarea>
 
+			{#if TURNSTILE_SITE_KEY}
+				<div bind:this={turnstileContainer}></div>
+			{/if}
+
 			<button
 				type="submit"
 				class="group/submit inline-flex w-full items-center justify-center gap-2 rounded-lg bg-gray-900 p-4 text-white transition-colors hover:bg-gray-800"
@@ -316,8 +415,9 @@
 
 			<div class="h-full overflow-hidden rounded-lg border-2 border-black bg-gray-100">
 				<iframe
-					class="h-full w-full border-0"
+					class="h-full w-full"
 					title="Daystar Solar"
+					style="border:0"
 					loading="lazy"
 					allowfullscreen
 					referrerpolicy="no-referrer-when-downgrade"

@@ -40,7 +40,7 @@
 			<img
 				src={CTABG}
 				class="img-clip absolute right-0 z-40 rounded-xl object-none opacity-40 sm:opacity-60 md:opacity-100"
-				alt="Daystar Solar rooftop solar panel installation"
+				alt=""
 				loading="lazy" 
 			/>
 		</div>

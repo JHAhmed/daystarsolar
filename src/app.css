@@ -85,9 +85,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-/* Utility to replace inline `style="display: contents"` in app.html
-   (kept out of markup so the SEO/code-to-text checks don't flag inline styles) */
-.sk-contents {
-  display: contents;
-}

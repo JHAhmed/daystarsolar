@@ -69,7 +69,7 @@
 		><img
 			height="1"
 			width="1"
-			class="hidden"
+			style="display:none"
 			src="https://www.facebook.com/tr?id=1774534922812759&ev=PageView&noscript=1"
 			alt="Facebook tracking pixel"
 		/></noscript
