@@ -36,15 +36,6 @@
 		src="https://cloud.umami.is/script.js"
 		data-website-id="fdff27c2-0ba8-46a4-b288-e707835f30ac"
 	></script>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=GT-PHX5SXCT"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-		gtag('config', 'GT-PHX5SXCT');
-	</script>
 	<script>
 		!(function (f, b, e, v, n, t, s) {
 			if (f.fbq) return;
