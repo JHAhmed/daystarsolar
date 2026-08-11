@@ -89,7 +89,7 @@
 							<ArrowIcon className="size-3 rotate-[-135deg]" />
 						</a>
 						<img
-							src={project.src}
+							src={project.src} width="1280" height="720"
 							alt={project.text}
 							class="h-[80%] w-full rounded-xl object-cover lg:h-[90%]"
 							loading="lazy" />

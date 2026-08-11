@@ -319,7 +319,7 @@
 		use:animateIn={{ blur: 8, duration: 0.5, delay: 0.5 }}
 		class="flex flex-col items-center justify-center space-y-6 text-center opacity-0 lg:px-4">
 		<div class="rounded-full bg-neutral-100 p-4">
-			<img src={quotationMark} class="size-4" alt="quote" />
+			<img src={quotationMark} width="24" height="24" class="size-4" alt="quote" />
 		</div>
 		<h2 class="text-3xl font-semibold leading-tight tracking-tight text-neutral-900 md:text-4xl lg:text-5xl">
 			Power your future with

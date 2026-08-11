@@ -54,7 +54,7 @@
 			<div class="flex h-16 items-center justify-between lg:h-20">
 				<div class="flex-shrink-0">
 					<a href="/" title="Daystar Solar - Home" class="flex">
-						<img class="h-12 w-auto lg:h-20" src={logo} alt="Daystar Logo" />
+						<img class="h-12 w-auto lg:h-20" src={logo} width="440" height="119" alt="Daystar Logo" />
 						<!-- LOGO -->
 					</a>
 				</div>
@@ -117,7 +117,7 @@
 		<div class="mx-auto px-2 lg:px-8">
 			<div class="flex h-16 items-center justify-center lg:h-20">
 				<a href="/" title="Daystar Solar - Home" class="flex">
-					<img class="h-12 w-auto lg:h-16" src={logo} alt="Daystar Logo" />
+					<img class="h-12 w-auto lg:h-16" src={logo} width="440" height="119" alt="Daystar Logo" />
 				</a>
 			</div>
 		</div>

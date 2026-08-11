@@ -13,5 +13,5 @@
 
 
 <div class="bg-white p-2 rounded-full">
-    <img src={IndiaMartLogo} alt="IndiaMart Logo" class={cn('size-4', className)} />
+    <img src={IndiaMartLogo} width="256" height="256" alt="IndiaMart Logo" class={cn('size-4', className)} />
 </div>

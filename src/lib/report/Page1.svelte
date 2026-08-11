@@ -86,7 +86,7 @@
 	bind:this={reportContainer1}
 	class="reportContainer mx-auto my-12 flex h-[842pt] w-[595pt] flex-col space-y-4 p-8 text-base text-gray-800"
 >
-	<img src={logo} alt="logo" class="w-72 mx-auto my-5" />
+	<img src={logo} width="440" height="119" alt="logo" class="w-72 mx-auto my-5" />
 	<p class="my-5 ml-auto">{currentDate}</p>
 
 	<h1 class="text-2xl font-bold">Hey {name},</h1>

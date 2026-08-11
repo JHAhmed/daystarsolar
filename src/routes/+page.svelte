@@ -274,7 +274,7 @@
         <div class="col-span-12 lg:col-span-5">
             <div class="mb-16">
                 <h1 class="mb-6 text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl">
-                    Solar<span class="text-orange-500">Plant</span>Company
+                    Solar <span class="text-orange-500">Plant</span> Company
                 </h1>
                 <p class="mb-8 text-lg text-gray-600">
                     Premium sustainable energy solutions for homes and businesses.
@@ -365,7 +365,7 @@
             use:animateIn={{ blur: 8, duration: 0.5, delay: 0.5 }}
             class="flex flex-col items-center justify-center text-center opacity-0">
             <div class="mb-6 rounded-full bg-gray-100 p-4">
-                <img src={quotationMark} class="h-4 w-4 text-gray-600" alt="quote" />
+                <img src={quotationMark} width="24" height="24" class="h-4 w-4 text-gray-600" alt="quote" />
             </div>
             <h2 class="mb-8 text-2xl font-semibold md:text-3xl lg:text-4xl">
                 Power your future with

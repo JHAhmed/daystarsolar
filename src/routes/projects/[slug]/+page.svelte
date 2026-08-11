@@ -72,7 +72,7 @@
 			use:animateIn={{ blur: 2, y: 5, delay: 0.4, inView: false }}
 			class="mb-8 overflow-hidden rounded-lg opacity-0"
 		>
-			<img src={post.image} alt={post.title} class="h-auto w-full object-cover" />
+			<img src={post.image} width="1280" height="720" alt={post.title} class="h-auto w-full object-cover" />
 		</div>
 	{/if}
 

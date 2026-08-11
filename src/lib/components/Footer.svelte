@@ -101,13 +101,13 @@
 	<div class="relative mx-auto my-4 flex items-center justify-center px-4 lg:px-8">
 		<div class="mr-[6.5rem] flex space-x-4 lg:space-x-6">
 			<a href="https://twitter.com/DaystarSolar" target="_blank" rel="noopener noreferrer">
-				<img class="h-3 w-auto lg:h-4" src={twitterLogo} alt="Twitter Logo" />
+				<img class="h-3 w-auto lg:h-4" src={twitterLogo} width="24" height="24" alt="Twitter Logo" />
 			</a>
 			<a href="https://www.facebook.com/daystarsolarindia" target="_blank" rel="noopener noreferrer">
-				<img class="h-3 w-auto lg:h-4" src={facebookLogo} alt="Facebook Logo" />
+				<img class="h-3 w-auto lg:h-4" src={facebookLogo} width="24" height="24" alt="Facebook Logo" />
 			</a>
 			<a href="https://in.linkedin.com/company/daystar-solar" target="_blank" rel="noopener noreferrer">
-				<img class="h-3 w-auto lg:h-4" src={linkedinLogo} alt="LinkedIn Logo" />
+				<img class="h-3 w-auto lg:h-4" src={linkedinLogo} width="24" height="24" alt="LinkedIn Logo" />
 			</a>
 			<a href="https://www.instagram.com/daystarsolar_official/" target="_blank" rel="noopener noreferrer">
 				<InstagramIcon className="h-3 lg:h-4 w-fit" />
@@ -123,7 +123,7 @@
 			class="absolute left-2/4 top-2/4 mx-auto flex -translate-x-2/4 -translate-y-2/4 transform items-center justify-center"
 		>
 			<a href="/" title="Daystar Solar - Home" class="flex items-center justify-center">
-				<img class="h-5 w-auto md:h-6" src={logoSmall} alt="Daystar Logo" />
+				<img class="h-5 w-auto md:h-6" src={logoSmall} width="80" height="80" alt="Daystar Logo" />
 			</a>
 		</div>
 
