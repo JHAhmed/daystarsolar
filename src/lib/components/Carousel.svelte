@@ -76,11 +76,11 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-<div class="relative h-full w-full overflow-hidden">
+<div class="relative w-full overflow-hidden">
 	<div class="flex h-full" bind:this={trackElement}>
 		{#each duplicatedProjects as project, i (project.text + i)}
 			<div class="h-full flex-shrink-0 px-2" style={`width: ${itemWidthPercent}%`}>
-				<figure class="relative my-2 h-full md:my-4">
+				<figure class="relative my-2 md:my-4">
 					{#if i % 2 === 0}
 						<a
 							href={project.href}
@@ -91,7 +91,7 @@
 						<img
 							src={project.src} width="1280" height="720"
 							alt={project.text}
-							class="h-[80%] w-full rounded-xl object-cover lg:h-[90%]"
+							class="aspect-[16/9] w-full rounded-xl object-cover lg:aspect-[16/9]"
 							loading="lazy" />
 						<p class="mt-3 text-center text-xs font-medium uppercase tracking-widest text-neutral-400">
 							{project.text}
@@ -109,7 +109,7 @@
 						<img
 							src={project.src}
 							alt={project.text}
-							class="h-[80%] w-full rounded-xl object-cover lg:h-[90%]"
+							class="aspect-[16/9] w-full rounded-xl object-cover lg:aspect-[16/9]"
 							loading="lazy" />
 					{/if}
 				</figure>
