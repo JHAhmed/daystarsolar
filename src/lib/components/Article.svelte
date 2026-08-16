@@ -60,12 +60,12 @@
 
 	<!-- Body HTML comes from the client's own Contentful space, rendered
 	     server-side. It is authored content, not request input. -->
-	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	<div
 		data-reveal
 		{@attach reveal({ trigger: 'load', delay: 0.2 })}
 		class="article-body max-w-none"
 	>
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 		{@html post.body}
 	</div>
 
