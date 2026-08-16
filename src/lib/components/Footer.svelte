@@ -57,7 +57,7 @@
 
 <footer class="mt-16">
 	<div class="bg-night-800 text-white">
-		<div class="container-page grid gap-12 py-16 md:py-20 lg:grid-cols-12 lg:gap-8">
+		<div class="container-page grid gap-12 py-14 md:py-18 lg:grid-cols-12 lg:gap-8">
 			<div class="lg:col-span-5">
 				<p class="max-w-md text-base leading-relaxed font-light text-white/85">
 					<span class="font-medium text-white">Daystar Solar</span> is Chennai's premier solar integrator,

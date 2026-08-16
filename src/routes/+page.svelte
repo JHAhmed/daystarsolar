@@ -86,7 +86,7 @@
 />
 
 <!-- ── Hero ────────────────────────────────────────────────────────────── -->
-<section class="container-page pt-8 pb-16 md:pt-12 md:pb-24">
+<section class="container-page pt-6 section-bottom md:pt-10">
 	<div class="grid gap-12 lg:grid-cols-12 lg:gap-12 xl:gap-16">
 		<div class="flex flex-col justify-center lg:col-span-5">
 			<h1
@@ -156,7 +156,7 @@
 </section>
 
 <!-- ── Stats ───────────────────────────────────────────────────────────── -->
-<section class="container-page pb-16 md:pb-24">
+<section class="container-page section-bottom">
 	<Stats />
 </section>
 
@@ -271,7 +271,7 @@
 </section>
 
 <!-- ── System benefits ─────────────────────────────────────────────────── -->
-<section class="pb-16 md:pb-24">
+<section class="section-bottom">
 	<div class="container-page">
 		<div
 			data-reveal
@@ -345,7 +345,7 @@
 </section>
 
 <!-- ── Evidence ────────────────────────────────────────────────────────── -->
-<section class="pb-16 md:pb-24">
+<section class="section-bottom">
 	<div class="container-page grid gap-5 md:grid-cols-2" {@attach revealGroup({ variant: 'blur' })}>
 		<figure data-reveal class="relative overflow-hidden rounded-card">
 			<enhanced:img
@@ -394,7 +394,7 @@
 </section>
 
 <!-- ── Showreel ────────────────────────────────────────────────────────── -->
-<section class="pb-16 md:pb-24">
+<section class="section-bottom">
 	<div class="container-page">
 		<div data-reveal {@attach reveal({ y: 24 })} class="overflow-hidden rounded-panel bg-ink-100">
 			<video

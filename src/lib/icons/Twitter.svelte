@@ -1,17 +1,25 @@
 <script>
 	import { cn } from '$lib/utils.js';
 
-	let { class: className = '', ...rest } = $props();
+	/**
+	 * X (formerly Twitter). Path from Simple Icons (CC0).
+	 *
+	 * The previous version was a 1200×1227 mark with `fill="#fff"` baked into
+	 * the path and `fill="none"` on the svg, so it rendered white-on-white and
+	 * was invisible in the footer. Now it takes its colour from the parent like
+	 * every other icon here.
+	 */
+	let { color = 'currentColor', class: className = '', ...rest } = $props();
 </script>
 
 <svg
 	{...rest}
 	xmlns="http://www.w3.org/2000/svg"
-	fill="none"
-	viewBox="0 0 1200 1227"
+	fill={color}
+	viewBox="0 0 24 24"
 	class={cn('size-12', className)}
-	><path
-		fill="#fff"
-		d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
-	/></svg
 >
+	<path
+		d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+	/>
+</svg>

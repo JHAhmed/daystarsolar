@@ -265,20 +265,35 @@
 	}
 }
 
-/* Vertical rhythm between major page sections. Two steps, used everywhere,
-   instead of the py-8/py-12/py-16/py-24 lottery the old pages used. */
+/* Vertical rhythm between major page sections. Three steps, used everywhere,
+   instead of the py-8/py-12/py-16/py-24 lottery the old pages used.
+
+   Tightened by 0.5rem per side against the first pass, so the gap between two
+   adjacent sections closes by a full 1rem — the client reads generous
+   whitespace as wasted space. Change these four numbers to retune the whole
+   site; no page sets its own section padding. */
 @utility section {
-	padding-block: 4rem;
+	padding-block: 3.5rem;
 
 	@media (width >= 48rem) {
-		padding-block: 6rem;
+		padding-block: 5.5rem;
 	}
 }
 
 @utility section-lg {
-	padding-block: 5rem;
+	padding-block: 4.5rem;
 
 	@media (width >= 48rem) {
-		padding-block: 8rem;
+		padding-block: 7.5rem;
+	}
+}
+
+/* For sections that follow straight on from the one above and only need to
+   close off their own bottom edge. */
+@utility section-bottom {
+	padding-bottom: 3.5rem;
+
+	@media (width >= 48rem) {
+		padding-bottom: 5.5rem;
 	}
 }

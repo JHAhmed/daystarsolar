@@ -116,12 +116,16 @@
 			</div>
 		</div>
 
-		<!-- Results -->
-		<div class="flex flex-col justify-center bg-night-900 p-8 md:p-12 lg:p-14">
-			<div class="flex flex-wrap items-stretch gap-8 sm:gap-10">
+		<!-- Results. Centred on both axes: the left column is a form and reads
+		     left-aligned, but the right column is a readout, and its two figures
+		     looked adrift flushed left inside a much wider panel. -->
+		<div
+			class="flex flex-col items-center justify-center bg-night-900 p-8 text-center md:p-12 lg:p-14"
+		>
+			<div class="flex flex-wrap items-stretch justify-center gap-8 sm:gap-10">
 				<div>
 					<p class="text-eyebrow text-white/40 uppercase">Annual Savings</p>
-					<p class="mt-3 flex items-baseline font-display text-white">
+					<p class="mt-3 flex items-baseline justify-center font-display text-white">
 						<span class="text-heading text-white/45">₹</span>
 						<span class="text-display tabular-nums lg:text-display-lg">
 							{formatIndianNumber(annualSavings)}
@@ -133,14 +137,14 @@
 
 				<div>
 					<p class="text-eyebrow text-white/40 uppercase">Required KW</p>
-					<p class="mt-3 flex items-baseline font-display text-white">
+					<p class="mt-3 flex items-baseline justify-center font-display text-white">
 						<span class="text-display tabular-nums lg:text-display-lg">{requiredKw}</span>
 						<span class="ml-1 text-heading text-white/45">kW</span>
 					</p>
 				</div>
 			</div>
 
-			<div class="mt-12 space-y-5">
+			<div class="mt-12 flex flex-col items-center gap-5">
 				<p class="text-base text-white/70">Get a detailed report with one click!</p>
 				<a
 					id="advanced-calculator-button"
