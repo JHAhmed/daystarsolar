@@ -68,25 +68,21 @@
 <div
 	class={variant === 'row'
 		? 'grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8'
-		: 'grid grid-cols-1 gap-10 md:grid-cols-3 md:divide-x md:divide-ink-200'}
->
+		: 'grid grid-cols-1 gap-10 md:grid-cols-3 md:divide-x md:divide-ink-200'}>
 	{#each STATS as stat, i (stat.label)}
 		<div
 			data-reveal
 			class={variant === 'row'
 				? 'flex flex-col items-center gap-2 text-center'
-				: 'flex items-center justify-center gap-4 px-4 text-center'}
-		>
+				: 'flex items-center justify-center gap-4 px-4 text-center'}>
 			<p class="font-display text-display text-night-900 tabular-nums lg:text-display-lg">
 				<span {@attach countUp(stat.number, i)}>{stat.number}</span><span
-					class="font-normal text-solar-300">+</span
-				>
+					class="font-normal text-solar-300">+</span>
 			</p>
 			<p
 				class={variant === 'row'
 					? 'text-sm text-ink-500'
-					: 'max-w-28 text-left text-base font-light text-ink-600'}
-			>
+					: 'max-w-28 text-left text-base font-light text-ink-600'}>
 				{stat.label}
 			</p>
 		</div>

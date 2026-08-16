@@ -39,8 +39,7 @@
 	title="Your Solar Report | Daystar Solar"
 	description="Your personalised solar savings report from Daystar Solar."
 	path="/report"
-	robots="noindex, nofollow"
-/>
+	robots="noindex, nofollow" />
 
 <div class="border-b border-ink-200 bg-white">
 	<div class="container-page flex flex-wrap items-center justify-between gap-4 py-6">

@@ -59,27 +59,24 @@
 	onfocusout={() => (paused = false)}
 	role="region"
 	aria-roledescription="carousel"
-	aria-label="Recent projects"
->
+	aria-label="Recent projects">
 	<div class="relative aspect-4/3 overflow-hidden rounded-panel bg-ink-100 sm:aspect-3/2">
 		{#each slides as slide, i (slide.slug)}
 			<div
 				class="slide absolute inset-0"
 				class:is-active={i === index}
 				aria-hidden={i !== index}
-				inert={i !== index || undefined}
-			>
+				inert={i !== index || undefined}>
 				<a href={slide.href} class="block h-full w-full" tabindex={i === index ? 0 : -1}>
 					<enhanced:img
 						src={slide.src}
 						alt="Daystar Solar project at {slide.title}"
 						class="h-full w-full object-cover"
 						loading={i === 0 ? 'eager' : 'lazy'}
-						fetchpriority={i === 0 ? 'high' : undefined}
-					/>
+						fetchpriority={i === 0 ? 'high' : undefined} />
 					<div
-						class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-night-950/75 to-transparent"
-					></div>
+						class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-night-950/75 to-transparent">
+					</div>
 
 					<div class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 sm:p-6">
 						<div>
@@ -89,8 +86,7 @@
 							</p>
 						</div>
 						<span
-							class="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition-[background-color,transform] duration-[200ms] ease-out group-hover/carousel:bg-solar-400 group-hover/carousel:text-night-900 sm:size-10"
-						>
+							class="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition-[background-color,transform] duration-200 ease-out group-hover/carousel:bg-solar-400 group-hover/carousel:text-night-900 sm:size-10">
 							<ArrowIcon class="size-4 -rotate-[135deg]" strokeWidth="2" />
 						</span>
 					</div>
@@ -106,16 +102,14 @@
 				type="button"
 				onclick={() => go(index - 1)}
 				aria-label="Previous project"
-				class="flex size-8 items-center justify-center rounded-full bg-ink-100 text-night-900 transition-[background-color,transform] duration-[160ms] ease-out hover:bg-ink-200 active:scale-[0.94]"
-			>
+				class="flex size-8 items-center justify-center rounded-full bg-ink-100 text-night-900 transition-[background-color,transform] duration-160 ease-out hover:bg-ink-200 active:scale-[0.94]">
 				<ArrowIcon class="size-3.5 rotate-90" strokeWidth="2" />
 			</button>
 			<button
 				type="button"
 				onclick={() => go(index + 1)}
 				aria-label="Next project"
-				class="flex size-8 items-center justify-center rounded-full bg-ink-100 text-night-900 transition-[background-color,transform] duration-[160ms] ease-out hover:bg-ink-200 active:scale-[0.94]"
-			>
+				class="flex size-8 items-center justify-center rounded-full bg-ink-100 text-night-900 transition-[background-color,transform] duration-160 ease-out hover:bg-ink-200 active:scale-[0.94]">
 				<ArrowIcon class="size-3.5 -rotate-90" strokeWidth="2" />
 			</button>
 		</div>
@@ -128,15 +122,12 @@
 					aria-selected={i === index}
 					aria-label={slide.title}
 					onclick={() => go(i)}
-					class="group/tick relative h-4 min-w-0 flex-1"
-				>
+					class="group/tick relative h-4 min-w-0 flex-1">
 					<span
-						class="absolute inset-x-0 top-1.5 block h-0.5 overflow-hidden rounded-full bg-ink-200 transition-colors duration-[160ms] group-hover/tick:bg-ink-300"
-					>
+						class="absolute inset-x-0 top-1.5 block h-0.5 overflow-hidden rounded-full bg-ink-200 transition-colors duration-160 group-hover/tick:bg-ink-300">
 						<span
 							class="block h-full w-full origin-left rounded-full bg-night-900 transition-transform duration-[400ms] ease-out"
-							style:transform="scaleX({i === index ? 1 : 0})"
-						></span>
+							style:transform="scaleX({i === index ? 1 : 0})"></span>
 					</span>
 				</button>
 			{/each}

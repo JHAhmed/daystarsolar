@@ -30,10 +30,10 @@
 	let consumerNumber = $state('');
 	let errors = $state({});
 
-	/** Six bi-monthly periods ending with the most recent, newest first. */
+	/** Four bi-monthly periods ending with the most recent, newest first. */
 	function seedReadings() {
 		const now = new Date();
-		return Array.from({ length: 6 }, (_, i) => {
+		return Array.from({ length: 4 }, (_, i) => {
 			const date = new Date(now.getFullYear(), now.getMonth() - i * 2, 1);
 			const dd = '01';
 			const mm = String(date.getMonth() + 1).padStart(2, '0');
@@ -49,7 +49,9 @@
 	let readings = $state(seedReadings());
 
 	const filledReadings = $derived(
-		readings.filter((row) => row.consumptionUnits.trim() && row.totalCharges.trim())
+		readings.filter(
+			(row) => String(row.consumptionUnits ?? '').trim() && String(row.totalCharges ?? '').trim()
+		)
 	);
 
 	const totals = $derived({
@@ -216,21 +218,17 @@
 		name: 'Solar Savings Calculator',
 		category: 'UtilitiesApplication',
 		description: 'Generate a report to estimate your solar savings using our solar calculator.'
-	})}
-/>
+	})} />
 
 {#if fetching}
 	<div
 		class="fixed inset-0 z-100 flex items-center justify-center bg-night-950/40 p-6 backdrop-blur-sm"
 		role="status"
-		aria-live="polite"
-	>
+		aria-live="polite">
 		<div
-			class="flex w-full max-w-md flex-col items-center gap-4 rounded-panel bg-white p-8 text-center shadow-lift"
-		>
-			<div
-				class="size-11 animate-spin rounded-full border-4 border-solar-400 border-t-transparent"
-			></div>
+			class="flex w-full max-w-md flex-col items-center gap-4 rounded-panel bg-white p-8 text-center shadow-lift">
+			<div class="size-11 animate-spin rounded-full border-4 border-solar-400 border-t-transparent">
+			</div>
 			<p class="text-sm font-medium text-night-900">
 				Checking the TNEB portal…<br />This can take 10-20 seconds
 			</p>
@@ -246,14 +244,16 @@
 	</div>
 
 	<!-- Progress -->
+	<!-- Only the steps that carry a connector line grow; giving the last one an
+	     equal share too left a third of the row empty on the right, which read
+	     as the whole progress bar sitting off-centre. -->
 	<ol class="mx-auto mt-12 flex max-w-2xl items-center gap-2" aria-label="Progress">
 		{#each STEPS as label, i (label)}
-			<li class="flex flex-1 items-center gap-2">
+			<li class="flex items-center gap-2 {i < STEPS.length - 1 ? 'flex-1' : ''}">
 				<span
-					class="flex size-7 shrink-0 items-center justify-center rounded-full text-xs font-medium transition-colors duration-[200ms]
+					class="flex size-7 shrink-0 items-center justify-center rounded-full text-xs font-medium transition-colors duration-200
 						{i <= step ? 'bg-night-900 text-white' : 'bg-ink-200 text-ink-500'}"
-					aria-current={i === step ? 'step' : undefined}
-				>
+					aria-current={i === step ? 'step' : undefined}>
 					{i + 1}
 				</span>
 				<span class="hidden text-sm sm:inline {i <= step ? 'text-night-900' : 'text-ink-400'}">
@@ -273,8 +273,7 @@
 			<div
 				data-reveal
 				{@attach reveal({ trigger: 'load', y: 14 })}
-				class="rounded-panel border border-ink-200 p-6 md:p-8"
-			>
+				class="rounded-panel border border-ink-200 p-6 md:p-8">
 				<h2 class="mb-6 font-display text-heading text-night-900">Your details</h2>
 
 				<div class="flex flex-col gap-4">
@@ -285,8 +284,7 @@
 						placeholder="John Smith"
 						autocomplete="name"
 						maxlength="60"
-						required
-					/>
+						required />
 
 					<Field
 						label="Contact number"
@@ -298,8 +296,7 @@
 						autocomplete="tel"
 						inputmode="numeric"
 						maxlength="15"
-						required
-					/>
+						required />
 
 					<fieldset>
 						<legend class="mb-2 text-sm font-medium text-ink-700">Connection type</legend>
@@ -309,11 +306,10 @@
 									type="button"
 									aria-pressed={details.consumerType === type.value}
 									onclick={() => (details.consumerType = type.value)}
-									class="rounded-lg px-3 py-2.5 text-sm font-medium transition-[background-color,color,transform] duration-[160ms] ease-out active:scale-[0.97]
+									class="rounded-lg px-3 py-2.5 text-sm font-medium transition-[background-color,color,transform] duration-160 ease-out active:scale-[0.97]
 										{details.consumerType === type.value
 										? 'bg-night-900 text-white'
-										: 'bg-ink-100 text-ink-600 hover:bg-ink-200'}"
-								>
+										: 'bg-ink-100 text-ink-600 hover:bg-ink-200'}">
 									{type.label}
 								</button>
 							{/each}
@@ -332,8 +328,7 @@
 					<button
 						type="button"
 						onclick={() => (step = 0)}
-						class="inline-flex items-center gap-1.5 text-sm text-ink-500 transition-colors hover:text-night-900"
-					>
+						class="inline-flex items-center gap-1.5 text-sm text-ink-500 transition-colors hover:text-night-900">
 						<ArrowIcon class="size-3.5 rotate-90" strokeWidth="2" />
 						Back to details
 					</button>
@@ -345,18 +340,16 @@
 						type="button"
 						aria-pressed={mode === 'manual'}
 						onclick={() => (mode = 'manual')}
-						class="rounded-lg px-3 py-2.5 text-sm font-medium transition-[background-color,color] duration-[160ms] ease-out
-							{mode === 'manual' ? 'bg-white text-night-900 shadow-soft' : 'text-ink-600 hover:text-night-900'}"
-					>
+						class="rounded-lg px-3 py-2.5 text-sm font-medium transition-[background-color,color] duration-160 ease-out
+							{mode === 'manual' ? 'bg-white text-night-900 shadow-soft' : 'text-ink-600 hover:text-night-900'}">
 						Enter bills manually
 					</button>
 					<button
 						type="button"
 						aria-pressed={mode === 'tneb'}
 						onclick={() => (mode = 'tneb')}
-						class="rounded-lg px-3 py-2.5 text-sm font-medium transition-[background-color,color] duration-[160ms] ease-out
-							{mode === 'tneb' ? 'bg-white text-night-900 shadow-soft' : 'text-ink-600 hover:text-night-900'}"
-					>
+						class="rounded-lg px-3 py-2.5 text-sm font-medium transition-[background-color,color] duration-160 ease-out
+							{mode === 'tneb' ? 'bg-white text-night-900 shadow-soft' : 'text-ink-600 hover:text-night-900'}">
 						Fetch from TNEB
 					</button>
 				</div>
@@ -391,8 +384,7 @@
 												inputmode="numeric"
 												bind:value={reading.consumptionUnits}
 												placeholder="0"
-												class="w-full rounded-lg border border-ink-200 px-3 py-2 text-night-900 transition-[border-color] duration-[160ms] focus:border-night-900 focus:ring-2 focus:ring-night-900/15 focus:outline-none"
-											/>
+												class="w-full rounded-lg border border-ink-200 px-3 py-2 text-night-900 transition-[border-color] duration-160 focus:border-night-900 focus:ring-2 focus:ring-night-900/15 focus:outline-none" />
 										</td>
 										<td class="py-2.5">
 											<label class="sr-only" for="charges-{i}">
@@ -405,8 +397,7 @@
 												inputmode="numeric"
 												bind:value={reading.totalCharges}
 												placeholder="0"
-												class="w-full rounded-lg border border-ink-200 px-3 py-2 text-night-900 transition-[border-color] duration-[160ms] focus:border-night-900 focus:ring-2 focus:ring-night-900/15 focus:outline-none"
-											/>
+												class="w-full rounded-lg border border-ink-200 px-3 py-2 text-night-900 transition-[border-color] duration-160 focus:border-night-900 focus:ring-2 focus:ring-night-900/15 focus:outline-none" />
 										</td>
 									</tr>
 								{/each}
@@ -418,8 +409,7 @@
 						<button
 							type="button"
 							onclick={addReading}
-							class="text-sm font-medium text-sky-600 transition-colors hover:text-sky-700"
-						>
+							class="text-sm font-medium text-sky-600 transition-colors hover:text-sky-700">
 							+ Add an earlier period
 						</button>
 
@@ -438,8 +428,7 @@
 							size="lg"
 							chip
 							onclick={submitManual}
-							disabled={submitting || filledReadings.length < 2}
-						>
+							disabled={submitting || filledReadings.length < 2}>
 							{submitting ? 'Building your report…' : 'Generate report'}
 						</Button>
 					</div>
@@ -457,31 +446,27 @@
 						placeholder="01123123123"
 						inputmode="numeric"
 						maxlength="15"
-						required
-					/>
+						required />
 
 					<div class="mt-3 flex flex-wrap gap-4">
 						<a
-							href="https://www.tnebltd.gov.in/BillStatus/consguide.html"
+							href="https://www.tnebltd.gov.in/BillStatus/consguide.xhtml"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="text-sm font-medium text-sky-600 hover:underline"
-						>
+							class="text-sm font-medium text-sky-600 hover:underline">
 							How to check your consumer number?
 						</a>
 						<button
 							type="button"
 							onclick={() => (showRegions = !showRegions)}
 							aria-expanded={showRegions}
-							class="inline-flex items-center gap-1 text-sm font-medium text-sky-600 hover:underline"
-						>
+							class="inline-flex items-center gap-1 text-sm font-medium text-sky-600 hover:underline">
 							Check your region code
 							<ChevronIcon
-								class="size-3.5 transition-transform duration-[220ms] {showRegions
+								class="size-3.5 transition-transform duration-220 {showRegions
 									? '-rotate-90'
 									: 'rotate-90'}"
-								strokeWidth="2"
-							/>
+								strokeWidth="2" />
 						</button>
 					</div>
 

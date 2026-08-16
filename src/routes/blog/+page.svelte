@@ -24,8 +24,7 @@
 		name: 'Daystar Solar Blog',
 		description:
 			'Read the latest blogs and articles from Daystar Solar, a leading solar energy solutions provider in south india'
-	})}
-/>
+	})} />
 
 <section class="container-page pt-6 section-bottom md:pt-10">
 	<PageHeader eyebrow="Latest Posts" eyebrowPosition="above">
@@ -36,20 +35,17 @@
 	{#if data.posts.length}
 		<div
 			class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-			{@attach revealGroup({ variant: 'blur', y: 18 })}
-		>
+			{@attach revealGroup({ variant: 'blur', y: 18 })}>
 			{#each data.posts as post (post.slug)}
 				<article
 					data-reveal
-					class="group/post flex flex-col overflow-hidden rounded-panel bg-ink-50 transition-shadow duration-[240ms] ease-out hover:shadow-lift"
-				>
+					class="group/post flex flex-col overflow-hidden rounded-panel bg-ink-50 transition-shadow duration-[240ms] ease-out hover:shadow-lift">
 					<div class="aspect-video overflow-hidden">
 						<img
 							src={post.image}
 							alt={post.title}
 							loading="lazy"
-							class="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover/post:scale-[1.04]"
-						/>
+							class="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover/post:scale-[1.04]" />
 					</div>
 
 					<div class="flex flex-1 flex-col gap-3 p-6">

@@ -37,7 +37,7 @@
 	const fieldClasses = $derived(
 		cn(
 			'w-full rounded-xl border bg-white px-4 py-3 text-base text-night-900 placeholder:text-ink-400',
-			'transition-[border-color,box-shadow] duration-[160ms] ease-out',
+			'transition-[border-color,box-shadow] duration-160 ease-out',
 			'focus:outline-none focus:ring-2 focus:ring-night-900/15',
 			error ? 'border-red-400 focus:border-red-500' : 'border-ink-200 focus:border-night-900',
 			prefix && 'pl-14'
@@ -55,8 +55,7 @@
 		{#if prefix}
 			<span
 				class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-base text-ink-500"
-				aria-hidden="true"
-			>
+				aria-hidden="true">
 				{prefix}
 			</span>
 		{/if}
@@ -82,8 +81,7 @@
 				aria-invalid={error ? 'true' : undefined}
 				aria-describedby={describedBy}
 				class={fieldClasses}
-				{...rest}
-			/>
+				{...rest} />
 		{/if}
 	</div>
 

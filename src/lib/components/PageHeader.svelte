@@ -28,8 +28,7 @@
 		<p
 			data-reveal
 			{@attach reveal({ trigger: 'load', delay: 0.05, y: 10 })}
-			class="mb-3 text-eyebrow text-ink-500 uppercase"
-		>
+			class="mb-3 text-eyebrow text-ink-500 uppercase">
 			{eyebrow}
 		</p>
 	{/if}
@@ -37,8 +36,7 @@
 	<h1
 		data-reveal
 		{@attach reveal({ variant: 'blur', trigger: 'load', duration: 0.9 })}
-		class="font-display text-display-lg text-night-900 md:text-display-xl"
-	>
+		class="font-display text-display-lg text-night-900 md:text-display-xl">
 		{@render children?.()}
 	</h1>
 
@@ -46,8 +44,7 @@
 		<p
 			data-reveal
 			{@attach reveal({ trigger: 'load', delay: 0.12, y: 10 })}
-			class="mt-4 text-eyebrow text-ink-500 uppercase"
-		>
+			class="mt-4 text-eyebrow text-ink-500 uppercase">
 			{eyebrow}
 		</p>
 	{/if}
@@ -56,8 +53,7 @@
 		<p
 			data-reveal
 			{@attach reveal({ trigger: 'load', delay: 0.18, y: 12 })}
-			class={cn('mt-6 max-w-2xl text-lead text-ink-600', centred && 'mx-auto')}
-		>
+			class={cn('mt-6 max-w-2xl text-lead text-ink-600', centred && 'mx-auto')}>
 			{lead}
 		</p>
 	{/if}

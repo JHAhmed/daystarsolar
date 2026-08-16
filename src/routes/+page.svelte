@@ -82,8 +82,7 @@
 	path="/"
 	image="/oghome.png"
 	robots="index, follow"
-	schema={[localBusinessSchema(), faqSchema(HOME_FAQS)]}
-/>
+	schema={[localBusinessSchema(), faqSchema(HOME_FAQS)]} />
 
 <!-- ── Hero ────────────────────────────────────────────────────────────── -->
 <section class="container-page pt-6 section-bottom md:pt-10">
@@ -92,45 +91,38 @@
 			<h1
 				data-reveal
 				{@attach reveal({ variant: 'blur', trigger: 'load', duration: 0.9 })}
-				class="font-display text-display-lg text-night-900 md:text-display-xl xl:text-display-2xl"
-			>
+				class="font-display text-display-lg text-night-900 md:text-display-xl xl:text-display-2xl">
 				Solar <span class="text-solar-500">Plant</span> Company
 			</h1>
 
 			<p
 				data-reveal
 				{@attach reveal({ trigger: 'load', delay: 0.12, y: 14 })}
-				class="mt-6 max-w-md text-lead text-ink-600"
-			>
+				class="mt-6 max-w-md text-lead text-ink-600">
 				Premium sustainable energy solutions for homes and businesses.
 			</p>
 
 			<div
 				data-reveal
 				{@attach reveal({ trigger: 'load', delay: 0.22, y: 14 })}
-				class="mt-9 flex flex-wrap gap-3"
-			>
+				class="mt-9 flex flex-wrap gap-3">
 				<button
 					type="button"
 					onclick={() => scrollTo(calculatorSection, { offset: -80 })}
-					class="group/hero inline-flex items-center gap-3 rounded-xl bg-solar-400 py-3 pr-3 pl-6 text-base font-medium text-night-900 transition-[background-color,transform] duration-[160ms] ease-out hover:bg-solar-500 active:scale-[0.97]"
-				>
+					class="group/hero inline-flex items-center gap-3 rounded-xl bg-solar-400 py-3 pr-3 pl-6 text-base font-medium text-night-900 transition-[background-color,transform] duration-160 ease-out hover:bg-solar-500 active:scale-[0.97]">
 					Solar Calculator
 					<span
-						class="flex size-9 items-center justify-center rounded-lg bg-white/90 transition-transform duration-[220ms] ease-out group-hover/hero:translate-y-0.5"
-					>
+						class="flex size-9 items-center justify-center rounded-lg bg-white/90 transition-transform duration-220 ease-out group-hover/hero:translate-y-0.5">
 						<ArrowIcon class="size-4" strokeWidth="2" />
 					</span>
 				</button>
 
 				<a
 					href="/ar"
-					class="group/ar inline-flex items-center gap-3 rounded-xl bg-sky-200 py-3 pr-3 pl-6 text-base font-medium text-night-900 transition-[background-color,transform] duration-[160ms] ease-out hover:bg-sky-300 active:scale-[0.97]"
-				>
+					class="group/ar inline-flex items-center gap-3 rounded-xl bg-sky-200 py-3 pr-3 pl-6 text-base font-medium text-night-900 transition-[background-color,transform] duration-160 ease-out hover:bg-sky-300 active:scale-[0.97]">
 					View in AR
 					<span
-						class="flex size-9 items-center justify-center rounded-lg bg-white/90 transition-transform duration-[220ms] ease-out group-hover/ar:scale-105"
-					>
+						class="flex size-9 items-center justify-center rounded-lg bg-white/90 transition-transform duration-220 ease-out group-hover/ar:scale-105">
 						<SmartCubeIcon class="size-5" />
 					</span>
 				</a>
@@ -139,8 +131,7 @@
 			<div
 				data-reveal
 				{@attach reveal({ trigger: 'load', delay: 0.34 })}
-				class="mt-12 border-l-2 border-ink-200 pl-6"
-			>
+				class="mt-12 border-l-2 border-ink-200 pl-6">
 				<h2 class="mb-3 font-sans text-sm font-medium text-ink-500">Trusted Solar Integrators</h2>
 				<p class="max-w-md text-sm leading-relaxed text-ink-600">
 					Sustainable development is the creed that underpins Daystar Solar's bespoke initiatives to
@@ -166,11 +157,9 @@
 		<p
 			data-reveal
 			{@attach reveal({ variant: 'blur' })}
-			class="text-center text-lead leading-relaxed font-light text-ink-700 md:text-heading-sm md:leading-relaxed"
-		>
+			class="text-center text-lead leading-relaxed font-light text-ink-700 md:text-heading-sm md:leading-relaxed">
 			<span class="font-medium text-night-900"
-				>We specialize in end-to-end solar power plant projects.</span
-			>
+				>We specialize in end-to-end solar power plant projects.</span>
 			Since 2012, we've been a trusted solar power integrator, partnering with Panasonic Solar for premium
 			panels and using top-quality imported inverters.
 			<span class="font-medium text-night-900">
@@ -194,8 +183,7 @@
 	<div class="container-page">
 		<div
 			class="grid gap-12 md:grid-cols-2 lg:grid-cols-3"
-			{@attach revealGroup({ variant: 'blur' })}
-		>
+			{@attach revealGroup({ variant: 'blur' })}>
 			<div data-reveal class="space-y-6">
 				<h3 class="font-display text-heading text-night-900">Comprehensive Solar Services</h3>
 				<p class="leading-relaxed text-ink-600">
@@ -208,8 +196,7 @@
 						src={landingImage1}
 						alt="Rooftop solar panel installation in Chennai by Daystar Solar"
 						loading="lazy"
-						class="h-60 w-full object-cover"
-					/>
+						class="h-60 w-full object-cover" />
 				</div>
 			</div>
 
@@ -221,8 +208,7 @@
 						height="16"
 						class="size-4"
 						alt=""
-						aria-hidden="true"
-					/>
+						aria-hidden="true" />
 				</div>
 				<h2 class="font-display text-heading-lg text-night-900 lg:text-display">
 					Power your future with
@@ -235,18 +221,15 @@
 						height="16"
 						class="size-4 rotate-180"
 						alt=""
-						aria-hidden="true"
-					/>
+						aria-hidden="true" />
 				</div>
 				<a
 					href="/products"
-					class="group/link inline-flex items-center gap-1.5 text-sm font-medium text-ink-600 transition-colors duration-[160ms] ease-out hover:text-night-900"
-				>
+					class="group/link inline-flex items-center gap-1.5 text-sm font-medium text-ink-600 transition-colors duration-160 ease-out hover:text-night-900">
 					Explore our Solar Products
 					<span
-						class="transition-transform duration-[200ms] ease-out group-hover/link:translate-x-1"
-						aria-hidden="true">&rarr;</span
-					>
+						class="transition-transform duration-200 ease-out group-hover/link:translate-x-1"
+						aria-hidden="true">&rarr;</span>
 				</a>
 			</div>
 
@@ -256,8 +239,7 @@
 						src={landingImage3}
 						alt="Commercial solar plant installation surrounded by nature"
 						loading="lazy"
-						class="h-60 w-full object-cover"
-					/>
+						class="h-60 w-full object-cover" />
 				</div>
 				<h3 class="font-display text-heading text-night-900">Quality Components</h3>
 				<p class="leading-relaxed text-ink-600">
@@ -276,15 +258,13 @@
 		<div
 			data-reveal
 			{@attach reveal({ variant: 'blur' })}
-			class="flex flex-col gap-8 rounded-panel bg-ink-50 p-8 md:flex-row md:items-center md:gap-12 md:p-12"
-		>
+			class="flex flex-col gap-8 rounded-panel bg-ink-50 p-8 md:flex-row md:items-center md:gap-12 md:p-12">
 			<div class="hidden shrink-0 overflow-hidden rounded-card md:block">
 				<enhanced:img
 					src={sampleImage1}
 					alt="High efficiency solar inverter system"
 					loading="lazy"
-					class="size-44 object-cover"
-				/>
+					class="size-44 object-cover" />
 			</div>
 			<ul class="grid flex-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
 				{#each BENEFITS as benefit (benefit)}
@@ -307,8 +287,7 @@
 					<li class="flex items-start gap-4">
 						<span
 							class="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-ink-100 text-xs font-medium text-ink-700"
-							aria-hidden="true">✓</span
-						>
+							aria-hidden="true">✓</span>
 						<div>
 							<p class="font-medium text-night-900">{reason.title}</p>
 							<p class="mt-1 text-sm text-ink-600">{reason.body}</p>
@@ -329,8 +308,7 @@
 				{#each PROCESS as step, i (step.title)}
 					<li class="flex gap-4">
 						<span
-							class="flex size-8 shrink-0 items-center justify-center rounded-full bg-solar-100 text-sm font-medium text-solar-600"
-						>
+							class="flex size-8 shrink-0 items-center justify-center rounded-full bg-solar-100 text-sm font-medium text-solar-600">
 							{i + 1}
 						</span>
 						<div>
@@ -352,11 +330,9 @@
 				src={landingImage3}
 				alt="High output solar panels working on a cloudy day"
 				loading="lazy"
-				class="h-96 w-full object-cover"
-			/>
+				class="h-96 w-full object-cover" />
 			<figcaption
-				class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-night-950/75 to-transparent p-6 text-sm font-medium text-white"
-			>
+				class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-night-950/75 to-transparent p-6 text-sm font-medium text-white">
 				Our panels provide maximum energy output even on cloudy days.
 			</figcaption>
 		</figure>
@@ -366,11 +342,9 @@
 				src={landingImage4}
 				alt="Residential rooftop solar installation reducing grid dependency"
 				loading="lazy"
-				class="h-96 w-full object-cover"
-			/>
+				class="h-96 w-full object-cover" />
 			<figcaption
-				class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-night-950/75 to-transparent p-6 text-sm font-medium text-white"
-			>
+				class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-night-950/75 to-transparent p-6 text-sm font-medium text-white">
 				Our solar panels are designed to generate maximum energy output, allowing you to rely less
 				on grid power and more on renewable solar energy.
 			</figcaption>
@@ -381,11 +355,9 @@
 				src={landingImage5}
 				alt="Durable solar panels capable of withstanding harsh weather"
 				loading="lazy"
-				class="h-64 w-full object-cover md:h-80"
-			/>
+				class="h-64 w-full object-cover md:h-80" />
 			<figcaption
-				class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-night-950/75 to-transparent p-6 text-sm font-medium text-white"
-			>
+				class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-night-950/75 to-transparent p-6 text-sm font-medium text-white">
 				Built to withstand the harshest weather conditions, our solar panels are incredibly durable
 				and come with a 20-year warranty.
 			</figcaption>
@@ -405,12 +377,10 @@
 				preload="metadata"
 				aria-label="Daystar Solar projects showreel"
 				title="Daystar Solar projects showreel"
-				class="h-auto w-full object-cover"
-			>
+				class="h-auto w-full object-cover">
 				<source
 					src="https://res.cloudinary.com/dlq8wuvji/video/upload/v1745575578/Daystar_Projects_Showreel_esvxpw.mp4"
-					type="video/mp4"
-				/>
+					type="video/mp4" />
 			</video>
 		</div>
 	</div>
@@ -422,8 +392,7 @@
 		<h2
 			data-reveal
 			{@attach reveal()}
-			class="text-center font-display text-heading-lg text-night-900"
-		>
+			class="text-center font-display text-heading-lg text-night-900">
 			Customer Testimonials
 		</h2>
 	</div>
@@ -436,8 +405,7 @@
 		<h2
 			data-reveal
 			{@attach reveal()}
-			class="mb-10 text-center font-display text-heading-lg text-night-900"
-		>
+			class="mb-10 text-center font-display text-heading-lg text-night-900">
 			Got Questions ?
 		</h2>
 
@@ -451,13 +419,11 @@
 			<div class="pt-4 text-center">
 				<a
 					href="/faq"
-					class="group/link inline-flex items-center gap-1.5 text-sm font-medium text-ink-600 transition-colors duration-[160ms] ease-out hover:text-night-900"
-				>
+					class="group/link inline-flex items-center gap-1.5 text-sm font-medium text-ink-600 transition-colors duration-160 ease-out hover:text-night-900">
 					Read more FAQs
 					<span
-						class="transition-transform duration-[200ms] ease-out group-hover/link:translate-x-1"
-						aria-hidden="true">&rarr;</span
-					>
+						class="transition-transform duration-200 ease-out group-hover/link:translate-x-1"
+						aria-hidden="true">&rarr;</span>
 				</a>
 			</div>
 		</div>

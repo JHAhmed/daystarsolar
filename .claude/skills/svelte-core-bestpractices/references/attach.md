@@ -69,8 +69,7 @@ Attachments can also be created inline (demo:
 			context.fillStyle = color;
 			context.fillRect(0, 0, canvas.width, canvas.height);
 		});
-	}}
-></canvas>
+	}}></canvas>
 ```
 
 > [!NOTE]

@@ -21,32 +21,28 @@
 		<p
 			data-reveal
 			{@attach reveal({ trigger: 'load' })}
-			class="font-display text-display-xl text-solar-400 lg:text-display-2xl"
-		>
+			class="font-display text-display-xl text-solar-400 lg:text-display-2xl">
 			{page.status}
 		</p>
 
 		<h1
 			data-reveal
 			{@attach reveal({ trigger: 'load', delay: 0.08 })}
-			class="mt-4 font-display text-display text-night-900"
-		>
+			class="mt-4 font-display text-display text-night-900">
 			{heading}
 		</h1>
 
 		<p
 			data-reveal
 			{@attach reveal({ trigger: 'load', delay: 0.16 })}
-			class="mt-4 text-lead text-ink-600"
-		>
+			class="mt-4 text-lead text-ink-600">
 			{body}
 		</p>
 
 		<div
 			data-reveal
 			{@attach reveal({ trigger: 'load', delay: 0.24 })}
-			class="mt-9 flex flex-wrap gap-3"
-		>
+			class="mt-9 flex flex-wrap gap-3">
 			<Button href="/" variant="primary" size="lg" chip>Back to home</Button>
 			<Button href="/contact" variant="subtle" size="lg">Contact us</Button>
 		</div>

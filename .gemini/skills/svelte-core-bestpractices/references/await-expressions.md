@@ -167,8 +167,7 @@ The [`fork(...)`](https://svelte.dev/docs/svelte/svelte/llms.txt#fork) API, adde
 		// in case `pending` didn't exist
 		// (if it did, this is a no-op)
 		open = true;
-	}}>open menu</button
->
+	}}>open menu</button>
 
 {#if open}
 	<!-- any async work inside this component will start

@@ -19,10 +19,30 @@
 	const today = formatLongDate();
 	const cycle = $derived(reportType === 'domestic' ? 'bimonthly' : 'monthly');
 
+	/**
+	 * The two halves of the history, paired with the figures already computed
+	 * for them. `buildReport` drops the odd row before splitting; page 3's
+	 * charts used to split the full list instead, so an odd number of readings
+	 * gave the second chart one more bar than the statistics beside it
+	 * described.
+	 */
+	const halves = $derived.by(() => {
+		const even = report.rows.length % 2 === 0 ? report.rows : report.rows.slice(0, -1);
+		const mid = even.length / 2;
+
+		// Rows run newest first, so the range reads oldest to newest.
+		const range = (slice) =>
+			slice.length ? `${slice.at(-1).formattedDate} – ${slice[0].formattedDate}` : '';
+
+		return [
+			{ stats: report.recent, rows: even.slice(0, mid) },
+			{ stats: report.earlier, rows: even.slice(mid) }
+		].map((half) => ({ ...half, range: range(half.rows) }));
+	});
+
 	let overviewCanvas = $state();
 	let comparisonCanvas = $state();
-	let recentCanvas = $state();
-	let earlierCanvas = $state();
+	let halfCanvases = $state([]);
 
 	const PALETTE = {
 		units: 'rgba(54, 162, 235, 0.6)',
@@ -46,6 +66,14 @@
 		// be off — an animating chart is still empty on the frame it captures.
 		Chart.defaults.animation = false;
 		Chart.defaults.font.family = 'Satoshi, Poppins, sans-serif';
+
+		// Every chart sits in a fixed-height box on a fixed-height page, so the
+		// aspect ratio has to give. Left on, Chart.js honoured the 2:1 default
+		// and drew a 512x256 chart into the 708pt-wide canvas, leaving a third
+		// of every box empty on the right — which is what made the charts look
+		// as though they were pushed off-centre.
+		Chart.defaults.responsive = true;
+		Chart.defaults.maintainAspectRatio = false;
 
 		const labels = report.rows.map((row) => row.formattedDate);
 		const units = report.rows.map((row) => row.consumptionUnits);
@@ -137,19 +165,24 @@
 			})
 		);
 
-		const half = Math.floor(labels.length / 2);
-		const halfChart = (canvas, sliceLabels, sliceValues) =>
-			new Chart(canvas, {
-				type: 'bar',
-				data: {
-					labels: sliceLabels,
-					datasets: [{ label: 'Units', data: sliceValues, backgroundColor: PALETTE.bars }]
-				},
-				options: { plugins: { legend: { display: false } } }
-			});
-
-		charts.push(halfChart(recentCanvas, labels.slice(0, half), units.slice(0, half)));
-		charts.push(halfChart(earlierCanvas, labels.slice(half), units.slice(half)));
+		halves.forEach((half, i) => {
+			charts.push(
+				new Chart(halfCanvases[i], {
+					type: 'bar',
+					data: {
+						labels: half.rows.map((row) => row.formattedDate),
+						datasets: [
+							{
+								label: 'Units',
+								data: half.rows.map((row) => row.consumptionUnits),
+								backgroundColor: PALETTE.bars
+							}
+						]
+					},
+					options: { plugins: { legend: { display: false } } }
+				})
+			);
+		});
 
 		return () => charts.forEach((chart) => chart.destroy());
 	});
@@ -177,8 +210,7 @@
 
 		<div class="my-5 flex flex-col items-center gap-3">
 			<div
-				class="flex w-2/3 items-center justify-between rounded-xl border border-ink-300 px-5 py-3"
-			>
+				class="flex w-2/3 items-center justify-between rounded-xl border border-ink-300 px-5 py-3">
 				<p class="text-sm font-semibold tracking-wider text-ink-700 uppercase">Total savings</p>
 				<p class="text-3xl font-medium text-solar-600">
 					₹{formatIndianNumber(report.totalSavings)}
@@ -186,8 +218,7 @@
 			</div>
 
 			<div
-				class="flex w-2/3 items-center justify-between rounded-xl border border-ink-300 px-5 py-3"
-			>
+				class="flex w-2/3 items-center justify-between rounded-xl border border-ink-300 px-5 py-3">
 				<p class="text-sm font-semibold tracking-wider text-ink-700 uppercase">Required solar kW</p>
 				<p class="text-3xl font-medium text-solar-600">
 					{report.requiredKw}<span class="ml-1 text-xl text-ink-700">kW</span>
@@ -202,7 +233,15 @@
 			{cycle} cycles.
 		</p>
 
-		<div class="my-4 h-64"><canvas bind:this={overviewCanvas} id="chart"></canvas></div>
+		<!-- `flex-1` rather than a fixed height: the page is a fixed A4 sheet, so
+		     whatever the text above does not use belongs to the chart. Pooling it
+		     above the footer instead is what left every page half empty.
+		     `position: relative` is Chart.js's requirement for a responsive
+		     canvas, and the explicit min-height stops the flex item's automatic
+		     min-content floor from being driven by the canvas it contains. -->
+		<div class="relative my-4 min-h-64 flex-1">
+			<canvas bind:this={overviewCanvas} id="chart"></canvas>
+		</div>
 
 		{@render footer()}
 	</section>
@@ -214,7 +253,9 @@
 			cost increases a lot more in relation to a small increase in consumption.
 		</p>
 
-		<div class="my-4 h-64"><canvas bind:this={comparisonCanvas}></canvas></div>
+		<div class="relative my-4 min-h-64 flex-1">
+			<canvas bind:this={comparisonCanvas}></canvas>
+		</div>
 
 		<p>
 			Also note how the consumption and cost peaks in the summer months. Massive savings can be
@@ -268,23 +309,34 @@
 			power requirement of the premises to reduce power consumption by 100% as of the last billing cycle.
 		</p>
 
-		<div class="my-5 flex gap-4">
-			{#each [{ half: report.recent, canvas: 'recent' }, { half: report.earlier, canvas: 'earlier' }] as slice, i (i)}
-				<div class="flex w-1/2 flex-col items-center">
-					<div class="h-44 w-full">
-						{#if i === 0}
-							<canvas bind:this={recentCanvas}></canvas>
-						{:else}
-							<canvas bind:this={earlierCanvas}></canvas>
-						{/if}
+		<!-- Side by side, the two charts were 346pt wide and 176pt tall and the
+		     page still ran out of content 400pt short of the footer. Stacked,
+		     each half gets a chart wide enough to read and a figures panel
+		     beside it, and the two rows share out everything the prose leaves. -->
+		<div class="my-3 flex flex-1 flex-col gap-4">
+			{#each halves as half, i (i)}
+				<div class="flex flex-1 gap-4">
+					<div class="relative min-h-32 flex-1">
+						<canvas bind:this={halfCanvases[i]}></canvas>
 					</div>
-					<p class="mt-4 text-left text-[10pt] leading-relaxed">
-						Max Consumption: <strong>{slice.half.peak?.consumptionUnits ?? 0}</strong> Units <br />
-						Min Consumption: <strong>{slice.half.min?.consumptionUnits ?? 0}</strong> Units <br />
-						Avg Consumption: <strong>{slice.half.avgUnits.toFixed(0)}</strong> Units <br />
-						Avg Cost: <strong>₹{formatIndianNumber(slice.half.avgCost)}</strong> <br />
-						Avg Cost w/ Solar: <strong>₹{formatIndianNumber(slice.half.avgUnits * 4)}</strong>
-					</p>
+
+					<!-- Label over value rather than "label: value" on one line: at this
+					     column width the run-on version broke every figure across two
+					     or three lines and the numbers stopped lining up. -->
+					<div class="w-52 self-center rounded-xl border border-ink-300 px-4 py-4">
+						<p class="text-[8pt] font-semibold tracking-wider text-ink-600 uppercase">
+							{half.range}
+						</p>
+
+						<dl class="mt-2.5 flex flex-col gap-2.5">
+							{#each [{ label: 'Max Consumption', value: `${half.stats.peak?.consumptionUnits ?? 0} Units` }, { label: 'Min Consumption', value: `${half.stats.min?.consumptionUnits ?? 0} Units` }, { label: 'Avg Consumption', value: `${half.stats.avgUnits.toFixed(0)} Units` }, { label: 'Avg Cost', value: `₹${formatIndianNumber(half.stats.avgCost)}` }, { label: 'Avg Cost w/ Solar', value: `₹${formatIndianNumber(half.stats.avgUnits * 4)}` }] as figure (figure.label)}
+								<div class="flex items-baseline justify-between gap-2">
+									<dt class="text-[9pt] text-ink-600">{figure.label}</dt>
+									<dd class="text-[10pt] font-bold whitespace-nowrap">{figure.value}</dd>
+								</div>
+							{/each}
+						</dl>
+					</div>
 				</div>
 			{/each}
 		</div>
@@ -304,7 +356,27 @@
 
 	<!-- ── Page 4 ─────────────────────────────────────────────────────── -->
 	<section class="page" id="Page4">
-		<p><strong>Conclusion &amp; Recommendation</strong></p>
+		<h2 class="text-xl font-bold">Conclusion &amp; Recommendation</h2>
+
+		<!-- The two headline figures again, laid out along the page rather than
+		     down it so the recap reads as a summary of the conclusion and not as
+		     a reprint of page 1. Three pages of working sit between them. -->
+		<div class="my-1 flex gap-3">
+			<div class="flex-1 rounded-xl border border-ink-300 px-4 py-3">
+				<p class="text-[8pt] font-semibold tracking-wider text-ink-600 uppercase">Total savings</p>
+				<p class="mt-1 text-2xl font-medium text-solar-600">
+					₹{formatIndianNumber(report.totalSavings)}
+				</p>
+			</div>
+			<div class="flex-1 rounded-xl border border-ink-300 px-4 py-3">
+				<p class="text-[8pt] font-semibold tracking-wider text-ink-600 uppercase">
+					Required solar kW
+				</p>
+				<p class="mt-1 text-2xl font-medium text-solar-600">
+					{report.requiredKw}<span class="ml-1 text-base text-ink-700">kW</span>
+				</p>
+			</div>
+		</div>
 
 		<p>
 			This study was carried out on data gathered from actual facts and numbers. The rise in
@@ -335,7 +407,10 @@
 			Chennai.
 		</p>
 
-		<p>
+		<!-- The closing paragraph is the one thing on this page a reader is meant
+		     to act on, so it gets a panel rather than being the fourth block of
+		     body text. Wording unchanged. -->
+		<p class="mt-2 rounded-xl border border-ink-300 bg-solar-50 px-5 py-4">
 			We are always available for any queries or clarifications you may require. Please feel free to
 			contact us at
 			<a href="mailto:{CONTACT.emails.service}" class="text-sky-600">{CONTACT.emails.service}</a>
@@ -343,14 +418,21 @@
 			<a href="tel:{CONTACT.primaryPhone}" class="text-sky-600">{CONTACT.reportPhones}</a>.
 		</p>
 
-		<p class="mt-auto text-[9pt] italic">
-			<strong>Standard Disclaimer:</strong> This is a computer-generated report. No warranty or responsibility
-			is expressed or implied by way of Daystar Solar or its representatives. This information is property
-			of Daystar Solar and not to be used for commercial purposes. This is a guideline calculation, contact
-			our representatives for an exact and best estimate on your power requirements.
-		</p>
+		<!-- Disclaimer and footer travel together. Given `mt-auto` each, they
+		     split the leftover space between them and the disclaimer ended up
+		     floating in the middle of the empty half of the page. What is left
+		     over now falls at the very foot of the last page, where a margin is
+		     what a reader expects. -->
+		<div class="mt-auto flex flex-col gap-3">
+			<p class="text-[9pt] italic">
+				<strong>Standard Disclaimer:</strong> This is a computer-generated report. No warranty or responsibility
+				is expressed or implied by way of Daystar Solar or its representatives. This information is property
+				of Daystar Solar and not to be used for commercial purposes. This is a guideline calculation,
+				contact our representatives for an exact and best estimate on your power requirements.
+			</p>
 
-		{@render footer()}
+			{@render footer()}
+		</div>
 	</section>
 </div>
 
@@ -371,7 +453,7 @@
 		background: white;
 		padding: 32pt;
 		font-size: 11pt;
-		line-height: 1.55;
+		line-height: 1.65;
 	}
 
 	/* On screen the pages sit apart on a grey field; in print they must butt up

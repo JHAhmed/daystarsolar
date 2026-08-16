@@ -2,6 +2,7 @@
 const config = {
 	useTabs: true,
 	singleQuote: true,
+	bracketSameLine: true,
 	trailingComma: 'none',
 	printWidth: 100,
 	plugins: ['prettier-plugin-svelte', 'prettier-plugin-tailwindcss'],

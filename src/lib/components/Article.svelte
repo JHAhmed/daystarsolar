@@ -46,15 +46,13 @@
 		<div
 			data-reveal
 			{@attach reveal({ variant: 'blur', trigger: 'load', delay: 0.12 })}
-			class="mb-12 overflow-hidden rounded-panel"
-		>
+			class="mb-12 overflow-hidden rounded-panel">
 			<img
 				src={post.image}
 				width="1280"
 				height="720"
 				alt={post.title}
-				class="h-auto w-full object-cover"
-			/>
+				class="h-auto w-full object-cover" />
 		</div>
 	{/if}
 
@@ -63,8 +61,7 @@
 	<div
 		data-reveal
 		{@attach reveal({ trigger: 'load', delay: 0.2 })}
-		class="article-body max-w-none"
-	>
+		class="article-body max-w-none">
 		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 		{@html post.body}
 	</div>

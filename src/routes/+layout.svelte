@@ -38,6 +38,5 @@
 		richColors
 		expand
 		position="bottom-right"
-		toastOptions={{ style: 'font-family: var(--font-sans);' }}
-	/>
+		toastOptions={{ style: 'font-family: var(--font-sans);' }} />
 {/if}

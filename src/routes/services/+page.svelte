@@ -58,14 +58,12 @@
 		name: 'Solar Services',
 		description:
 			'Discover our full range of solar services including installation, maintenance, and consultation.'
-	})}
-/>
+	})} />
 
 <section class="container-page pt-6 section-bottom md:pt-10">
 	<PageHeader
 		align="center"
-		lead="From cozy homes to large factories, we provide end-to-end solar execution."
-	>
+		lead="From cozy homes to large factories, we provide end-to-end solar execution.">
 		Solar Panel Installation In Chennai
 	</PageHeader>
 
@@ -110,8 +108,7 @@
 						src={WHY_IMAGES[i]}
 						alt={card.alt}
 						loading="lazy"
-						class="h-48 w-full object-cover"
-					/>
+						class="h-48 w-full object-cover" />
 					<div class="p-6 md:p-8">
 						<h3 class="mb-3 font-display text-heading-sm text-night-900">{card.title}</h3>
 						<p class="text-sm leading-relaxed text-ink-600">{card.body}</p>
@@ -131,8 +128,7 @@
 
 		<ol
 			class="grid gap-x-8 gap-y-10 sm:grid-cols-2 md:grid-cols-4"
-			{@attach revealGroup({ y: 16, stagger: 0.06 })}
-		>
+			{@attach revealGroup({ y: 16, stagger: 0.06 })}>
 			{#each PROCESS_STEPS as step, i (step.title)}
 				{@const Icon = STEP_ICONS[i]}
 				<li data-reveal class="relative">
@@ -142,14 +138,12 @@
 						<span class="size-2.5 shrink-0 rounded-full bg-solar-400"></span>
 						<span
 							class="connector ml-2 h-px flex-1 bg-ink-200"
-							class:is-last={i === PROCESS_STEPS.length - 1}
-						></span>
+							class:is-last={i === PROCESS_STEPS.length - 1}></span>
 					</div>
 
 					<div class="mb-3 flex items-center gap-3">
 						<span
-							class="flex size-8 shrink-0 items-center justify-center rounded-lg bg-night-900 p-1.5"
-						>
+							class="flex size-8 shrink-0 items-center justify-center rounded-lg bg-night-900 p-1.5">
 							<Icon class="size-full text-white" />
 						</span>
 						<h3 class="font-display text-heading-sm text-night-900">{step.title}</h3>

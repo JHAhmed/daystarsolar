@@ -17,8 +17,7 @@
 		name: 'Our Projects',
 		description:
 			'A showcase of successful solar installations across residential and commercial sectors.'
-	})}
-/>
+	})} />
 
 <section class="container-page pt-6 section-bottom md:pt-10">
 	<PageHeader>Our Projects</PageHeader>
@@ -28,8 +27,7 @@
 			{#each data.projects as project (project.slug)}
 				<article
 					data-reveal
-					class="group/project flex flex-col overflow-hidden rounded-panel bg-ink-50 transition-shadow duration-[240ms] ease-out hover:shadow-lift md:flex-row"
-				>
+					class="group/project flex flex-col overflow-hidden rounded-panel bg-ink-50 transition-shadow duration-[240ms] ease-out hover:shadow-lift md:flex-row">
 					<div class="flex flex-col justify-center gap-5 p-6 md:w-1/2 md:p-8">
 						<h2 class="font-display text-heading text-night-900 md:text-heading-lg">
 							{project.title}
@@ -51,8 +49,7 @@
 							src={project.image}
 							alt={project.title}
 							loading="lazy"
-							class="h-56 w-full rounded-card object-cover transition-transform duration-[600ms] ease-out group-hover/project:scale-[1.02] md:h-full"
-						/>
+							class="h-56 w-full rounded-card object-cover transition-transform duration-[600ms] ease-out group-hover/project:scale-[1.02] md:h-full" />
 					</div>
 				</article>
 			{/each}

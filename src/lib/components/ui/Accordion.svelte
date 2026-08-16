@@ -43,13 +43,11 @@
 					onclick={() => toggle(i)}
 					aria-expanded={openStates[i]}
 					aria-controls="{id}-panel-{i}"
-					class="group/acc flex w-full items-center justify-between gap-6 px-1 py-5 text-left transition-colors duration-[160ms] ease-out hover:text-solar-600 md:py-6"
-				>
+					class="group/acc flex w-full items-center justify-between gap-6 px-1 py-5 text-left transition-colors duration-160 ease-out hover:text-solar-600 md:py-6">
 					<span class="font-sans text-base font-medium text-night-900 md:text-lg">{label}</span>
 					<span
-						class="flex size-8 shrink-0 items-center justify-center rounded-full bg-ink-100 text-night-900 transition-[background-color,transform] duration-[220ms] ease-out group-hover/acc:bg-ink-200"
-						class:is-open={openStates[i]}
-					>
+						class="flex size-8 shrink-0 items-center justify-center rounded-full bg-ink-100 text-night-900 transition-[background-color,transform] duration-220 ease-out group-hover/acc:bg-ink-200"
+						class:is-open={openStates[i]}>
 						<ChevronIcon class="size-4 rotate-90" strokeWidth="2" />
 					</span>
 				</button>
@@ -59,8 +57,7 @@
 				id="{id}-panel-{i}"
 				class="panel"
 				class:is-open={openStates[i]}
-				inert={!openStates[i] || undefined}
-			>
+				inert={!openStates[i] || undefined}>
 				<div class="overflow-hidden">
 					<div class="pr-10 pb-6 text-sm leading-relaxed text-ink-600 md:text-base">
 						{#if html}

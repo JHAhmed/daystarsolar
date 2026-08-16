@@ -114,21 +114,18 @@
 		name: 'Contact Us',
 		description:
 			'Get in touch with Daystar Solar for all your solar energy needs. Contact us for procurement, admin, service, and sales queries.'
-	})}
-/>
+	})} />
 
 <section class="container-page pt-6 md:pt-10">
 	<PageHeader eyebrow="Let's talk" align="center">Get In Touch</PageHeader>
 
 	<div
 		class="mt-12 flex flex-wrap items-center justify-center gap-3"
-		{@attach revealGroup({ y: 12, stagger: 0.05 })}
-	>
+		{@attach revealGroup({ y: 12, stagger: 0.05 })}>
 		<a
 			data-reveal
 			href={CONTACT.landline.href}
-			class="flex items-center gap-3 rounded-full border border-ink-200 py-2 pr-5 pl-2 transition-[border-color,transform] duration-[160ms] ease-out hover:border-ink-300 active:scale-[0.98]"
-		>
+			class="flex items-center gap-3 rounded-full border border-ink-200 py-2 pr-5 pl-2 transition-[border-color,transform] duration-160 ease-out hover:border-ink-300 hover:bg-sky-50 active:scale-[0.98]">
 			<span class="flex size-10 items-center justify-center rounded-full bg-sky-100">
 				<PhoneIcon class="size-4 text-sky-600" />
 			</span>
@@ -140,8 +137,7 @@
 			href={CONTACT.whatsapp}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="flex items-center gap-3 rounded-full border border-ink-200 py-2 pr-5 pl-2 transition-[border-color,transform] duration-[160ms] ease-out hover:border-ink-300 active:scale-[0.98]"
-		>
+			class="flex items-center gap-3 rounded-full border border-ink-200 py-2 pr-5 pl-2 transition-[border-color,transform] duration-160 ease-out hover:border-ink-300 hover:bg-green-50 active:scale-[0.98]">
 			<span class="flex size-10 items-center justify-center rounded-full bg-green-100">
 				<ChatIcon class="size-4 text-green-600" />
 			</span>
@@ -152,8 +148,7 @@
 			<a
 				data-reveal
 				href="tel:+9191766686{suffix}"
-				class="flex items-center gap-3 rounded-full border border-ink-200 py-2 pr-5 pl-2 transition-[border-color,transform] duration-[160ms] ease-out hover:border-ink-300 active:scale-[0.98]"
-			>
+				class="flex items-center gap-3 rounded-full border border-ink-200 py-2 pr-5 pl-2 transition-[border-color,transform] duration-160 ease-out hover:border-ink-300 hover:bg-green-50 active:scale-[0.98]">
 				<span class="flex size-10 items-center justify-center rounded-full bg-green-100">
 					<MobileIcon class="size-4 text-green-600" />
 				</span>
@@ -173,8 +168,7 @@
 			{@attach reveal({ y: 18 })}
 			onsubmit={handleSubmit}
 			novalidate
-			class="flex flex-col gap-4 rounded-panel border border-ink-200 p-6 md:p-8"
-		>
+			class="flex flex-col gap-4 rounded-panel border border-ink-200 p-6 md:p-8">
 			<div class="grid gap-4 sm:grid-cols-2">
 				<Field
 					label="First name"
@@ -183,8 +177,7 @@
 					placeholder="John"
 					autocomplete="given-name"
 					maxlength="40"
-					required
-				/>
+					required />
 				<Field
 					label="Last name"
 					bind:value={form.lastName}
@@ -192,8 +185,7 @@
 					placeholder="Smith"
 					autocomplete="family-name"
 					maxlength="40"
-					required
-				/>
+					required />
 			</div>
 
 			<Field
@@ -203,8 +195,7 @@
 				error={errors.email}
 				placeholder="johnsmith@gmail.com"
 				autocomplete="email"
-				required
-			/>
+				required />
 
 			<Field
 				label="Phone number"
@@ -216,8 +207,7 @@
 				autocomplete="tel"
 				inputmode="numeric"
 				maxlength="15"
-				required
-			/>
+				required />
 
 			<Field
 				label="Message"
@@ -227,8 +217,7 @@
 				error={errors.message}
 				placeholder="Hey there!"
 				maxlength="5000"
-				required
-			/>
+				required />
 
 			<Button type="submit" variant="primary" size="lg" chip disabled={submitting} class="mt-2">
 				{submitting ? 'Sending…' : 'Submit'}
@@ -240,8 +229,7 @@
 				href={ADDRESS.mapsUrl}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="group/addr relative flex items-start gap-3 rounded-panel border border-ink-200 p-6 transition-[border-color,background-color] duration-[160ms] ease-out hover:border-ink-300 hover:bg-ink-50"
-			>
+				class="group/addr relative flex items-start gap-3 rounded-panel border border-ink-200 p-6 transition-[border-color,background-color] duration-160 ease-out hover:border-ink-300 hover:bg-ink-50">
 				<LocationIcon class="mt-0.5 size-5 shrink-0 text-ink-500" />
 				<p class="text-sm leading-relaxed text-ink-700">
 					<span class="font-medium text-night-900">
@@ -249,9 +237,8 @@
 					</span>, Chennai - 600102, Tamil Nadu
 				</p>
 				<span
-					class="flex size-8 shrink-0 items-center justify-center rounded-full bg-ink-100 text-night-900 transition-transform duration-[200ms] ease-out group-hover/addr:translate-x-0.5 group-hover/addr:-translate-y-0.5"
-				>
-					<ArrowIcon class="size-3.5 -rotate-[135deg]" strokeWidth="2" />
+					class="flex size-8 shrink-0 items-center justify-center rounded-full bg-ink-100 text-night-900 transition-transform duration-200 ease-out group-hover/addr:translate-x-0.5 group-hover/addr:-translate-y-0.5">
+					<ArrowIcon class="size-3.5 rotate-[-135deg]" strokeWidth="2" />
 				</span>
 			</a>
 
@@ -276,15 +263,13 @@
 		<h2
 			data-reveal
 			{@attach reveal()}
-			class="mb-10 text-center font-display text-heading-lg text-night-900"
-		>
+			class="mb-10 text-center font-display text-heading-lg text-night-900">
 			Follow Our Socials
 		</h2>
 
 		<div
 			class="flex flex-wrap items-center justify-center gap-3"
-			{@attach revealGroup({ y: 12, stagger: 0.05 })}
-		>
+			{@attach revealGroup({ y: 12, stagger: 0.05 })}>
 			{#each SOCIALS as social (social.name)}
 				{@const Icon = SOCIAL_ICONS[social.name]}
 				<a
@@ -292,11 +277,9 @@
 					href={social.href}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="flex items-center gap-3 rounded-full border border-ink-200 py-2 pr-5 pl-2 transition-[border-color,transform] duration-[160ms] ease-out hover:border-ink-300 active:scale-[0.98]"
-				>
+					class="flex items-center gap-3 rounded-full border border-ink-200 py-2 pr-5 pl-2 transition-[border-color,transform] duration-160 ease-out hover:border-ink-300 active:scale-[0.98]">
 					<span
-						class="flex size-10 items-center justify-center rounded-full {social.brandClass} text-white"
-					>
+						class="flex size-10 items-center justify-center rounded-full {social.brandClass} text-white">
 						<Icon class="size-4" />
 					</span>
 					<span class="text-sm">{social.name}</span>
@@ -312,8 +295,7 @@
 		<h2
 			data-reveal
 			{@attach reveal()}
-			class="mb-10 text-center font-display text-heading-lg text-night-900"
-		>
+			class="mb-10 text-center font-display text-heading-lg text-night-900">
 			Prefer to mail instead?
 		</h2>
 
@@ -323,8 +305,7 @@
 				<a
 					data-reveal
 					href="mailto:{card.email}"
-					class="flex flex-col items-center gap-3 rounded-panel border-2 {card.accent} bg-ink-50/50 p-6 text-center transition-[border-color,box-shadow,transform] duration-[200ms] ease-out hover:shadow-soft active:scale-[0.99]"
-				>
+					class="flex flex-col items-center gap-3 rounded-panel border-2 {card.accent} bg-ink-50/50 p-6 text-center transition-[border-color,box-shadow,transform] duration-200 ease-out hover:shadow-soft active:scale-[0.99]">
 					<Icon class="my-2 size-6 text-ink-600" strokeWidth="1" />
 					<h3 class="font-medium text-night-900">{card.label}</h3>
 					<span class="text-sm break-all text-ink-600">{card.email}</span>

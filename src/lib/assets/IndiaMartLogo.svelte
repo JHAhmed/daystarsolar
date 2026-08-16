@@ -17,6 +17,5 @@
 		width="256"
 		height="256"
 		alt="IndiaMart Logo"
-		class={cn('size-4', className)}
-	/>
+		class={cn('size-4', className)} />
 </div>

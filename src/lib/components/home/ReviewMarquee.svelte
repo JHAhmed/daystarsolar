@@ -27,8 +27,7 @@
 					rel="noopener noreferrer"
 					aria-hidden={i >= REVIEWS.length ? 'true' : undefined}
 					tabindex={i >= REVIEWS.length ? -1 : undefined}
-					class="group/review flex h-full flex-col rounded-card border border-ink-200 bg-white p-6 transition-[border-color,box-shadow,transform] duration-[200ms] ease-out hover:-translate-y-0.5 hover:border-ink-300 hover:shadow-lift"
-				>
+					class="group/review flex h-full flex-col rounded-card border border-ink-200 bg-white p-6 transition-[border-color,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 hover:border-ink-300 hover:shadow-lift">
 					<div class="mb-5 flex items-center justify-between">
 						<div class="flex gap-0.5" aria-label="{review.rating} out of 5 stars">
 							{#each { length: review.rating } as _, star (star)}
@@ -43,8 +42,7 @@
 					<div class="mt-auto flex items-center justify-between gap-3">
 						<p class="text-sm font-medium text-night-900">{review.name}</p>
 						<span
-							class="flex size-7 items-center justify-center rounded-full bg-ink-100 text-ink-500 transition-[background-color,color] duration-[200ms] ease-out group-hover/review:bg-solar-400 group-hover/review:text-white"
-						>
+							class="flex size-7 items-center justify-center rounded-full bg-ink-100 text-ink-500 transition-[background-color,color] duration-200 ease-out group-hover/review:bg-solar-400 group-hover/review:text-white">
 							<ArrowIcon class="size-3.5 -rotate-[135deg]" strokeWidth="2" />
 						</span>
 					</div>

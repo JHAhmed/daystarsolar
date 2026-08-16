@@ -46,13 +46,15 @@
 	class="sticky top-0 z-50 transition-[background-color,box-shadow,border-color] duration-300 ease-out
 		{condensed || open
 		? 'border-b border-ink-200 bg-white/85 shadow-soft backdrop-blur-md'
-		: 'border-b border-transparent bg-white'}"
->
+		: 'border-b border-transparent bg-white'}">
 	<nav class="container-page" aria-label="Primary">
+		<!-- With the links and menu button gone, `justify-between` has nothing to
+		     space and leaves the logo stranded on the left, so the minimal bar
+		     centres it instead. -->
 		<div
-			class="flex items-center justify-between transition-[height] duration-300 ease-out
-				{condensed ? 'h-16 lg:h-20' : 'h-20 lg:h-28'}"
-		>
+			class="flex items-center transition-[height] duration-300 ease-out
+				{minimal ? 'justify-center' : 'justify-between'}
+				{condensed ? 'h-16 lg:h-20' : 'h-20 lg:h-28'}">
 			<a href="/" title="Daystar Solar - Home" class="flex shrink-0 items-center">
 				<img
 					class="w-auto transition-[height] duration-300 ease-out {condensed
@@ -61,8 +63,7 @@
 					src={logo}
 					width="440"
 					height="119"
-					alt="Daystar Solar"
-				/>
+					alt="Daystar Solar" />
 			</a>
 
 			{#if !minimal}
@@ -70,10 +71,9 @@
 					{#each NAV_LINKS as link (link.href)}
 						<a
 							href={link.href}
-							class="nav-link relative py-2 text-sm text-night-900 transition-colors duration-[160ms] ease-out hover:text-night-900"
+							class="nav-link relative py-2 text-sm text-night-900 transition-colors duration-160 ease-out hover:text-night-900"
 							class:is-active={isActive(link.href)}
-							aria-current={isActive(link.href) ? 'page' : undefined}
-						>
+							aria-current={isActive(link.href) ? 'page' : undefined}>
 							{link.name}
 						</a>
 					{/each}
@@ -87,8 +87,7 @@
 					aria-expanded={open}
 					aria-controls="mobile-menu"
 					aria-label={open ? 'Close menu' : 'Open menu'}
-					class="flex size-10 items-center justify-center rounded-full bg-ink-100 text-night-900 transition-[background-color,transform] duration-[160ms] ease-out hover:bg-ink-200 active:scale-[0.94] lg:hidden"
-				>
+					class="flex size-10 items-center justify-center rounded-full bg-ink-100 text-night-900 transition-[background-color,transform] duration-160 ease-out hover:bg-ink-200 active:scale-[0.94] lg:hidden">
 					<span class="relative block h-3 w-4">
 						<span class="burger-line top-0" class:is-open={open}></span>
 						<span class="burger-line bottom-0" class:is-open={open}></span>
@@ -112,9 +111,8 @@
 									href={link.href}
 									onclick={close}
 									aria-current={isActive(link.href) ? 'page' : undefined}
-									class="block rounded-lg px-4 py-3 text-lg transition-colors duration-[160ms] ease-out
-										{isActive(link.href) ? 'bg-ink-100 font-medium text-night-900' : 'text-ink-700 hover:bg-ink-50'}"
-								>
+									class="block rounded-lg px-4 py-3 text-lg transition-colors duration-160 ease-out
+										{isActive(link.href) ? 'bg-ink-100 font-medium text-night-900' : 'text-ink-700 hover:bg-ink-50'}">
 									{link.name}
 								</a>
 							</li>

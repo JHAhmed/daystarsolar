@@ -61,7 +61,7 @@
 	const classes = $derived(
 		cn(
 			'group/btn relative inline-flex shrink-0 items-center justify-center font-medium',
-			'transition-[background-color,border-color,color,transform,box-shadow] duration-[160ms] ease-out',
+			'transition-[background-color,border-color,color,transform,box-shadow] duration-160 ease-out',
 			'active:scale-[0.97] disabled:pointer-events-none disabled:opacity-50',
 			shape === 'pill' ? 'rounded-full' : 'rounded-xl',
 			variants[variant],
@@ -72,7 +72,7 @@
 
 	const chipClasses = $derived(
 		cn(
-			'flex items-center justify-center transition-transform duration-[220ms] ease-out',
+			'flex items-center justify-center transition-transform duration-220 ease-out',
 			'group-hover/btn:translate-x-0.5',
 			shape === 'pill' ? 'rounded-full' : 'rounded-lg',
 			chipSizes[size],
@@ -87,8 +87,7 @@
 		<span class={chipClasses} aria-hidden="true">
 			<ArrowIcon
 				class={cn('size-4', chip === 'diagonal' ? '-rotate-[135deg]' : '-rotate-90')}
-				strokeWidth="2"
-			/>
+				strokeWidth="2" />
 		</span>
 	{/if}
 {/snippet}

@@ -11,24 +11,21 @@
 	title="Report unavailable | Daystar Solar"
 	description="We could not generate your solar report."
 	path="/report-error"
-	robots="noindex, nofollow"
-/>
+	robots="noindex, nofollow" />
 
 <section class="container-page flex min-h-[60vh] items-center py-24">
 	<div class="max-w-xl">
 		<h1
 			data-reveal
 			{@attach reveal({ trigger: 'load' })}
-			class="font-display text-display text-night-900"
-		>
+			class="font-display text-display text-night-900">
 			{alreadySolar ? "You're already on solar" : "We couldn't build your report"}
 		</h1>
 
 		<p
 			data-reveal
 			{@attach reveal({ trigger: 'load', delay: 0.1 })}
-			class="mt-5 text-lead text-ink-600"
-		>
+			class="mt-5 text-lead text-ink-600">
 			{#if alreadySolar}
 				Your connection already has a solar net metering service registered against it, so there is
 				no savings estimate for us to calculate. If you'd like to expand your existing system, our
@@ -42,8 +39,7 @@
 		<div
 			data-reveal
 			{@attach reveal({ trigger: 'load', delay: 0.18 })}
-			class="mt-9 flex flex-wrap gap-3"
-		>
+			class="mt-9 flex flex-wrap gap-3">
 			{#if !alreadySolar}
 				<Button href="/calculator" variant="primary" size="lg" chip>Enter bills manually</Button>
 			{/if}
@@ -51,8 +47,7 @@
 				href="/contact"
 				variant={alreadySolar ? 'primary' : 'subtle'}
 				size="lg"
-				chip={alreadySolar}
-			>
+				chip={alreadySolar}>
 				Talk to our team
 			</Button>
 		</div>
@@ -60,11 +55,9 @@
 		<p
 			data-reveal
 			{@attach reveal({ trigger: 'load', delay: 0.26 })}
-			class="mt-8 text-sm text-ink-500"
-		>
+			class="mt-8 text-sm text-ink-500">
 			Prefer to call? <a href={CONTACT.landline.href} class="text-sky-600 hover:underline"
-				>{CONTACT.landline.label}</a
-			>
+				>{CONTACT.landline.label}</a>
 		</p>
 	</div>
 </section>

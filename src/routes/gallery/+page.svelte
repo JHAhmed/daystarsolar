@@ -50,29 +50,25 @@
 		name: 'Gallery',
 		description:
 			'View the latest solar installations and projects from Daystar Solar, a leading solar energy solutions provider in south india.'
-	})}
-/>
+	})} />
 
 <section class="container-page pt-6 section-bottom md:pt-10">
 	<PageHeader>Commercial Solar Installation</PageHeader>
 
 	<div
 		class="mt-14 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4"
-		{@attach revealGroup({ variant: 'blur', y: 14, stagger: 0.04 })}
-	>
+		{@attach revealGroup({ variant: 'blur', y: 14, stagger: 0.04 })}>
 		{#each items as item (item.path)}
 			<button
 				type="button"
 				data-reveal
 				onclick={() => open(item)}
-				class="group/tile block overflow-hidden rounded-card transition-transform duration-[200ms] ease-out active:scale-[0.985]"
-			>
+				class="group/tile block overflow-hidden rounded-card transition-transform duration-200 ease-out active:scale-[0.985]">
 				<enhanced:img
 					src={item.src}
 					alt="Daystar Solar installation at {item.title}"
 					loading="lazy"
-					class="aspect-4/3 h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover/tile:scale-[1.05]"
-				/>
+					class="aspect-4/3 h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover/tile:scale-[1.05]" />
 			</button>
 		{/each}
 	</div>
@@ -84,15 +80,13 @@
 	onclick={(event) => {
 		if (event.target === dialog) close();
 	}}
-	class="lightbox m-auto max-h-[92dvh] max-w-[min(64rem,92vw)] bg-transparent p-0 backdrop:bg-night-950/70 backdrop:backdrop-blur-sm"
->
+	class="lightbox m-auto max-h-[92dvh] max-w-[min(64rem,92vw)] bg-transparent p-0 backdrop:bg-night-950/70 backdrop:backdrop-blur-sm">
 	{#if active}
 		<div class="flex flex-col gap-4">
 			<enhanced:img
 				src={active.src}
 				alt="Daystar Solar installation at {active.title}"
-				class="max-h-[72dvh] w-full rounded-panel object-contain"
-			/>
+				class="max-h-[72dvh] w-full rounded-panel object-contain" />
 
 			<div class="flex flex-wrap items-center justify-between gap-3">
 				<p class="font-display text-heading-sm text-white">{active.title}</p>

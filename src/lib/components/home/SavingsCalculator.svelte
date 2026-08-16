@@ -74,8 +74,8 @@
 							<div class="h-full w-full rounded-full bg-ink-200"></div>
 							<div
 								class="absolute inset-y-0 left-0 rounded-full bg-night-900"
-								style:width="{progress}%"
-							></div>
+								style:width="{progress}%">
+							</div>
 						</div>
 						<input
 							id="electricity-bill"
@@ -85,8 +85,7 @@
 							step="1000"
 							bind:value={monthlyBill}
 							aria-valuetext="₹{formatIndianNumber(monthlyBill)}"
-							class="range-input relative w-full cursor-pointer"
-						/>
+							class="range-input relative w-full cursor-pointer" />
 					</div>
 
 					<div class="mt-3 flex justify-between text-xs text-ink-400">
@@ -103,11 +102,10 @@
 								type="button"
 								aria-pressed={consumerType === type.value}
 								onclick={() => (consumerType = type.value)}
-								class="rounded-lg px-3 py-2.5 text-sm font-medium transition-[background-color,color,transform] duration-[160ms] ease-out active:scale-[0.97]
+								class="rounded-lg px-3 py-2.5 text-sm font-medium transition-[background-color,color,transform] duration-160 ease-out active:scale-[0.97]
 									{consumerType === type.value
 									? 'bg-night-900 text-white'
-									: 'bg-ink-100 text-ink-600 hover:bg-ink-200'}"
-							>
+									: 'bg-ink-100 text-ink-600 hover:bg-ink-200'}">
 								{type.label}
 							</button>
 						{/each}
@@ -120,8 +118,7 @@
 		     left-aligned, but the right column is a readout, and its two figures
 		     looked adrift flushed left inside a much wider panel. -->
 		<div
-			class="flex flex-col items-center justify-center bg-night-900 p-8 text-center md:p-12 lg:p-14"
-		>
+			class="flex flex-col items-center justify-center bg-night-900 p-8 text-center md:p-12 lg:p-14">
 			<div class="flex flex-wrap items-stretch justify-center gap-8 sm:gap-10">
 				<div>
 					<p class="text-eyebrow text-white/40 uppercase">Annual Savings</p>
@@ -150,12 +147,10 @@
 					id="advanced-calculator-button"
 					data-umami-event="Advanced Calculator Button"
 					href="/calculator"
-					class="group/adv inline-flex items-center gap-4 rounded-xl bg-white py-3 pr-3 pl-6 transition-[background-color,transform] duration-[160ms] ease-out hover:bg-ink-100 active:scale-[0.97]"
-				>
+					class="group/adv inline-flex items-center gap-4 rounded-xl bg-white py-3 pr-3 pl-6 transition-[background-color,transform] duration-160 ease-out hover:bg-ink-100 active:scale-[0.97]">
 					<span class="text-base font-medium text-night-900">Advanced Calculator</span>
 					<span
-						class="flex size-9 items-center justify-center rounded-lg bg-solar-400 text-night-900 transition-[background-color,color,transform] duration-[200ms] ease-out group-hover/adv:translate-x-0.5 group-hover/adv:bg-night-900 group-hover/adv:text-white"
-					>
+						class="flex size-9 items-center justify-center rounded-lg bg-solar-400 text-night-900 transition-[background-color,color,transform] duration-200 ease-out group-hover/adv:translate-x-0.5 group-hover/adv:bg-night-900 group-hover/adv:text-white">
 						<ChevronIcon strokeWidth={2.5} class="size-4" />
 					</span>
 				</a>

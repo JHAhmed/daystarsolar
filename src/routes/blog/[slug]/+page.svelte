@@ -17,7 +17,6 @@
 		path: `/blog/${post.slug}`,
 		name: post.title,
 		description: post.summary
-	})}
-/>
+	})} />
 
 <Article {post} backHref="/blog" backLabel="Back" />

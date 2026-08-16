@@ -83,8 +83,7 @@
 								<li>
 									<a
 										href={link.href}
-										class="text-white/75 transition-colors duration-[160ms] ease-out hover:text-white"
-									>
+										class="text-white/75 transition-colors duration-160 ease-out hover:text-white">
 										{link.name}
 									</a>
 								</li>
@@ -101,8 +100,7 @@
 
 				<form onsubmit={handleSubmit} class="max-w-sm">
 					<div
-						class="flex items-center gap-2 rounded-xl bg-white p-1.5 transition-shadow duration-200 focus-within:ring-2 focus-within:ring-solar-400"
-					>
+						class="flex items-center gap-2 rounded-xl bg-white p-1.5 transition-shadow duration-200 focus-within:ring-2 focus-within:ring-solar-400">
 						<label class="sr-only" for="newsletter-email">Email address</label>
 						<input
 							id="newsletter-email"
@@ -110,14 +108,12 @@
 							type="email"
 							autocomplete="email"
 							placeholder="Email"
-							class="w-full border-none bg-transparent px-2.5 py-2 text-sm text-night-900 placeholder:text-ink-400 focus:ring-0 focus:outline-none"
-						/>
+							class="w-full border-none bg-transparent px-2.5 py-2 text-sm text-night-900 placeholder:text-ink-400 focus:ring-0 focus:outline-none" />
 						<button
 							type="submit"
 							disabled={submitting}
 							aria-label="Subscribe to newsletter"
-							class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-night-900 text-white transition-[transform,background-color] duration-[160ms] ease-out hover:bg-night-700 active:scale-[0.94] disabled:opacity-50"
-						>
+							class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-night-900 text-white transition-[transform,background-color] duration-160 ease-out hover:bg-night-700 active:scale-[0.94] disabled:opacity-50">
 							<ArrowIcon class="size-4 -rotate-90" strokeWidth="2" />
 						</button>
 					</div>
@@ -143,8 +139,7 @@
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label={social.name}
-							class="block text-ink-400 transition-[color,transform] duration-[160ms] ease-out hover:-translate-y-0.5 hover:text-night-900"
-						>
+							class="block text-ink-400 transition-[color,transform] duration-160 ease-out hover:-translate-y-0.5 hover:text-night-900">
 							<Icon class="size-4" />
 						</a>
 					</li>
@@ -159,8 +154,7 @@
 				href="https://wurks.studio/"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-sm font-normal text-ink-500"
-			>
+				class="text-sm font-normal text-ink-500">
 				By <span
 					class="font-medium text-purple-600 decoration-purple-600 decoration-2 underline-offset-2 hover:underline"
 					>Wurks</span

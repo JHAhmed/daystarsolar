@@ -42,8 +42,7 @@
 		name: 'About Daystar Solar',
 		description:
 			'Learn more about Daystar Solar, our mission, and the team powering your solar future.'
-	})}
-/>
+	})} />
 
 <section class="container-page pt-6 section-bottom md:pt-10">
 	<PageHeader eyebrow="Daystar Solar" eyebrowPosition="above" align="center">
@@ -58,8 +57,7 @@
 					src={image}
 					alt="Solar panels on various buildings"
 					loading={i === 0 ? 'eager' : 'lazy'}
-					class="h-full w-full object-cover"
-				/>
+					class="h-full w-full object-cover" />
 			</div>
 		{/each}
 	</div>
@@ -105,8 +103,7 @@
 <section class="section-bottom">
 	<div
 		class="container-page grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8"
-		{@attach revealGroup({ y: 14, stagger: 0.06 })}
-	>
+		{@attach revealGroup({ y: 14, stagger: 0.06 })}>
 		{#each FEATURES as feature (feature.text)}
 			{@const Icon = feature.icon}
 			<div data-reveal class="flex flex-col items-center gap-3 text-center">

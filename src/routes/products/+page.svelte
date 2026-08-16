@@ -50,8 +50,7 @@
 		name: 'Solar Products',
 		description:
 			'Explore our range of high-efficiency solar panels, inverters, batteries, and accessories.'
-	})}
-/>
+	})} />
 
 <section class="container-page pt-6 section-bottom md:pt-10">
 	<PageHeader>Our Products</PageHeader>
@@ -77,13 +76,12 @@
 						src={product.image}
 						alt={product.alt}
 						loading="lazy"
-						class="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover/product:scale-[1.04]"
-					/>
+						class="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover/product:scale-[1.04]" />
 				</div>
 
 				<div
-					class="absolute inset-0 bg-gradient-to-t from-night-950/85 via-night-950/35 to-transparent"
-				></div>
+					class="absolute inset-0 bg-gradient-to-t from-night-950/85 via-night-950/35 to-transparent">
+				</div>
 
 				<div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
 					<h2 class="font-display text-heading-lg text-white md:text-display">
@@ -98,8 +96,7 @@
 							href={MARKETPLACES.amazon}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-4 py-2 text-sm text-white backdrop-blur-sm transition-[background-color,transform] duration-[160ms] ease-out hover:bg-white/25 active:scale-[0.97]"
-						>
+							class="flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-4 py-2 text-sm text-white backdrop-blur-sm transition-[background-color,transform] duration-160 ease-out hover:bg-white/25 active:scale-[0.97]">
 							<AmazonLogo class="h-4 w-auto" />
 							<span>Amazon</span>
 							<ArrowIcon class="size-3 -rotate-[135deg]" strokeWidth="2" />
@@ -109,8 +106,7 @@
 							href={MARKETPLACES.indiamart}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-4 py-2 text-sm text-white backdrop-blur-sm transition-[background-color,transform] duration-[160ms] ease-out hover:bg-white/25 active:scale-[0.97]"
-						>
+							class="flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-4 py-2 text-sm text-white backdrop-blur-sm transition-[background-color,transform] duration-160 ease-out hover:bg-white/25 active:scale-[0.97]">
 							<IndiaMartLogo class="h-4 w-auto" />
 							<span>IndiaMART</span>
 							<ArrowIcon class="size-3 -rotate-[135deg]" strokeWidth="2" />
