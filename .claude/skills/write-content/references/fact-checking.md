@@ -1,9 +1,11 @@
 # Technique 08: Fact-Checking & Verification
 
 ## What It Is
+
 A systematic process to verify every factual claim, statistic, quote, and attribution in AI-assisted content — because AI models confidently fabricate data, invent sources, and present plausible-sounding but incorrect information.
 
 ## Why It Works
+
 One fabricated statistic destroys an article's credibility. Google's EEAT framework heavily weights Trustworthiness, and factual accuracy is its foundation. More practically: if a reader fact-checks ONE claim and it's wrong, they dismiss the entire article — and bounce back to search results (NavBoost penalty).
 
 AI hallucination rates for factual claims vary by model and domain, but even the best models fabricate 5-15% of specific statistics and quotes. For an article with 20 factual claims, that's 1-3 fabricated "facts" by default.
@@ -11,6 +13,7 @@ AI hallucination rates for factual claims vary by model and domain, but even the
 ## Step-by-Step Process
 
 ### Step 1: Claim Extraction
+
 1. Read the draft and highlight every factual claim:
    - Statistics ("63% of marketers...")
    - Quotes ("According to [name]...")
@@ -21,6 +24,7 @@ AI hallucination rates for factual claims vary by model and domain, but even the
 2. Create a verification checklist with each claim
 
 ### Step 2: Source Verification
+
 3. For each statistic:
    - Can you find the ORIGINAL source (not another blog citing it)?
    - Is the source reputable (academic, government, major research firm)?
@@ -36,6 +40,7 @@ AI hallucination rates for factual claims vary by model and domain, but even the
    - Is the author/organization correct?
 
 ### Step 3: Claim Classification
+
 6. Classify each claim:
    - **Verified**: Source found, claim matches
    - **Partially correct**: Source exists but numbers/context differ
@@ -46,6 +51,7 @@ AI hallucination rates for factual claims vary by model and domain, but even the
 9. Flag unverifiable claims for human verification
 
 ### Step 4: Attribution Standards
+
 10. Replace all vague attributions:
     - "Studies show..." -> "[Organization]'s [year] study of [N subjects] found..."
     - "Experts agree..." -> "[Name], [title] at [organization], states..."
@@ -54,6 +60,7 @@ AI hallucination rates for factual claims vary by model and domain, but even the
 11. Every statistic must have: source name, year, and ideally a link
 
 ### Step 5: Currency Check
+
 12. Flag statistics older than 2 years for review
 13. Note when data was last updated
 14. Add "as of [date]" qualifiers for time-sensitive data

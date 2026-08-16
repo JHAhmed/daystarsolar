@@ -1,26 +1,31 @@
 # Tactic 06: Strategic Guest Posting
 
 ## What It Is
+
 Writing and publishing high-quality articles on other websites in your niche in exchange for a backlink to your site (usually in the author bio or contextually within the content). The emphasis is on "strategic" — targeting relevant, authoritative sites with genuine editorial standards, not mass guest post farms.
 
 ## Why It Works
+
 Guest posting works because it's a genuine value exchange: you provide free content, they provide exposure and a link. Google's algorithm recognizes editorial links within quality content as strong trust signals, especially when the linking site is topically relevant. The key shift in 2025-2026: Google has largely devalued links from low-quality guest post mills, but editorial guest posts on respected publications still carry significant weight.
 
 ## Step-by-Step Process
 
 ### Step 1: Build Your Target List (2 hours)
+
 1. Use backlink gap data to find blogs linking to competitors via guest posts
 2. Search: `[your niche] "write for us"` or `[your niche] "guest post"`
 3. Target sites with: DR 30+, real organic traffic, editorial standards, topical relevance
 4. Aim for 20-30 prospects to yield 2-3 placements
 
 ### Step 2: Research Each Target (1 hour per target)
+
 - Read 3-5 of their recent articles
 - Identify content gaps (topics they haven't covered)
 - Note their writing style, audience, and content format
 - Check if they have contributor guidelines
 
 ### Step 3: Craft Personalized Pitches (30 min per pitch)
+
 - Reference specific articles you've read
 - Pitch 2-3 unique topic ideas with clear value for THEIR audience
 - Include your credentials/expertise
@@ -28,6 +33,7 @@ Guest posting works because it's a genuine value exchange: you provide free cont
 - Keep it under 200 words
 
 ### Step 4: Write Exceptional Content (6-10 hours per post)
+
 - Match their quality standard or exceed it
 - Include original insights, data, or case studies
 - Naturally integrate 1-2 contextual links to your site
@@ -35,6 +41,7 @@ Guest posting works because it's a genuine value exchange: you provide free cont
 - Format properly (headings, images, meta description)
 
 ### Step 5: Promote After Publication
+
 - Share on your social channels
 - Build 2-3 supporting links TO the guest post (this amplifies its authority and benefits both you and the host)
 
@@ -66,13 +73,13 @@ Guest posting works because it's a genuine value exchange: you provide free cont
 
 ## Time & Cost Estimate
 
-| Aspect | Estimate |
-|--------|----------|
-| Prospecting | 2-3 hours/month |
-| Pitching | 1-2 hours/month (10-15 pitches) |
-| Writing | 6-10 hours per accepted post |
-| Cost (DIY) | €0 |
-| Cost (outsourced) | €300-1,000 per post |
+| Aspect            | Estimate                        |
+| ----------------- | ------------------------------- |
+| Prospecting       | 2-3 hours/month                 |
+| Pitching          | 1-2 hours/month (10-15 pitches) |
+| Writing           | 6-10 hours per accepted post    |
+| Cost (DIY)        | €0                              |
+| Cost (outsourced) | €300-1,000 per post             |
 
 ## Expected Results
 
@@ -82,13 +89,13 @@ Guest posting works because it's a genuine value exchange: you provide free cont
 
 ## Tools Needed
 
-| Tool | Purpose | Cost |
-|------|---------|------|
-| **Hunter.io** | Find editor emails | Free tier |
-| **BuzzStream** | Outreach CRM and tracking | $24/mo |
-| **Grammarly** | Polish guest post quality | Free tier |
-| **Ahrefs Content Explorer** | Find sites accepting guest posts | $129/mo |
-| **Google Docs** | Write and share drafts | Free |
+| Tool                        | Purpose                          | Cost      |
+| --------------------------- | -------------------------------- | --------- |
+| **Hunter.io**               | Find editor emails               | Free tier |
+| **BuzzStream**              | Outreach CRM and tracking        | $24/mo    |
+| **Grammarly**               | Polish guest post quality        | Free tier |
+| **Ahrefs Content Explorer** | Find sites accepting guest posts | $129/mo   |
+| **Google Docs**             | Write and share drafts           | Free      |
 
 ## How Data Helps
 
@@ -106,8 +113,8 @@ Guest posting works because it's a genuine value exchange: you provide free cont
 
 ## Best For Which Phase
 
-| Phase | Relevance |
-|-------|-----------|
-| **DR 0-10** | ⭐⭐ Hard to get accepted without credentials; start with smaller blogs |
+| Phase        | Relevance                                                                 |
+| ------------ | ------------------------------------------------------------------------- |
+| **DR 0-10**  | ⭐⭐ Hard to get accepted without credentials; start with smaller blogs   |
 | **DR 10-30** | ⭐⭐⭐⭐⭐ Sweet spot — enough credibility to pitch, huge impact per link |
-| **DR 30+** | ⭐⭐⭐⭐ Target top-tier publications for maximum impact |
+| **DR 30+**   | ⭐⭐⭐⭐ Target top-tier publications for maximum impact                  |

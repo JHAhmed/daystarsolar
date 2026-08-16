@@ -14,13 +14,13 @@ The 2024 API leak confirmed what practitioners had suspected: Google tracks sign
 
 These are the target ranges. Think of them as a budget, not a formula:
 
-| Category | Safe range | What counts |
-|---|---|---|
-| **Branded** | 40-55% | Your business name, domain name, founder name (e.g., "Acme", "acme.com", "Acme Tools") |
-| **Naked URL** | 15-20% | The literal URL as the anchor (e.g., "https://acme.com/blog/post") |
-| **Generic** | 15-20% | "click here", "read more", "this article", "check it out", "source" |
-| **Partial match** | 10-15% | Anchors containing your target keyword plus other words (e.g., "this guide to email marketing") |
-| **Exact match** | 3-5% MAXIMUM | Anchors that are literally your target keyword (e.g., "email marketing software") |
+| Category          | Safe range   | What counts                                                                                     |
+| ----------------- | ------------ | ----------------------------------------------------------------------------------------------- |
+| **Branded**       | 40-55%       | Your business name, domain name, founder name (e.g., "Acme", "acme.com", "Acme Tools")          |
+| **Naked URL**     | 15-20%       | The literal URL as the anchor (e.g., "https://acme.com/blog/post")                              |
+| **Generic**       | 15-20%       | "click here", "read more", "this article", "check it out", "source"                             |
+| **Partial match** | 10-15%       | Anchors containing your target keyword plus other words (e.g., "this guide to email marketing") |
+| **Exact match**   | 3-5% MAXIMUM | Anchors that are literally your target keyword (e.g., "email marketing software")               |
 
 ### Why each category matters
 
@@ -55,6 +55,7 @@ This happens. Someone inherits a site, or they followed bad advice in 2019, or e
 Anchor text isn't the only shape Google watches. Source diversity matters too. A profile where every link comes from one source type looks just as manipulative as one where every link uses the same anchor.
 
 Watch for monocultures:
+
 - **All guest posts**: a site with 80% guest post links and nothing else looks like it's buying placements
 - **All directories**: plausible at Foundation phase, suspicious at Authority phase
 - **All forum/comment links**: comment spam signature

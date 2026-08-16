@@ -24,6 +24,7 @@ AI systems cite content that is: easy to extract, verifiable, authoritative, and
 Lead every major section with a clear, extractable answer before expanding with detail.
 
 **Pattern:**
+
 ```
 ## [Question as H2]
 
@@ -39,6 +40,7 @@ Lead every major section with a clear, extractable answer before expanding with 
 FAQPage schema makes content materially more likely to appear in AI Overviews â€” see the Relixir study cited in Key Statistics.
 
 **Implementation:**
+
 - Include 3-5 FAQ items per page
 - Use actual questions people search for (from PAA data in the brief)
 - Answer in 40-60 words per question
@@ -49,6 +51,7 @@ FAQPage schema makes content materially more likely to appear in AI Overviews â€
 Structure content as verifiable claims followed by evidence. AI systems prefer content they can confidently cite.
 
 **Pattern:**
+
 ```
 [Factual claim with specific data point]. [Source attribution].
 [Supporting evidence or context].
@@ -62,6 +65,7 @@ Structure content as verifiable claims followed by evidence. AI systems prefer c
 Explicitly name entities and their relationships. AI systems build knowledge graphs from entity-rich content.
 
 **Implementation:**
+
 - Name specific companies, people, tools, frameworks (not "many companies" but "Coolblue, Bol.com, and Zalando")
 - Define relationships between entities explicitly
 - Use structured data (Organization, Person, Product schema) to reinforce entity markup
@@ -72,6 +76,7 @@ Explicitly name entities and their relationships. AI systems build knowledge gra
 Clear question-answer patterns that AI can extract and cite.
 
 **Implementation:**
+
 - Use questions as H2/H3 headings where natural
 - Answer immediately in extractable format
 - Include "who/what/when/where/why/how" question variants
@@ -82,6 +87,7 @@ Clear question-answer patterns that AI can extract and cite.
 Include verifiable statistics with explicit source citations.
 
 **Implementation:**
+
 - Cite specific sources by name and year: "(Ahrefs, 2025)" not "according to research"
 - Include URLs for original data where possible
 - Prefer recent sources (within 12 months)
@@ -98,29 +104,30 @@ Include verifiable statistics with explicit source citations.
 
 ## GEO Measurement Metrics
 
-| Metric | What It Measures |
-|--------|-----------------|
-| Prompt Coverage | How often your content appears in AI responses for target queries |
-| Citation Share | Your percentage of total citations vs. competitors |
-| Visibility Score | Prominence of your citations (position, context) |
-| Authority Weight | How AI systems rate your domain's reliability |
-| Freshness Ratio | Recency of your most-cited content |
+| Metric           | What It Measures                                                  |
+| ---------------- | ----------------------------------------------------------------- |
+| Prompt Coverage  | How often your content appears in AI responses for target queries |
+| Citation Share   | Your percentage of total citations vs. competitors                |
+| Visibility Score | Prominence of your citations (position, context)                  |
+| Authority Weight | How AI systems rate your domain's reliability                     |
+| Freshness Ratio  | Recency of your most-cited content                                |
 
 ## Dual Optimization: Google + AI
 
 The writing skill should optimize for BOTH simultaneously. The overlap is large:
 
-| Signal | Google Ranking | AI Citation |
-|--------|---------------|-------------|
-| Clear, extractable answers | Featured snippets | Direct citation |
-| FAQ schema | Entity understanding | 3.2x citation rate |
-| E-E-A-T signals | Quality score | Authority weight |
-| Structured headings | Crawlability | Parsability |
-| Specific data with sources | Information gain | Verifiability |
-| Recency/freshness | QDF signal | Recency preference |
-| Entity-rich content | Knowledge Graph | Entity linking |
+| Signal                     | Google Ranking       | AI Citation        |
+| -------------------------- | -------------------- | ------------------ |
+| Clear, extractable answers | Featured snippets    | Direct citation    |
+| FAQ schema                 | Entity understanding | 3.2x citation rate |
+| E-E-A-T signals            | Quality score        | Authority weight   |
+| Structured headings        | Crawlability         | Parsability        |
+| Specific data with sources | Information gain     | Verifiability      |
+| Recency/freshness          | QDF signal           | Recency preference |
+| Entity-rich content        | Knowledge Graph      | Entity linking     |
 
 **What differs:**
+
 - Google rewards engagement signals (NavBoost) -- AI systems don't (yet)
 - AI systems prefer concise, extractable text -- Google rewards comprehensive coverage
 - AI systems heavily weight recency -- Google balances recency with authority

@@ -21,6 +21,7 @@ You are a senior SEO specialist with deep knowledge of featured snippet mechanic
 ## Step 1: Check the Current Snippet
 
 Google the target keyword. Observe:
+
 - Is there a featured snippet at all?
 - If yes: which domain holds it? Your domain or a competitor?
 - What format is it? Paragraph / ordered list / unordered list / table
@@ -32,21 +33,22 @@ If there's NO featured snippet at all, that's actually good news — the slot is
 
 Google uses format matching. The query type dictates the snippet format:
 
-| Query type | Snippet format | Example query |
-|---|---|---|
-| "What is X" | Paragraph (40-60 words) | "what is affiliate marketing" |
-| "How to X" | Ordered list | "how to bake sourdough" |
-| "X list" or "types of X" | Unordered list | "types of cheese" |
-| "X vs Y" | Table or paragraph | "react vs vue" |
-| "Best X" / "top X" | Unordered list with brief | "best running shoes" |
-| "When did X" / "who is X" | Short paragraph (< 50 words) | "when did rome fall" |
-| Numeric answer | Short phrase or table | "how much is tesla stock" |
+| Query type                | Snippet format               | Example query                 |
+| ------------------------- | ---------------------------- | ----------------------------- |
+| "What is X"               | Paragraph (40-60 words)      | "what is affiliate marketing" |
+| "How to X"                | Ordered list                 | "how to bake sourdough"       |
+| "X list" or "types of X"  | Unordered list               | "types of cheese"             |
+| "X vs Y"                  | Table or paragraph           | "react vs vue"                |
+| "Best X" / "top X"        | Unordered list with brief    | "best running shoes"          |
+| "When did X" / "who is X" | Short paragraph (< 50 words) | "when did rome fall"          |
+| Numeric answer            | Short phrase or table        | "how much is tesla stock"     |
 
 **Apply the rule:** write the answer in the exact format Google wants. If it's a "how to" query, you need ordered steps. If it's a "what is", you need a paragraph of 40-60 words.
 
 ## Step 3: Fetch and Read Your Page
 
 Read your current page. Find where you (try to) answer the target query. Check:
+
 - Does the answer appear? If yes, where? (First paragraph, under an H2, deep in the article?)
 - Is the format right for the query type?
 - Is the answer clean and self-contained, or does it require context from surrounding paragraphs?
@@ -55,6 +57,7 @@ Read your current page. Find where you (try to) answer the target query. Check:
 ## Step 4: Identify the Gap
 
 The most common failures:
+
 - **Wrong format** — you wrote a paragraph when Google wants a list
 - **Answer too long** — Google truncates at ~60 words for paragraph; 8-10 items for list
 - **Answer too short** — Google wants a complete thought
@@ -73,12 +76,14 @@ Write a new version of the answer section, optimized for the snippet. The rewrit
 5. **Include the target keyword naturally in the first 20 words**
 
 Provide two versions:
+
 - **The featured snippet answer block** — 40-60 words or 3-8 list items, exactly what you want Google to pull
 - **A longer follow-up paragraph** — for the reader who wants more depth after the snippet block
 
 ## Step 6: Supporting Structure
 
 In addition to the answer block, add:
+
 - An H2 with the exact query phrasing immediately above the answer
 - A short intro of 1-2 sentences between the H2 and the answer (optional, helps scannability)
 - The 40-60 word answer OR the 3-8 step list
@@ -89,18 +94,21 @@ Google's snippet extractor looks at this structure specifically. The answer bloc
 ## Step 7: Format-Specific Rules
 
 ### For paragraph snippets (40-60 words):
+
 - Complete sentence structure — subject, verb, object
 - Direct definition or answer
 - No "in this guide we'll cover..." fluff
 - Include the target term in the first 20 words
 
 ### For ordered list snippets (how-to):
+
 - 3-8 steps maximum
 - Each step = one action verb + one sentence
 - Steps must be self-contained (don't reference previous steps implicitly)
 - Use "1. 2. 3." numbering that Google can parse
 
 ### For table snippets (comparisons):
+
 - Clear column headers
 - 3-6 rows usually
 - Keep each cell short (1-10 words)
@@ -108,9 +116,11 @@ Google's snippet extractor looks at this structure specifically. The answer bloc
 ## Step 8: Output
 
 ### Current State
+
 - Keyword | Current snippet holder | Snippet format present | Snippet text
 
 ### Your Page Analysis
+
 - URL | Current position (if known) | Where the answer appears | Format gap
 
 ### Rewrite
@@ -120,11 +130,13 @@ Google's snippet extractor looks at this structure specifically. The answer bloc
 **Supporting follow-up:** [the longer paragraph that comes after]
 
 ### Implementation Notes
+
 - Place the new answer block here: [specific location in the existing content]
 - Keep the rest of the page intact — don't rewrite surrounding sections
 - The FIRST instance of this answer format on the page is what Google extracts
 
 ### Realistic Timeline
+
 - Google typically picks up snippet changes within 1-4 weeks
 - If no change in 4 weeks, check whether your H2 matches the query phrasing closely enough
 - Don't make further changes for at least 2 weeks after the rewrite — let Google reprocess
@@ -150,6 +162,7 @@ Load from `references/` only when the step calls for them.
 - **`structured-data-snippets.md`** — schema markup that helps rich results even though it doesn't help featured snippets directly (optional, when the user wants both)
 
 **Snippet-friendly content type templates** (`references/content-types/`) — load the matching one when the rewrite scope expands from answer block to full section:
+
 - `how-to.md` — for ordered list snippets
 - `faq-page.md` — for paragraph snippet stacks from PAA
 - `comparison.md` — for table snippets

@@ -13,6 +13,7 @@ Those three answers map to one of four buckets.
 ## Core gap
 
 **Criteria (all three must be true):**
+
 - Present in all 3/3 top-ranking competitors.
 - Treated as a material section in at least 2 of them (full H2 section, multi-paragraph treatment, or dedicated table/list — not a sentence in passing).
 - Directly related to the primary target keyword's core intent, not a tangent.
@@ -24,6 +25,7 @@ Those three answers map to one of four buckets.
 ## Differentiator gap
 
 **Criteria:**
+
 - Present in 1 or 2 of the 3 top competitors (not all three).
 - The competitor(s) that cover it are ranking above the one that doesn't — i.e. the gap correlates with position.
 - Treated at paragraph depth or better, not a one-liner.
@@ -35,6 +37,7 @@ Those three answers map to one of four buckets.
 ## Commodity gap
 
 **Criteria:**
+
 - Present in all 3 competitors but shallow in all 3 (a sentence, a bullet, a single mention).
 - Doesn't appear to correlate with ranking position — everyone covers it the same minimal way.
 - Feels like a checkbox topic rather than a reason-to-read topic.
@@ -46,6 +49,7 @@ Those three answers map to one of four buckets.
 ## Opportunity gap
 
 **Criteria:**
+
 - Present in 0 of the top 3 competitors.
 - Relevant to the topic's entity space (passes the "would a domain expert expect this to be covered?" test).
 - Has external signal that it matters: People Also Ask boxes, related searches, forum threads, or an obvious hole in the comparison axes.
@@ -59,18 +63,19 @@ Those three answers map to one of four buckets.
 
 Hypothetical gap inventory from a real audit:
 
-| # | Gap | 3/3? | Depth | Rank correlation? | Bucket |
-|---|---|---|---|---|---|
-| 1 | Prisma section | 3/3 | Full section all 3 | n/a | Core |
-| 2 | Drizzle section | 3/3 | Full section all 3 | n/a | Core |
-| 3 | TypeORM section | 3/3 | Full section all 3 | n/a | Core |
-| 4 | Runtime schema validation (Zod, etc) | 2/3 | Subsection | Yes, top 2 have it | Differentiator |
-| 5 | Edge runtime compatibility (Cloudflare Workers, Vercel Edge) | 1/3 | Subsection | Yes, the one has it is #1 | Differentiator |
-| 6 | "ORM" vs "query builder" distinction | 3/3 | One sentence each | No | Commodity |
-| 7 | License comparison (MIT vs Apache vs Elastic) | 0/3 | — | — | Opportunity |
-| 8 | Schema drift handling in production migrations | 0/3 | — | PAA signal present | Opportunity |
+| #   | Gap                                                          | 3/3? | Depth              | Rank correlation?         | Bucket         |
+| --- | ------------------------------------------------------------ | ---- | ------------------ | ------------------------- | -------------- |
+| 1   | Prisma section                                               | 3/3  | Full section all 3 | n/a                       | Core           |
+| 2   | Drizzle section                                              | 3/3  | Full section all 3 | n/a                       | Core           |
+| 3   | TypeORM section                                              | 3/3  | Full section all 3 | n/a                       | Core           |
+| 4   | Runtime schema validation (Zod, etc)                         | 2/3  | Subsection         | Yes, top 2 have it        | Differentiator |
+| 5   | Edge runtime compatibility (Cloudflare Workers, Vercel Edge) | 1/3  | Subsection         | Yes, the one has it is #1 | Differentiator |
+| 6   | "ORM" vs "query builder" distinction                         | 3/3  | One sentence each  | No                        | Commodity      |
+| 7   | License comparison (MIT vs Apache vs Elastic)                | 0/3  | —                  | —                         | Opportunity    |
+| 8   | Schema drift handling in production migrations               | 0/3  | —                  | PAA signal present        | Opportunity    |
 
 Priority order for the rewrite:
+
 1. Gaps 1–3 (core) — confirm we have full sections on Prisma, Drizzle, TypeORM. These are table stakes.
 2. Gap 4 (differentiator) — add a subsection on runtime validation integration per ORM.
 3. Gap 8 (opportunity) — lead with this if the PAA signal is strong. It's the headline angle.

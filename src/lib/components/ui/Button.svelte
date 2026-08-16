@@ -48,11 +48,13 @@
 		ghost: 'bg-transparent text-current'
 	};
 
-	const sizes = {
+	// Derived, not a plain object: padding differs when the chip is present, and
+	// `chip` is a prop that a caller may toggle after mount.
+	const sizes = $derived({
 		sm: chip ? 'gap-2 py-1.5 pl-4 pr-1.5 text-sm' : 'px-4 py-2 text-sm',
 		md: chip ? 'gap-3 py-2 pl-5 pr-2 text-sm' : 'px-5 py-2.5 text-sm',
 		lg: chip ? 'gap-4 py-2.5 pl-7 pr-2.5 text-base' : 'px-7 py-3.5 text-base'
-	};
+	});
 
 	const chipSizes = { sm: 'size-6', md: 'size-7', lg: 'size-9' };
 

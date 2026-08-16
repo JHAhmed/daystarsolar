@@ -1,9 +1,11 @@
 # Technique 28: "Alternatives to X" Pages
 
 ## What It Is
+
 Commercial investigation content listing and evaluating alternatives to a specific well-known product or service. Captures "[Product] alternatives", "[Product] vervangen", and "iets zoals [Product]" searches. Targets users dissatisfied with or priced out of a market leader.
 
 ## When to Use
+
 Commercial investigation intent -- user already knows a specific product but is looking for other options. Triggered by dissatisfaction, price concerns, feature gaps, or general curiosity. High conversion potential because the user is already in buying mode.
 
 ## Structure Template
@@ -51,23 +53,28 @@ H2: Our recommendation
 ```
 
 ## Word Count
+
 1,500-3,000 words (150-300 words per alternative plus intro/comparison sections)
 
 ## Schema Markup
+
 - **Primary:** ItemList (with ListItem entries)
 - **Secondary:** FAQ (for FAQ section)
 
 ## Featured Snippet Strategy
+
 - **Format:** List snippet (alternatives queries trigger numbered lists)
 - **Target:** The numbered list of alternatives with their "best for" labels
 - **Alternative:** Table snippet for the comparison table
 
 ## CTA Placement
+
 - After each alternative: "try [alternative]" or "compare prices" link
 - After comparison table: quiz or decision tool
 - End of article: recommendation with conversion CTA
 
 ## Internal Linking Strategy
+
 - Link to individual review articles for each alternative
 - Link to "[X] vs [Alternative]" comparison articles
 - Link to the review of the original product [X]
@@ -75,6 +82,7 @@ H2: Our recommendation
 - Receive links from review pages and "best of" roundups
 
 ## Key Success Factors
+
 1. **Name the reasons for switching:** Validate why the reader is looking for alternatives
 2. **Direct comparison to [X]:** Each alternative must be explicitly compared to the original
 3. **Specific "best for" labels:** Do not just list alternatives -- explain who each one is best for
@@ -83,6 +91,7 @@ H2: Our recommendation
 6. **Honest about trade-offs:** Every alternative has something it does worse than [X]
 
 ## Common Mistakes
+
 - Listing alternatives without comparing them to the original product
 - No clear recommendation or decision framework
 - Missing the "why switch" section (does not validate the reader's intent)
@@ -92,6 +101,7 @@ H2: Our recommendation
 - No pricing information (the #1 reason people look for alternatives)
 
 ## Anti-AI Focus
+
 Alternatives pages require genuine knowledge of both the original product and its competitors. To establish authenticity:
 
 - **Explain the specific pain points that drive switching.** "Vattenfall raised variable rates by 12% in Q1 2026, which is why we are seeing increased interest in alternatives" -- this kind of market-aware context is beyond AI's reach.
@@ -101,6 +111,7 @@ Alternatives pages require genuine knowledge of both the original product and it
 - **Reference user community sentiment.** "On Tweakers, users report that Alternative 2's setup process takes about 30 minutes longer than X's" -- citing specific community feedback demonstrates research depth.
 
 ## Example Topics by Niche
+
 - Energy: "Vattenfall alternatieven: 8 energieleveranciers die goedkoper zijn"
 - Telecom: "Ziggo alternatieven: de beste internet providers zonder Ziggo"
 - SaaS: "Ahrefs alternatives: 7 SEO tools compared on features and price"

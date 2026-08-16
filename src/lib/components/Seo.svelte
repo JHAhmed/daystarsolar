@@ -37,9 +37,14 @@
 	const imageUrl = $derived(absolute(image));
 
 	const blocks = $derived(schema ? (Array.isArray(schema) ? schema : [schema]) : []);
+
+	// Assembled rather than written literally: a bare closing script tag in this
+	// template string would terminate the component's own <script> block.
+	const CLOSE_SCRIPT = `</${'script'}>`;
+
 	const jsonLd = $derived(
 		blocks
-			.map((block) => `<script type="application/ld+json">${serializeJsonLd(block)}<\/script>`)
+			.map((block) => `<script type="application/ld+json">${serializeJsonLd(block)}${CLOSE_SCRIPT}`)
 			.join('')
 	);
 </script>
@@ -62,5 +67,9 @@
 		<meta property="og:description" content={ogDescription ?? description} />
 	{/if}
 
+	<!-- Safe: the only interpolated content is JSON.stringify output with every
+	     `<` escaped to < by serializeJsonLd, so no value can close the tag
+	     or inject markup. -->
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html jsonLd}
 </svelte:head>

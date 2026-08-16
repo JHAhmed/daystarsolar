@@ -1,9 +1,11 @@
 # Technique 19: "What Is" / Definition Articles
 
 ## What It Is
+
 Informational content that clearly defines a concept, term, or topic. Captures "what is [term]", "[term] meaning", and "[term] definition" searches.
 
 ## When to Use
+
 Informational intent -- user wants to understand a concept before taking action. High featured snippet opportunity. Strong top-of-funnel content for building topical authority.
 
 ## Structure Template
@@ -43,22 +45,27 @@ H2: Related topics
 ```
 
 ## Word Count
+
 1,000-2,000 words (enough to fully explain without padding)
 
 ## Schema Markup
+
 - **Primary:** DefinedTerm (with name and description)
 - **Secondary:** FAQ (for the FAQ section)
 
 ## Featured Snippet Strategy
+
 - **Format:** Paragraph snippet (definition queries strongly trigger paragraph snippets)
 - **Target:** The quick definition paragraph directly after H1
 - **Tip:** Start with "[Term] is..." to match Google's preferred snippet format
 
 ## CTA Placement
+
 - Mid-article (after "how it works"): related tool, calculator, or comparison
 - End of article: deeper guide, consultation, or relevant product page
 
 ## Internal Linking Strategy
+
 - Link to how-to articles for applying the concept
 - Link to comparison articles for choosing between types
 - Link to pillar page for the broader topic cluster
@@ -66,6 +73,7 @@ H2: Related topics
 - Receive links from how-tos, guides, and FAQ pages that reference the term
 
 ## Key Success Factors
+
 1. **First sentence is the definition:** No preamble -- start with "[Term] is..." immediately
 2. **Plain language first, technical second:** Define in simple words, then add nuance
 3. **Visual explanation:** Diagrams or infographics dramatically increase dwell time
@@ -74,6 +82,7 @@ H2: Related topics
 6. **Keep it focused:** One concept per article -- do not blend multiple definitions
 
 ## Common Mistakes
+
 - Long introductions before the actual definition (loses snippet and reader)
 - Circular definitions ("SEO is the practice of doing SEO")
 - Too academic or jargon-heavy for the target audience
@@ -82,6 +91,7 @@ H2: Related topics
 - Forgetting to link to action-oriented content (how-tos, buying guides)
 
 ## Anti-AI Focus
+
 Definition articles are frequently targeted by AI content generators because the format is straightforward. To differentiate:
 
 - **Ground definitions in local context.** Reference specific Dutch or European regulations, market conditions, or cultural norms that generic AI-generated definitions miss. For example, when defining "salderen," include the current Dutch net metering rules and their planned phase-out timeline.
@@ -90,6 +100,7 @@ Definition articles are frequently targeted by AI content generators because the
 - **Add the "in practice" section with genuine observation.** Describe how the concept actually plays out in the market, including surprises or counterintuitive behaviors you have observed firsthand.
 
 ## Example Topics by Niche
+
 - Energy: "Wat is salderen? Uitleg en regels voor zonnepanelen"
 - Telecom: "Wat is glasvezel? Verschil met kabel en DSL uitgelegd"
 - SaaS: "What is a CDP? Customer Data Platform explained"

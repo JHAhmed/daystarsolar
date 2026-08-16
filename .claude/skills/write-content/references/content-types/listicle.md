@@ -1,9 +1,11 @@
 # Technique 27: "Best X for Y" Listicle Roundups
 
 ## What It Is
+
 Curated list content ranking or recommending multiple options within a category for a specific audience or use case. Captures "best [product/service] for [audience/use case]" searches. High commercial intent with strong conversion potential.
 
 ## When to Use
+
 Commercial investigation intent -- user is exploring options within a category but has not narrowed down to specific products. These searches signal active buying consideration and respond well to structured comparisons.
 
 ## Structure Template
@@ -48,23 +50,28 @@ H2: Methodology
 ```
 
 ## Word Count
+
 2,000-4,000 words (depends on number of items -- 200-400 words per item plus intro/outro)
 
 ## Schema Markup
+
 - **Primary:** ItemList (with ListItem entries and position)
 - **Secondary:** FAQ (for FAQ section)
 
 ## Featured Snippet Strategy
+
 - **Format:** List snippet (listicle queries strongly trigger numbered lists)
 - **Target:** The "top picks at a glance" section
 - **Alternative:** Table snippet for the summary comparison table
 
 ## CTA Placement
+
 - After each item: affiliate link, "check price", or "visit site" button
 - After top 3: comparison tool or quiz ("not sure which? take our quiz")
 - End of article: buying guide link or consultation CTA
 
 ## Internal Linking Strategy
+
 - Link to individual review articles for each listed item
 - Link to "X vs Y" comparison articles for top picks
 - Link to buying guide for the category
@@ -72,6 +79,7 @@ H2: Methodology
 - Receive links from pillar page, individual reviews, and definition articles
 
 ## Key Success Factors
+
 1. **Lead with top picks:** Summary table above the fold -- do not make readers scroll through 10 items
 2. **Consistent evaluation framework:** Same criteria applied to every item in the same order
 3. **Specific "best for" labels:** Each item should win in a specific category or use case
@@ -81,6 +89,7 @@ H2: Methodology
 7. **Limit the list:** 7-10 items is optimal. 20+ items overwhelms and suggests no actual curation
 
 ## Common Mistakes
+
 - No summary table at the top (readers want the answer fast)
 - All items described equally positively (no differentiation = no value)
 - Missing methodology section (undermines credibility)
@@ -90,6 +99,7 @@ H2: Methodology
 - Generic descriptions that could apply to any competitor
 
 ## Anti-AI Focus
+
 Listicle roundups are one of the most commonly AI-generated content types because the format is formulaic. To ensure yours stands apart:
 
 - **Base rankings on documented evaluation.** Describe the specific testing process: "We signed up for all 10 providers, used each for at least 2 weeks, and scored them on 6 criteria." AI cannot claim a testing process it never performed.
@@ -99,6 +109,7 @@ Listicle roundups are one of the most commonly AI-generated content types becaus
 - **Add personal recommendations per reader profile.** "If you are a freelancer working from home, our #4 pick is actually better for you than our #1" -- this kind of specific advice requires real understanding of the products and the audience.
 
 ## Example Topics by Niche
+
 - Energy: "Beste energieleveranciers 2026: top 10 op prijs, service en duurzaamheid"
 - Telecom: "Beste internet providers Nederland 2026: vergeleken op snelheid en prijs"
 - SaaS: "Best project management tools for small teams in 2026"

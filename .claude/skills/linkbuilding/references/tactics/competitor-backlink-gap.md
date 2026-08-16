@@ -1,25 +1,31 @@
 # Tactic 04: Competitor Backlink Gap Analysis
 
 ## What It Is
+
 Using tools to identify websites that link to your competitors but not to you, then systematically pursuing those same link opportunities. This is "reverse engineering" your competitors' link profiles to find proven, achievable link sources.
 
 ## Why It Works
+
 If a site links to multiple competitors in your niche, they clearly link to sites like yours — making them far more likely to link to you too. This removes the guesswork from prospecting. Instead of hoping a random site will be interested, you're targeting sites with a proven pattern of linking to businesses in your space. The conversion rate is 2-3x higher than random outreach because relevance is pre-validated.
 
 ## Step-by-Step Process
 
 ### Step 1: Identify Your Top 3-5 SERP Competitors
+
 1. Use your SEO data source's competitor data tool to find organic search competitors
 2. Don't just pick the biggest — pick competitors at similar or slightly higher authority
 3. Include 1-2 aspirational competitors (DR 50+) and 1-2 realistic ones (similar DR to you)
 
 ### Step 2: Run Backlink Gap Analysis
+
 1. Use backlink gap data with your domain vs top 3 competitors
 2. Export the list of domains linking to competitors but not to you
 3. Sort by: number of competitors they link to (2+ = highest priority)
 
 ### Step 3: Categorize Opportunities (2 hours)
+
 Tag each prospect by link type:
+
 - **Directory/listing** — Easy to replicate (just submit)
 - **Resource page** — Medium difficulty (pitch your content)
 - **Blog post/article** — Hard (need guest post or outreach)
@@ -27,12 +33,14 @@ Tag each prospect by link type:
 - **Forum/community** — Easy (participate and share)
 
 ### Step 4: Prioritize and Outreach
+
 1. Start with directories and listings (quick wins)
 2. Move to resource pages (medium effort)
 3. Guest post opportunities last (high effort but high value)
 4. For each category, create tailored outreach
 
 ### Step 5: Monitor and Iterate Monthly
+
 1. Re-run gap analysis monthly
 2. New competitor backlinks = new opportunities
 3. Track which prospect categories convert best
@@ -62,11 +70,11 @@ Tag each prospect by link type:
 
 ## Time & Cost Estimate
 
-| Aspect | Estimate |
-|--------|----------|
+| Aspect   | Estimate                                  |
+| -------- | ----------------------------------------- |
 | Analysis | 2-3 hours (initial), 1 hour/month ongoing |
-| Outreach | 3-5 hours/month |
-| Cost | €0 (using tools) |
+| Outreach | 3-5 hours/month                           |
+| Cost     | €0 (using tools)                          |
 
 ## Expected Results
 
@@ -76,12 +84,12 @@ Tag each prospect by link type:
 
 ## Tools Needed
 
-| Tool | Purpose | Cost |
-|------|---------|------|
-| **your SEO data source** | backlink gap data, competitor data | Included |
-| **Ahrefs Link Intersect** | Alternative gap analysis | $129/mo |
-| **Google Sheets** | Track and categorize opportunities | Free |
-| **Hunter.io** | Find contact emails for outreach | Free tier |
+| Tool                      | Purpose                            | Cost      |
+| ------------------------- | ---------------------------------- | --------- |
+| **your SEO data source**  | backlink gap data, competitor data | Included  |
+| **Ahrefs Link Intersect** | Alternative gap analysis           | $129/mo   |
+| **Google Sheets**         | Track and categorize opportunities | Free      |
+| **Hunter.io**             | Find contact emails for outreach   | Free tier |
 
 ## How Data Helps
 
@@ -99,8 +107,8 @@ Tag each prospect by link type:
 
 ## Best For Which Phase
 
-| Phase | Relevance |
-|-------|-----------|
-| **DR 0-10** | ⭐⭐⭐⭐ Focus on directories and easy wins from the gap |
+| Phase        | Relevance                                                                 |
+| ------------ | ------------------------------------------------------------------------- |
+| **DR 0-10**  | ⭐⭐⭐⭐ Focus on directories and easy wins from the gap                  |
 | **DR 10-30** | ⭐⭐⭐⭐⭐ Sweet spot — enough content to pitch, gaps are most actionable |
-| **DR 30+** | ⭐⭐⭐⭐ Target higher-DR gap opportunities |
+| **DR 30+**   | ⭐⭐⭐⭐ Target higher-DR gap opportunities                               |

@@ -35,10 +35,10 @@ If neither a snippet nor an AIO is present, go to criterion 3.
 
 ## The Four-Quadrant Matrix
 
-|  | No AIO | AIO Present |
-|---|---|---|
-| **Snippet present** | Target the snippet. Highest ROI — clean single-target rewrite. | Dual optimization: target both. Write for the snippet (H2 + 40-60 word block), add structured data, ensure the top 10 ranking. |
-| **No snippet** | Target the SERP feature Google is likely to add next — usually "People Also Ask" (PAA) or related searches. Add a FAQ section with PAA-style questions. | Target AIO citation, not a snippet. Focus on entity-rich writing, structured data, answer-first format. |
+|                     | No AIO                                                                                                                                                  | AIO Present                                                                                                                    |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| **Snippet present** | Target the snippet. Highest ROI — clean single-target rewrite.                                                                                          | Dual optimization: target both. Write for the snippet (H2 + 40-60 word block), add structured data, ensure the top 10 ranking. |
+| **No snippet**      | Target the SERP feature Google is likely to add next — usually "People Also Ask" (PAA) or related searches. Add a FAQ section with PAA-style questions. | Target AIO citation, not a snippet. Focus on entity-rich writing, structured data, answer-first format.                        |
 
 Each quadrant has a different rewrite brief. Confusing them is the main reason snippet optimization projects fail.
 

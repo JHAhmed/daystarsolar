@@ -9,23 +9,27 @@ Kyle Roof spent more than half a decade running 400+ controlled single-variable 
 ## The four groups
 
 **Group A (critical). Get these wrong and nothing else matters.**
+
 - Meta title (the undisputed #1 signal)
 - Body content
 - URL
 - H1
 
 **Group B (important). Worth fixing once Group A is clean.**
+
 - H2
 - H3
 - H4
 - Anchor text of internal links pointing TO the page
 
 **Group C (supporting). Small wins, not differentiators.**
+
 - Bold text
 - Italic text
 - Image alt text
 
 **Group D (minimal or zero ranking impact).**
+
 - Schema markup (affects SERP features and rich results, NOT rankings directly)
 - HTML tags
 - Open Graph
@@ -34,7 +38,7 @@ Kyle Roof spent more than half a decade running 400+ controlled single-variable 
 
 ## Counter-intuitive findings to remember
 
-**1. Keyword position within the title tag does not matter.** Inclusion matters. "First-half placement" is folklore from correlation studies, not causation. When Roof tested beginning vs middle vs end placement, there was no meaningful ranking delta. So when auditing a title tag: check that the primary keyword is *present* and the title *earns the click*. Don't waste a recommendation on "move the keyword to the front."
+**1. Keyword position within the title tag does not matter.** Inclusion matters. "First-half placement" is folklore from correlation studies, not causation. When Roof tested beginning vs middle vs end placement, there was no meaningful ranking delta. So when auditing a title tag: check that the primary keyword is _present_ and the title _earns the click_. Don't waste a recommendation on "move the keyword to the front."
 
 **2. Schema markup does not directly affect rankings.** Roof's test pages with and without schema ranked identically. Schema drives SERP features (rich results, How-To panels, FAQ accordions, Product cards, Review stars) and those SERP features drive CTR. That's a real lever, just not a ranking lever. When auditing: flag missing schema as a "rich result eligibility" issue in Dimension 6, not as a Dimension 5 ranking problem.
 
@@ -48,7 +52,7 @@ Concretely:
 
 - A page with a weak title tag (Group A) and 14 missing alt tags (Group C): fix the title first. Don't even mention the alt tags until the title is clean.
 - A page with a clean title, missing H2 with the keyword variant (Group B), and no schema (Group D): fix the H2. Schema goes in the "consider later if you want rich results" pile.
-- A page where Group A is already clean: that's when image alt text, internal anchor text, and bolded phrases actually matter. This is also where most audits *should* land, because Group A is usually obvious.
+- A page where Group A is already clean: that's when image alt text, internal anchor text, and bolded phrases actually matter. This is also where most audits _should_ land, because Group A is usually obvious.
 
 The inversion to watch for: most generic SEO checklists over-weight Group C/D because those are the factors easiest to scan programmatically. Don't do this. If you surface 15 recommendations and 12 of them are schema and alt text, your audit is telling the author to rearrange deck chairs while the title tag is on fire.
 

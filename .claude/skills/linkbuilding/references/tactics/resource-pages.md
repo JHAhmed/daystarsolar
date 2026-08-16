@@ -1,32 +1,39 @@
 # Tactic 09: Resource Page Link Building
 
 ## What It Is
+
 Finding curated "resources," "useful links," or "recommended tools" pages in your niche and pitching your content for inclusion. These are pages specifically designed to link out to helpful resources — making them natural targets for link building.
 
 ## Why It Works
+
 Resource page curators actively WANT to link out — their page's value comes from the quality of links they provide. This means you're not asking someone to go out of their way; you're helping them improve their existing resource. The intent is already aligned, making conversion rates higher than most other outreach tactics (5-15%).
 
 ## Step-by-Step Process
 
 ### Step 1: Find Resource Pages (2 hours)
+
 Use Google search operators:
+
 - `[niche] intitle:"resources" OR intitle:"useful links" OR inurl:resources`
 - `[niche] "helpful resources" OR "recommended tools" OR "best tools"`
 - `[niche] intitle:"links we love" OR intitle:"our favorite"`
 - `[niche] inurl:links OR inurl:resources`
 
 ### Step 2: Qualify Prospects
+
 - DR 20+ and real organic traffic
 - Page is actively maintained (updated within past year)
 - Links are relevant to your content
 - Page has reasonable number of outbound links (not 500+)
 
 ### Step 3: Identify Your Best Content to Pitch
+
 - Match your content to gaps in their resource page
 - Your content should be the BEST resource on that specific topic
 - Use opportunity detection to identify your strongest pages
 
 ### Step 4: Personalized Outreach
+
 - Reference specific resources they already link to
 - Explain why your content adds value their readers would appreciate
 - Keep it brief (4-6 sentences)
@@ -57,11 +64,11 @@ Use Google search operators:
 
 ## Time & Cost Estimate
 
-| Aspect | Estimate |
-|--------|----------|
-| Prospecting | 2-3 hours per campaign |
-| Outreach | 2-3 hours per batch (20-30 prospects) |
-| Cost | €0 |
+| Aspect      | Estimate                              |
+| ----------- | ------------------------------------- |
+| Prospecting | 2-3 hours per campaign                |
+| Outreach    | 2-3 hours per batch (20-30 prospects) |
+| Cost        | €0                                    |
 
 ## Expected Results
 
@@ -71,12 +78,12 @@ Use Google search operators:
 
 ## Tools Needed
 
-| Tool | Purpose | Cost |
-|------|---------|------|
-| **Google Search** | Find resource pages | Free |
-| **Ahrefs** | Check DR of resource pages | $129/mo |
-| **Hunter.io** | Find contact emails | Free tier |
-| **Google Sheets** | Track prospects | Free |
+| Tool              | Purpose                    | Cost      |
+| ----------------- | -------------------------- | --------- |
+| **Google Search** | Find resource pages        | Free      |
+| **Ahrefs**        | Check DR of resource pages | $129/mo   |
+| **Hunter.io**     | Find contact emails        | Free tier |
+| **Google Sheets** | Track prospects            | Free      |
 
 ## How Data Helps
 
@@ -92,8 +99,8 @@ Use Google search operators:
 
 ## Best For Which Phase
 
-| Phase | Relevance |
-|-------|-----------|
-| **DR 0-10** | ⭐⭐⭐ Works if you have quality content to pitch |
-| **DR 10-30** | ⭐⭐⭐⭐ Excellent mid-phase tactic |
-| **DR 30+** | ⭐⭐⭐ Target higher-authority resource pages |
+| Phase        | Relevance                                         |
+| ------------ | ------------------------------------------------- |
+| **DR 0-10**  | ⭐⭐⭐ Works if you have quality content to pitch |
+| **DR 10-30** | ⭐⭐⭐⭐ Excellent mid-phase tactic               |
+| **DR 30+**   | ⭐⭐⭐ Target higher-authority resource pages     |

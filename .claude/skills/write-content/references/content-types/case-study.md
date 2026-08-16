@@ -1,9 +1,11 @@
 # Technique 38: Case Study Pages
 
 ## What It Is
+
 Evidence-based content showcasing a specific client result, project outcome, or success story. The most powerful E-E-A-T content type because it demonstrates real Experience and Expertise with verifiable results. Captures "[service] results", "[industry] case study", and "[problem] oplossing" searches.
 
 ## When to Use
+
 Commercial investigation intent -- user wants proof that your service or product delivers results before committing. Use when you have specific, measurable client outcomes you can share. Essential for high-consideration purchases (B2B, services, expensive products).
 
 ## Structure Template
@@ -52,24 +54,29 @@ H2: Want similar results?
 ```
 
 ## Word Count
+
 1,500-2,500 words (detailed enough to be credible, focused enough to maintain interest)
 
 ## Schema Markup
+
 - **Primary:** Article (with author, datePublished, about)
 - **Secondary:** Organization (for the client, if named)
 
 ## Featured Snippet Strategy
+
 - **Format:** Paragraph snippet for "[industry] case study" queries
 - **Target:** The overview/at-a-glance section with the key result
 - **Tip:** Include the primary metric in the first 50 words of the page
 
 ## CTA Placement
+
 - After overview (above fold): "Want similar results? Contact us"
 - After results section: primary conversion CTA (strongest proof point)
 - End of page: consultation or service page CTA
 - Sidebar: related case studies in the same industry
 
 ## Internal Linking Strategy
+
 - Link to the service page for the service described in the case study
 - Link to related case studies in the same industry or service
 - Link to methodology or how-to content explaining the approach
@@ -77,9 +84,11 @@ H2: Want similar results?
 - Receive links from service pages, about page, and industry-specific content
 
 ## Anti-AI Focus
+
 Case studies are nearly impossible to AI-generate convincingly without real data. Real names (with permission), real numbers, and real timelines are essential. The specificity of a genuine case study -- exact percentages, named tools used, specific challenges encountered mid-project, and direct client quotes -- is what makes it credible. Vague or rounded numbers, generic industry descriptions, and unnamed clients are telltale signs of fabricated content. Invest the time to document real outcomes with real details.
 
 ## Key Success Factors
+
 1. **Lead with the number:** The headline result must be in the H1 and above the fold
 2. **Specific, verifiable metrics:** "142% increase in organic traffic" not "significant improvement"
 3. **Before and after:** Show the starting point and the end result with data
@@ -89,6 +98,7 @@ Case studies are nearly impossible to AI-generate convincingly without real data
 7. **Visual proof:** Charts, screenshots, before/after comparisons
 
 ## Common Mistakes
+
 - Vague results without specific numbers ("improved their rankings" means nothing)
 - No process description (readers cannot evaluate your expertise without knowing what you did)
 - Missing timeline (results without timeframe are meaningless)
@@ -98,6 +108,7 @@ Case studies are nearly impossible to AI-generate convincingly without real data
 - Only showcasing perfect outcomes (including challenges overcome builds more trust)
 
 ## Example Topics by Niche
+
 - Energy: "Zonnepanelen installateur: van 50 naar 200 leads per maand met lokale SEO"
 - Telecom: "Telecom provider: 89% minder churn door verbeterde klantenservice pagina's"
 - SaaS: "B2B SaaS: how we increased trial signups by 230% with content marketing"

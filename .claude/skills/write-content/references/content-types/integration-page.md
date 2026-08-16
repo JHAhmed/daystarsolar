@@ -1,9 +1,11 @@
 # Technique 35: SaaS Integration Pages
 
 ## What It Is
+
 Product pages dedicated to a specific integration between your software and a third-party tool. Captures "[your product] + [partner tool] integration", "[tool A] koppelen aan [tool B]", and "[tool] API" searches. Scalable SEO strategy -- one page per integration.
 
 ## When to Use
+
 Commercial/navigational intent -- user wants to know if your product works with a tool they already use, or is looking for a solution that connects two specific tools. High conversion potential because it addresses a specific compatibility need.
 
 ## Structure Template
@@ -49,24 +51,29 @@ H2: Related integrations
 ```
 
 ## Word Count
+
 800-1,500 words (focused and practical -- users want compatibility confirmation and setup instructions)
 
 ## Schema Markup
+
 - **Primary:** SoftwareApplication (name, applicationCategory, operatingSystem)
 - **Secondary:** HowTo (for the setup steps)
 
 ## Featured Snippet Strategy
+
 - **Format:** List snippet for "how to connect [A] to [B]" queries
 - **Target:** The setup steps section
 - **Alternative:** Paragraph snippet for "does [A] integrate with [B]" queries
 
 ## CTA Placement
+
 - Hero section: primary CTA above the fold
 - After features: "try this integration" CTA
 - After setup steps: "connect now" CTA
 - End of page: trial or demo CTA
 
 ## Internal Linking Strategy
+
 - Link to integrations hub/directory page
 - Link to related integration pages (same category of tools)
 - Link to how-to articles for advanced configuration
@@ -74,6 +81,7 @@ H2: Related integrations
 - Receive links from integrations directory, partner's integration directory, and blog content
 
 ## Key Success Factors
+
 1. **Both logos prominently displayed:** Visual confirmation of the partnership/compatibility
 2. **Setup instructions included:** Users need to know how easy (or hard) it is before committing
 3. **Screenshots of the integration working:** Visual proof that it actually works
@@ -82,6 +90,7 @@ H2: Related integrations
 6. **Partner tool SEO:** Include the partner tool's name in title, URL, and headings
 
 ## Common Mistakes
+
 - Vague description of what the integration does (be specific about data and actions)
 - No setup instructions (forces users to sign up before knowing the process)
 - No screenshots (users want visual proof before committing)
@@ -91,6 +100,7 @@ H2: Related integrations
 - Not linking from the partner's directory or marketplace
 
 ## Example Topics by Niche
+
 - Energy: "Toon slimme thermostaat + Google Home koppeling"
 - Telecom: "Ziggo Mediabox + Chromecast integratie instellen"
 - SaaS: "InhouseSEO + Google Search Console: automatische data-import"

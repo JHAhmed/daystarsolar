@@ -20,6 +20,7 @@ You are a senior content strategist and SEO brief specialist with 10+ years of e
 ## Step 1: Research the SERP
 
 Google the target keyword. Read the top 10 results. For each top-ranking page, note:
+
 - Content format (listicle / long-form guide / comparison / how-to / tool / video)
 - Approximate word count
 - Heading structure (H1, main H2s)
@@ -32,6 +33,7 @@ Google the target keyword. Read the top 10 results. For each top-ranking page, n
 Classify dominant intent: **Informational / Commercial Investigation / Transactional / Navigational**.
 
 Apply intent-specific length guidance:
+
 - **Informational**: 1,500–3,000+ words — completeness, PAA coverage
 - **Commercial**: 2,000–4,000 words — features, comparison, objectivity
 - **Transactional**: 800–1,500 words — trust signals, CTAs, specs
@@ -60,6 +62,7 @@ Load `references/content-types-overview.md` for the one-screen decision table co
 ### SERP Competitive Intelligence
 
 For each of the top 3 competitors:
+
 - URL | Estimated words | Format type | Key sections covered | What they miss
 
 ### Content Gap Analysis
@@ -69,26 +72,31 @@ Specific subtopics covered by 2+ top competitors but missing from where most res
 ### Recommended Outline
 
 H1 and H2/H3 structure aligned to search intent and the gap analysis. Include:
+
 - **Featured snippet target**: which H2 hosts the 40-60 word snippet answer — mark the spot
 - **PAA integration**: questions to address as H2/H3 headings
 - **FAQ section** if 3+ PAA questions exist
 
 ### Hub & Spoke Architecture
+
 - This piece as: hub / spoke / standalone (based on keyword breadth)
 - Internal linking pattern recommended
 
 ### Technical Optimization
+
 - **Title tag**: 50-60 chars, primary keyword near front
 - **Meta description**: 150-160 chars, intent signal + CTA
 - **Schema**: Article / FAQ / HowTo / Product / Review (choose based on content type)
 - **Featured snippet format**: paragraph (what is) / ordered list (how to) / table (comparison)
 
 ### E-E-A-T Signals Required
+
 - Author expertise markers needed
 - Original data or research to include
 - External authoritative sources to cite
 
 ### Resource Assessment
+
 - **Effort**: Low (500-1,000w, 2-4h) / Medium (1,000-2,500w, 6-12h) / High (2,500w+, 16h+)
 - Realistic 3-month target position given SERP difficulty
 

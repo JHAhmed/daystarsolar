@@ -1,9 +1,11 @@
 # Technique 22: Statistics / Data Pages
 
 ## What It Is
+
 Data-driven content that curates, visualizes, and contextualizes statistics around a specific topic. Designed as a link magnet -- journalists, bloggers, and researchers link to these pages as primary sources.
 
 ## When to Use
+
 Informational intent -- user is researching data to support content, presentations, or decisions. Captures "[topic] statistics", "[topic] data [year]", and "how many [topic] in [country]" searches. Highest link-earning content type in SEO.
 
 ## Structure Template
@@ -45,23 +47,28 @@ H2: FAQ
 ```
 
 ## Word Count
+
 2,000-3,500 words (data-dense -- every sentence should contain or contextualize a number)
 
 ## Schema Markup
+
 - **Primary:** Article (with dateModified prominently displayed)
 - **Secondary:** Dataset (name, description, distribution, temporalCoverage)
 
 ## Featured Snippet Strategy
+
 - **Format:** List snippet (statistics queries strongly trigger numbered/bulleted lists)
 - **Target:** The "Key highlights" bulleted list at the top
 - **Alternative:** Table snippet for comparison statistics
 
 ## CTA Placement
+
 - After key highlights: downloadable PDF or infographic
 - Mid-article: related tool or calculator that uses the data
 - End of article: newsletter signup for data updates, or related analysis content
 
 ## Internal Linking Strategy
+
 - Link to definition articles for terms behind the statistics
 - Link to analysis/thought leadership pieces that interpret the data
 - Link to how-to articles for acting on the data
@@ -69,6 +76,7 @@ H2: FAQ
 - Receive links from blog posts, pillar pages, and external sites (link magnet)
 
 ## Key Success Factors
+
 1. **Source everything:** Every single statistic must have a linked source citation
 2. **Recency signals:** Display "Last updated: [date]" prominently and update quarterly
 3. **Original analysis:** Do not just list stats -- add interpretation and year-over-year trends
@@ -78,6 +86,7 @@ H2: FAQ
 7. **Embeddable assets:** Provide charts that other sites can embed with attribution
 
 ## Common Mistakes
+
 - Statistics without sources (destroys credibility)
 - No update date (readers cannot assess recency)
 - Just listing numbers without context or analysis
@@ -87,6 +96,7 @@ H2: FAQ
 - Too many statistics without categorization (overwhelming wall of numbers)
 
 ## Anti-AI Focus
+
 Statistics pages have a natural advantage against AI imitation because they depend on verifiable, sourced data. However, AI can still generate plausible-sounding but fabricated statistics. To strengthen authenticity:
 
 - **Link every statistic to its primary source.** AI-generated statistics pages often cite vague sources or none at all. Direct links to CBS, Eurostat, or industry reports are difficult to fake convincingly.
@@ -96,6 +106,7 @@ Statistics pages have a natural advantage against AI imitation because they depe
 - **Date-stamp aggressively.** Include specific collection dates and note when individual statistics were last verified. Stale or undated statistics are a hallmark of AI-generated content.
 
 ## Example Topics by Niche
+
 - Energy: "Energieprijzen Nederland 2026: 35 statistieken en trends"
 - Telecom: "Internet in Nederland: 30 statistieken over snelheid, dekking en gebruik"
 - SaaS: "Email marketing statistics 2026: 50 benchmarks you need to know"

@@ -10,34 +10,30 @@ The core entity. Describes the author as a real-world person with verifiable ref
 
 ```json
 {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://example.com/authors/jane-doe#person",
-  "name": "Jane Doe",
-  "url": "https://example.com/authors/jane-doe",
-  "image": "https://example.com/images/jane-doe.jpg",
-  "jobTitle": "Senior Tax Advisor",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Example Tax Advisory",
-    "url": "https://example.com"
-  },
-  "alumniOf": {
-    "@type": "EducationalOrganization",
-    "name": "University of Amsterdam"
-  },
-  "knowsAbout": [
-    "Dutch tax law",
-    "International tax treaties",
-    "Small business taxation"
-  ],
-  "sameAs": [
-    "https://www.linkedin.com/in/janedoe",
-    "https://twitter.com/janedoe",
-    "https://github.com/janedoe",
-    "https://orcid.org/0000-0000-0000-0000",
-    "https://www.wikidata.org/wiki/Q0000000"
-  ]
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"@id": "https://example.com/authors/jane-doe#person",
+	"name": "Jane Doe",
+	"url": "https://example.com/authors/jane-doe",
+	"image": "https://example.com/images/jane-doe.jpg",
+	"jobTitle": "Senior Tax Advisor",
+	"worksFor": {
+		"@type": "Organization",
+		"name": "Example Tax Advisory",
+		"url": "https://example.com"
+	},
+	"alumniOf": {
+		"@type": "EducationalOrganization",
+		"name": "University of Amsterdam"
+	},
+	"knowsAbout": ["Dutch tax law", "International tax treaties", "Small business taxation"],
+	"sameAs": [
+		"https://www.linkedin.com/in/janedoe",
+		"https://twitter.com/janedoe",
+		"https://github.com/janedoe",
+		"https://orcid.org/0000-0000-0000-0000",
+		"https://www.wikidata.org/wiki/Q0000000"
+	]
 }
 ```
 
@@ -49,25 +45,22 @@ The Person block above goes in the `author` field of the article. You can either
 
 ```json
 {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "How to File Dutch Taxes as a Freelancer",
-  "datePublished": "2026-04-13",
-  "dateModified": "2026-04-13",
-  "author": {
-    "@type": "Person",
-    "@id": "https://example.com/authors/jane-doe#person",
-    "name": "Jane Doe",
-    "url": "https://example.com/authors/jane-doe",
-    "sameAs": [
-      "https://www.linkedin.com/in/janedoe",
-      "https://orcid.org/0000-0000-0000-0000"
-    ]
-  },
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://example.com#organization"
-  }
+	"@context": "https://schema.org",
+	"@type": "Article",
+	"headline": "How to File Dutch Taxes as a Freelancer",
+	"datePublished": "2026-04-13",
+	"dateModified": "2026-04-13",
+	"author": {
+		"@type": "Person",
+		"@id": "https://example.com/authors/jane-doe#person",
+		"name": "Jane Doe",
+		"url": "https://example.com/authors/jane-doe",
+		"sameAs": ["https://www.linkedin.com/in/janedoe", "https://orcid.org/0000-0000-0000-0000"]
+	},
+	"publisher": {
+		"@type": "Organization",
+		"@id": "https://example.com#organization"
+	}
 }
 ```
 
@@ -79,25 +72,25 @@ Declare this once in a site-wide JSON-LD block. Other schemas on individual page
 
 ```json
 {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://example.com#organization",
-  "name": "Example Tax Advisory",
-  "url": "https://example.com",
-  "logo": "https://example.com/logo.png",
-  "description": "Dutch tax advisory for freelancers and small businesses.",
-  "foundingDate": "2018-01-01",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Herengracht 1",
-    "addressLocality": "Amsterdam",
-    "postalCode": "1015BA",
-    "addressCountry": "NL"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/company/example-tax-advisory",
-    "https://www.wikidata.org/wiki/Q0000001"
-  ]
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	"@id": "https://example.com#organization",
+	"name": "Example Tax Advisory",
+	"url": "https://example.com",
+	"logo": "https://example.com/logo.png",
+	"description": "Dutch tax advisory for freelancers and small businesses.",
+	"foundingDate": "2018-01-01",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "Herengracht 1",
+		"addressLocality": "Amsterdam",
+		"postalCode": "1015BA",
+		"addressCountry": "NL"
+	},
+	"sameAs": [
+		"https://www.linkedin.com/company/example-tax-advisory",
+		"https://www.wikidata.org/wiki/Q0000001"
+	]
 }
 ```
 
@@ -105,39 +98,34 @@ Declare this once in a site-wide JSON-LD block. Other schemas on individual page
 
 ```json
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://example.com#organization",
-      "name": "Example Tax Advisory",
-      "url": "https://example.com",
-      "logo": "https://example.com/logo.png",
-      "sameAs": [
-        "https://www.linkedin.com/company/example-tax-advisory"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://example.com/authors/jane-doe#person",
-      "name": "Jane Doe",
-      "url": "https://example.com/authors/jane-doe",
-      "jobTitle": "Senior Tax Advisor",
-      "worksFor": { "@id": "https://example.com#organization" },
-      "sameAs": [
-        "https://www.linkedin.com/in/janedoe",
-        "https://orcid.org/0000-0000-0000-0000"
-      ]
-    },
-    {
-      "@type": "Article",
-      "headline": "How to File Dutch Taxes as a Freelancer",
-      "datePublished": "2026-04-13",
-      "dateModified": "2026-04-13",
-      "author": { "@id": "https://example.com/authors/jane-doe#person" },
-      "publisher": { "@id": "https://example.com#organization" }
-    }
-  ]
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Organization",
+			"@id": "https://example.com#organization",
+			"name": "Example Tax Advisory",
+			"url": "https://example.com",
+			"logo": "https://example.com/logo.png",
+			"sameAs": ["https://www.linkedin.com/company/example-tax-advisory"]
+		},
+		{
+			"@type": "Person",
+			"@id": "https://example.com/authors/jane-doe#person",
+			"name": "Jane Doe",
+			"url": "https://example.com/authors/jane-doe",
+			"jobTitle": "Senior Tax Advisor",
+			"worksFor": { "@id": "https://example.com#organization" },
+			"sameAs": ["https://www.linkedin.com/in/janedoe", "https://orcid.org/0000-0000-0000-0000"]
+		},
+		{
+			"@type": "Article",
+			"headline": "How to File Dutch Taxes as a Freelancer",
+			"datePublished": "2026-04-13",
+			"dateModified": "2026-04-13",
+			"author": { "@id": "https://example.com/authors/jane-doe#person" },
+			"publisher": { "@id": "https://example.com#organization" }
+		}
+	]
 }
 ```
 

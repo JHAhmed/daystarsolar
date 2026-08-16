@@ -1,20 +1,24 @@
 # Tactic 02: Local & Industry Citations/Directories
 
 ## What It Is
+
 Submitting your business to relevant industry directories, local business directories, and niche-specific listing sites. These are curated platforms where businesses are listed with their name, address, phone, website, and description. Unlike entity stacking (broad platform presence), this focuses specifically on directory-style citations.
 
 ## Why It Works
+
 Directories serve as independent corroborating signals for your business's existence and relevance. Google uses citation consistency as a trust signal, especially for local SEO. Many directories have high domain authority (DR 50-80+) and pass genuine link equity. More importantly, niche directories send Google strong topical relevance signals — "this business belongs in this industry."
 
 ## Step-by-Step Process
 
 ### Step 1: Identify Your Directory Categories (1 hour)
+
 1. **General business directories**: Yelp, Yellow Pages, BBB, Foursquare
 2. **Industry-specific**: Clutch (agencies), Capterra (SaaS), G2 (software), TripAdvisor (hospitality)
 3. **Local directories**: Chamber of Commerce, local business associations, city/region directories
 4. **Professional associations**: Industry bodies, trade groups (often require membership)
 
 ### Step 2: Prepare Your Listing Information
+
 - Canonical business name (EXACT same as entity stacking)
 - Address (or "service area" for non-local)
 - Phone number
@@ -24,16 +28,19 @@ Directories serve as independent corroborating signals for your business's exist
 - Logo and photos
 
 ### Step 3: Submit to Top-Tier Directories First (2 hours)
+
 - Google Business Profile (if not done in entity stacking)
 - Yelp, BBB, Yellow Pages
 - Industry-specific #1 and #2 directories
 
 ### Step 4: Submit to Niche Directories (2 hours)
+
 - Use backlink gap data to find directories linking to competitors
 - Search: `[your niche] directory` or `[your niche] "submit site"`
 - Submit to 10-20 relevant niche directories
 
 ### Step 5: Claim and Optimize Existing Listings (1 hour)
+
 - Many directories auto-create listings from public data
 - Search your brand name on major directories
 - Claim and complete these profiles
@@ -65,11 +72,11 @@ Directories serve as independent corroborating signals for your business's exist
 
 ## Time & Cost Estimate
 
-| Aspect | Estimate |
-|--------|----------|
-| Initial setup | 3-5 hours (one-time) |
-| Cost | €0-200 (most free, some paid memberships) |
-| Maintenance | 30 min/quarter (update listings) |
+| Aspect        | Estimate                                  |
+| ------------- | ----------------------------------------- |
+| Initial setup | 3-5 hours (one-time)                      |
+| Cost          | €0-200 (most free, some paid memberships) |
+| Maintenance   | 30 min/quarter (update listings)          |
 
 ## Expected Results
 
@@ -79,12 +86,12 @@ Directories serve as independent corroborating signals for your business's exist
 
 ## Tools Needed
 
-| Tool | Purpose | Cost |
-|------|---------|------|
-| **BrightLocal** | Citation finding and tracking | $39/mo |
+| Tool                                 | Purpose                                  | Cost       |
+| ------------------------------------ | ---------------------------------------- | ---------- |
+| **BrightLocal**                      | Citation finding and tracking            | $39/mo     |
 | **Whitespark Local Citation Finder** | Find directories for your niche/location | Free trial |
-| **Moz Local** | Submit to data aggregators | $14/mo |
-| **Google Sheets** | Track submissions manually | Free |
+| **Moz Local**                        | Submit to data aggregators               | $14/mo     |
+| **Google Sheets**                    | Track submissions manually               | Free       |
 
 ## How Data Helps
 
@@ -102,8 +109,8 @@ Directories serve as independent corroborating signals for your business's exist
 
 ## Best For Which Phase
 
-| Phase | Relevance |
-|-------|-----------|
-| **DR 0-10** | ⭐⭐⭐⭐⭐ Do this in Week 1-2 alongside entity stacking |
-| **DR 10-30** | ⭐⭐⭐ Fill gaps, add niche-specific directories |
-| **DR 30+** | ⭐⭐ Maintain listings, add premium directories |
+| Phase        | Relevance                                                |
+| ------------ | -------------------------------------------------------- |
+| **DR 0-10**  | ⭐⭐⭐⭐⭐ Do this in Week 1-2 alongside entity stacking |
+| **DR 10-30** | ⭐⭐⭐ Fill gaps, add niche-specific directories         |
+| **DR 30+**   | ⭐⭐ Maintain listings, add premium directories          |

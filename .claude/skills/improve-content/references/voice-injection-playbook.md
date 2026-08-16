@@ -15,6 +15,7 @@ Google's EEAT framework implicitly rewards voice consistency: content from a rec
 ## Step-by-Step Process
 
 ### Step 1: Voice Sample Collection
+
 1. Gather 3-5 real articles written by the brand's actual writer(s)
 2. Include variety: a formal piece, a casual piece, a technical piece
 3. Each sample should be 500-1,500 words minimum
@@ -22,6 +23,7 @@ Google's EEAT framework implicitly rewards voice consistency: content from a rec
 5. **Capture negative examples too**: "We NEVER say 'leverage'" or "We NEVER use bullet points for everything" is just as important as positive guidelines
 
 ### Step 2: Voice Analysis
+
 6. Analyze the samples for:
    - **Sentence length patterns**: Does the writer use short, punchy sentences? Long, flowing ones? A mix?
    - **Vocabulary level**: Technical jargon? Plain language? Industry-specific terms?
@@ -33,6 +35,7 @@ Google's EEAT framework implicitly rewards voice consistency: content from a rec
    - **Quirks**: Any distinctive patterns? Parenthetical asides? Rhetorical questions? Specific metaphors?
 
 ### Step 3: Voice Profile Creation
+
 7. Create a voice profile document with this structure:
 
 ```
@@ -57,12 +60,14 @@ Example phrases that capture the voice:
 ```
 
 ### Step 4: Voice Integration in Prompts
+
 8. Include the voice profile in every writing prompt
 9. Include 1-2 voice sample excerpts as few-shot examples
 10. Instruct the model: "Write as if you ARE [writer name]. Match their sentence patterns, vocabulary, and tone exactly."
 11. After generation, compare output against samples for voice drift
 
 ### Step 5: Voice Consistency Audit
+
 12. Read the draft next to a real sample -- do they sound like the same person?
 13. Check for AI voice bleeding through (formality spikes, generic transitions)
 14. Verify vocabulary consistency (using the brand's specific terms)
@@ -78,6 +83,7 @@ Example phrases that capture the voice:
 **Mechanism:** Forces the model away from the statistical mean. A specific voice has specific word preferences, sentence rhythms, and opinions that break predictability.
 
 **Implementation:**
+
 ```
 You are writing as [Name], a [role] who has been doing this for [X years].
 They are known for: [specific trait, e.g., "blunt honesty about what doesn't work"]
@@ -96,6 +102,7 @@ Example of their voice: "[2-3 example sentences]"
 **Mechanism:** Directly addresses the low-burstiness detection signal. Humans naturally produce "bursts" of complexity followed by simple punchy lines.
 
 **Implementation:**
+
 ```
 Vary sentence length dramatically. Follow a long, complex sentence with
 a short punchy one. Some paragraphs should be a single sentence. Others
@@ -104,6 +111,7 @@ be similar in length. Mix 5-word fragments with 35-word complex sentences.
 ```
 
 **Example transformation:**
+
 - AI: "Email marketing remains one of the most effective digital marketing strategies available to businesses today. It provides a direct line of communication with potential customers. The return on investment is consistently high across industries."
 - Human: "Email marketing works. Not in the vague, 'it's part of a balanced strategy' way consultants love. I mean: for every euro you spend, you get 36 back. That's DKG's 2025 data across 4,000 campaigns, and it's been consistent for five years running."
 
@@ -114,6 +122,7 @@ be similar in length. Mix 5-word fragments with 35-word complex sentences.
 **Mechanism:** Specific details are high-entropy tokens that break predictability. They also signal E-E-A-T (Experience, Expertise) to Google.
 
 **Implementation:**
+
 ```
 Never write a general claim without a specific example. Instead of
 "many companies struggle with this," write "When Coolblue's marketing
@@ -132,6 +141,7 @@ exact consequences.
 **Mechanism:** AI is trained via RLHF to be balanced and inoffensive. Strong opinions are high-entropy by definition. They also drive engagement (comments, shares, backlinks) which are ranking signals via NavBoost.
 
 **Implementation:**
+
 ```
 Take a strong position on every topic. Don't hedge with "it depends"
 unless you genuinely mean it. If something is bad, say it's bad. If
@@ -151,6 +161,7 @@ When appropriate, include phrases like:
 **Mechanism:** Real cultural references signal an author who lives in the world. They create "information gain" that generic content cannot replicate. They anchor content in a specific time and place.
 
 **Implementation:**
+
 ```
 Reference specific cultural touchstones where relevant -- recent news,
 industry events, widely-known examples. Not as decoration but as genuine
@@ -166,6 +177,7 @@ specific Dutch companies, known media personalities, etc.
 **Mechanism:** "Telling" produces low-perplexity text ("Page speed affects rankings"). "Showing" produces high-perplexity, engaging text ("You click a search result. Three seconds pass. Still loading. You hit back. Google noticed.").
 
 **Implementation:**
+
 ```
 Never just state a fact. Show it through a brief scenario. Instead of
 "page speed affects rankings," write a mini-narrative: "You click a
@@ -181,6 +193,7 @@ interaction -- and it just cost the slow site a ranking position."
 **Mechanism:** Paul Graham claims this puts you "ahead of 95% of writers." Conversational language has naturally higher burstiness, uses contractions, and avoids the formal register AI defaults to.
 
 **Implementation:**
+
 ```
 Write as if talking to a smart friend over coffee. Use contractions
 (don't, isn't, won't). Start sentences with "And" or "But" when natural.
@@ -197,6 +210,7 @@ it until it sounds like a person.
 **Mechanism:** AI produces unnaturally perfect grammar and structure. Human writing has quirks that increase both burstiness and perplexity.
 
 **Implementation:**
+
 ```
 You are allowed to be imperfect. Use sentence fragments for emphasis.
 Start sentences with conjunctions. Use parenthetical asides (like this)
@@ -212,6 +226,7 @@ Real writers do this naturally.
 **Mechanism:** AI maintains a uniform register. Humans naturally shift -- a technical explanation followed by a casual aside, a formal point followed by a joke.
 
 **Implementation:**
+
 ```
 Shift between registers naturally. After a technical paragraph,
 drop in something casual. After making a serious point, add a human
@@ -229,6 +244,7 @@ Makes you feel productive, doesn't it?)"
 **Mechanism:** "Write your copy as if you're having a conversation with one reader." Using "I" and "you" creates intimacy. Specific, seemingly irrelevant details build trust.
 
 **Implementation:**
+
 ```
 Write to one specific person who already cares about this topic.
 Use "you" and "I" (or "we" for brand content). Include specific,
@@ -245,12 +261,14 @@ The writing skill should load a Voice Document (from your saved business context
 ## Brand Voice Profile
 
 ### Identity
+
 - Writer role/title:
 - Years of experience:
 - Known for:
 - Industry perspective:
 
 ### Voice Characteristics
+
 - Formality level: [casual / conversational / professional / formal]
 - Uses contractions: [yes / no]
 - Uses humor: [yes / sparingly / no]
@@ -258,18 +276,22 @@ The writing skill should load a Voice Document (from your saved business context
 - Sentence length tendency: [short and punchy / mixed / flowing]
 
 ### Reference Domains
+
 - Analogies drawn from: [e.g., cooking, sports, construction]
 - Cultural references: [e.g., Dutch media, tech industry, specific era]
 
 ### Pet Peeves (things this voice NEVER does)
+
 - [e.g., "never says 'at the end of the day'"]
 - [e.g., "never hedges when they have data"]
 - [e.g., "never uses business jargon"]
 
 ### Example Paragraphs (2-3 samples of the target voice)
+
 [Actual writing samples that demonstrate the voice]
 
 ### Audience
+
 - Writing for: [specific person description]
 - Their knowledge level: [beginner / intermediate / expert]
 - What they care about: [specific concerns]
@@ -279,14 +301,14 @@ The writing skill should load a Voice Document (from your saved business context
 
 ## Copywriting Frameworks by Content Type
 
-| Content Type | Best Framework | Why |
-|-------------|---------------|-----|
-| Service pages, landing pages | PAS (Problem-Agitate-Solve) | Forces emotional engagement |
-| Commercial content, reviews | AIDA (Attention-Interest-Desire-Action) | Drives decision-making |
-| Brand content, about pages | StoryBrand | Positions reader as hero |
-| News, definitions, how-tos | Inverted Pyramid | Answer first, expand second |
-| Email-style, newsletters | Gary Halbert "One Person" | Maximum intimacy |
-| Data pages, comparisons | David Ogilvy "Facts First" | Specifics over superlatives |
+| Content Type                 | Best Framework                          | Why                         |
+| ---------------------------- | --------------------------------------- | --------------------------- |
+| Service pages, landing pages | PAS (Problem-Agitate-Solve)             | Forces emotional engagement |
+| Commercial content, reviews  | AIDA (Attention-Interest-Desire-Action) | Drives decision-making      |
+| Brand content, about pages   | StoryBrand                              | Positions reader as hero    |
+| News, definitions, how-tos   | Inverted Pyramid                        | Answer first, expand second |
+| Email-style, newsletters     | Gary Halbert "One Person"               | Maximum intimacy            |
+| Data pages, comparisons      | David Ogilvy "Facts First"              | Specifics over superlatives |
 
 ## Tips
 

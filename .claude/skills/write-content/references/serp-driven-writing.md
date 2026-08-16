@@ -19,6 +19,7 @@ Kyle Roof's 400+ controlled experiments at PageOptimizer Pro proved that on-page
 **The priority:** Trust > Expertise > Experience > Authoritativeness
 
 **Cyrus Shepard's 50-site case study (4,000+ websites across 2023 updates):**
+
 - Winners: used first-person pronouns, demonstrated first-hand experience
 - Losers: excessive ads (14.01 per page vs. 6.32 on winners), over-optimized anchor text
 - 17 on-page features showed statistically significant correlations
@@ -26,18 +27,21 @@ Kyle Roof's 400+ controlled experiments at PageOptimizer Pro proved that on-page
 ### E-E-A-T Signals the Writing Skill Should Produce
 
 **Experience signals (the new "E"):**
+
 - First-person language: "in my testing," "when I tried," "our data shows"
 - Specific case studies with real numbers and dates
 - References to original photos, screenshots, or videos
 - Practical tips that only come from doing the thing
 
 **Expertise signals:**
+
 - Depth of coverage (not just mentioning a topic, but explaining the WHY)
 - Correct use of industry terminology
 - Nuanced positions (not just repeating the obvious)
 - Citing specific sources (not "experts say")
 
 **Trust signals:**
+
 - Author attribution with verifiable credentials
 - Transparent methodology ("here's how we tested this")
 - Honest limitations ("this approach doesn't work for X")
@@ -48,9 +52,11 @@ Kyle Roof's 400+ controlled experiments at PageOptimizer Pro proved that on-page
 Based on 400+ controlled experiments:
 
 **Group A (Highest weight):**
+
 - Meta title -- the undisputed #1 on-page signal
 
 **Group B:**
+
 - URL path
 - H1 heading
 - Body content (~2% density, naturally distributed)
@@ -59,16 +65,19 @@ Based on 400+ controlled experiments:
 - Anchor text of internal links TO this page
 
 **Group C:**
+
 - Bold text
 - Italic text
 - Image alt text
 
 **Group D (Lowest):**
+
 - Schema markup text
 - HTML tags
 - Open graph text
 
 **Not indexed at all:**
+
 - Meta description (doesn't affect rankings, but affects CTR)
 - Meta keyword tag
 
@@ -78,14 +87,14 @@ Based on 400+ controlled experiments:
 
 Ahrefs found near-zero correlation (0.04) between word count and ranking. The data by intent:
 
-| Intent | Optimal Length | Rationale |
-|--------|---------------|-----------|
-| Informational (comprehensive guide) | 1,500-3,000+ | Needs to cover the full topic |
-| Informational (specific question) | 800-1,500 | Answer directly, don't pad |
-| Commercial investigation (comparison) | 1,200-2,500 | Depth in evaluation criteria |
-| Commercial investigation (roundup) | 2,000-4,000 | Multiple items need coverage |
-| Transactional | Minimal needed | No fluff; specs, pricing, CTA |
-| Local service | 300-500 unique words | Must be genuinely unique per location |
+| Intent                                | Optimal Length       | Rationale                             |
+| ------------------------------------- | -------------------- | ------------------------------------- |
+| Informational (comprehensive guide)   | 1,500-3,000+         | Needs to cover the full topic         |
+| Informational (specific question)     | 800-1,500            | Answer directly, don't pad            |
+| Commercial investigation (comparison) | 1,200-2,500          | Depth in evaluation criteria          |
+| Commercial investigation (roundup)    | 2,000-4,000          | Multiple items need coverage          |
+| Transactional                         | Minimal needed       | No fluff; specs, pricing, CTA         |
+| Local service                         | 300-500 unique words | Must be genuinely unique per location |
 
 **Key rule:** Match the SERP. If top 5 results average 2,000 words, write 2,000-2,500. If they average 800, writing 3,000 wastes effort and may signal wrong intent.
 
@@ -96,6 +105,7 @@ Ahrefs found near-zero correlation (0.04) between word count and ranking. The da
 **Optimal answer length:** 40-50 words (293 characters average)
 
 **Query-format mapping:**
+
 - "How" queries -> ordered list snippets (46.91%)
 - "Does/Are/Is/Can/Should/Will" queries -> paragraph snippets
 - Comparison queries -> table snippets
@@ -108,6 +118,7 @@ Ahrefs found near-zero correlation (0.04) between word count and ranking. The da
 PAA prevalence spiked 34.7% on mobile and 37.5% on desktop (2024-2025). Your site does NOT need to rank #1 to appear in PAA.
 
 **Strategy:**
+
 - Include 3-5 PAA questions as H2 or H3 headings
 - Answer each in 40-60 words immediately after the heading
 - Then expand with detail below the direct answer
@@ -116,7 +127,9 @@ PAA prevalence spiked 34.7% on mobile and 37.5% on desktop (2024-2025). Your sit
 ## Algorithm Signals That Matter (From the Leak)
 
 ### NavBoost (Confirmed)
+
 Uses rolling 13-month window of click data. Tracks:
+
 - **goodClicks** -- positive engagement
 - **badClicks** -- negative engagement
 - **lastLongestClicks** -- where the user's search ENDED (strongest signal)
@@ -124,11 +137,13 @@ Uses rolling 13-month window of click data. Tracks:
 **Writing implication:** Content must immediately engage. The first screen of content determines whether users stay or pogo-stick back. Front-load value.
 
 ### Information Gain (Patent Granted June 2024)
+
 Measures how much UNIQUE information a document provides beyond what already exists. NOT about length -- about saying something competitors don't.
 
 **Writing implication:** Every article must contain at least one section that adds genuinely new information: original data, unique analysis, contrarian perspective, or specific case study.
 
 ### Site Authority (Confirmed in Leak)
+
 Despite public denials, Google has a site-level authority metric. Homepage authority influences the entire domain.
 
 **Writing implication:** Each piece of content contributes to site-level authority. Thin, low-quality content hurts the whole domain (HCU classifier operates site-wide).
@@ -136,11 +151,13 @@ Despite public denials, Google has a site-level authority metric. Homepage autho
 ## Content Scoring Tools: Reality Check
 
 Surfer SEO, Clearscope, Frase analyze top-ranking pages and identify patterns. Ahrefs tested correlation with actual rankings:
+
 - NeuronWriter + Ahrefs: Strongest (but modest) correlation
 - Clearscope: ~0.30
 - Surfer SEO: ~0.27
 
 **The fundamental limitation:** These tools measure FIRST-STAGE retrieval signals only (lexical matching, BM25-style). After that:
+
 1. RankEmbed adds candidates keyword matching missed
 2. Mustang applies ~100+ signals including NavBoost, quality scores
 3. DeepRank applies BERT-based understanding to final 20-30 results
@@ -150,12 +167,15 @@ Surfer SEO, Clearscope, Frase analyze top-ranking pages and identify patterns. A
 ## Content Freshness
 
 ### QDF (Query Deserves Freshness)
+
 Activates for: breaking news, recurring events, topics with frequent updates. When active, newer content temporarily outranks stronger traditional signals.
 
 ### AI Citation Freshness
+
 ChatGPT shows strongest recency preference: 76.4% of most-cited pages were updated within 30 days.
 
 ### Practical Rules
+
 - Date-stamp all content with publication and last-updated dates
 - Update high-traffic content every 3-6 months
 - Don't just change the date -- Google detects fake freshness

@@ -17,16 +17,19 @@ Google's NavBoost system (confirmed in antitrust trial) demotes content that fai
 ## The Science of Detection
 
 ### Perplexity (How predictable each word is)
+
 - **AI text**: Low perplexity -- the model picks the statistically most likely next word. "The results clearly demonstrate the significant impact..."
 - **Human text**: Higher perplexity -- humans choose unexpected words, use slang, make idiosyncratic choices. "The numbers surprised us. Not because they were good -- they weren't -- but because they were exactly wrong."
 - **Fix**: Instruct the model to use less common phrasings, domain-specific jargon, and unexpected vocabulary choices
 
 ### Burstiness (Sentence length variation)
+
 - **AI text**: Remarkably uniform -- 15-25 words per sentence, consistent complexity
 - **Human text**: Wild variation. Like this. And then suddenly a sentence that stretches across multiple clauses, connecting ideas that might not obviously belong together but make sense when you follow the writer's train of thought. Then short again.
 - **Fix**: Explicitly vary sentence length between 3 and 40+ words per section
 
 ### Stylometric Patterns (31+ markers per StyloAI research)
+
 - Function word frequency, sentence complexity distribution, vocabulary richness, syntactic diversity
 - **AI text**: Clusters tightly in a predictable zone across all markers
 - **Human text**: Much wider distribution with more variation
@@ -41,6 +44,7 @@ These words and phrases are so strongly associated with AI that their presence a
 delve, tapestry, realm, landscape (metaphorical), multifaceted, nuanced, testament, cutting-edge, revolutionary, comprehensive (as adjective), crucial, compelling, vibrant, game-changer, leverage (verb), unlock potential, harness, endeavour, embark, navigate (metaphorical), pivotal, intricate, innovative, seamless, robust, transformative, meticulous, facilitate, utilize, commence, paramount, plethora, myriad, culminate, underscore, bolster, spearhead
 
 **Phrases:**
+
 - "It's worth noting that..."
 - "In today's [anything] landscape"
 - "Moreover" / "Furthermore" / "Additionally" (as sentence starters)
@@ -56,25 +60,26 @@ delve, tapestry, realm, landscape (metaphorical), multifaceted, nuanced, testame
 - "Marking a pivotal moment in the evolution of..."
 
 **Replacements:**
-| AI Word | Human Alternative |
-|---------|------------------|
-| leverage | use |
-| utilize | use |
-| commence | start, begin |
-| facilitate | help, enable |
-| endeavor | try, attempt |
-| robust | strong, solid |
-| seamless | smooth, easy |
-| innovative | new, original |
+
+| AI Word       | Human Alternative        |
+| ------------- | ------------------------ |
+| leverage      | use                      |
+| utilize       | use                      |
+| commence      | start, begin             |
+| facilitate    | help, enable             |
+| endeavor      | try, attempt             |
+| robust        | strong, solid            |
+| seamless      | smooth, easy             |
+| innovative    | new, original            |
 | comprehensive | full, complete, thorough |
-| paramount | critical, key |
-| plethora | many, lots of |
-| culminate | end in, lead to |
-| underscore | show, highlight |
-| delve | dig into, look at |
-| testament | proof, sign |
-| landscape | space, market, field |
-| showcase | show |
+| paramount     | critical, key            |
+| plethora      | many, lots of            |
+| culminate     | end in, lead to          |
+| underscore    | show, highlight          |
+| delve         | dig into, look at        |
+| testament     | proof, sign              |
+| landscape     | space, market, field     |
+| showcase      | show                     |
 
 ### Tier 2: Flag When Clustered (+2 points each, flag at 3+ per article)
 
@@ -136,6 +141,7 @@ These are acceptable in isolation but signal AI when they cluster:
 ### Pass 1: Detection and Rewrite
 
 Scan the complete text against all three tiers plus structural patterns. For each detection:
+
 1. Quote the flagged text
 2. Explain why it's flagged (tier + specific pattern)
 3. Provide a rewrite that preserves meaning while eliminating the pattern
@@ -144,6 +150,7 @@ Scan the complete text against all three tiers plus structural patterns. For eac
 ### Pass 2: Surviving Pattern Check
 
 After Pass 1 rewrites, re-scan the full text. First-pass rewrites sometimes introduce new AI patterns (the model's natural tendency reasserts). Specifically check for:
+
 - Recycled transitions that survived the first edit
 - Lingering vocabulary inflation (replaced one AI word with another)
 - Copula swaps that crept back in
@@ -157,12 +164,12 @@ Score: +5 points for each paragraph failing the Horoscope Test.
 
 ## Risk Scoring
 
-| Score | Risk Level | Action |
-|-------|-----------|--------|
-| 0-5 | Low | Content passes |
-| 6-12 | Medium | Flag specific issues for human review |
-| 13-20 | High | Auto-revise flagged sections |
-| 21+ | Critical | Full rewrite required |
+| Score | Risk Level | Action                                |
+| ----- | ---------- | ------------------------------------- |
+| 0-5   | Low        | Content passes                        |
+| 6-12  | Medium     | Flag specific issues for human review |
+| 13-20 | High       | Auto-revise flagged sections          |
+| 21+   | Critical   | Full rewrite required                 |
 
 ## Content Patterns to Eliminate
 

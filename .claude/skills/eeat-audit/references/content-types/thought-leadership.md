@@ -1,9 +1,11 @@
 # Technique 24: Opinion / Thought Leadership Articles
 
 ## What It Is
+
 Expert perspective content that shares a unique viewpoint, challenges conventional wisdom, or provides forward-looking analysis. Builds E-E-A-T through demonstrated expertise and original thinking. Earns links and brand authority.
 
 ## When to Use
+
 Informational intent -- user wants expert insight on a complex or debated topic. Use when you have genuine expertise, proprietary data, or a contrarian perspective. Not suitable for topics where the user just needs facts.
 
 ## Structure Template
@@ -44,23 +46,28 @@ H2: Conclusion / Call to think differently
 ```
 
 ## Word Count
+
 1,200-2,500 words (substance over length -- every paragraph must earn its place)
 
 ## Schema Markup
+
 - **Primary:** Article (with author, datePublished)
 - **Secondary:** Person (detailed author schema with credentials and expertise)
 
 ## Featured Snippet Strategy
+
 - **Format:** Paragraph snippet (for the thesis statement)
 - **Target:** Not the primary goal -- thought leadership optimizes for engagement and links, not snippets
 - **Tip:** Strong opening paragraph that summarizes the argument can capture "why" and "should" queries
 
 ## CTA Placement
+
 - End of article: related content, newsletter, or author's other thought leadership pieces
 - Mid-article (after strongest argument): relevant tool or service that aligns with the thesis
 - Author bio section: consulting, speaking, or service CTA
 
 ## Internal Linking Strategy
+
 - Link to data/statistics pages that support your arguments
 - Link to case studies that provide evidence
 - Link to how-to content for the "what to do about it" section
@@ -68,6 +75,7 @@ H2: Conclusion / Call to think differently
 - Receive links from social shares, PR, and industry discussions
 
 ## Key Success Factors
+
 1. **Have an actual opinion:** A point of view no one disagrees with is not thought leadership
 2. **Support with evidence:** Opinions without data are just noise -- use numbers and examples
 3. **Author credibility:** Named author with visible credentials and relevant experience
@@ -77,6 +85,7 @@ H2: Conclusion / Call to think differently
 7. **Publish consistently:** One thought leadership piece does not build authority -- commit to a cadence
 
 ## Common Mistakes
+
 - Generic opinions that everyone agrees with ("quality matters" is not thought leadership)
 - No supporting evidence (pure opinion without data reads as a blog rant)
 - No author byline or credentials (anonymous thought leadership is an oxymoron)
@@ -86,6 +95,7 @@ H2: Conclusion / Call to think differently
 - Writing about topics outside your genuine expertise
 
 ## Anti-AI Focus
+
 Thought leadership is the content type most naturally resistant to AI generation, because AI is designed to be neutral and consensus-driven rather than opinionated. To maximize this advantage:
 
 - **Take a genuine stance and own it.** AI hedges by default ("it depends," "there are pros and cons"). A clear, defensible opinion with your name attached is the strongest anti-AI signal in content.
@@ -95,6 +105,7 @@ Thought leadership is the content type most naturally resistant to AI generation
 - **Show your reasoning process.** Explain how you arrived at your position, including what changed your mind or what evidence would make you reconsider. This intellectual transparency is distinctly human.
 
 ## Example Topics by Niche
+
 - Energy: "Waarom de energietransitie in Nederland te langzaam gaat -- en wat we anders moeten doen"
 - Telecom: "De toekomst van glasvezel in Nederland: waarom 10 Gbps er eerder komt dan je denkt"
 - SaaS: "Why most SaaS companies should stop chasing enterprise and focus on SMB"

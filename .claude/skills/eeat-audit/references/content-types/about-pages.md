@@ -1,9 +1,11 @@
 # Technique 39: About Pages
 
 ## What It Is
+
 Trust-building content that establishes who you are, your expertise, mission, and credibility. Critical for E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness). Captures "[brand] about", "[brand] team", and "who is behind [brand]" searches. One of the most visited pages on any website.
 
 ## When to Use
+
 Navigational/trust intent -- user wants to verify the legitimacy and expertise of the organization before doing business. Every website needs an about page. It is evaluated by Google's Quality Raters as a key E-E-A-T signal.
 
 ## Structure Template
@@ -50,24 +52,29 @@ H2: Contact
 ```
 
 ## Word Count
+
 500-1,500 words (authentic and concise -- overly long about pages feel like they're trying too hard)
 
 ## Schema Markup
+
 - **Primary:** Organization (name, url, logo, foundingDate, founders, sameAs)
 - **Secondary:** Person (for each team member with credentials)
 
 ## Featured Snippet Strategy
+
 - **Format:** Not a primary snippet target
 - **Target:** Knowledge panel -- Organization schema feeds Google's Knowledge Panel
 - **Tip:** Include founding date, founders, and headquarters in structured data
 
 ## CTA Placement
+
 - After mission section: "See what we can do for you" link to services
 - After team section: "Work with us" or careers link
 - End of page: contact CTA or consultation booking
 - Not aggressive -- the about page builds trust, not hard sells
 
 ## Internal Linking Strategy
+
 - Link to service pages (what we do in practice)
 - Link to case studies (proof of expertise)
 - Link to team member author pages (for blog E-E-A-T)
@@ -75,6 +82,7 @@ H2: Contact
 - Receive links from footer, main navigation, and author bylines across all content
 
 ## Key Success Factors
+
 1. **Real photos:** Team photos, office photos, candid shots -- not stock photography
 2. **Named people with credentials:** Google's Quality Raters specifically look for this
 3. **Specific credentials:** "15 years in renewable energy" not "years of experience"
@@ -83,6 +91,7 @@ H2: Contact
 6. **Updated regularly:** Team changes, new milestones, and updated numbers
 
 ## Common Mistakes
+
 - Stock photos instead of real team photos (immediately damages trust)
 - No named people (anonymous companies are a Quality Rater red flag)
 - Generic corporate mission statements ("We strive to deliver excellence" -- meaningless)
@@ -92,6 +101,7 @@ H2: Contact
 - Missing Organization schema (loses Knowledge Panel opportunity)
 
 ## Example Topics by Niche
+
 - Energy: "Over Energievergelijker.nl -- onafhankelijk energieadvies sinds 2018"
 - Telecom: "Over Belsimpel -- het team achter de telecom vergelijker"
 - SaaS: "About InhouseSEO -- built by SEO professionals for business owners"

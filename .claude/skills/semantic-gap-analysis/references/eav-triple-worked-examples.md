@@ -7,9 +7,11 @@ The framework is Koray Tuğberk GÜBÜR's: every entity on a page should carry a
 ## Example 1 — Espresso machines
 
 **Thin coverage (keywords only):**
+
 > espresso machine, coffee machine, best espresso machine, $5000 espresso machine, commercial espresso machine
 
 **Rich coverage (EAV):**
+
 - **Entity:** La Marzocco Linea Mini
 - **Attributes:** brew pressure (9 bar), boiler configuration (dual boiler, saturated group), price point (~EUR 5,800), heat-up time (~20 min), PID temperature stability (±0.5°C), E61-derived group head with saturated design
 - **Relations:** competes with Rocket R58 and ECM Synchronika in the prosumer tier; successor to the La Marzocco GS3 in Home-use positioning; uses the same group head philosophy as the commercial Linea Classic; preferred by third-wave cafes like Blue Bottle for staff training machines; pairs commonly with the Eureka Atom 75 or Niche Zero grinders
@@ -19,9 +21,11 @@ The thin version ranks for "espresso machine." The rich version ranks for "best 
 ## Example 2 — SaaS payment infrastructure
 
 **Thin coverage:**
+
 > stripe, stripe pricing, payment processing fees, online payments
 
 **Rich coverage (EAV):**
+
 - **Entity:** Stripe Connect
 - **Attributes:** transaction fee structure (2.9% + 30¢ for cards, 0.8% capped at $5 for ACH), platform revenue share model (Application Fee API), account types (Standard, Express, Custom), 1099-K issuance handled by Stripe for US Custom accounts, supports 135+ currencies
 - **Relations:** competes with Adyen MarketPay for enterprise marketplaces and with Paddle Merchant-of-Record for simpler SaaS cases; powers Shopify Payments under the hood; used by Substack for creator payouts and Lyft for driver disbursements; built on top of core Stripe Payments primitives (Charges, PaymentIntents); alternative to building PCI-DSS compliance in-house
@@ -31,9 +35,11 @@ The thin version is a pricing page. The rich version is a piece that a fintech P
 ## Example 3 — Refractive surgery
 
 **Thin coverage:**
+
 > lasik, laser eye surgery, lasik cost, is lasik safe
 
 **Rich coverage (EAV):**
+
 - **Entity:** LASIK (Laser-Assisted In Situ Keratomileusis)
 - **Attributes:** recovery window (24–48 hours to functional vision, 3–6 months to fully stabilized), ideal candidate age range (21–40), corneal thickness requirement (~500 microns minimum), refractive error range (up to -12D myopia, +6D hyperopia, 6D astigmatism), FDA approval date (1999 for myopia), typical cost (USD 2,000–3,000 per eye in the US)
 - **Relations:** alternatives include PRK (better for thin corneas, longer recovery), SMILE (small-incision, flapless, newer), and ICL (implantable collamer lens, for extreme prescriptions); shares the femtosecond-laser flap creation step with Femto-LASIK; reported side effects include dry eye symptoms, halos and starbursts at night, and rare ectasia; contraindicated for keratoconus patients and during pregnancy
@@ -43,9 +49,11 @@ Notice how the relations encode medical decision-making. A reader searching "LAS
 ## Example 4 — Dutch corporate law
 
 **Thin coverage:**
+
 > BV oprichten, BV kosten, nederlandse BV
 
 **Rich coverage (EAV):**
+
 - **Entity:** Besloten Vennootschap (BV) oprichten
 - **Attributes:** minimum share capital (EUR 0.01 since Flex-BV reform 2012), notary requirement (verplicht — notariële akte), deed language (Nederlands, met optionele Engelse vertaling), registration timeline (typically 1–5 business days after akte), VPB (corporate income tax) rate (19% first EUR 200K, 25.8% above), DGA minimum salary rule (EUR 56,000 in 2026)
 - **Relations:** alternatives for solo entrepreneurs include Eenmanszaak (unlimited liability, simpler) and VOF (for partnerships); filed at the Kamer van Koophandel (KvK); governed by Boek 2 Burgerlijk Wetboek; often used as a holding structure above a werk-BV for dividend-routing and liability shielding; contrasts with the German GmbH (EUR 25,000 minimum) and the UK Ltd (GBP 1 minimum, no notary)
@@ -55,9 +63,11 @@ This is what a Dutch tax advisor's blog looks like when they're actually writing
 ## Example 5 — Local service (HVAC)
 
 **Thin coverage:**
+
 > ac repair, air conditioning repair near me, broken ac
 
 **Rich coverage (EAV):**
+
 - **Entity:** Residential AC compressor failure
 - **Attributes:** typical symptoms (warm air at vents, hard-start clicking, outside unit humming but not spinning, tripped breaker), diagnostic steps (capacitor test, contactor inspection, amp draw reading, refrigerant pressure check), common root causes (failed run capacitor ~70% of cases, seized bearings, locked rotor, low refrigerant charge starving the compressor), repair vs replace threshold ($1,500+ on a system over 10 years old = replace)
 - **Relations:** capacitor failures are the single most common false-alarm "compressor is dead" call; contactors are a $15 part that mimics compressor failure when pitted; R-22 systems (pre-2010) face refrigerant phase-out making major repairs uneconomic; the compressor sits inside the outdoor condenser unit alongside the condenser coil and fan motor
@@ -67,9 +77,11 @@ A local HVAC page with this content reads as a real technician talking. A generi
 ## Example 6 — Running shoes
 
 **Thin coverage:**
+
 > best running shoes, running shoes for beginners, marathon shoes
 
 **Rich coverage (EAV):**
+
 - **Entity:** Nike Vaporfly 3
 - **Attributes:** stack height (40mm heel / 32mm forefoot), carbon plate (full-length ZoomX Flyplate), midsole foam (ZoomX PEBA-based), drop (8mm), weight (~196g men's US 10), outsole (partial rubber, exposed foam for weight savings), durability (~250 km before noticeable foam compression)
 - **Relations:** competes directly with Adidas Adios Pro 3 and Asics Metaspeed Sky Paris in the super-shoe tier; successor to the Vaporfly Next% 2; shares the ZoomX foam platform with the Alphafly 3 (which adds Air Zoom pods and more stack); banned briefly in 2020 discussions before World Athletics set the 40mm stack-height rule that the Vaporfly 3 complies with exactly; trainer equivalent in the Nike lineup is the Pegasus Plus
@@ -79,9 +91,11 @@ The attributes here aren't trivia — they're the exact things a runner comparin
 ## Example 7 — Cooking technique
 
 **Thin coverage:**
+
 > how to sear a steak, best way to cook steak, steak recipe
 
 **Rich coverage (EAV):**
+
 - **Entity:** Reverse-sear method for thick-cut steaks
 - **Attributes:** ideal cut thickness (1.5–2.5 inches), oven temperature (225–275°F / 110–135°C), target internal temperature before searing (10–15°F below final doneness), finishing sear temperature (screaming-hot cast iron or carbon steel, 450°F+ surface), total cook time for a 2-inch ribeye (35–50 min + 2 min sear), rest time (minimal — the slow cook acts as the rest)
 - **Relations:** contrasts with the traditional sear-first-then-roast method (which produces a gray band under the crust); pairs naturally with dry-brining 24–48 hours ahead; developed and popularized by J. Kenji López-Alt for Serious Eats; works best on ribeye, strip, and thick porterhouse and poorly on thin flat-iron or skirt; competes with sous-vide + sear on results but requires no equipment beyond an oven thermometer

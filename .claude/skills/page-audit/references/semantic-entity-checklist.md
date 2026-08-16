@@ -25,14 +25,16 @@ Most "content gap" tools surface keyword overlaps instead of conceptual gaps. Do
 ## Worked example: "best coffee brewing method"
 
 **Thin semantic profile (scores ~4)**
+
 - Entities: coffee, water, cup, filter, grinder
 - Predicates: make, prepare, pour, add, wait
 - EAV triples: "coffee needs hot water" (relationship, no value)
 - Subtopics: types of coffee makers, instructions
 
-This reads like a page written by someone who has never actually brewed coffee beyond a drip machine. It covers the *topic* but doesn't inhabit the *domain*. Google's NLP will parse it into a handful of weak triples and rank it below anything with real depth.
+This reads like a page written by someone who has never actually brewed coffee beyond a drip machine. It covers the _topic_ but doesn't inhabit the _domain_. Google's NLP will parse it into a handful of weak triples and rank it below anything with real depth.
 
 **Rich semantic profile (scores ~9)**
+
 - Entities: V60, Chemex, Aeropress, French press, Moka pot, burr grinder, gooseneck kettle, scale, tamper, portafilter, TDS meter, specialty roaster, single origin, blonde roast, natural process, washed process, crema, bloom
 - Predicates: grind, extract, bloom, tamp, tare, agitate, pre-infuse, steep, decant, plunge, invert, pour, swirl, filter, pre-wet
 - EAV triples: `[V60] [grind size] [medium-fine]`, `[Aeropress] [brew time] [1:30-2:30]`, `[Chemex] [paper filter] [25% thicker than V60]`, `[extraction] [target TDS] [1.15-1.35%]`, `[bloom] [duration] [30-45 seconds]`, `[water temperature] [optimal range] [90-96°C]`
@@ -62,4 +64,4 @@ These three checks will get you 80% of the way to an accurate Dimension 2 score 
 
 ## Cross-reference
 
-This file is the scoring rubric. For actually closing the gaps (building a semantic brief, running entity extraction against competitors, generating a predicate list), invoke the `semantic-gap-analysis` skill. Use this checklist to *find* the problem; use that skill to *fix* it.
+This file is the scoring rubric. For actually closing the gaps (building a semantic brief, running entity extraction against competitors, generating a predicate list), invoke the `semantic-gap-analysis` skill. Use this checklist to _find_ the problem; use that skill to _fix_ it.

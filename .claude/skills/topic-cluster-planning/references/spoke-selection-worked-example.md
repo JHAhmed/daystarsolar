@@ -1,6 +1,6 @@
 # Spoke Selection: A Worked Example
 
-Going from a raw SERP scrape to a finished spoke list. SKILL.md tells you *what* to do. This shows *how* it looks when you do it.
+Going from a raw SERP scrape to a finished spoke list. SKILL.md tells you _what_ to do. This shows _how_ it looks when you do it.
 
 ## Seed topic
 
@@ -38,6 +38,7 @@ That's 18 raw queries. The goal is 8-10 non-overlapping spokes. Overlap is the e
 Group questions that belong to the same answer. If two questions share the same underlying intent and would be answered by the same article, fold them.
 
 **Cluster A: Foundational / definition**
+
 - 1 (What is email marketing for SaaS?)
 - 2 (SaaS vs e-commerce email)
 - 12 (Product-led email marketing)
@@ -45,6 +46,7 @@ Group questions that belong to the same answer. If two questions share the same 
 These answer "what is this and how is it different?" They belong in the hub's intro, not in a spoke.
 
 **Cluster B: Lifecycle and sequences**
+
 - 4 (What sequences should SaaS send?)
 - 5 (Onboarding sequence)
 - 6 (Welcome email)
@@ -53,6 +55,7 @@ These answer "what is this and how is it different?" They belong in the hub's in
 4 and 14 both map the lifecycle. 5 and 6 are the first touches. Fold into two spokes: the full lifecycle map, and onboarding specifically.
 
 **Cluster C: Conversion / revenue**
+
 - 7 (Trial conversion email)
 - 8 (Reduce churn with email)
 - 9 (Win-back campaign)
@@ -60,6 +63,7 @@ These answer "what is this and how is it different?" They belong in the hub's in
 Three distinct lifecycle moments, each large enough for its own spoke. If resource-constrained, 8 and 9 could fold into one "retention and win-back" piece.
 
 **Cluster D: Operations and deliverability**
+
 - 10 (KPIs to track)
 - 11 (Send frequency)
 - 17 (Avoiding spam folder)
@@ -68,12 +72,14 @@ Three distinct lifecycle moments, each large enough for its own spoke. If resour
 10 and 18 overlap (both metrics). 17 is deliverability. 11 is cadence. Three spokes at most.
 
 **Cluster E: Tools and stack**
+
 - 3 (Best tools)
 - 16 (Transactional email in SaaS)
 
 3 is a commercial-intent comparison and becomes a spoke. 16 is technical and mostly answered on product docs, so it becomes an FAQ on the deliverability spoke.
 
 **Cluster F: Segmentation and list management**
+
 - 13 (Newsletters for SaaS?)
 - 15 (How to segment a SaaS list)
 
@@ -106,36 +112,39 @@ That's 10 spokes. Good number.
 Not all of the 18 raw questions become articles. Some are too broad (those belong in the hub). Some are too narrow (those become FAQs inside an existing spoke).
 
 **Hub-level** (broad, foundational, lives inside the hub):
+
 - 1, 2, 12: the "what is SaaS email marketing and how is it different" questions
 
 **Spoke-level** (specific, standalone article):
+
 - The 10 listed above
 
 **FAQ-level** (too narrow for its own article, folds into a parent):
+
 - 13 (newsletters) → into the lifecycle spoke
 - 16 (transactional email) → FAQ inside deliverability spoke
 - 18 (average open rates) → subsection of the KPIs spoke
 
 ## Step 5: Final spoke map
 
-| # | Spoke Topic | Target Keyword | Content Type | Words | Answers Question |
-|---|---|---|---|---|---|
-| 1 | SaaS Onboarding Email Sequence | saas onboarding email sequence | How-to + template | 2,500 | #5, #6 |
-| 2 | Best Email Marketing Tools for SaaS | email marketing tools for saas | Comparison | 3,500 | #3 |
-| 3 | Trial-to-Paid Conversion Emails | trial conversion email | How-to + examples | 2,000 | #7 |
-| 4 | Reducing SaaS Churn With Email | reduce saas churn with email | Strategy guide | 2,500 | #8 |
-| 5 | SaaS Email KPIs and Benchmarks | saas email marketing kpis | Listicle + data | 2,000 | #10, #18 |
-| 6 | SaaS Customer Lifecycle Email Map | saas lifecycle emails | Framework article | 3,000 | #4, #14, #13 |
-| 7 | Segmenting a SaaS Email List | saas email segmentation | How-to | 1,800 | #15 |
-| 8 | SaaS Email Deliverability Guide | saas email deliverability | Technical guide | 2,800 | #17, #16 |
-| 9 | Win-Back Email Campaigns for SaaS | saas win-back email | How-to + examples | 1,800 | #9 |
-| 10 | How Often Should SaaS Companies Email Users | saas email frequency | Short opinion + data | 1,200 | #11 |
+| #   | Spoke Topic                                 | Target Keyword                 | Content Type         | Words | Answers Question |
+| --- | ------------------------------------------- | ------------------------------ | -------------------- | ----- | ---------------- |
+| 1   | SaaS Onboarding Email Sequence              | saas onboarding email sequence | How-to + template    | 2,500 | #5, #6           |
+| 2   | Best Email Marketing Tools for SaaS         | email marketing tools for saas | Comparison           | 3,500 | #3               |
+| 3   | Trial-to-Paid Conversion Emails             | trial conversion email         | How-to + examples    | 2,000 | #7               |
+| 4   | Reducing SaaS Churn With Email              | reduce saas churn with email   | Strategy guide       | 2,500 | #8               |
+| 5   | SaaS Email KPIs and Benchmarks              | saas email marketing kpis      | Listicle + data      | 2,000 | #10, #18         |
+| 6   | SaaS Customer Lifecycle Email Map           | saas lifecycle emails          | Framework article    | 3,000 | #4, #14, #13     |
+| 7   | Segmenting a SaaS Email List                | saas email segmentation        | How-to               | 1,800 | #15              |
+| 8   | SaaS Email Deliverability Guide             | saas email deliverability      | Technical guide      | 2,800 | #17, #16         |
+| 9   | Win-Back Email Campaigns for SaaS           | saas win-back email            | How-to + examples    | 1,800 | #9               |
+| 10  | How Often Should SaaS Companies Email Users | saas email frequency           | Short opinion + data | 1,200 | #11              |
 
 Total cluster: 1 hub + 10 spokes, roughly 23,000 words of new content.
 
 ## Step 6: Internal link graph
 
-Every spoke links back to the hub. Beyond that, only link between spokes when the connection is *natural*. Don't force cross-links.
+Every spoke links back to the hub. Beyond that, only link between spokes when the connection is _natural_. Don't force cross-links.
 
 ```
 HUB: Complete Guide to SaaS Email Marketing

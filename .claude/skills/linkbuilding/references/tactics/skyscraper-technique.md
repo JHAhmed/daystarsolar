@@ -1,21 +1,26 @@
 # Tactic 12: Skyscraper Technique (& Shotgun Skyscraper)
 
 ## What It Is
+
 Finding the most linked-to content in your niche, creating a significantly better version, then reaching out to everyone who links to the inferior version asking them to link to yours instead. The "Shotgun Skyscraper" variant (Authority Hacker) scales this by combining broken link replacement with skyscraper outreach across many topics simultaneously.
 
 ## Why It Works
+
 People link to the best available resource on a topic. If you create something demonstrably better — with more recent data, better design, original research, interactive elements — webmasters have a rational reason to update their link. The psychology is "would you rather link to an outdated 2020 guide or a comprehensive 2026 guide with original data?"
 
 ## Step-by-Step Process
 
 ### Step 1: Find Link-Worthy Content to Beat (3-4 hours)
+
 1. Use backlink gap data to identify competitor content with the most backlinks
 2. Use Ahrefs Content Explorer to find most-linked pages for target keywords
 3. Focus on content that's outdated, incomplete, or poorly designed
 4. Prioritize topics where you can add unique value (not just "longer")
 
 ### Step 2: Create Your Superior Version (15-25 hours)
+
 Must be SIGNIFICANTLY better in at least 2-3 ways:
+
 - **More current data** (2026 stats vs 2021 stats)
 - **Original research** (your own data, not just aggregated)
 - **Better design** (custom graphics, interactive elements)
@@ -23,6 +28,7 @@ Must be SIGNIFICANTLY better in at least 2-3 ways:
 - **Better UX** (table of contents, downloadable resources, video summaries)
 
 ### Step 3: Outreach to Linkers (5-10 hours)
+
 1. Export all domains linking to the inferior content
 2. Find contact emails for each
 3. Send personalized emails explaining WHY yours is better
@@ -53,12 +59,12 @@ Must be SIGNIFICANTLY better in at least 2-3 ways:
 
 ## Time & Cost Estimate
 
-| Aspect | Estimate |
-|--------|----------|
-| Research | 3-4 hours |
-| Content creation | 15-25 hours |
-| Outreach | 5-10 hours |
-| Cost | €0-500 (design) |
+| Aspect           | Estimate        |
+| ---------------- | --------------- |
+| Research         | 3-4 hours       |
+| Content creation | 15-25 hours     |
+| Outreach         | 5-10 hours      |
+| Cost             | €0-500 (design) |
 
 ## Expected Results
 
@@ -69,12 +75,12 @@ Must be SIGNIFICANTLY better in at least 2-3 ways:
 
 ## Tools Needed
 
-| Tool | Purpose | Cost |
-|------|---------|------|
-| **Ahrefs Content Explorer** | Find most-linked content | $129/mo |
-| **Canva/Figma** | Design improvements | Free-$13/mo |
-| **Hunter.io / Pitchbox** | Find and manage outreach | Free-$495/mo |
-| **Wayback Machine** | Compare content changes over time | Free |
+| Tool                        | Purpose                           | Cost         |
+| --------------------------- | --------------------------------- | ------------ |
+| **Ahrefs Content Explorer** | Find most-linked content          | $129/mo      |
+| **Canva/Figma**             | Design improvements               | Free-$13/mo  |
+| **Hunter.io / Pitchbox**    | Find and manage outreach          | Free-$495/mo |
+| **Wayback Machine**         | Compare content changes over time | Free         |
 
 ## How Data Helps
 
@@ -91,8 +97,8 @@ Must be SIGNIFICANTLY better in at least 2-3 ways:
 
 ## Best For Which Phase
 
-| Phase | Relevance |
-|-------|-----------|
-| **DR 0-10** | ⭐⭐ Difficult — low credibility makes it hard to convince linkers to switch |
-| **DR 10-30** | ⭐⭐⭐ Viable with strong content differentiation |
-| **DR 30+** | ⭐⭐⭐⭐ Best results — existing authority makes the switch more appealing |
+| Phase        | Relevance                                                                    |
+| ------------ | ---------------------------------------------------------------------------- |
+| **DR 0-10**  | ⭐⭐ Difficult — low credibility makes it hard to convince linkers to switch |
+| **DR 10-30** | ⭐⭐⭐ Viable with strong content differentiation                            |
+| **DR 30+**   | ⭐⭐⭐⭐ Best results — existing authority makes the switch more appealing   |

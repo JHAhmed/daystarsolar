@@ -18,6 +18,7 @@ Every new site owner faces the same brutal chicken-and-egg problem:
 4. **No links → No authority** — Loop restarts
 
 The 2024 Google algorithm leak confirmed what practitioners long suspected:
+
 - **`siteAuthority`** is a real attribute in Google's ranking system (despite years of denial)
 - **NavBoost** uses click data heavily — new sites have none
 - A **`hostAge`** attribute exists for handling "fresh spam" — effectively confirming the sandbox
@@ -28,6 +29,7 @@ The 2024 Google algorithm leak confirmed what practitioners long suspected:
 ### What "Sandbox" Actually Means in Practice
 
 The Google Sandbox isn't an official term, but the effect is real and documented:
+
 - **Duration:** Typically 3-6 months for most niches, up to 12 months for competitive verticals (finance, health, legal)
 - **Symptoms:** Pages get indexed but barely rank, even for low-competition terms. Rankings may briefly spike then drop
 - **Mechanism:** Likely a combination of low entity confidence, insufficient user signals (NavBoost), and lack of topical authority
@@ -77,6 +79,7 @@ Most new site owners skip this entirely. Don't.
    - Categorize: directories, resource pages, guest posts, editorial mentions
 
 **Pre-launch link building for SaaS specifically:**
+
 - Submit to beta directories: BetaList, Launching Next, Beta Bound
 - Set up a ProductHunt upcoming page (starts building community pre-launch)
 - Create a waitlist page and promote it on Indie Hackers, Hacker News
@@ -91,34 +94,38 @@ Most new site owners skip this entirely. Don't.
 **Time investment:** 8-10 hours total
 
 #### Day 1-3: Core Platforms
-| Platform | DR | Link Type | Time | Notes |
-|----------|-----|-----------|------|-------|
-| Google Business Profile | 100 | NoFollow | 20 min | Even non-local. Verify ASAP |
-| LinkedIn Company Page | 98 | NoFollow | 20 min | Complete ALL fields |
-| Facebook Business Page | 96 | NoFollow | 15 min | Consistent branding |
-| YouTube Channel | 99 | NoFollow | 15 min | Upload at least 1 video |
-| X/Twitter Profile | 93 | NoFollow | 10 min | Link in bio |
-| Instagram Business | 96 | NoFollow | 10 min | Link in bio |
-| Medium | 95 | NoFollow* | 30 min | Publish 1 article with link (*can be dofollow) |
-| Pinterest Business | 94 | NoFollow | 10 min | Create 1 board |
+
+| Platform                | DR  | Link Type | Time   | Notes                                          |
+| ----------------------- | --- | --------- | ------ | ---------------------------------------------- |
+| Google Business Profile | 100 | NoFollow  | 20 min | Even non-local. Verify ASAP                    |
+| LinkedIn Company Page   | 98  | NoFollow  | 20 min | Complete ALL fields                            |
+| Facebook Business Page  | 96  | NoFollow  | 15 min | Consistent branding                            |
+| YouTube Channel         | 99  | NoFollow  | 15 min | Upload at least 1 video                        |
+| X/Twitter Profile       | 93  | NoFollow  | 10 min | Link in bio                                    |
+| Instagram Business      | 96  | NoFollow  | 10 min | Link in bio                                    |
+| Medium                  | 95  | NoFollow* | 30 min | Publish 1 article with link (*can be dofollow) |
+| Pinterest Business      | 94  | NoFollow  | 10 min | Create 1 board                                 |
 
 #### Day 4-7: Authority Platforms
-| Platform | DR | Link Type | Time | Notes |
-|----------|-----|-----------|------|-------|
-| Crunchbase | 91 | DoFollow | 20 min | Free basic listing, great for SaaS/startups |
-| About.me | 93 | DoFollow | 10 min | Personal brand page |
-| GitHub | 96 | NoFollow | 15 min | If relevant for tech |
-| AngelList/Wellfound | 91 | DoFollow | 15 min | For startups |
-| Gravatar | 90 | NoFollow | 5 min | Often overlooked |
-| Slideshare | 95 | NoFollow | 20 min | Upload a presentation |
+
+| Platform            | DR  | Link Type | Time   | Notes                                       |
+| ------------------- | --- | --------- | ------ | ------------------------------------------- |
+| Crunchbase          | 91  | DoFollow  | 20 min | Free basic listing, great for SaaS/startups |
+| About.me            | 93  | DoFollow  | 10 min | Personal brand page                         |
+| GitHub              | 96  | NoFollow  | 15 min | If relevant for tech                        |
+| AngelList/Wellfound | 91  | DoFollow  | 15 min | For startups                                |
+| Gravatar            | 90  | NoFollow  | 5 min  | Often overlooked                            |
+| Slideshare          | 95  | NoFollow  | 20 min | Upload a presentation                       |
 
 #### Day 7-14: Citations & Directories
+
 - **General:** Yelp, YellowPages, BBB, Manta, Foursquare
 - **Tech:** G2, Capterra, AlternativeTo, SaaSHub
 - **Local:** Chamber of Commerce, city business directories
 - **Industry-specific:** Find 5-10 directories in your exact niche
 
 **Hidden tips from practitioners:**
+
 - **Wikidata is the secret weapon:** Creating a Wikidata entry (if your brand is notable enough) significantly accelerates entity recognition. Google pulls directly from Wikidata for Knowledge Panels
 - **`sameAs` schema is crucial:** Add ALL profile URLs in your Organization schema's `sameAs` property
 - **Don't create all profiles in one day.** Spread over 2 weeks to look natural
@@ -126,6 +133,7 @@ Most new site owners skip this entirely. Don't.
 - **Image consistency:** Same logo and brand colors everywhere. Google's image recognition cross-references visual branding
 
 **Press release:**
+
 - Distribute your launch announcement via a PR wire service (PRWeb, Newswire, or even EIN Presswire for ~$50)
 - Focus on brand mention and NAP, not link juice — Google mostly ignores PR wire backlinks but values the entity signals and Google News indexing
 - A newsworthy angle helps: original data, industry disruption, unique approach
@@ -139,9 +147,11 @@ Most new site owners skip this entirely. Don't.
 **Time investment:** 6-8 hours total
 
 #### Strategy 1: Leverage Your Network (2 hours)
+
 **This is the single most underutilized tactic for new sites.**
 
 Every new site owner is sitting on potential links without realizing:
+
 - **Suppliers/vendors:** If you use tools or services, write testimonials. Many companies feature testimonials on their homepage with a backlink (often DR 40-80+)
 - **Business partners:** Ask for a mention on their "Partners" page
 - **Personal network:** Friends, family, ex-colleagues with websites or blogs
@@ -149,11 +159,13 @@ Every new site owner is sitting on potential links without realizing:
 - **Professional associations:** Industry groups often have member directories
 
 **Outreach template that works (from Reddit practitioners):**
+
 > "Hey [Name], I just launched [Site]. Since we [work together / you use our service / we're in the same industry], would you be open to adding a link from your [partners page / resources section]? Happy to do the same for you."
 
 **Conversion rate:** 30-50% when you have a genuine relationship (vs. 2-5% for cold outreach)
 
 #### Strategy 2: Testimonial Link Building (2 hours)
+
 - List every tool, service, and product you genuinely use
 - Write thoughtful testimonials for 10-20 of them
 - Many companies display testimonials on their homepage or testimonials page with a dofollow link
@@ -161,12 +173,14 @@ Every new site owner is sitting on potential links without realizing:
 - **Success rate:** ~20-30% of submitted testimonials get published with a link
 
 #### Strategy 3: First Guest Post (4 hours)
+
 - Don't aim high yet. Target sites in your niche with DR 20-40
 - **Critical insight from the LinkRush case study:** DR 30-35 relevant niche sites reply. DR 70 generic blogs don't even open your email
 - Start with sites where you can demonstrate genuine expertise
 - **One quality guest post > ten mediocre directory submissions** at this stage
 
 #### Strategy 4: Community Participation (Ongoing, 1 hour/week)
+
 - **Reddit:** Participate genuinely in relevant subreddits. After building karma/reputation, your link mentions carry weight
 - **Industry forums:** Find niche-specific forums (use Google: "[your industry] forum" or "[your industry] community")
 - **Slack/Discord communities:** Many industries have active groups where you can build relationships that lead to links
@@ -198,6 +212,7 @@ This is the single most important thing you'll do in month 2. Not two assets, no
 5. **Expert roundup** — Email 30 experts a single compelling question. Even with low authority, experts often share/link to content they're featured in. The "ego bait" effect.
 
 **Choosing your topic (use data):**
+
 - opportunity detection → Find topics where you could compete
 - keyword cluster data → Identify the topic cluster with highest link potential
 - backlink gap data → See what content types earn links in your niche
@@ -217,6 +232,7 @@ Now that you have foundation links AND a linkable asset:
 5. Move to Medium targets with your linkable asset as leverage
 
 **Outreach success rates (realistic numbers from practitioners):**
+
 - Cold email (generic): 2-5% conversion
 - Cold email (personalized, with great content): 5-10%
 - Relationship-based outreach: 20-50%
@@ -226,6 +242,7 @@ Now that you have foundation links AND a linkable asset:
 
 **The "3-2-1" protocol (from Woodpecker research):**
 Before sending any link request, first:
+
 - 3 meaningful interactions with the target (comments, shares, replies)
 - 2 personalized comments on their content
 - 1 custom resource shared with them
@@ -241,17 +258,20 @@ This protocol increased conversion rates from 7% to 23% in agency tests.
 **Time investment:** 15-20 hours total
 
 By now you should have:
+
 - ✅ 20-30 foundation/entity links
 - ✅ 5-10 real authority links from network/testimonials/guest posts
 - ✅ 1 strong linkable asset
 - ✅ A growing list of competitor backlink opportunities
 
 #### Week 9-10: Second Linkable Asset + More Guest Posts
+
 - Create a second major content piece (different format from the first)
 - Pitch 2-3 guest posts to slightly higher-authority sites (DR 30-50)
 - **Broken link building:** Find broken links on competitor-linking sites, offer your content as replacement (see Tactic 8)
 
 #### Week 11-12: Resource Page Outreach + HARO/Connectively
+
 - Search for resource pages in your niche: `[your topic] + "useful resources"` or `[your topic] + inurl:resources`
 - Sign up for journalist query platforms:
   - **Qwoted** — Best signal-to-noise ratio, strong verification
@@ -265,13 +285,13 @@ By now you should have:
 
 This is where many new sites get penalized. Follow this distribution:
 
-| Anchor Type | Target % | Example |
-|-------------|----------|---------|
-| Branded | 40-50% | "YourBrand", "YourBrand.com" |
-| Naked URL | 15-20% | "https://yourbrand.com" |
-| Generic | 15-20% | "click here", "read more", "this guide" |
-| Partial match | 10-15% | "guide to [topic] by YourBrand" |
-| Exact match keyword | 3-5% MAX | "[target keyword]" |
+| Anchor Type         | Target % | Example                                 |
+| ------------------- | -------- | --------------------------------------- |
+| Branded             | 40-50%   | "YourBrand", "YourBrand.com"            |
+| Naked URL           | 15-20%   | "https://yourbrand.com"                 |
+| Generic             | 15-20%   | "click here", "read more", "this guide" |
+| Partial match       | 10-15%   | "guide to [topic] by YourBrand"         |
+| Exact match keyword | 3-5% MAX | "[target keyword]"                      |
 
 **Critical warning:** Keep exact-match anchors under 5% for the first 6 months. Over-optimization of anchor text is the #1 reason new sites get penalized. The Reddit consensus is clear: "90% brand, few partial, few topic. Keep off the exact match anchors."
 
@@ -285,17 +305,20 @@ This is where many new sites get penalized. Follow this distribution:
 **New tactics to add:**
 
 #### Reactive Digital PR (Month 4+)
+
 - Monitor trending topics in your industry with Google Trends, Twitter/X trending
 - Prepare data-driven commentary on breaking news
 - Respond to journalist queries within minutes
 - **Even unknown brands can win reactive PR** — journalists need expert quotes fast, they don't always check your DR
 
 #### Niche Edits (Month 4+)
+
 - Approach sites that have existing content mentioning your topic but not linking to you
 - Offer your content/tool as an additional resource
 - This works better now that you have some authority — site owners check your DR before agreeing
 
 #### Podcast Guesting (Month 5+)
+
 - Start with small, niche-specific podcasts (500-2,000 listeners)
 - You don't need to be famous — you need to be an expert with a good story
 - Each podcast appearance = 1-3 backlinks (show notes, transcript, episode page)
@@ -303,12 +326,14 @@ This is where many new sites get penalized. Follow this distribution:
 - **Tip:** Use Rephonic, ListenNotes, or PodcastGuests.com to find relevant shows
 
 #### Strategic Content Expansion
+
 - Publish 2-4 new content pieces per month
 - Each piece should target a specific topic cluster
 - Build internal links from new content to your linkable assets
 - **The LinkRush case study pattern:** They merged weak posts, created 2 strong linkable assets, and went from DR 12 → 28 in 60 days with ~20 quality backlinks
 
 **Link velocity guidelines for months 4-6:**
+
 - Safe range: 5-15 new referring domains per month
 - The consensus from multiple sources: 5-10 quality backlinks/month for new sites
 - Focus on quality over quantity — 3 DR 50+ links beat 30 DR 10 links
@@ -324,23 +349,27 @@ This is where many new sites get penalized. Follow this distribution:
 **Advanced tactics to add:**
 
 #### Proactive Digital PR
+
 - Now you have enough authority for journalists to take you seriously
 - Create data studies, surveys, or research pieces designed for media coverage
 - Pitch to industry publications and relevant journalists
 - Consider a PR tool like Prowly, Meltwater, or JustReachOut ($100-500/month)
 
 #### Skyscraper Technique
+
 - Find top-linked content in your niche
 - Create a significantly better version
 - Reach out to everyone linking to the original
 - This works MUCH better at DR 25+ than at DR 5 (sites are more willing to link)
 
 #### Link Reclamation
+
 - By now, you may have unlinked brand mentions
 - Use Google Alerts or Mention to find brand mentions without links
 - Reach out and request the link be added — high conversion rate (30-50%)
 
 #### Strategic Partnerships & Link Exchanges
+
 - At this stage, you're valuable enough for partnerships
 - **Three-way (ABC) exchanges** are safer than direct reciprocal links
 - Partner with complementary (not competing) businesses
@@ -355,12 +384,14 @@ This is where many new sites get penalized. Follow this distribution:
 **Monthly time investment:** 8-15 hours (link building becomes more efficient as authority grows)
 
 #### What Changes at DR 30+
+
 - **Outreach becomes easier:** Higher acceptance rates for guest posts and link requests
 - **Content earns links passively:** High-authority content starts attracting links without outreach
 - **New tactics unlock:** You can now participate in expert roundups, get featured on "best of" lists, and attract journalist attention naturally
 - **Link velocity can increase:** 15-30 new referring domains per month is safe at this stage
 
 #### Focus Areas for Months 10-12
+
 1. **Double down on what works:** Review analytics to see which tactics generated the best links. Do more of those
 2. **Content refresh:** Update your best-performing content with new data. This often re-triggers link acquisition
 3. **Build relationships, not just links:** The best link builders have networks of 50-100 site owners they can call on
@@ -376,18 +407,19 @@ This is where many new sites get penalized. Follow this distribution:
 
 **Time required:** 15-25 hours/month
 
-| Activity | Time/Month | Cost |
-|----------|-----------|------|
-| Entity stacking (month 1 only) | 8h | €0 |
-| Social profile creation & posting | 2h | €0 |
-| Testimonial outreach | 2h | €0 |
-| Community participation (Reddit, forums) | 4h | €0 |
-| Guest post writing & pitching | 6h | €0 |
-| Content creation (linkable assets) | 8h | €0 |
-| HARO/Connectively/Qwoted responses | 3h | €0 |
-| Competitor analysis (free Ahrefs/Moz tools) | 2h | €0 |
+| Activity                                    | Time/Month | Cost |
+| ------------------------------------------- | ---------- | ---- |
+| Entity stacking (month 1 only)              | 8h         | €0   |
+| Social profile creation & posting           | 2h         | €0   |
+| Testimonial outreach                        | 2h         | €0   |
+| Community participation (Reddit, forums)    | 4h         | €0   |
+| Guest post writing & pitching               | 6h         | €0   |
+| Content creation (linkable assets)          | 8h         | €0   |
+| HARO/Connectively/Qwoted responses          | 3h         | €0   |
+| Competitor analysis (free Ahrefs/Moz tools) | 2h         | €0   |
 
 **Expected results (12 months):**
+
 - Month 3: DR 5-10, 30-40 referring domains
 - Month 6: DR 10-15, 60-80 referring domains
 - Month 12: DR 15-25, 100-150 referring domains
@@ -398,13 +430,14 @@ This is where many new sites get penalized. Follow this distribution:
 
 **Who this is for:** Small businesses, early-stage startups
 
-| Activity | Cost/Month | What You Get |
-|----------|-----------|-------------|
-| Press release distribution (quarterly) | €25 | Brand mentions in 50+ outlets |
-| HARO premium or Qwoted subscription | €50 | Better journalist queries, faster access |
-| Freelance content writer (1 article) | €25 | Supplemental linkable content |
+| Activity                               | Cost/Month | What You Get                             |
+| -------------------------------------- | ---------- | ---------------------------------------- |
+| Press release distribution (quarterly) | €25        | Brand mentions in 50+ outlets            |
+| HARO premium or Qwoted subscription    | €50        | Better journalist queries, faster access |
+| Freelance content writer (1 article)   | €25        | Supplemental linkable content            |
 
 **Expected results (12 months):**
+
 - Month 3: DR 8-12, 40-60 referring domains
 - Month 6: DR 15-20, 80-120 referring domains
 - Month 12: DR 25-35, 150-250 referring domains
@@ -413,14 +446,15 @@ This is where many new sites get penalized. Follow this distribution:
 
 **Who this is for:** Funded startups, growing businesses
 
-| Activity | Cost/Month | What You Get |
-|----------|-----------|-------------|
-| Link building tool (Ahrefs Lite or SEMrush) | €100 | Professional backlink research |
-| Outreach tool (Pitchbox, BuzzStream, or Respona) | €100 | Automated outreach management |
-| Freelance content + design | €200 | Professional linkable assets |
-| Paid guest posts (2-3/month) | €100 | DR 30-50 editorial links |
+| Activity                                         | Cost/Month | What You Get                   |
+| ------------------------------------------------ | ---------- | ------------------------------ |
+| Link building tool (Ahrefs Lite or SEMrush)      | €100       | Professional backlink research |
+| Outreach tool (Pitchbox, BuzzStream, or Respona) | €100       | Automated outreach management  |
+| Freelance content + design                       | €200       | Professional linkable assets   |
+| Paid guest posts (2-3/month)                     | €100       | DR 30-50 editorial links       |
 
 **Expected results (12 months):**
+
 - Month 3: DR 10-15, 50-80 referring domains
 - Month 6: DR 20-30, 120-180 referring domains
 - Month 12: DR 35-50, 250-400 referring domains
@@ -429,14 +463,15 @@ This is where many new sites get penalized. Follow this distribution:
 
 **Who this is for:** Funded SaaS, competitive niches, agencies
 
-| Activity | Cost/Month | What You Get |
-|----------|-----------|-------------|
-| Digital PR agency (retainer) | €1,000 | 10-30 high-DR links/month |
-| Professional content creation | €500 | 2-3 linkable assets/month |
-| Tools & subscriptions | €200 | Full SEO stack |
-| Paid placements & niche edits | €300 | Strategic DR 40-70 links |
+| Activity                      | Cost/Month | What You Get              |
+| ----------------------------- | ---------- | ------------------------- |
+| Digital PR agency (retainer)  | €1,000     | 10-30 high-DR links/month |
+| Professional content creation | €500       | 2-3 linkable assets/month |
+| Tools & subscriptions         | €200       | Full SEO stack            |
+| Paid placements & niche edits | €300       | Strategic DR 40-70 links  |
 
 **Expected results (12 months):**
+
 - Month 3: DR 15-25, 80-120 referring domains
 - Month 6: DR 30-45, 200-350 referring domains
 - Month 12: DR 50-65, 500-800 referring domains
@@ -449,12 +484,14 @@ This is where many new sites get penalized. Follow this distribution:
 
 **Unique advantages:** Product Hunt, beta directories, integration partners, free tools
 **Primary tactics:**
+
 1. **Pre-launch:** BetaList, ProductHunt Upcoming, Indie Hackers, Hacker News
 2. **Launch:** ProductHunt launch (can earn 50-100 backlinks in a week, DR 90+ dofollow if top 3)
 3. **Post-launch:** Integration partner pages, "alternatives to [competitor]" content, free tool/API
 4. **Ongoing:** Comparison pages ("[You] vs [Competitor]"), developer documentation, open-source contributions
 
 **ProductHunt tips:**
+
 - Embed the PH launch badge on your site (permanent dofollow backlink if you rank top 3 for the week)
 - Lenny's Newsletter data: "A valuable long-tail effect of launching on Product Hunt is the SEO benefit from landing a high-authority backlink"
 - Also submit to PH alternatives: Uneed, There's an AI for That, SaaSHub, AlternativeTo
@@ -463,12 +500,14 @@ This is where many new sites get penalized. Follow this distribution:
 
 **Unique advantages:** Product reviews, supplier relationships, visual content
 **Primary tactics:**
+
 1. **Foundation:** Product aggregators, shopping comparison sites, manufacturer directories
 2. **Month 1-3:** Supplier/manufacturer links (ask to be listed as authorized retailer), product review outreach
 3. **Month 3-6:** Buying guides, "best [product] for [use case]" content, influencer seeding
 4. **Ongoing:** Unlinked brand mentions from product reviews, seasonal content (gift guides)
 
 **E-commerce specific tips:**
+
 - Link to homepage AND category pages (not just product pages — products change, categories are permanent)
 - Create a "press" or "as seen in" page early — it attracts more media links
 - Offer products for review to micro-bloggers (DR 20-40) — they're more responsive than big publications
@@ -477,12 +516,14 @@ This is where many new sites get penalized. Follow this distribution:
 
 **Unique advantages:** Geographic relevance, local communities, physical presence
 **Primary tactics:**
+
 1. **Foundation:** Google Business Profile, local directories, Chamber of Commerce, BBB
 2. **Month 1-3:** Local newspaper/blog outreach, community event sponsorships, local business partnerships
 3. **Month 3-6:** Local awards/recognition, charity partnerships, neighborhood guides
 4. **Ongoing:** Local event hosting/sponsoring, community involvement
 
 **Local business specific tips:**
+
 - Local links are MUCH easier to get than national links
 - Sponsor a local youth sports team ($100-500) = link from their website (often .org with decent authority)
 - Offer to write a guest column for local news sites
@@ -492,12 +533,14 @@ This is where many new sites get penalized. Follow this distribution:
 
 **Unique advantages:** Content flexibility, community building, expert positioning
 **Primary tactics:**
+
 1. **Foundation:** Social profiles, content distribution platforms (Medium, LinkedIn Articles, Substack)
 2. **Month 1-3:** Guest posting (start small, DR 20-30), roundup participation, community engagement
 3. **Month 3-6:** Original research, expert interviews, resource pages
 4. **Ongoing:** Content syndication, newsletter swaps, podcast guesting
 
 **Blog specific tips:**
+
 - Your first 10 posts should be "linkable" — not random blog posts, but resources others would cite
 - Start an email newsletter from day 1 — subscribers share content and create link opportunities
 - Participate in "blog carnivals" or content communities in your niche
@@ -506,12 +549,14 @@ This is where many new sites get penalized. Follow this distribution:
 
 **Unique advantages:** Comparison content, product expertise, review authority
 **Primary tactics:**
+
 1. **Foundation:** Standard entity stacking + niche-specific directories
 2. **Month 1-3:** Comparison and "best of" content, product brand mentions (reach out to brands you review)
 3. **Month 3-6:** Original data from product testing, industry statistics roundups
 4. **Ongoing:** Seasonal link building (Black Friday roundups, yearly "best of" updates)
 
 **Affiliate specific tips:**
+
 - Google scrutinizes affiliate sites more heavily — E-E-A-T signals matter
 - Show real product photos, real testing, real expertise — this earns links AND Google trust
 - Brands often link to honest reviews (even critical ones) from their "Press" pages
@@ -526,6 +571,7 @@ This is where many new sites get penalized. Follow this distribution:
 **Starting point:** DR 12, pages indexed but barely ranking, keywords stuck on page 4-5
 
 **Week-by-week timeline:**
+
 - **Week 1:** Cleaned house — deleted thin content, merged similar posts, created 2 linkable assets (data-backed guide + honest comparison post), fixed 12 broken internal links
 - **Week 2-3:** Sent 50 personalized outreach emails. Results: 2 replies, 38 "no thanks", 10 ghosted. Key insight: DR 30-35 niche sites replied, DR 70 generic blogs didn't
 - **Week 4:** First 5 links landed — 3 niche edits, 2 resource mentions. Added internal links from indexed pages to speed up indexing
@@ -534,6 +580,7 @@ This is where many new sites get penalized. Follow this distribution:
 - **Week 7-8:** Continued steady building. DR reached 28 by day 60
 
 **Key takeaways:**
+
 - Total links built: ~20 quality backlinks
 - Focus on relevance over raw DR
 - Content cleanup was just as important as link building
@@ -563,13 +610,13 @@ This is where many new sites get penalized. Follow this distribution:
 
 ### Safe Link Velocity by Phase
 
-| Phase | Monthly New Referring Domains | Notes |
-|-------|------------------------------|-------|
-| Month 1 | 15-25 (mostly foundation) | Entity/citation links don't count as "aggressive" |
-| Month 2-3 | 5-10 quality links | Gradual ramp. Quality > quantity |
-| Month 4-6 | 8-15 quality links | Slight increase as authority grows |
-| Month 7-9 | 10-20 quality links | More natural as site gets traffic |
-| Month 10-12 | 15-30 quality links | Authority supports faster velocity |
+| Phase       | Monthly New Referring Domains | Notes                                             |
+| ----------- | ----------------------------- | ------------------------------------------------- |
+| Month 1     | 15-25 (mostly foundation)     | Entity/citation links don't count as "aggressive" |
+| Month 2-3   | 5-10 quality links            | Gradual ramp. Quality > quantity                  |
+| Month 4-6   | 8-15 quality links            | Slight increase as authority grows                |
+| Month 7-9   | 10-20 quality links           | More natural as site gets traffic                 |
+| Month 10-12 | 15-30 quality links           | Authority supports faster velocity                |
 
 ### Red Flags That Indicate Dangerous Velocity
 
@@ -582,6 +629,7 @@ This is where many new sites get penalized. Follow this distribution:
 ### What Reddit Practitioners Actually Say
 
 From r/SEO threads on link velocity:
+
 - "For a new site, start with about 5 to 10 backlinks a month and gradually increase"
 - "You're safe as long as you get good backlinks from legitimate websites"
 - "Even 1 or 2 do-follow backlinks each month can increase your Domain Authority"
@@ -595,33 +643,43 @@ From r/SEO threads on link velocity:
 ## Common Mistakes That Kill New Site Link Building
 
 ### Mistake 1: Skipping Entity Stacking
+
 Jumping straight to outreach without establishing your entity is like applying for a loan with no credit history. Build the foundation first.
 
 ### Mistake 2: Over-Optimizing Anchor Text
+
 The #1 penalty trigger for new sites. Keep exact-match anchors under 5%. A Reddit backlink specialist: "3% common keyword anchors. I often see 10% or more — that's when sites get hit."
 
 ### Mistake 3: Buying Cheap Links from Fiverr/SEOClerks
+
 "500 backlinks for $5" will get you de-indexed. One practitioner reported a niche site de-indexed two weeks after adding cheap Web 2.0 links.
 
 ### Mistake 4: Ignoring Relevance
+
 A DR 80 link from an irrelevant site is worth less than a DR 30 link from a highly relevant niche site. Google heavily weighs topical relevance.
 
 ### Mistake 5: Sending Links to Pages That Target Zero-Volume Keywords
+
 "One of the most common mistakes in link building is sending great backlinks to pages that target keywords nobody is searching for." Use your SEO data source's keyword search to verify traffic potential first.
 
 ### Mistake 6: Building Links to Product/Service Pages Only
+
 Diversify your link targets: homepage (40-50%), blog/content pages (30-40%), product/service pages (10-20%). Links only to money pages look manipulative.
 
 ### Mistake 7: Inconsistent NAP Across Platforms
+
 Different addresses or phone numbers across profiles confuse entity signals and weaken citation value.
 
 ### Mistake 8: Giving Up After Month 2
+
 Most link building efforts take 3-6 months to show ranking impact. The "dip" at month 2-3 (when initial excitement fades but results haven't arrived) kills most campaigns.
 
 ### Mistake 9: Not Tracking What Works
+
 Track every link: source, DR, anchor text, date, target page, whether it's indexed. Without data, you can't optimize.
 
 ### Mistake 10: Spending All Time on Outreach, None on Content
+
 You need something worth linking to. The best outreach in the world can't sell garbage content.
 
 ---
@@ -658,36 +716,39 @@ You need something worth linking to. The best outreach in the world can't sell g
 
 ## How Data Helps New Sites Specifically
 
-| Tool | New Site Use Case | Why It's Critical for DR 0-10 |
-|-------------|-------------------|-------------------------------|
-| your saved business context | Brand name, niche, description for consistent entity stacking | Ensures NAP consistency across 20+ platforms |
-| backlink profile data | Baseline measurement: where do you stand? | Track progress weekly during critical first 90 days |
-| backlink gap data | Find domains linking to competitors but not you | **#1 prospect list** for outreach — replaces expensive Ahrefs subscription |
-| new/lost backlink tracking | Monitor which links you've gained and lost | Catch lost links early, understand what's working |
-| competitor data | Identify who you're competing against | Essential for gap analysis and content strategy |
-| competitor change feed | Detect new competitor content | Find content ideas that earn links in your niche |
-| opportunity detection | Find pages ranking 4-20 that need links | **Prioritize link building** to pages closest to page 1 |
-| keyword cluster data | Identify topic clusters to build authority | **Focus link building** on one topic cluster at a time |
-| page-level SEO data | Per-page backlink metrics | See which pages need more links |
-| internal link data | Internal link structure | Ensure new backlink equity flows to target pages |
-| keyword search | Find keywords worth targeting | **Don't waste links** on zero-volume keywords |
-| SERP feature detection | Featured snippet opportunities | New sites can win snippets before ranking organically |
+| Tool                        | New Site Use Case                                             | Why It's Critical for DR 0-10                                              |
+| --------------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| your saved business context | Brand name, niche, description for consistent entity stacking | Ensures NAP consistency across 20+ platforms                               |
+| backlink profile data       | Baseline measurement: where do you stand?                     | Track progress weekly during critical first 90 days                        |
+| backlink gap data           | Find domains linking to competitors but not you               | **#1 prospect list** for outreach — replaces expensive Ahrefs subscription |
+| new/lost backlink tracking  | Monitor which links you've gained and lost                    | Catch lost links early, understand what's working                          |
+| competitor data             | Identify who you're competing against                         | Essential for gap analysis and content strategy                            |
+| competitor change feed      | Detect new competitor content                                 | Find content ideas that earn links in your niche                           |
+| opportunity detection       | Find pages ranking 4-20 that need links                       | **Prioritize link building** to pages closest to page 1                    |
+| keyword cluster data        | Identify topic clusters to build authority                    | **Focus link building** on one topic cluster at a time                     |
+| page-level SEO data         | Per-page backlink metrics                                     | See which pages need more links                                            |
+| internal link data          | Internal link structure                                       | Ensure new backlink equity flows to target pages                           |
+| keyword search              | Find keywords worth targeting                                 | **Don't waste links** on zero-volume keywords                              |
+| SERP feature detection      | Featured snippet opportunities                                | New sites can win snippets before ranking organically                      |
 
 ### New Site Specific AI Prompts
 
 your SEO data source's link building prompt should generate phase-appropriate strategies:
 
 **For DR 0-5 sites:**
+
 - Focus output on entity stacking checklist + first 10 link targets
 - Emphasize testimonial and relationship-based opportunities
 - Provide specific platform list based on niche
 
 **For DR 5-10 sites:**
+
 - Shift to content creation + outreach strategies
 - Provide competitor gap analysis with prioritized target list
 - Include outreach email templates
 
 **For DR 10+ sites:**
+
 - Full tactic recommendation based on data
 - Budget-optimized strategy
 - Advanced techniques (digital PR, partnerships)
@@ -697,6 +758,7 @@ your SEO data source's link building prompt should generate phase-appropriate st
 ## Week-by-Week Quick Reference Checklist
 
 ### Week 1
+
 - [ ] Register all social profiles (consistent branding)
 - [ ] Set up Google Business Profile
 - [ ] Add Organization schema to website
@@ -704,24 +766,28 @@ your SEO data source's link building prompt should generate phase-appropriate st
 - [ ] Identify 10 people who can link to you
 
 ### Week 2
+
 - [ ] Create Crunchbase, About.me, Medium profiles
 - [ ] Submit to 10-15 relevant directories
 - [ ] Publish 1 article on Medium linking back
 - [ ] Distribute press release (if budget allows)
 
 ### Week 3
+
 - [ ] Write testimonials for 10 tools/services you use
 - [ ] Email network contacts for launch mentions
 - [ ] Start participating in 2-3 relevant communities
 - [ ] Begin competitor backlink research
 
 ### Week 4
+
 - [ ] Follow up on testimonials and network requests
 - [ ] Pitch first guest post (target DR 20-35 niche site)
 - [ ] Sign up for HARO/Connectively/Qwoted
 - [ ] Start planning first linkable asset
 
 ### Week 5-8
+
 - [ ] Create and publish linkable asset #1
 - [ ] Send 20-30 outreach emails based on competitor gap
 - [ ] Respond to 10+ journalist queries
@@ -729,6 +795,7 @@ your SEO data source's link building prompt should generate phase-appropriate st
 - [ ] Build broken link replacement opportunities
 
 ### Week 9-12
+
 - [ ] Create linkable asset #2 (different format)
 - [ ] Begin resource page outreach
 - [ ] Secure 2-3 more guest posts
@@ -736,6 +803,7 @@ your SEO data source's link building prompt should generate phase-appropriate st
 - [ ] Review and optimize: what's working? Double down
 
 ### Month 4-6
+
 - [ ] 5-10 new quality links per month
 - [ ] Reactive digital PR (respond to industry news)
 - [ ] Niche edit opportunities
@@ -743,6 +811,7 @@ your SEO data source's link building prompt should generate phase-appropriate st
 - [ ] Internal link optimization
 
 ### Month 7-12
+
 - [ ] Scale to 10-20 new quality links per month
 - [ ] Proactive digital PR campaigns
 - [ ] Skyscraper technique on proven topics
@@ -753,50 +822,50 @@ your SEO data source's link building prompt should generate phase-appropriate st
 
 ## Time & Cost Estimate
 
-| Aspect | Estimate |
-|--------|----------|
-| Initial setup (month 1) | 25-35 hours |
-| Monthly maintenance (month 2-6) | 15-20 hours |
-| Monthly maintenance (month 7-12) | 10-15 hours |
-| Minimum cost | €0 (pure sweat equity) |
-| Recommended budget | €100-500/month |
-| Aggressive budget | €2,000+/month |
+| Aspect                           | Estimate               |
+| -------------------------------- | ---------------------- |
+| Initial setup (month 1)          | 25-35 hours            |
+| Monthly maintenance (month 2-6)  | 15-20 hours            |
+| Monthly maintenance (month 7-12) | 10-15 hours            |
+| Minimum cost                     | €0 (pure sweat equity) |
+| Recommended budget               | €100-500/month         |
+| Aggressive budget                | €2,000+/month          |
 
 ## Expected Results
 
-| Milestone | Timeline | What You Should See |
-|-----------|----------|-------------------|
-| First indexing improvements | Week 2-3 | Pages indexed faster, appearing in Search Console |
-| First ranking signals | Month 2-3 | Long-tail keywords appearing on pages 3-5 |
-| DR 10 | Month 2-4 | Depends on niche competitiveness |
-| First page 1 rankings | Month 3-6 | Low-competition, long-tail keywords |
-| DR 20 | Month 4-8 | Starting to unlock medium-competition keywords |
-| Organic traffic inflection point | Month 6-9 | Compounding growth becomes visible |
-| DR 30 | Month 8-14 | Competitive keywords become achievable |
-| Self-sustaining link attraction | Month 10-18 | Content starts earning links without outreach |
+| Milestone                        | Timeline    | What You Should See                               |
+| -------------------------------- | ----------- | ------------------------------------------------- |
+| First indexing improvements      | Week 2-3    | Pages indexed faster, appearing in Search Console |
+| First ranking signals            | Month 2-3   | Long-tail keywords appearing on pages 3-5         |
+| DR 10                            | Month 2-4   | Depends on niche competitiveness                  |
+| First page 1 rankings            | Month 3-6   | Low-competition, long-tail keywords               |
+| DR 20                            | Month 4-8   | Starting to unlock medium-competition keywords    |
+| Organic traffic inflection point | Month 6-9   | Compounding growth becomes visible                |
+| DR 30                            | Month 8-14  | Competitive keywords become achievable            |
+| Self-sustaining link attraction  | Month 10-18 | Content starts earning links without outreach     |
 
 ## Tools Needed
 
-| Tool | Purpose | Cost | Phase |
-|------|---------|------|-------|
-| **your SEO data source** | Backlink analysis, competitor gap, keyword research | Included | All |
-| **Google Search Console** | Monitor indexing, rankings, discover link opportunities | Free | All |
-| **Google Alerts** | Monitor brand mentions and competitor mentions | Free | All |
-| **Ahrefs Webmaster Tools** | Free backlink checker and site audit | Free | All |
-| **HARO/Qwoted/Featured** | Journalist query platforms | Free-€50/mo | Month 2+ |
-| **Hunter.io** | Find email addresses for outreach | Free tier | Month 2+ |
-| **Pitchbox/BuzzStream** | Outreach management | €100/mo | Month 4+ (if budget allows) |
-| **Canva** | Brand assets, infographics | Free tier | All |
-| **Schema markup generator** | Organization/LocalBusiness schema | Free | Week 1 |
+| Tool                        | Purpose                                                 | Cost        | Phase                       |
+| --------------------------- | ------------------------------------------------------- | ----------- | --------------------------- |
+| **your SEO data source**    | Backlink analysis, competitor gap, keyword research     | Included    | All                         |
+| **Google Search Console**   | Monitor indexing, rankings, discover link opportunities | Free        | All                         |
+| **Google Alerts**           | Monitor brand mentions and competitor mentions          | Free        | All                         |
+| **Ahrefs Webmaster Tools**  | Free backlink checker and site audit                    | Free        | All                         |
+| **HARO/Qwoted/Featured**    | Journalist query platforms                              | Free-€50/mo | Month 2+                    |
+| **Hunter.io**               | Find email addresses for outreach                       | Free tier   | Month 2+                    |
+| **Pitchbox/BuzzStream**     | Outreach management                                     | €100/mo     | Month 4+ (if budget allows) |
+| **Canva**                   | Brand assets, infographics                              | Free tier   | All                         |
+| **Schema markup generator** | Organization/LocalBusiness schema                       | Free        | Week 1                      |
 
 ## Best For Which Phase
 
-| Phase | Relevance |
-|-------|-----------|
-| **DR 0-10** | ⭐⭐⭐⭐⭐ THIS IS THE GUIDE — follow it completely |
-| **DR 10-30** | ⭐⭐⭐⭐ — Use months 4-9 section as your roadmap |
-| **DR 30+** | ⭐⭐ — You've graduated. Focus on tactics 5-7, 11-12, 14-15 individually |
+| Phase        | Relevance                                                                |
+| ------------ | ------------------------------------------------------------------------ |
+| **DR 0-10**  | ⭐⭐⭐⭐⭐ THIS IS THE GUIDE — follow it completely                      |
+| **DR 10-30** | ⭐⭐⭐⭐ — Use months 4-9 section as your roadmap                        |
+| **DR 30+**   | ⭐⭐ — You've graduated. Focus on tactics 5-7, 11-12, 14-15 individually |
 
 ---
 
-*This is the most comprehensive link building guide for new sites in the research collection. It integrates all 17 individual tactics into a coherent timeline specifically designed for sites starting from zero authority. Last updated: March 2026.*
+_This is the most comprehensive link building guide for new sites in the research collection. It integrates all 17 individual tactics into a coherent timeline specifically designed for sites starting from zero authority. Last updated: March 2026._

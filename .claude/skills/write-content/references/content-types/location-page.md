@@ -1,9 +1,11 @@
 # Technique 37: Location / Service Area Pages
 
 ## What It Is
+
 Locally-optimized content targeting geographic-specific searches for services or businesses. Each page focuses on one specific location or service area. Captures "[service] [city]", "[service] in de buurt", and "[service] [region]" searches. Critical for local SEO and Google Maps visibility.
 
 ## When to Use
+
 Local/transactional intent -- user wants a service or business in a specific geographic area. Create one page per location you serve. Must be genuinely unique per location -- Google penalizes doorway pages with only the city name swapped.
 
 ## Structure Template
@@ -56,25 +58,30 @@ H2: Contact in [Location]
 ```
 
 ## Word Count
+
 1,200-1,500 words (substantial enough to be genuinely useful, not so long that it's clearly padded)
 
 ## Schema Markup
+
 - **Primary:** LocalBusiness (name, address, telephone, geo, openingHours)
 - **Secondary:** Service (serviceType, areaServed, provider)
 - **Tertiary:** FAQ (for the FAQ section)
 
 ## Featured Snippet Strategy
+
 - **Format:** Paragraph snippet for "[service] [location]" queries
 - **Target:** The opening section describing the service in context of the location
 - **Tip:** Include the location name naturally in the first 50 words
 
 ## CTA Placement
+
 - **Hero section:** Location-specific CTA above the fold
 - **After local projects:** Social proof reinforcement CTA
 - **After pricing:** "Get a quote for [Location]" CTA
 - **End of page:** Full contact form with address/phone
 
 ## Internal Linking Strategy
+
 - Link to main service page for detailed service information
 - Link to nearby location pages ("Ook actief in [nearby city]")
 - Link to relevant case studies from the area
@@ -82,6 +89,7 @@ H2: Contact in [Location]
 - Receive links from main service page, city hub page, and blog content
 
 ## Key Success Factors
+
 1. **Genuinely unique content per location:** Each page must have location-specific information, not just city-name swaps
 2. **Local case studies or projects:** Real examples from the area prove local presence
 3. **Location-specific data:** Local pricing, regulations, permits, climate factors
@@ -90,6 +98,7 @@ H2: Contact in [Location]
 6. **Local schema markup:** Complete LocalBusiness schema with geo coordinates
 
 ## Common Mistakes
+
 - **Doorway pages:** Identical content with only the city name changed (Google penalty risk)
 - No local case studies or project examples (no proof of local presence)
 - Missing LocalBusiness schema (loses local pack eligibility)
@@ -99,6 +108,7 @@ H2: Contact in [Location]
 - Not including location-specific pricing or regulatory information
 
 ## Example Topics by Niche
+
 - Energy: "Zonnepanelen installatie Rotterdam -- lokale installateurs en prijzen"
 - Telecom: "Glasvezel beschikbaarheid Amsterdam -- check per postcode"
 - SaaS: "SEO bureau Utrecht -- lokaal online marketing advies"

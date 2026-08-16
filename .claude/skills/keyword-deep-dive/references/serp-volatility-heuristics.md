@@ -30,13 +30,13 @@ No tool needed for any of these.
 
 Pick the level that fits the majority of signals, not the worst case.
 
-**Level 1: Stable.** Mixed publication years across top 10, minimal freshness tags, no news carousel, Wayback confirms same URLs 6 months ago. *Implication:* Safe to invest in depth. One well-built page will hold. 12-month traffic forecasts are reasonable. Update annually.
+**Level 1: Stable.** Mixed publication years across top 10, minimal freshness tags, no news carousel, Wayback confirms same URLs 6 months ago. _Implication:_ Safe to invest in depth. One well-built page will hold. 12-month traffic forecasts are reasonable. Update annually.
 
-**Level 2: Moderate.** Some freshness tags on 2-3 top results, mostly stable URL set but positions 3-10 swap weekly, no news carousel. *Implication:* Target top 5 with depth; expect to move within it. Plan quarterly refreshes. Forecasts should assume ±30% variance month-over-month.
+**Level 2: Moderate.** Some freshness tags on 2-3 top results, mostly stable URL set but positions 3-10 swap weekly, no news carousel. _Implication:_ Target top 5 with depth; expect to move within it. Plan quarterly refreshes. Forecasts should assume ±30% variance month-over-month.
 
-**Level 3: Turbulent.** Every top 5 result carries a recent freshness tag, and multiple pages have publication dates inside 90 days. The query sits in a rapidly changing space (SaaS pricing, trending topics). *Implication:* Either commit to monthly updates or don't target. Publishing once and leaving is a losing move. Forecasts unreliable beyond 60 days.
+**Level 3: Turbulent.** Every top 5 result carries a recent freshness tag, and multiple pages have publication dates inside 90 days. The query sits in a rapidly changing space (SaaS pricing, trending topics). _Implication:_ Either commit to monthly updates or don't target. Publishing once and leaving is a losing move. Forecasts unreliable beyond 60 days.
 
-**Level 4: Untrackable.** Top Stories carousel dominates, all results from major news publishers, publication dates inside 2 weeks. *Implication:* Don't target for evergreen SEO. These SERPs belong to Google News publishers. Skip and target an evergreen angle of the same topic instead.
+**Level 4: Untrackable.** Top Stories carousel dominates, all results from major news publishers, publication dates inside 2 weeks. _Implication:_ Don't target for evergreen SEO. These SERPs belong to Google News publishers. Skip and target an evergreen angle of the same topic instead.
 
 ## Tools That Help (Not Required)
 

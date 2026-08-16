@@ -1,9 +1,11 @@
 # Technique 20: Ultimate Guide / Pillar Pages
 
 ## What It Is
+
 Comprehensive, long-form content that covers an entire topic in depth and serves as the central hub of a topic cluster. Captures broad head terms and establishes topical authority.
 
 ## When to Use
+
 Informational/navigational intent -- user wants a complete overview of a broad topic. Use when building topic clusters. The pillar page links to and from all supporting content (how-tos, definitions, comparisons, FAQs).
 
 ## Structure Template
@@ -53,24 +55,29 @@ H2: Resources and next steps
 ```
 
 ## Word Count
+
 3,000-5,000+ words (comprehensive but not padded -- every section earns its place)
 
 ## Schema Markup
+
 - **Primary:** Article (with headline, author, datePublished, dateModified)
 - **Secondary:** FAQ (for the FAQ section)
 
 ## Featured Snippet Strategy
+
 - **Format:** Paragraph snippet for the overview, list snippets for subtopic sections
 - **Target:** The "What is" section for definition snippets, ToC for list snippets
 - **Tip:** Each H2 section should have a self-contained opening paragraph that can stand alone as a snippet
 
 ## CTA Placement
+
 - After table of contents: free resource, checklist, or tool
 - Mid-article (every 800-1,000 words): contextual CTAs matching section topic
 - End of article: primary conversion CTA (consultation, trial, comparison tool)
 - Sticky sidebar CTA on desktop
 
 ## Internal Linking Strategy
+
 - **Hub model:** Link OUT to every cluster article (how-tos, definitions, comparisons, FAQs)
 - **Receive links:** Every cluster article links back to this pillar page
 - **Cross-pillar:** Link to related pillar pages for adjacent topic clusters
@@ -78,6 +85,7 @@ H2: Resources and next steps
 - **Anchor text variety:** Use descriptive anchor text, not "click here" or "read more"
 
 ## Key Success Factors
+
 1. **Table of contents is essential:** Users and Google both need to navigate 3,000+ word pages
 2. **Overview, not exhaustive:** Cover each subtopic enough to be useful, then link to the deep-dive
 3. **Regular updates:** Pillar pages must be updated at least quarterly to maintain rankings
@@ -87,6 +95,7 @@ H2: Resources and next steps
 7. **E-E-A-T signals:** Author byline, publication date, update date, methodology notes
 
 ## Common Mistakes
+
 - Writing 5,000 words of shallow content instead of 3,000 words of substantive content
 - Not linking to cluster articles (defeats the purpose of a pillar page)
 - No table of contents (readers bounce from long pages without navigation)
@@ -96,6 +105,7 @@ H2: Resources and next steps
 - No visual elements (wall-of-text pillar pages have high bounce rates)
 
 ## Anti-AI Focus
+
 Pillar pages are less commonly AI-generated wholesale due to their length and complexity, but individual sections can still read as generic. To ensure authenticity:
 
 - **Inject editorial perspective throughout.** Each section overview should reflect a point of view or prioritization that comes from real expertise, not just neutral summarization.
@@ -105,6 +115,7 @@ Pillar pages are less commonly AI-generated wholesale due to their length and co
 - **Update visibly.** Show a changelog or "last updated" note with specific details about what changed and why. AI-generated content is typically published once and never revisited.
 
 ## Example Topics by Niche
+
 - Energy: "Alles over zonnepanelen: kosten, subsidie, terugverdientijd en installatie"
 - Telecom: "Internet in Nederland: alles over providers, snelheden en abonnementen"
 - SaaS: "The complete guide to marketing automation in 2026"

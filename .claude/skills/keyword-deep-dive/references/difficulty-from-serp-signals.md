@@ -6,7 +6,7 @@ How to classify a keyword as Easy, Moderate, or Hard by reading the actual SERP 
 
 KD scores from Ahrefs, Moz, and Semrush are modeled estimates built from different formulas. Ahrefs leans primarily on referring domains; Semrush blends backlink strength with keyword characteristics. There's no industry-standard formula, and [Keywords Everywhere's comparison](https://keywordseverywhere.com/blog/how-the-top-tools-calculate-kd/) notes the tools can differ by 30+ points on the same keyword. A KD of 15 in one tool can be a KD of 55 in another. That's not a minor disagreement; it's a signal that the metric isn't measuring what you care about.
 
-What you actually care about: *can a site like mine realistically earn a page-1 position in the next 6-12 months?* That's a question about the specific SERP and your specific position on it, not a single number. The rubric below replaces the KD score with a signal count you can read from the live SERP in 10 minutes.
+What you actually care about: _can a site like mine realistically earn a page-1 position in the next 6-12 months?_ That's a question about the specific SERP and your specific position on it, not a single number. The rubric below replaces the KD score with a signal count you can read from the live SERP in 10 minutes.
 
 ## Easy Signals
 

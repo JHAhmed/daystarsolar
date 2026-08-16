@@ -4,7 +4,8 @@
 	let { color = 'currentColor', class: className = '', ...rest } = $props();
 </script>
 
-<svg {...rest}
+<svg
+	{...rest}
 	xmlns="http://www.w3.org/2000/svg"
 	fill={color}
 	viewBox="0 0 24 24"

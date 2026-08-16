@@ -5,6 +5,7 @@ Link velocity is the rate at which a site acquires new backlinks. Google evaluat
 ## Safe pace by phase
 
 **Foundation (DR 0-15, new site)**
+
 - Month 1: 15-25 links from entity stacking and citations. One-time setup on high-authority platforms (Google Business, LinkedIn, Crunchbase, Wikidata, industry directories). The burst is explained by the launch.
 - Months 2-3: 5-10 quality links per month.
 - Months 4-6: 8-15 per month as momentum builds.

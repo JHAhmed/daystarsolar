@@ -1,9 +1,11 @@
 # Tactic 01: Entity Stacking & Brand Foundations
 
 ## What It Is
+
 Entity stacking is the process of creating consistent brand presence across 20+ authoritative platforms to establish your business as a recognized "entity" in Google's Knowledge Graph. This includes social profiles, business directories, and Web 2.0 properties — all with consistent NAP (Name, Address, Phone) and brand information.
 
 ## Why It Works
+
 Google's algorithm increasingly relies on entity recognition. The 2024 algorithm leak confirmed that Google builds entity profiles from cross-platform signals. When Google sees your brand consistently referenced across LinkedIn, Crunchbase, YouTube, Medium, etc., it begins to trust your site as a real, legitimate entity rather than a thin affiliate or spam site. This is the digital equivalent of "being a real business."
 
 **Algorithm reasoning:** Google's Knowledge Graph connects entities across the web. More consistent signals = stronger entity confidence = faster trust building. Without entity stacking, aggressive link building looks unnatural to Google because there's no supporting entity footprint.
@@ -11,6 +13,7 @@ Google's algorithm increasingly relies on entity recognition. The 2024 algorithm
 ## Step-by-Step Process
 
 ### Week 1: Core Platforms (4 hours)
+
 1. **Google Business Profile** — Even for non-local businesses. Verify with postcard or phone
 2. **LinkedIn Company Page** — Complete all fields, add logo, banner, description
 3. **Facebook Business Page** — With complete info, consistent branding
@@ -20,6 +23,7 @@ Google's algorithm increasingly relies on entity recognition. The 2024 algorithm
 7. **Instagram Business** — Link in bio
 
 ### Week 2: Authority Platforms (3 hours)
+
 8. **Crunchbase** — Free basic listing, great for SaaS/startups
 9. **About.me** — Personal brand page
 10. **Medium** — Publish at least 1 article linking back
@@ -29,6 +33,7 @@ Google's algorithm increasingly relies on entity recognition. The 2024 algorithm
 14. **G2/Capterra** — For software companies
 
 ### Week 3: Schema & Verification (2 hours)
+
 15. Add **Organization schema markup** to your website
 16. Add **LocalBusiness schema** if applicable
 17. Add **sameAs** properties linking to all profiles
@@ -62,11 +67,11 @@ Google's algorithm increasingly relies on entity recognition. The 2024 algorithm
 
 ## Time & Cost Estimate
 
-| Aspect | Estimate |
-|--------|----------|
-| Initial setup | 6-10 hours (one-time) |
-| Cost | €0 (all free platforms) |
-| Maintenance | 1 hour/month (profile updates) |
+| Aspect        | Estimate                       |
+| ------------- | ------------------------------ |
+| Initial setup | 6-10 hours (one-time)          |
+| Cost          | €0 (all free platforms)        |
+| Maintenance   | 1 hour/month (profile updates) |
 
 ## Expected Results
 
@@ -77,13 +82,13 @@ Google's algorithm increasingly relies on entity recognition. The 2024 algorithm
 
 ## Tools Needed
 
-| Tool | Purpose | Cost |
-|------|---------|------|
-| **Whitespark** | NAP consistency checking | Free tier available |
-| **Schema.org markup generator** | Create Organization/LocalBusiness schema | Free |
-| **Google Search Console** | Monitor entity-related search appearance | Free |
-| **BrightLocal** | Citation tracking | $39/month |
-| **Canva** | Consistent brand assets for all profiles | Free tier |
+| Tool                            | Purpose                                  | Cost                |
+| ------------------------------- | ---------------------------------------- | ------------------- |
+| **Whitespark**                  | NAP consistency checking                 | Free tier available |
+| **Schema.org markup generator** | Create Organization/LocalBusiness schema | Free                |
+| **Google Search Console**       | Monitor entity-related search appearance | Free                |
+| **BrightLocal**                 | Citation tracking                        | $39/month           |
+| **Canva**                       | Consistent brand assets for all profiles | Free tier           |
 
 ## How Data Helps
 
@@ -100,8 +105,8 @@ Google's algorithm increasingly relies on entity recognition. The 2024 algorithm
 
 ## Best For Which Phase
 
-| Phase | Relevance |
-|-------|-----------|
-| **DR 0-10** | ⭐⭐⭐⭐⭐ CRITICAL — Do this FIRST before anything else |
-| **DR 10-30** | ⭐⭐⭐ — Fill gaps in your entity profile |
-| **DR 30+** | ⭐⭐ — Maintain and expand to niche-specific platforms |
+| Phase        | Relevance                                                |
+| ------------ | -------------------------------------------------------- |
+| **DR 0-10**  | ⭐⭐⭐⭐⭐ CRITICAL — Do this FIRST before anything else |
+| **DR 10-30** | ⭐⭐⭐ — Fill gaps in your entity profile                |
+| **DR 30+**   | ⭐⭐ — Maintain and expand to niche-specific platforms   |

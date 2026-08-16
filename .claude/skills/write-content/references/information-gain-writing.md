@@ -1,9 +1,11 @@
 # Technique 01: Information Gain Writing
 
 ## What It Is
+
 Writing content that adds genuinely NEW information compared to what already ranks for a keyword. Based on Google's Information Gain patent (granted June 2024), which scores how much additional value a page provides beyond existing search results.
 
 ## Why It Works
+
 Google's algorithm compares your content against other pages the user has already seen on the same topic. Pages that say the same thing as the top 10 get low Information Gain scores. Pages that add unique data, perspectives, or insights get high scores — and rank higher.
 
 The API leak confirmed this via `OriginalContentScore` — a separate metric that evaluates content uniqueness across the index.
@@ -13,6 +15,7 @@ The API leak confirmed this via `OriginalContentScore` — a separate metric tha
 ## Step-by-Step Process
 
 ### Step 1: SERP Gap Analysis
+
 1. Search the target keyword and read the top 10 results fully
 2. Create a spreadsheet: rows = topics covered, columns = each competitor
 3. Mark what each competitor covers and — critically — what they DON'T cover
@@ -20,6 +23,7 @@ The API leak confirmed this via `OriginalContentScore` — a separate metric tha
 5. Note the "missing angles": perspectives, data types, or use cases nobody addresses
 
 ### Step 2: Unique Value Identification
+
 6. Ask: "What do I know about this topic that these 10 pages don't include?"
 7. Sources of unique value:
    - **First-party data**: "We analyzed 500 customer accounts..."
@@ -32,12 +36,14 @@ The API leak confirmed this via `OriginalContentScore` — a separate metric tha
 8. Select 3-5 information gain elements to include
 
 ### Step 3: Content Architecture
+
 9. Structure the article to lead with unique insights, not rehashed basics
 10. Place information gain elements in the first 30% of the content (Google evaluates engagement early)
 11. Use unique headings that signal novel content (not generic "What is X?" and "Benefits of X")
 12. Plan specific data points, quotes, and examples for each section
 
 ### Step 4: Writing with Information Gain
+
 13. Every section must answer: "What can the reader ONLY learn here?"
 14. Replace generic statements with specific ones:
     - Bad: "Many companies have seen success with this approach"
@@ -71,9 +77,10 @@ The Information Gain patent (granted June 2024) explicitly describes the scoring
 
 > "Information gain scores indicate how much more information one source may bring to a person who has seen other sources on the same topic. Pages with higher information gain scores may be ranked higher."
 
-This means Google is not just comparing your page to competitors -- it's comparing it to pages the *specific user* has already seen in their search session. Returning to search after reading 3 similar articles? The 4th needs to add something NEW.
+This means Google is not just comparing your page to competitors -- it's comparing it to pages the _specific user_ has already seen in their search session. Returning to search after reading 3 similar articles? The 4th needs to add something NEW.
 
 **Tools Used:**
+
 - keyword search — identify target keyword landscape
 - competitor data — analyze who ranks for this topic
 - opportunity detection — find keywords where we rank 4-20

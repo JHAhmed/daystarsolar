@@ -14,11 +14,11 @@ That's the theory. In practice there are five situations where it doesn't hold.
 
 A site with no pages doesn't have the crawl budget to get 3-4 spokes indexed before the hub lands. You'll spend a month publishing spokes that aren't even in the index yet.
 
-**Do this instead:** publish 1-2 spokes to establish the domain, then the hub, then scale. The point isn't to have mature spokes before the hub; it's to have *any* indexed content the hub can link to.
+**Do this instead:** publish 1-2 spokes to establish the domain, then the hub, then scale. The point isn't to have mature spokes before the hub; it's to have _any_ indexed content the hub can link to.
 
 ### 2. Site with existing content in the space
 
-If the site already has 5-10 articles loosely in the topic area, don't treat this as a blank-slate cluster. Audit first. One of those articles may already function as a hub (broad intent, high traffic, ranks for the seed keyword), in which case you're *upgrading* the existing page and producing net-new spokes around it. Or an existing article may already function as a high-quality spoke, becoming row 1 of your spoke list so you skip writing that one.
+If the site already has 5-10 articles loosely in the topic area, don't treat this as a blank-slate cluster. Audit first. One of those articles may already function as a hub (broad intent, high traffic, ranks for the seed keyword), in which case you're _upgrading_ the existing page and producing net-new spokes around it. Or an existing article may already function as a high-quality spoke, becoming row 1 of your spoke list so you skip writing that one.
 
 **Do this instead:** audit existing URLs against the planned cluster before producing any new content. Publishing a fresh hub that competes with your own existing page is cannibalization.
 
@@ -64,4 +64,4 @@ These numbers assume a normal-authority domain. New domains are slower, establis
 
 ## Cross-reference
 
-The general theory of hub-and-spoke clustering lives in [topic-cluster-strategy.md](./topic-cluster-strategy.md). That file explains *why* clusters work. This file is the operational decision layer: given that you've chosen to build a cluster, which order do you ship the pieces?
+The general theory of hub-and-spoke clustering lives in [topic-cluster-strategy.md](./topic-cluster-strategy.md). That file explains _why_ clusters work. This file is the operational decision layer: given that you've chosen to build a cluster, which order do you ship the pieces?

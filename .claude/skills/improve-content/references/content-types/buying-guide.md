@@ -1,9 +1,11 @@
 # Technique 30: Buying Guides
 
 ## What It Is
+
 Educational content that helps users understand what to look for when purchasing a product or service category. Focuses on criteria, considerations, and decision-making framework rather than specific product recommendations.
 
 ## When to Use
+
 Commercial investigation intent -- user is early in the purchase journey and needs to understand the category before evaluating specific options. Captures "where to buy [category]", "[category] kiezen", "what to look for in [category]" searches.
 
 ## Structure Template
@@ -56,23 +58,28 @@ H2: Ready to choose?
 ```
 
 ## Word Count
+
 2,000-3,500 words (comprehensive enough to cover all buying criteria)
 
 ## Schema Markup
+
 - **Primary:** Article (with author, datePublished, dateModified)
 - **Secondary:** FAQ (for FAQ section)
 
 ## Featured Snippet Strategy
+
 - **Format:** List snippet for "what to look for" queries
 - **Target:** The quick checklist section at the top
 - **Alternative:** Table snippet for the budget guide with price ranges
 
 ## CTA Placement
+
 - After quick checklist: downloadable PDF checklist
 - After budget guide: comparison tool or calculator
 - End of article: links to "best of" roundup and specific product reviews
 
 ## Internal Linking Strategy
+
 - Link to "best of" roundups for specific recommendations
 - Link to individual product reviews for deep dives
 - Link to comparison articles for head-to-head evaluations
@@ -81,6 +88,7 @@ H2: Ready to choose?
 - Receive links from pillar pages and product/category pages
 
 ## Key Success Factors
+
 1. **Criteria-focused, not product-focused:** Teach how to evaluate, do not recommend specific products
 2. **Specific benchmarks:** "Look for at least 370Wp per panel" not "look for good performance"
 3. **Budget ranges with context:** Price alone means nothing without explaining what you get at each tier
@@ -90,6 +98,7 @@ H2: Ready to choose?
 7. **Seasonal/timing advice:** When to buy for the best deal (Dutch market-specific)
 
 ## Common Mistakes
+
 - Recommending specific products (that is a roundup, not a buying guide)
 - Vague criteria without specific numbers or benchmarks
 - Only covering purchase price, not total cost of ownership
@@ -99,6 +108,7 @@ H2: Ready to choose?
 - Not addressing the "where to buy" question
 
 ## Anti-AI Focus
+
 Buying guides require domain expertise to write well because the value lies in knowing what actually matters versus what sounds important on paper. To ensure your guide signals genuine expertise:
 
 - **Include benchmarks from real market research.** "In the Netherlands, a quality solar panel installation costs between 4,000 and 8,000 euros for a typical household as of Q1 2026" -- specific, current, localized numbers that AI would need to guess at.
@@ -109,6 +119,7 @@ Buying guides require domain expertise to write well because the value lies in k
 - **Add the "questions to ask the seller" section.** Specific questions that expose quality differences ("Ask for the panel degradation rate after 25 years -- anything above 0.5% per year is below industry standard") demonstrate insider knowledge.
 
 ## Example Topics by Niche
+
 - Energy: "Zonnepanelen kopen: 8 criteria waar je op moet letten in 2026"
 - Telecom: "Internet abonnement kiezen: de complete koopwijzer"
 - SaaS: "How to choose a CRM: the complete buying guide for SMBs"

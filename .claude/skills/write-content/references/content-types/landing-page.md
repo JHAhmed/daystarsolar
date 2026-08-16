@@ -1,9 +1,11 @@
 # Technique 33: Landing Pages
 
 ## What It Is
+
 Conversion-focused pages designed to turn visitors into leads or customers. Minimal navigation, single clear CTA, and persuasive copy. Can target both organic search and paid traffic. Captures "[service] aanvragen", "[tool] proberen", and "[action] offerte" searches.
 
 ## When to Use
+
 Transactional intent -- user is ready to take action (sign up, request a quote, start a trial, download). Use for campaigns, specific offers, or high-intent keywords where the goal is conversion, not education.
 
 ## Structure Template
@@ -48,19 +50,23 @@ H2: FAQ (optional, below fold)
 ```
 
 ## Word Count
+
 800-1,200 words (every word must serve the conversion goal -- ruthlessly cut anything that does not)
 
 ## Schema Markup
+
 - **Primary:** WebPage or Product/Service (depending on what is offered)
 - **Secondary:** FAQ (if FAQ section is included)
 - **Tertiary:** Organization (trust signals)
 
 ## Featured Snippet Strategy
+
 - **Format:** Not the primary goal for landing pages
 - **Target:** Focus on ranking for transactional keywords, not snippet capture
 - **Tip:** The H1 and meta description should include the primary transactional keyword
 
 ## CTA Placement
+
 - **Hero section:** Primary CTA above the fold (most important placement)
 - **After benefits:** Reinforcement CTA
 - **After social proof:** Strongest conversion point -- repeat primary CTA
@@ -68,6 +74,7 @@ H2: FAQ (optional, below fold)
 - **Maximum 1 CTA type:** Do not offer multiple different actions -- one page, one goal
 
 ## Internal Linking Strategy
+
 - **Minimal outbound links:** Do not link away from the page unnecessarily
 - Link to terms, privacy, and legal pages in footer only
 - Receive links from blog content, email campaigns, and paid traffic
@@ -75,6 +82,7 @@ H2: FAQ (optional, below fold)
 - Do not include main site navigation if possible (focused experience)
 
 ## Key Success Factors
+
 1. **One page, one goal:** Every element must serve the single conversion objective
 2. **Above-the-fold CTA:** The primary CTA must be visible without scrolling
 3. **Social proof is non-negotiable:** Testimonials, ratings, or customer counts build trust
@@ -83,6 +91,7 @@ H2: FAQ (optional, below fold)
 6. **Mobile-first design:** Majority of traffic is mobile -- design for thumb-friendly CTAs
 
 ## Common Mistakes
+
 - Too many CTAs or competing actions (confuses the visitor)
 - Wall of text without visual hierarchy (no one reads landing pages linearly)
 - No social proof (claims without evidence do not convert)
@@ -92,6 +101,7 @@ H2: FAQ (optional, below fold)
 - Not testing variations (landing pages should always be A/B tested)
 
 ## Example Topics by Niche
+
 - Energy: "Energievergelijker -- bespaar tot 30% op stroom en gas"
 - Telecom: "Glasvezel aanvragen -- check beschikbaarheid op jouw adres"
 - SaaS: "Start your free 14-day trial -- no credit card required"

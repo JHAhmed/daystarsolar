@@ -25,7 +25,7 @@ Topic: bootstrapping a B2B tool to $100K ARR. The user interviewed is a founder 
 
 Cold outbound works in year one and then stops working, but not because of deliverability. It stops because the founder runs out of interesting things to say. Most advice tells you to scale outbound to 500 emails a day. The real constraint after month six is that your own product usage doesn't produce enough new angles for a second email to the same prospect. The founders who plateau at $40-60K ARR are usually the ones still writing generic outbound. The ones who break past $100K started publishing case studies instead and letting warm inbound replace cold around month eight.
 
-*Why this section matters for downstream writing: this gives the article a thesis. The writer can now lead with "cold outbound works until it doesn't, and it stops working for a specific reason nobody talks about" instead of yet another generic "here's how I got to $100K" post. The contrarian take sets the angle for every other paragraph in the eventual article.*
+_Why this section matters for downstream writing: this gives the article a thesis. The writer can now lead with "cold outbound works until it doesn't, and it stops working for a specific reason nobody talks about" instead of yet another generic "here's how I got to $100K" post. The contrarian take sets the angle for every other paragraph in the eventual article._
 
 ### Specific examples and data points
 
@@ -36,7 +36,7 @@ Cold outbound works in year one and then stops working, but not because of deliv
 - CAC in outbound phase: €118. CAC once content took over: €31
 - Biggest wasted spend: €3,400 on a Facebook ads experiment in summer 2023 that produced zero paying customers
 
-*Why this section matters for downstream writing: named subreddits, specific date ranges, euro amounts, and conversion percentages are Tier 1 information gain. A generic AI can't invent "€3,400 on Facebook ads in summer 2023" convincingly, and if it does, it's wrong. The writer should weave these numbers into arguments, not dump them into a "my results" box at the bottom. Every one of these data points can anchor a section.*
+_Why this section matters for downstream writing: named subreddits, specific date ranges, euro amounts, and conversion percentages are Tier 1 information gain. A generic AI can't invent "€3,400 on Facebook ads in summer 2023" convincingly, and if it does, it's wrong. The writer should weave these numbers into arguments, not dump them into a "my results" box at the bottom. Every one of these data points can anchor a section._
 
 ### Experience details
 
@@ -46,7 +46,7 @@ Cold outbound works in year one and then stops working, but not because of deliv
 - Failure story: spent two months in mid-2024 trying to build an annual plan discount flow because a consultant said it would raise ACV. It did, by 18%, but also doubled the refund rate because customers signed up annually without understanding the product. Killed it in September.
 - Unexpected lesson: the founder's personal LinkedIn drove more demo requests than the company LinkedIn by a factor of roughly six, even at similar follower counts. Company pages are noise; personal pages are signal.
 
-*Why this section matters for downstream writing: the "failure story" and "unexpected lesson" bullets are exactly what the write-content skill will turn into the "what went wrong" paragraphs that build EEAT trust. A specific named tool (Lemlist) with a specific named problem (deliverability in month three, two blacklisted domains) is more believable and more rankable than "we tried a cold outreach tool and it didn't work out". The failure story about the annual plan consultant is gold because it has a direction nobody else writes about: "raising ACV made refunds worse."*
+_Why this section matters for downstream writing: the "failure story" and "unexpected lesson" bullets are exactly what the write-content skill will turn into the "what went wrong" paragraphs that build EEAT trust. A specific named tool (Lemlist) with a specific named problem (deliverability in month three, two blacklisted domains) is more believable and more rankable than "we tried a cold outreach tool and it didn't work out". The failure story about the annual plan consultant is gold because it has a direction nobody else writes about: "raising ACV made refunds worse."_
 
 ### Scope and limitations
 
@@ -56,7 +56,7 @@ Cold outbound works in year one and then stops working, but not because of deliv
 - The Reddit launch trick is almost certainly dead by 2026. Worked in 2023 because r/smallbusiness was less aggressive about promotional posts. Don't replicate it literally. Replicate the principle (one high-signal organic post in the right community) in whichever community is currently viable.
 - Everything above is B2B only. B2C bootstrapping at this price point has different dynamics, especially around refunds and support volume.
 
-*Why this section matters for downstream writing: this is the "who should NOT follow this advice" section, and it's what turns a generic success story into actual thought leadership. Most $100K ARR posts leave readers thinking "will this work for me?" and never answer. The scope section answers that directly. The writer should not bury this at the end of the article; it should be near the top, so readers who aren't the right fit self-select out.*
+_Why this section matters for downstream writing: this is the "who should NOT follow this advice" section, and it's what turns a generic success story into actual thought leadership. Most $100K ARR posts leave readers thinking "will this work for me?" and never answer. The scope section answers that directly. The writer should not bury this at the end of the article; it should be near the top, so readers who aren't the right fit self-select out._
 
 ---
 

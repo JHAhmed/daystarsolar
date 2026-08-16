@@ -59,17 +59,17 @@
 	<div class="bg-night-800 text-white">
 		<div class="container-page grid gap-12 py-16 md:py-20 lg:grid-cols-12 lg:gap-8">
 			<div class="lg:col-span-5">
-				<p class="max-w-md text-base font-light leading-relaxed text-white/85">
-					<span class="font-medium text-white">Daystar Solar</span> is Chennai's premier solar
-					integrator, delivering sustainable energy solutions for homes and businesses since 2012. We
-					partner with global leaders to ensure quality and reliability.
+				<p class="max-w-md text-base leading-relaxed font-light text-white/85">
+					<span class="font-medium text-white">Daystar Solar</span> is Chennai's premier solar integrator,
+					delivering sustainable energy solutions for homes and businesses since 2012. We partner with
+					global leaders to ensure quality and reliability.
 				</p>
 			</div>
 
 			<nav class="grid grid-cols-2 gap-8 lg:col-span-4" aria-label="Footer">
 				{#each FOOTER_LINKS as column (column.heading)}
 					<div>
-						<p class="mb-4 text-eyebrow uppercase text-white/50">
+						<p class="mb-4 text-eyebrow text-white/50 uppercase">
 							{#if column.headingHref}
 								<a href={column.headingHref} class="transition-colors hover:text-white">
 									{column.heading}
@@ -110,7 +110,7 @@
 							type="email"
 							autocomplete="email"
 							placeholder="Email"
-							class="w-full border-none bg-transparent px-2.5 py-2 text-sm text-night-900 placeholder:text-ink-400 focus:outline-none focus:ring-0"
+							class="w-full border-none bg-transparent px-2.5 py-2 text-sm text-night-900 placeholder:text-ink-400 focus:ring-0 focus:outline-none"
 						/>
 						<button
 							type="submit"
@@ -133,9 +133,7 @@
 	</div>
 
 	<div class="container-page">
-		<div
-			class="flex flex-col-reverse items-center justify-between gap-6 py-8 sm:flex-row sm:gap-4"
-		>
+		<div class="flex flex-col-reverse items-center justify-between gap-6 py-8 sm:flex-row sm:gap-4">
 			<ul class="flex items-center gap-5">
 				{#each SOCIALS as social (social.name)}
 					{@const Icon = SOCIAL_ICONS[social.name]}

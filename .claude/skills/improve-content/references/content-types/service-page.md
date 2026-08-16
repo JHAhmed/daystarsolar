@@ -1,9 +1,11 @@
 # Technique 36: Service Pages
 
 ## What It Is
+
 Commercial/transactional content describing a specific service offering, its benefits, process, and pricing. The core conversion page for service-based businesses. Captures "[service]", "[service] inhuren", "[service] in [location]", and "[service] kosten" searches.
 
 ## When to Use
+
 Commercial/transactional intent -- user is evaluating a specific service or ready to inquire. Every distinct service offering needs its own page. Do not combine multiple services on one page.
 
 ## Structure Template
@@ -58,19 +60,23 @@ H2: Ready to get started?
 ```
 
 ## Word Count
+
 1,200-2,000 words (thorough enough to answer all questions, concise enough to keep focus on conversion)
 
 ## Schema Markup
+
 - **Primary:** Service (name, description, provider, serviceType)
 - **Secondary:** LocalBusiness (if location-specific service)
 - **Tertiary:** FAQ (for the FAQ section)
 
 ## Featured Snippet Strategy
+
 - **Format:** List snippet for "what does [service] include" queries
 - **Target:** The deliverables section or the process steps
 - **Alternative:** Paragraph snippet for "[service] meaning/definition" queries
 
 ## CTA Placement
+
 - **Hero section:** Primary CTA above the fold
 - **After process:** "Ready to start?" CTA
 - **After results:** Social proof reinforcement CTA (strongest conversion point)
@@ -78,6 +84,7 @@ H2: Ready to get started?
 - **End of page:** Full contact form or booking widget
 
 ## Internal Linking Strategy
+
 - Link to case studies for proof of results
 - Link to related services (cross-sell opportunities)
 - Link to blog content that supports the service's value proposition
@@ -86,6 +93,7 @@ H2: Ready to get started?
 - Receive links from homepage, navigation, blog content, and location pages
 
 ## Key Success Factors
+
 1. **One service per page:** Do not combine SEO and SEA on one page -- separate pages rank better
 2. **Clear process:** Users want to know exactly what happens after they contact you
 3. **Specific results:** "37% more organic traffic in 4 months" not "we get you more traffic"
@@ -95,6 +103,7 @@ H2: Ready to get started?
 7. **FAQ addresses objections:** Use the FAQ to handle "is it worth it" and "how long does it take" questions
 
 ## Common Mistakes
+
 - Combining multiple services on one page (dilutes rankings and confuses visitors)
 - No pricing information at all (users leave to find a competitor who shows pricing)
 - Generic differentiators ("we care about quality" -- everyone says this)
@@ -104,6 +113,7 @@ H2: Ready to get started?
 - Writing about what you do instead of what the client gets
 
 ## Example Topics by Niche
+
 - Energy: "Zonnepanelen installatie -- professionele montage met 10 jaar garantie"
 - Telecom: "Zakelijk internet aanvragen -- glasvezel voor bedrijven"
 - SaaS: "SEO audit service -- complete technische en content analyse van je website"

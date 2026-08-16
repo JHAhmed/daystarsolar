@@ -1,9 +1,11 @@
 # Technique 18: How-To / Tutorial Articles
 
 ## What It Is
+
 Informational content that guides users through accomplishing a specific task. Captures "how to [action]" and "[action] tutorial" searches.
 
 ## When to Use
+
 Informational intent -- user wants to accomplish a specific task. High PAA presence, strong featured snippet opportunity.
 
 ## Structure Template
@@ -38,22 +40,27 @@ H2: Next steps / Related guides
 ```
 
 ## Word Count
+
 1,500-3,000 words (intent-dependent -- simple tasks shorter, complex tasks longer)
 
 ## Schema Markup
+
 - **Primary:** HowTo (with step-by-step structured data)
 - **Secondary:** FAQ (for the FAQ section)
 
 ## Featured Snippet Strategy
+
 - **Format:** Ordered list snippet (46.91% of "how" queries)
 - **Target:** Place numbered steps as an ordered list after the relevant H2
 - **Quick answer:** 40-60 word paragraph answer directly after H1 for paragraph snippet
 
 ## CTA Placement
+
 - Mid-article (after step 3-4): related tool, product, or service
 - End of article: deeper guide, consultation, or conversion page
 
 ## Internal Linking Strategy
+
 - Link to definition pages for technical jargon
 - Link to related how-tos (next steps)
 - Link to relevant product/service pages for tools mentioned
@@ -61,6 +68,7 @@ H2: Next steps / Related guides
 - Receive links from pillar page and FAQ hubs
 
 ## Key Success Factors
+
 1. **Front-load the answer:** The quick answer section must appear before the detailed steps
 2. **One action per step:** Each step should describe exactly one thing the reader does
 3. **Visual evidence:** Screenshots, photos, or diagrams per step demonstrate Experience
@@ -68,6 +76,7 @@ H2: Next steps / Related guides
 5. **Common mistakes are gold:** These differentiate from generic guides and signal experience
 
 ## Common Mistakes
+
 - Burying the answer below a long introduction
 - Missing the quick-answer paragraph (loses featured snippet opportunity)
 - Not including visuals per step (text-only how-tos underperform)
@@ -75,6 +84,7 @@ H2: Next steps / Related guides
 - Missing prerequisites section (frustrates readers mid-process)
 
 ## Anti-AI Focus
+
 Most effective anti-AI signal for tutorials: mention specific error messages, version numbers, and unexpected behaviors that only someone who actually did this would know.
 
 How-to articles are one of the content types most vulnerable to AI-generated imitation because the step-by-step format is easy to replicate structurally. What AI cannot replicate is the texture of real experience. To make your tutorials unmistakably human-authored:
@@ -86,6 +96,7 @@ How-to articles are one of the content types most vulnerable to AI-generated imi
 - **Mention what did NOT work.** Describing failed approaches before arriving at the working solution is a strong experience signal. AI-generated content almost never includes false starts or dead ends.
 
 ## Example Topics by Niche
+
 - Energy comparison: "Hoe kies je de beste energieleverancier"
 - Local services: "Hoe vind je een betrouwbare loodgieter in Amsterdam"
 - SaaS: "How to set up automated email workflows"

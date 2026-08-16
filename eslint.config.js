@@ -9,6 +9,8 @@ const gitignorePath = path.resolve(import.meta.dirname, '.gitignore');
 
 export default defineConfig([
 	includeIgnoreFile(gitignorePath),
+	// Agent tooling shipped with the scaffold — not project source.
+	{ ignores: ['.claude/**', '.gemini/**', '.github/**'] },
 	js.configs.recommended,
 	svelte.configs.recommended,
 	prettier,
@@ -23,8 +25,16 @@ export default defineConfig([
 	},
 
 	{
-		// Override or add rule settings here, such as:
-		// 'svelte/button-has-type': 'error'
-		rules: {}
+		rules: {
+			// The site is served from the domain root and has no `base` path, so
+			// wrapping every internal href in resolve() adds ceremony without
+			// changing a single URL. Re-enable if the app is ever moved to a
+			// subpath deployment.
+			'svelte/no-navigation-without-resolve': 'off',
+
+			// `_` is the conventional throwaway binding in `{#each}` blocks that
+			// only need the index.
+			'no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }]
+		}
 	}
 ]);

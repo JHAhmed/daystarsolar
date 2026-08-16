@@ -30,13 +30,13 @@ Same principle applies to timestamps, durations, costs, and counts. "$2,438.17" 
 
 ### Failure stories with mechanism
 
-"It didn't work because the API was rate-limiting me at 15 requests per hour, which I only discovered after tracing the 429 responses." The story isn't just "it broke." It's "it broke for *this specific reason* and here's how I figured that out." The mechanism is the proof. A writer who hasn't hit the failure can't reconstruct the mechanism convincingly.
+"It didn't work because the API was rate-limiting me at 15 requests per hour, which I only discovered after tracing the 429 responses." The story isn't just "it broke." It's "it broke for _this specific reason_ and here's how I figured that out." The mechanism is the proof. A writer who hasn't hit the failure can't reconstruct the mechanism convincingly.
 
 Corollary: the existence of any failure story at all is a strong signal. Writers who haven't done the work write as if everything went to plan, because they're narrating the plan, not the experience.
 
 ### Unexpected observations
 
-"Nobody warned me that X causes Y because Z, so I had to figure it out from a 2019 GitHub issue." The unexpected observation is the thing the documentation doesn't mention, the edge case that's not in the tutorial, the fact that surprised the author. This is almost impossible to fake because the writer would need to know both what the conventional account says *and* what the exception is, and then have a reason to surface the exception.
+"Nobody warned me that X causes Y because Z, so I had to figure it out from a 2019 GitHub issue." The unexpected observation is the thing the documentation doesn't mention, the edge case that's not in the tutorial, the fact that surprised the author. This is almost impossible to fake because the writer would need to know both what the conventional account says _and_ what the exception is, and then have a reason to surface the exception.
 
 ### Original photos, screenshots, and diagrams tied to specific moments
 
@@ -54,7 +54,7 @@ Not stock imagery. Not generic illustrations. A photo of the actual thing the au
 
 ### Third-person narration of other people's examples
 
-"Companies like Spotify have used this technique to..." This is summary. It's evidence the author read about Spotify, not that they did the thing. On its own it's fine (not every article is autobiographical), but if it's the *only* evidence offered as Experience, the score is 4 at best.
+"Companies like Spotify have used this technique to..." This is summary. It's evidence the author read about Spotify, not that they did the thing. On its own it's fine (not every article is autobiographical), but if it's the _only_ evidence offered as Experience, the score is 4 at best.
 
 ### Generic advice with no anchoring to a specific moment
 
@@ -100,7 +100,7 @@ Don't over-count. Three sentences from the same story are one signal, not three.
 
 **Ghost-written content.** Experience doesn't care who typed the words. If the named author has genuinely done the work and dictated the specifics to a writer, the signals will still appear in the prose. If the named author hasn't done the work and the ghost-writer is inventing plausible-sounding details, the signals will read as off: numbers too round, stories too smooth, failures suspiciously educational.
 
-**Journalism and primary-source reporting.** A reporter interviewing sources isn't claiming Experience for themselves. They're surfacing the experience of others. Score Experience against the *subject's* experience as reported, not the writer's. The tells become "did the reporter get close enough to the subject to report specific details, or are they paraphrasing a press release?"
+**Journalism and primary-source reporting.** A reporter interviewing sources isn't claiming Experience for themselves. They're surfacing the experience of others. Score Experience against the _subject's_ experience as reported, not the writer's. The tells become "did the reporter get close enough to the subject to report specific details, or are they paraphrasing a press release?"
 
 **Commissioned case studies.** An agency writing a case study about a client's project can legitimately claim Experience if the agency did the work. Score it like a first-person account but verify the specifics are the agency's own, not borrowed from the client's marketing copy.
 

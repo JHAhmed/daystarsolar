@@ -105,7 +105,7 @@
 		{#if !minimal}
 			<div id="mobile-menu" class="mobile-menu" class:is-open={open} inert={!open || undefined}>
 				<div class="overflow-hidden">
-					<ul class="flex flex-col gap-1 pb-6 pt-2">
+					<ul class="flex flex-col gap-1 pt-2 pb-6">
 						{#each NAV_LINKS as link (link.href)}
 							<li>
 								<a
@@ -113,9 +113,7 @@
 									onclick={close}
 									aria-current={isActive(link.href) ? 'page' : undefined}
 									class="block rounded-lg px-4 py-3 text-lg transition-colors duration-[160ms] ease-out
-										{isActive(link.href)
-										? 'bg-ink-100 font-medium text-night-900'
-										: 'text-ink-700 hover:bg-ink-50'}"
+										{isActive(link.href) ? 'bg-ink-100 font-medium text-night-900' : 'text-ink-700 hover:bg-ink-50'}"
 								>
 									{link.name}
 								</a>

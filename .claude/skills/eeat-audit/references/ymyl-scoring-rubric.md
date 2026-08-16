@@ -34,7 +34,7 @@ Each E-E-A-T dimension gets a stricter interpretation when the topic is YMYL. Th
 
 On non-YMYL topics, a first-person story is usually enough. On YMYL, the story has to be backed by primary-source evidence of hands-on work, not just "I tried this once." A medical writer saying "I had this condition" is weak. A medical writer saying "I had this condition, here's the treatment protocol my endocrinologist put me on, here's the lab value I was tracking, here's what changed at month three" is strong.
 
-The rubric rewards evidence of *repeated* hands-on engagement: multiple cases, documented outcomes, a track record visible in the writing itself.
+The rubric rewards evidence of _repeated_ hands-on engagement: multiple cases, documented outcomes, a track record visible in the writing itself.
 
 ### Expertise (YMYL weighting: 12 pts, elevated from 10)
 

@@ -8,13 +8,13 @@ Two independent studies put the organic CTR drop from AI Overviews in roughly th
 
 **[Ahrefs, December 2025](https://ahrefs.com/blog/ai-overviews-reduce-clicks-update/):** 58% lower average CTR on the top-ranking page when an AI Overview is present. Methodology: 300,000 keywords from their Keywords Explorer database (150k with an AIO, 150k informational without), using aggregated GSC data from December 2023 (pre-AIO) versus December 2025. On AIO keywords, position 1 CTR fell from 0.073% to 0.016%. On informational keywords without an AIO, position 1 fell from 0.076% to 0.039%, so some of the decline is a broader behavioral shift. The 58% figure isolates the AIO-specific delta.
 
-**[Seer Interactive, September 2025](https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-september-2025-update):** 61% drop in organic CTR for AIO-present informational queries, from 1.76% to 0.61%. Paid CTR dropped 68%. Sample: 3,119 informational queries, 42 client organizations, 25.1 million organic impressions, June 2024 through September 2025. Seer also reports CTR fell 41% on queries *without* AI Overviews over the same window, which matches the broader decoupling story.
+**[Seer Interactive, September 2025](https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-september-2025-update):** 61% drop in organic CTR for AIO-present informational queries, from 1.76% to 0.61%. Paid CTR dropped 68%. Sample: 3,119 informational queries, 42 client organizations, 25.1 million organic impressions, June 2024 through September 2025. Seer also reports CTR fell 41% on queries _without_ AI Overviews over the same window, which matches the broader decoupling story.
 
 The two studies used different methodologies and different keyword samples and landed within 3 percentage points of each other. That's unusual alignment for SEO research, and it's the reason we treat "roughly 60% organic CTR loss under an AIO" as the planning assumption for informational intent.
 
 ## The Citation Bonus
 
-Seer's same study found pages cited *inside* the AI Overview earn 35% more organic clicks than non-cited peers in the same SERP (0.70% vs 0.52% organic CTR in Q3 2025). Paid lift for cited brands was 91%. Seer can't prove causation (authority signals may drive both citation likelihood and baseline clickability), but the pattern is strong enough to plan around.
+Seer's same study found pages cited _inside_ the AI Overview earn 35% more organic clicks than non-cited peers in the same SERP (0.70% vs 0.52% organic CTR in Q3 2025). Paid lift for cited brands was 91%. Seer can't prove causation (authority signals may drive both citation likelihood and baseline clickability), but the pattern is strong enough to plan around.
 
 Separately, [Ahrefs' February 2026 update](https://ahrefs.com/blog/ai-overview-citations-top-10/) found that only 38% of AIO citations come from pages ranking in the top 10 for the original query, down from 76% seven months earlier. They analyzed 863,000 keywords and 4 million AI Overview URLs. The remaining citations split between pages ranking 11-100 (31.2%) and pages outside the top 100 entirely (31%). This matters because it breaks the old assumption that "rank top 10 and you'll get cited." Google's January 27, 2026 Gemini 3 upgrade is the most likely explanation: query fan-out pulls citations from sub-queries that may not match the main query's top 10 at all.
 
@@ -31,7 +31,7 @@ AIOs appear most often on:
 - **Early-funnel research queries** where there's no single authoritative source and users benefit from a synthesized answer.
 - **Health and finance categories** saw outsized AIO growth (206-273%) between January and March 2025 per [Digital Bloom 2026](https://thedigitalbloom.com/learn/organic-traffic-crisis-report-2026-update/).
 
-AIOs appear *less* often on:
+AIOs appear _less_ often on:
 
 - Pure navigational queries (brand searches)
 - Local-intent queries where a map pack dominates
@@ -43,7 +43,7 @@ AIOs appear *less* often on:
 
 The decision is rarely "abandon the keyword." It's "reframe what winning looks like." Run through these questions:
 
-1. **Can you plausibly get cited inside the AIO?** If yes, you still get 35% *more* clicks than peers, not fewer. Citation eligibility depends on matching fan-out sub-queries, not just ranking the main query.
+1. **Can you plausibly get cited inside the AIO?** If yes, you still get 35% _more_ clicks than peers, not fewer. Citation eligibility depends on matching fan-out sub-queries, not just ranking the main query.
 2. **Is this keyword part of a cluster where multiple pages can earn citations across the fan-out?** If yes, one page losing direct clicks may be offset by three others earning citation visibility.
 3. **Does brand exposure in the AIO itself have value independent of clicks?** For commerce brands, being named in an AIO is effectively free advertising even without the click.
 4. **Is there a transactional tail you're really targeting?** The AIO may suppress the informational head query's CTR, but the transactional tail ("buy X," "sign up for X") is usually AIO-free and carries the conversion weight anyway.

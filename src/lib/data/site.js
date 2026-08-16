@@ -80,8 +80,7 @@ export const SOCIALS = [
 ];
 
 export const MARKETPLACES = {
-	amazon:
-		'https://www.amazon.in/stores/DaystarSolar/page/EEE44EC4-A6FA-4DDA-B319-B5711BA870CD/',
+	amazon: 'https://www.amazon.in/stores/DaystarSolar/page/EEE44EC4-A6FA-4DDA-B319-B5711BA870CD/',
 	indiamart: 'https://www.indiamart.com/daystarsolar/'
 };
 

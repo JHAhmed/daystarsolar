@@ -1,10 +1,17 @@
 <script>
 	import { cn } from '$lib/utils.js';
 
-	let { strokeWidth = 1.5, color = 'currentColor', fill = 'none', class: className = '', ...rest } = $props();
+	let {
+		strokeWidth = 1.5,
+		color = 'currentColor',
+		fill = 'none',
+		class: className = '',
+		...rest
+	} = $props();
 </script>
 
-<svg {...rest}
+<svg
+	{...rest}
 	xmlns="http://www.w3.org/2000/svg"
 	{fill}
 	viewBox="0 0 24 24"

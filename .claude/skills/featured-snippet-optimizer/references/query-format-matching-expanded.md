@@ -4,39 +4,39 @@ Google picks a snippet format based on query shape. Write the answer in the wron
 
 ## The Expanded Table
 
-| Query Pattern | Snippet Format Google Shows | Example Query | Notes |
-|---|---|---|---|
-| "What is X" | Paragraph, 40-60 words | "what is affiliate marketing" | Most common snippet type. Answer sits directly under an H2 that mirrors the query. |
-| "What does X mean" | Paragraph, 30-50 words | "what does SEO mean" | Shorter than "what is X" — Google wants a dictionary-style gloss, not an explainer. |
-| "What are X" | Paragraph or unordered list | "what are backlinks" | Splits on subject: single definition → paragraph; plural enumerable → list. |
-| "How to X" | Ordered list, 3-8 steps | "how to bake sourdough" | The canonical list-snippet query. Steps must use `<ol>` with `<li>`. |
-| "How do I X" | Ordered list, 3-8 steps | "how do I reset my router" | First-person variant, same format. |
-| "How do you X" | Ordered list, 3-8 steps | "how do you make cold brew" | Second-person variant. Same rules. |
-| "Steps to X" | Ordered list, 5-10 steps | "steps to start an LLC" | Longer lists tolerated here — Google expects procedural depth. |
-| "X tutorial" | Ordered list | "python tutorial" | Same as how-to; tutorial implies sequence. |
-| "X vs Y" | Table (primary), paragraph (fallback) | "react vs vue" | Table wins when the page uses a real `<table>` element with clear column headers. Without a table, Google falls back to a comparison paragraph. |
-| "X or Y" | Paragraph, opinionated | "css grid or flexbox" | Different from "vs" — reads as a decision, not a spec sheet. One-paragraph recommendation format. |
-| "Difference between X and Y" | Paragraph or table | "difference between ram and rom" | Paragraph is more common; table only if both entities have multiple parallel attributes. |
-| "Types of X" | Unordered list, 5-10 items | "types of cheese" | Each item = one noun phrase, sometimes with a 5-10 word gloss. |
-| "X list" | Unordered list | "programming languages list" | Same format as types-of, usually larger (8-12 items). |
-| "Best X" | Unordered list with brief descriptors | "best running shoes" | The most AIO-displaced pattern — see reality check below. |
-| "Top X" | Unordered list | "top email marketing platforms" | Same as "best X". Often numbered in the source but Google still renders as bullets. |
-| "When did X" | Short paragraph, under 40 words | "when did rome fall" | Direct date/year answer with 1-2 sentences of context. |
-| "When was X" | Short paragraph | "when was the internet invented" | Similar to "when did X"; includes a date and actor. |
-| "Who is X" | Short paragraph, person bio format | "who is elon musk" | 2-4 sentences, usually pulled near a headshot or knowledge panel. |
-| "Who invented X" | Short paragraph | "who invented the telephone" | Name + year + one-line context. |
-| "Why does X" | Paragraph, explanation format | "why does iron rust" | 40-70 words. Causal structure: mechanism + outcome. |
-| "Why is X" | Paragraph | "why is the sky blue" | Same as "why does X". "Why" question words have historically had the highest snippet trigger rate of any question word — optimize as if a snippet is available. |
-| "How much does X cost" | Table (ranges) or paragraph (single price) | "how much does a tesla cost" | Price ranges across variants → table. Single product → paragraph with the number up front. |
-| "How long does X take" | Short paragraph with specific time | "how long does a passport take" | Answer the duration in the first clause; qualify in the second. |
-| "How many X" | Short phrase, single number | "how many bones in the human body" | Sometimes just a number card. Format the answer as "There are N X" in the first sentence. |
-| "Where is X" | Short paragraph with location | "where is machu picchu" | Often paired with a map card, not a classic snippet. Still write a paragraph answer under an H2. |
-| "X definition" | Paragraph, dictionary format | "paradox definition" | Shorter than "what is X" — 20-40 words, dictionary tone. |
-| "X examples" | Unordered list or paragraph with inline examples | "metaphor examples" | List format wins when examples are parallel and short. Paragraph wins when each example needs context. |
-| "Is X [adjective]" | Paragraph, direct yes/no | "is coffee bad for you" | Start with "Yes" or "No", then 2-3 sentences of qualification. Google rewards the literal yes/no opener. |
-| "Can X Y" | Paragraph, yes/no | "can dogs eat chocolate" | Same rule as "Is X" — commit to a direct answer first word. |
-| "X calculator" | Calculator widget, not a snippet | "mortgage calculator" | Not a snippet target at all. Google serves an interactive calculator. Don't chase this. |
-| "X meaning in [language]" | Paragraph, translation format | "amigo meaning in english" | Often replaced by a translation card — snippet is secondary. |
+| Query Pattern                | Snippet Format Google Shows                      | Example Query                      | Notes                                                                                                                                                           |
+| ---------------------------- | ------------------------------------------------ | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "What is X"                  | Paragraph, 40-60 words                           | "what is affiliate marketing"      | Most common snippet type. Answer sits directly under an H2 that mirrors the query.                                                                              |
+| "What does X mean"           | Paragraph, 30-50 words                           | "what does SEO mean"               | Shorter than "what is X" — Google wants a dictionary-style gloss, not an explainer.                                                                             |
+| "What are X"                 | Paragraph or unordered list                      | "what are backlinks"               | Splits on subject: single definition → paragraph; plural enumerable → list.                                                                                     |
+| "How to X"                   | Ordered list, 3-8 steps                          | "how to bake sourdough"            | The canonical list-snippet query. Steps must use `<ol>` with `<li>`.                                                                                            |
+| "How do I X"                 | Ordered list, 3-8 steps                          | "how do I reset my router"         | First-person variant, same format.                                                                                                                              |
+| "How do you X"               | Ordered list, 3-8 steps                          | "how do you make cold brew"        | Second-person variant. Same rules.                                                                                                                              |
+| "Steps to X"                 | Ordered list, 5-10 steps                         | "steps to start an LLC"            | Longer lists tolerated here — Google expects procedural depth.                                                                                                  |
+| "X tutorial"                 | Ordered list                                     | "python tutorial"                  | Same as how-to; tutorial implies sequence.                                                                                                                      |
+| "X vs Y"                     | Table (primary), paragraph (fallback)            | "react vs vue"                     | Table wins when the page uses a real `<table>` element with clear column headers. Without a table, Google falls back to a comparison paragraph.                 |
+| "X or Y"                     | Paragraph, opinionated                           | "css grid or flexbox"              | Different from "vs" — reads as a decision, not a spec sheet. One-paragraph recommendation format.                                                               |
+| "Difference between X and Y" | Paragraph or table                               | "difference between ram and rom"   | Paragraph is more common; table only if both entities have multiple parallel attributes.                                                                        |
+| "Types of X"                 | Unordered list, 5-10 items                       | "types of cheese"                  | Each item = one noun phrase, sometimes with a 5-10 word gloss.                                                                                                  |
+| "X list"                     | Unordered list                                   | "programming languages list"       | Same format as types-of, usually larger (8-12 items).                                                                                                           |
+| "Best X"                     | Unordered list with brief descriptors            | "best running shoes"               | The most AIO-displaced pattern — see reality check below.                                                                                                       |
+| "Top X"                      | Unordered list                                   | "top email marketing platforms"    | Same as "best X". Often numbered in the source but Google still renders as bullets.                                                                             |
+| "When did X"                 | Short paragraph, under 40 words                  | "when did rome fall"               | Direct date/year answer with 1-2 sentences of context.                                                                                                          |
+| "When was X"                 | Short paragraph                                  | "when was the internet invented"   | Similar to "when did X"; includes a date and actor.                                                                                                             |
+| "Who is X"                   | Short paragraph, person bio format               | "who is elon musk"                 | 2-4 sentences, usually pulled near a headshot or knowledge panel.                                                                                               |
+| "Who invented X"             | Short paragraph                                  | "who invented the telephone"       | Name + year + one-line context.                                                                                                                                 |
+| "Why does X"                 | Paragraph, explanation format                    | "why does iron rust"               | 40-70 words. Causal structure: mechanism + outcome.                                                                                                             |
+| "Why is X"                   | Paragraph                                        | "why is the sky blue"              | Same as "why does X". "Why" question words have historically had the highest snippet trigger rate of any question word — optimize as if a snippet is available. |
+| "How much does X cost"       | Table (ranges) or paragraph (single price)       | "how much does a tesla cost"       | Price ranges across variants → table. Single product → paragraph with the number up front.                                                                      |
+| "How long does X take"       | Short paragraph with specific time               | "how long does a passport take"    | Answer the duration in the first clause; qualify in the second.                                                                                                 |
+| "How many X"                 | Short phrase, single number                      | "how many bones in the human body" | Sometimes just a number card. Format the answer as "There are N X" in the first sentence.                                                                       |
+| "Where is X"                 | Short paragraph with location                    | "where is machu picchu"            | Often paired with a map card, not a classic snippet. Still write a paragraph answer under an H2.                                                                |
+| "X definition"               | Paragraph, dictionary format                     | "paradox definition"               | Shorter than "what is X" — 20-40 words, dictionary tone.                                                                                                        |
+| "X examples"                 | Unordered list or paragraph with inline examples | "metaphor examples"                | List format wins when examples are parallel and short. Paragraph wins when each example needs context.                                                          |
+| "Is X [adjective]"           | Paragraph, direct yes/no                         | "is coffee bad for you"            | Start with "Yes" or "No", then 2-3 sentences of qualification. Google rewards the literal yes/no opener.                                                        |
+| "Can X Y"                    | Paragraph, yes/no                                | "can dogs eat chocolate"           | Same rule as "Is X" — commit to a direct answer first word.                                                                                                     |
+| "X calculator"               | Calculator widget, not a snippet                 | "mortgage calculator"              | Not a snippet target at all. Google serves an interactive calculator. Don't chase this.                                                                         |
+| "X meaning in [language]"    | Paragraph, translation format                    | "amigo meaning in english"         | Often replaced by a translation card — snippet is secondary.                                                                                                    |
 
 ## Ambiguous and Edge Cases
 

@@ -11,6 +11,7 @@ Koray Tuğberk GÜBÜR's framing: the predicate is the edge in the entity graph.
 grind, extract, bloom, tamp, dose, shower, degas, puck, channel, pre-infuse, pull, distribute, level, dial-in, purge, dose-and-weigh
 
 Example of the difference:
+
 - **Generalist:** "Put the coffee in the machine and press the button. The machine will make your espresso."
 - **Expert:** "Dose 18g into a 20g VST basket, distribute with a WDT tool, tamp level, lock in, and pull a 36g shot in 28 seconds. Watch for channeling in the first 5 seconds — if you see it, re-dial the grind finer."
 

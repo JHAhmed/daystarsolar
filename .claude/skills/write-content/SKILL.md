@@ -10,8 +10,8 @@ Writes a complete SEO-optimized article. Four phases: research → content type 
 ## Input
 
 - **Topic or target keyword** (required)
-- *(Optional)* An existing content brief — skip the research phase if provided
-- *(Optional)* Expert interview output from the `expert-interview` skill
+- _(Optional)_ An existing content brief — skip the research phase if provided
+- _(Optional)_ Expert interview output from the `expert-interview` skill
 
 If no topic is given, ask for one before proceeding.
 
@@ -31,6 +31,7 @@ Always confirm the write location with the user before saving. If any of these a
 **Every use after that**: load that file first. If missing, ask where the user saved it or re-ask the questions.
 
 Questions on first use:
+
 - What does the business do, and who is it for?
 - What's the brand's tone of voice? (Professional / Casual / Technical / Authoritative / Conversational)
 - What language should content be written in?
@@ -66,6 +67,7 @@ Ask 2-3 quick questions to extract unique knowledge the user has. Pick from:
 Ask one at a time. Keep it quick.
 
 **Adapt style**:
+
 - Newer/smaller site, less SEO-savvy user: conversational, explain why each question matters
 - Established site, experienced user: fast, direct, no hand-holding
 
@@ -76,6 +78,7 @@ Ask one at a time. Keep it quick.
 Produce the complete article in clean markdown. Follow ALL of these rules:
 
 ### Voice and Stance
+
 - Write like a practitioner talking to a peer. Not a textbook, not a press release.
 - Take clear positions. "We tested this and X works better than Y" beats "both X and Y have merits."
 - Use "you" and "I/we" — write to one person, not an audience.
@@ -86,6 +89,7 @@ Produce the complete article in clean markdown. Follow ALL of these rules:
 - Anchor in real context — reference current events, industry shifts, or cultural touchstones where relevant.
 
 ### Rhythm and Structure
+
 - Vary sentence length dramatically. Mix 5-word punches with 30-word complexes. Never 3+ consecutive sentences of similar length.
 - Vary paragraph length. One-sentence paragraphs are fine. So are 6-sentence ones.
 - Use fragments for emphasis. Start sentences with "And" or "But" when natural.
@@ -96,6 +100,7 @@ Produce the complete article in clean markdown. Follow ALL of these rules:
 - Don't summarize at the end of sections unless genuinely complex (3+ subsections).
 
 ### Show, Don't Just State
+
 - Don't state facts. Show them through brief scenarios. Instead of "page speed affects rankings" — "You click a search result. Three seconds pass. Still loading. You hit back. Google tracked every millisecond."
 - For claims backed by experience, narrate the moment: what was tried, what happened, what surprised you.
 
@@ -108,6 +113,7 @@ delve, landscape (metaphorical), testament, leverage, utilize, robust, seamless,
 "It's worth noting", "In today's [anything]", "Let's dive in", "In conclusion", "plays a crucial/vital/pivotal role", "It goes without saying", "In the realm of".
 
 **Avoid these structural patterns:**
+
 - Rule-of-three groupings (use 2 or 4 items instead)
 - Synonym cycling (repeat the right word rather than finding alternatives)
 - Copula avoidance ("serves as" — just say "is")
@@ -127,6 +133,7 @@ delve, landscape (metaphorical), testament, leverage, utilize, robust, seamless,
 - **Service/landing page**: PAS framework. Pain point first, agitate consequences, then solution
 
 ### SEO Structure
+
 - Primary keyword in meta title, H1, first 100 words, 2-3 H2s. ~2% body density, naturally distributed.
 - Place a 40-60 word direct answer immediately after the most important H2 — targets featured snippets. "How" queries get ordered lists, "what is" gets paragraphs, comparisons get tables.
 - Weave 2-3 PAA questions into the article as H2/H3 headings with direct answers.
@@ -134,6 +141,7 @@ delve, landscape (metaphorical), testament, leverage, utilize, robust, seamless,
 - Front-load value. The first screen is the highest-value real estate. No preamble paragraphs.
 
 ### Long Article Strategy (1,500+ words)
+
 - Write section by section. Track what you've covered to prevent repetition and voice drift.
 - At least 30% of the article must contain details no generic AI could produce: the user's data, examples, opinions, experience.
 
@@ -155,12 +163,14 @@ Write in the language from the business context. If not specified, match the lan
 Load from `references/` only when the step or rule calls for them. Don't preload — each file is heavy enough to blow context if stacked.
 
 **Content type templates** (`references/content-types/`) — load one after Phase 2:
+
 - Common: `how-to.md`, `definition.md`, `comparison.md`, `listicle.md`, `pillar-page.md`, `faq-page.md`, `landing-page.md`, `service-page.md`, `case-study.md`
 - Content and news: `statistics-page.md`, `news-article.md`, `glossary-page.md`
 - Commercial: `alternatives-page.md`, `buying-guide.md`, `product-page.md`, `category-page.md`, `integration-page.md`, `location-page.md`, `programmatic-page.md`
 - `references/content-types-overview.md` for the decision table across all 23 content types (load this FIRST if unsure which type to pick)
 
 **Writing technique modules** (`references/`) — load when the matching Phase 4 rule needs more depth:
+
 - `anti-slop-ruleset.md` — full tiered banned vocab + structural tell list (when the inline anti-slop block isn't catching something)
 - `voice-injection-playbook.md` — voice and register techniques (when the draft reads flat)
 - `information-gain-writing.md` — the 30% rule and how to satisfy it (for the "So What" test)

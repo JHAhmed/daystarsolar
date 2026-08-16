@@ -1,9 +1,11 @@
 # Technique 25: Glossary / Definition Hub Pages
 
 ## What It Is
+
 A centralized collection of short definitions for industry-specific terms, organized alphabetically or by category. Each term gets a concise explanation. Functions as a topical authority signal and internal linking hub.
 
 ## When to Use
+
 Informational intent -- user wants quick definitions of industry jargon. Use when your niche has 30+ specialized terms that users search for. The glossary page acts as a hub; high-value terms also get dedicated definition articles.
 
 ## Structure Template
@@ -36,29 +38,35 @@ H2: [Category-based alternative]
 ```
 
 ## Word Count
+
 200-400 words per term (total page length depends on number of terms -- typically 5,000-15,000 words for a full glossary)
 
 ## Schema Markup
+
 - **Primary:** DefinedTermSet (with individual DefinedTerm entries)
 - **Secondary:** BreadcrumbList
 
 ## Featured Snippet Strategy
+
 - **Format:** Paragraph snippet (definition queries trigger paragraph snippets)
 - **Target:** Each H3 term heading with its concise definition paragraph
 - **Tip:** Start each definition with "[Term] is..." for maximum snippet eligibility
 
 ## CTA Placement
+
 - Sticky navigation or sidebar: search/filter functionality for finding terms
 - Within definitions: contextual links to related products, tools, or services
 - End of page: pillar page CTA or newsletter signup for industry updates
 
 ## Internal Linking Strategy
+
 - **Outbound hub:** Every term links to its dedicated definition article (if one exists)
 - **Outbound to related:** Terms cross-reference other glossary entries
 - **Receive links:** Every article in the cluster links technical terms back to the glossary
 - **Anchor links:** Use #term-name anchors so other pages can deep-link to specific definitions
 
 ## Key Success Factors
+
 1. **Alphabetical AND searchable:** Provide both A-Z navigation and on-page search/filter
 2. **Concise definitions:** 200-400 words maximum per term -- this is a reference, not an article
 3. **Link to deep-dives:** High-value terms should have their own dedicated definition article
@@ -67,6 +75,7 @@ H2: [Category-based alternative]
 6. **Anchor links per term:** Enable deep-linking from any page to a specific glossary entry
 
 ## Common Mistakes
+
 - Definitions that are too long (turns the glossary into an encyclopedia)
 - Definitions that are too short (one-sentence definitions provide no value)
 - No navigation system (100+ terms without A-Z anchors is unusable)
@@ -76,6 +85,7 @@ H2: [Category-based alternative]
 - Missing DefinedTerm schema (loses rich result opportunity for definitions)
 
 ## Anti-AI Focus
+
 Glossary pages are frequently AI-generated because the format is repetitive and the content seems straightforward. To differentiate your glossary from AI-produced alternatives:
 
 - **Write definitions from the practitioner's perspective.** Instead of textbook definitions, explain terms the way you would to a new colleague. Include the practical implications that matter in your specific industry context.
@@ -85,6 +95,7 @@ Glossary pages are frequently AI-generated because the format is repetitive and 
 - **Update with industry evolution.** Add notes when term definitions shift due to new regulations, technology changes, or market developments, with dates.
 
 ## Example Topics by Niche
+
 - Energy: "Energie woordenlijst: van aardwarmte tot zonnepaneel -- 80 begrippen uitgelegd"
 - Telecom: "Telecom woordenboek: 60 internetbegrippen eenvoudig uitgelegd"
 - SaaS: "Marketing glossary: 100 digital marketing terms defined"

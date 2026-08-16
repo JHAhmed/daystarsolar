@@ -1,21 +1,26 @@
 # Tactic 14: Strategic Partnerships & Co-Marketing
 
 ## What It Is
+
 Building genuine business relationships with complementary (non-competing) businesses and leveraging those partnerships for mutual link building. This includes co-authored content, joint webinars, integration partnerships, cross-promotions, podcast collaborations, and co-branded research. Each partner benefits from the other's audience and link equity.
 
 ## Why It Works
+
 Partnership links are among the most natural-looking links in any backlink profile because they represent real business relationships. Google's algorithm explicitly values links that arise from genuine business context. Partners also bring their own audiences, amplifying distribution and making the content more link-worthy to third parties.
 
 ## Step-by-Step Process
 
 ### Step 1: Identify Complementary Partners (2-3 hours)
+
 - **Complementary tools**: If you sell email marketing, partner with CRM companies
 - **Adjacent audiences**: Same buyers, different products/services
 - **Similar stage**: Companies at a similar growth phase are more willing to collaborate
 - Use competitor data to identify companies in adjacent spaces (not direct competitors)
 
 ### Step 2: Propose Collaboration (1 hour per partner)
+
 Partnership formats ranked by link value:
+
 1. **Joint research/survey** — Both parties promote, both earn links
 2. **Co-authored guide** — Published on one site, linked from both
 3. **Integration partnership** — Technical integration with "works with" links
@@ -24,6 +29,7 @@ Partnership formats ranked by link value:
 6. **Tool/resource co-creation** — Build something together
 
 ### Step 3: Execute and Cross-Promote
+
 - Both partners promote through their channels
 - Both add partner links to relevant pages
 - Create dedicated partner/integration pages on both sites
@@ -52,12 +58,12 @@ Partnership formats ranked by link value:
 
 ## Time & Cost Estimate
 
-| Aspect | Estimate |
-|--------|----------|
-| Partner identification | 2-3 hours |
-| Relationship building | Ongoing |
+| Aspect                 | Estimate                |
+| ---------------------- | ----------------------- |
+| Partner identification | 2-3 hours               |
+| Relationship building  | Ongoing                 |
 | Joint content creation | 10-40 hours per project |
-| Cost | €0 (mutual investment) |
+| Cost                   | €0 (mutual investment)  |
 
 ## Expected Results
 
@@ -67,12 +73,12 @@ Partnership formats ranked by link value:
 
 ## Tools Needed
 
-| Tool | Purpose | Cost |
-|------|---------|------|
-| **LinkedIn** | Partner prospecting | Free |
-| **Google Docs** | Co-authored content | Free |
-| **Zoom** | Joint webinars | Free-$14/mo |
-| **Partner CRM** | Track partnerships | Free (spreadsheet) |
+| Tool            | Purpose             | Cost               |
+| --------------- | ------------------- | ------------------ |
+| **LinkedIn**    | Partner prospecting | Free               |
+| **Google Docs** | Co-authored content | Free               |
+| **Zoom**        | Joint webinars      | Free-$14/mo        |
+| **Partner CRM** | Track partnerships  | Free (spreadsheet) |
 
 ## How Data Helps
 
@@ -90,8 +96,8 @@ Partnership formats ranked by link value:
 
 ## Best For Which Phase
 
-| Phase | Relevance |
-|-------|-----------|
-| **DR 0-10** | ⭐⭐ Hard to attract quality partners without some authority |
+| Phase        | Relevance                                                            |
+| ------------ | -------------------------------------------------------------------- |
+| **DR 0-10**  | ⭐⭐ Hard to attract quality partners without some authority         |
 | **DR 10-30** | ⭐⭐⭐⭐ Can partner with similar-stage companies for mutual benefit |
-| **DR 30+** | ⭐⭐⭐⭐⭐ Strongest tactic — attract high-authority partners |
+| **DR 30+**   | ⭐⭐⭐⭐⭐ Strongest tactic — attract high-authority partners        |

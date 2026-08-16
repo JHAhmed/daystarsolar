@@ -34,6 +34,7 @@ Fetch the homepage of the domain. Google the brand name. From what you can see:
 - **Apparent size** — solo / small team / established company
 
 Classify the phase:
+
 - **Foundation phase**: new (< 1 year), thin content, no brand signals, likely DR 0-15
 - **Growth phase**: 1-3 years, 20-100 pages of content, some brand mentions, likely DR 16-40
 - **Authority phase**: 3+ years, established brand, knowledge panel, media mentions, likely DR 41+
@@ -68,6 +69,7 @@ Before giving execution instructions for any tactic, load its full playbook from
 ## Step 3: Anchor Text Safety
 
 If the user can share anchor text distribution (from any backlink tool), compare against safe ranges:
+
 - **Branded** (business name, domain): 40-50%
 - **Naked URL**: 15-20%
 - **Generic** ("click here", "read more"): 15-20%
@@ -81,12 +83,15 @@ If they can't share this data, skip this step.
 ## Step 4: Output
 
 ### Authority Phase Assessment
+
 Phase classification with reasoning.
 
 ### Top 3 Recommended Tactics
+
 Matched to the phase. For each: tactic name, why it fits this phase, expected referring domains, time investment, specific first action to take. Reference the full playbook.
 
 ### Link Velocity Guidelines
+
 - Month 1: 15-25 foundation links
 - Months 2-3: 5-10 quality links
 - Months 4-6: 8-15
@@ -109,9 +114,11 @@ Once foundation links are built, a keyword deep dive on your biggest opportunity
 Load from `references/` only when the step or situation calls for them.
 
 **Tactic playbooks** (`references/tactics/`) — load one before giving execution instructions for that tactic in Step 2:
+
 - `entity-stacking.md`, `citations-directories.md`, `competitor-backlink-gap.md`, `guest-posting.md`, `resource-pages.md`, `skyscraper-technique.md`, `strategic-partnerships.md`, `podcast-guesting.md`, `new-site-launch-strategy.md`
 
 **Diagnostic and safety references** (`references/`):
+
 - `phase-classification-tree.md` — decision tree when Step 1 signals are ambiguous
 - `anchor-text-safety-guide.md` — full anchor safety framework and penalty recovery (Step 3)
 - `link-velocity-redflags.md` — velocity red flags and SpamBrain patterns (diagnosing a traffic drop that looks link-related)
