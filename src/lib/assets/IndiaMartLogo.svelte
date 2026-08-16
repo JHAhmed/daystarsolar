@@ -1,10 +1,10 @@
 <script>
-	import { cn } from '$lib/utils/tw-merge';
+	import { cn } from '$lib/utils.js';
 	import IndiaMartLogo from '$lib/assets/indiamartlogo.png';
 	// export let strokeWidth = 1.5;
 	// export let color = "currentColor";
 
-	export let className = '';
+	let { class: className = '' } = $props();
 </script>
 
 <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width={strokeWidth} stroke={color} class={cn('size-4', className)}>

@@ -34,6 +34,7 @@
 	},
 	"dependencies": {
 		"@contentful/rich-text-html-renderer": "^17.2.3",
+		"@fvilers/heroicons-svelte": "^2.1.5-fix.3",
 		"@google/model-viewer": "^4.3.1",
 		"@supabase/supabase-js": "^2.112.3",
 		"@vercel/analytics": "^2.0.1",

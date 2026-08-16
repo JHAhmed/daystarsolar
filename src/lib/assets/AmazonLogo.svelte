@@ -1,7 +1,7 @@
 <script>
-	import { cn } from '$lib/utils/tw-merge';
+	import { cn } from '$lib/utils.js';
 
-	export let className = '';
+	let { class: className = '' } = $props();
 </script>
 
 <div class="rounded-full bg-white p-2">
