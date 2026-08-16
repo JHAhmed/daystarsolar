@@ -1,0 +1,284 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* ============================================================================
+   Daystar Solar — design tokens
+
+   The previous site had a real design system hiding inside it: orange as the
+   accent, a pale blue as the secondary, warm-neutral surfaces, near-black
+   headings set very tight. Nothing here invents a new palette — it names what
+   was already being used by hand so it can be applied consistently.
+   ========================================================================= */
+
+@theme {
+	/* --- Brand: solar ------------------------------------------------------
+	   The accent. solar-400 is the exact orange the old site leaned on for
+	   arrow chips and highlighted words; 500/600 exist so text on light
+	   surfaces can actually pass contrast, which orange-400 never did. */
+	--color-solar-50: #fff7ed;
+	--color-solar-100: #ffedd5;
+	--color-solar-200: #fed7aa;
+	--color-solar-300: #fdba74;
+	--color-solar-400: #fb923c;
+	--color-solar-500: #f97316;
+	--color-solar-600: #e35d0b;
+	--color-solar-700: #bd4d0c;
+
+	/* --- Brand: sky --------------------------------------------------------
+	   The secondary. Carries the nav contact pill and the CTA button. */
+	--color-sky-50: #eff6ff;
+	--color-sky-100: #dbeafe;
+	--color-sky-200: #bfdbfe;
+	--color-sky-300: #93c5fd;
+	--color-sky-400: #60a5fa;
+	--color-sky-500: #3b82f6;
+	--color-sky-600: #2563eb;
+
+	/* --- Night -------------------------------------------------------------
+	   Dark bands: footer, calculator results panel, CTA. night-800 is the
+	   footer colour carried over verbatim from the old tailwind config. */
+	--color-night-600: #3a4150;
+	--color-night-700: #2b303b;
+	--color-night-800: #1f232c;
+	--color-night-900: #14171d;
+	--color-night-950: #0d0f14;
+
+	/* --- Ink ---------------------------------------------------------------
+	   Neutral ramp for text, borders and light surfaces. */
+	--color-ink-50: #fafafa;
+	--color-ink-100: #f5f5f5;
+	--color-ink-200: #e5e5e5;
+	--color-ink-300: #d4d4d4;
+	--color-ink-400: #a3a3a3;
+	--color-ink-500: #737373;
+	--color-ink-600: #525252;
+	--color-ink-700: #404040;
+	--color-ink-800: #262626;
+	--color-ink-900: #171717;
+
+	/* --- Typography --------------------------------------------------------
+	   Clash Display for headings, Poppins for everything else, Satoshi
+	   reserved for the PDF report. */
+	--font-display: 'Clash Display', 'Poppins', ui-sans-serif, system-ui, sans-serif;
+	--font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+	--font-report: 'Satoshi', 'Poppins', ui-sans-serif, system-ui, sans-serif;
+
+	/* Display sizes carry their own leading, tracking and weight so headings
+	   can never drift apart between pages the way they did before. Tracking
+	   tightens as size grows. */
+	--text-display-2xl: 5.5rem;
+	--text-display-2xl--line-height: 0.9;
+	--text-display-2xl--letter-spacing: -0.04em;
+	--text-display-2xl--font-weight: 500;
+
+	--text-display-xl: 4.25rem;
+	--text-display-xl--line-height: 0.94;
+	--text-display-xl--letter-spacing: -0.035em;
+	--text-display-xl--font-weight: 500;
+
+	--text-display-lg: 3.25rem;
+	--text-display-lg--line-height: 0.98;
+	--text-display-lg--letter-spacing: -0.03em;
+	--text-display-lg--font-weight: 500;
+
+	--text-display: 2.5rem;
+	--text-display--line-height: 1.04;
+	--text-display--letter-spacing: -0.028em;
+	--text-display--font-weight: 500;
+
+	--text-heading-lg: 2rem;
+	--text-heading-lg--line-height: 1.12;
+	--text-heading-lg--letter-spacing: -0.024em;
+	--text-heading-lg--font-weight: 500;
+
+	--text-heading: 1.5rem;
+	--text-heading--line-height: 1.2;
+	--text-heading--letter-spacing: -0.02em;
+	--text-heading--font-weight: 500;
+
+	--text-heading-sm: 1.175rem;
+	--text-heading-sm--line-height: 1.35;
+	--text-heading-sm--letter-spacing: -0.014em;
+	--text-heading-sm--font-weight: 500;
+
+	--text-lead: 1.1875rem;
+	--text-lead--line-height: 1.6;
+	--text-lead--letter-spacing: -0.011em;
+	--text-lead--font-weight: 400;
+
+	/* Uppercase micro-labels — the "TRUSTED SOLAR INTEGRATORS" pattern. */
+	--text-eyebrow: 0.75rem;
+	--text-eyebrow--line-height: 1;
+	--text-eyebrow--letter-spacing: 0.14em;
+	--text-eyebrow--font-weight: 500;
+
+	/* --- Motion ------------------------------------------------------------
+	   One vocabulary for every animation on the site. Durations are named by
+	   intent, not by number, so "slow" means the same thing everywhere. */
+	--ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+	--ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+	--ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+	--ease-out-back: cubic-bezier(0.34, 1.4, 0.64, 1);
+
+	--duration-instant: 100ms;
+	--duration-fast: 180ms;
+	--duration-base: 280ms;
+	--duration-slow: 480ms;
+	--duration-reveal: 800ms;
+
+	/* --- Surface ----------------------------------------------------------- */
+	--radius-card: 0.875rem;
+	--radius-panel: 1.25rem;
+
+	--shadow-soft: 0 1px 2px rgb(23 23 23 / 0.04), 0 8px 24px -8px rgb(23 23 23 / 0.08);
+	--shadow-lift: 0 2px 4px rgb(23 23 23 / 0.04), 0 16px 40px -12px rgb(23 23 23 / 0.14);
+	--shadow-chip: 0 1px 2px rgb(23 23 23 / 0.16);
+}
+
+/* ============================================================================
+   Base
+   ========================================================================= */
+
+@layer base {
+	html {
+		/* Lenis drives scrolling; native smooth-scroll would fight it. */
+		scroll-behavior: auto;
+		-webkit-text-size-adjust: 100%;
+	}
+
+	body {
+		background-color: var(--color-white);
+		color: var(--color-ink-900);
+		font-family: var(--font-sans);
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: var(--font-display);
+		text-wrap: balance;
+	}
+
+	p {
+		text-wrap: pretty;
+	}
+
+	::selection {
+		background-color: var(--color-solar-200);
+		color: var(--color-night-900);
+	}
+
+	/* A single visible focus treatment for the whole site. The old site had
+	   none, which made the calculator and contact forms unusable by keyboard. */
+	:focus-visible {
+		outline: 2px solid var(--color-night-900);
+		outline-offset: 2px;
+		border-radius: 2px;
+	}
+
+	/* Lenis needs the scroll container to not be height-constrained. */
+	html.lenis,
+	html.lenis body {
+		height: auto;
+	}
+
+	.lenis.lenis-smooth {
+		scroll-behavior: auto !important;
+	}
+
+	.lenis.lenis-stopped {
+		overflow: hidden;
+	}
+}
+
+/* ============================================================================
+   Reveal primitives
+
+   Elements marked [data-reveal] are hidden before their entrance animation
+   runs — but only once JavaScript has confirmed it is present. Without this
+   guard the old site shipped `opacity-0` in the markup, so any crawler or
+   failed script left whole sections permanently invisible.
+   ========================================================================= */
+
+@layer components {
+	html:not(.no-js) [data-reveal] {
+		opacity: 0;
+		will-change: transform, opacity, filter;
+	}
+
+	html:not(.no-js) [data-reveal='fade'] {
+		opacity: 0;
+	}
+}
+
+/* Honour the OS setting. GSAP is gated in JS as well; this covers the gap
+   before the timelines are created. */
+@media (prefers-reduced-motion: reduce) {
+	html:not(.no-js) [data-reveal] {
+		opacity: 1 !important;
+		transform: none !important;
+		filter: none !important;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* ============================================================================
+   Utilities
+   ========================================================================= */
+
+@utility container-page {
+	margin-inline: auto;
+	width: 100%;
+	max-width: 80rem;
+	padding-inline: 1.25rem;
+
+	@media (width >= 48rem) {
+		padding-inline: 2rem;
+	}
+
+	@media (width >= 80rem) {
+		padding-inline: 2.5rem;
+	}
+}
+
+@utility container-prose {
+	margin-inline: auto;
+	width: 100%;
+	max-width: 46rem;
+	padding-inline: 1.25rem;
+
+	@media (width >= 48rem) {
+		padding-inline: 2rem;
+	}
+}
+
+/* Vertical rhythm between major page sections. Two steps, used everywhere,
+   instead of the py-8/py-12/py-16/py-24 lottery the old pages used. */
+@utility section {
+	padding-block: 4rem;
+
+	@media (width >= 48rem) {
+		padding-block: 6rem;
+	}
+}
+
+@utility section-lg {
+	padding-block: 5rem;
+
+	@media (width >= 48rem) {
+		padding-block: 8rem;
+	}
+}
