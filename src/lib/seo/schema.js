@@ -16,6 +16,20 @@ export function absolute(path = '/') {
 }
 
 /**
+ * Appends the site suffix to a CMS-supplied title, unless the title already
+ * carries it. Several Contentful entries were authored with "| Daystar Solar"
+ * baked into the title field, and the old template appended it unconditionally
+ * — those pages shipped titles ending "| Daystar Solar | Daystar Solar".
+ */
+export function pageTitle(title, suffix = SITE.name) {
+	const trimmed = String(title ?? '').trim();
+	if (!trimmed) return suffix;
+
+	const alreadySuffixed = trimmed.toLowerCase().endsWith(`| ${suffix}`.toLowerCase());
+	return alreadySuffixed ? trimmed : `${trimmed} | ${suffix}`;
+}
+
+/**
  * Serialises a schema object for safe embedding in a <script> tag. Escaping
  * `<` means no value in the data can ever close the tag early.
  */
