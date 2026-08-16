@@ -23,17 +23,23 @@
 		open = false;
 	}
 
-	// The menu is a full-height overlay on mobile; letting the page scroll
-	// underneath it is the classic bug this prevents.
+	// The menu is an overlay on mobile; letting the page scroll underneath it
+	// is the classic bug this prevents.
+	//
+	// The lock goes on <html>, not <body>: `overflow: hidden` on the body makes
+	// it a scroll container, which steals the sticky header's scrollport and
+	// drops the bar back at the top of the document — off-screen, taking the
+	// menu with it. On <html> the value propagates to the viewport instead and
+	// the header keeps sticking.
 	$effect(() => {
 		if (!open) return;
 		const lenis = getLenis();
 		lenis?.stop();
-		document.body.style.overflow = 'hidden';
+		document.documentElement.style.overflow = 'hidden';
 
 		return () => {
 			lenis?.start();
-			document.body.style.overflow = '';
+			document.documentElement.style.overflow = '';
 		};
 	});
 
@@ -45,7 +51,7 @@
 <header
 	class="sticky top-0 z-50 transition-[background-color,box-shadow,border-color] duration-300 ease-out
 		{condensed || open
-		? 'border-b border-ink-200 bg-white/85 shadow-soft backdrop-blur-md'
+		? 'border-b border-ink-200 bg-white/90 shadow-soft backdrop-blur-lg'
 		: 'border-b border-transparent bg-white'}">
 	<nav class="container-page" aria-label="Primary">
 		<!-- With the links and menu button gone, `justify-between` has nothing to
@@ -100,34 +106,65 @@
 			Kept mounted and animated with a grid-row transition rather than
 			mounted/unmounted, so rapidly tapping the toggle retargets the
 			animation instead of restarting it.
+
+			Anchored to the bottom of the bar rather than left in the header's
+			flow: as a flow child it grew the sticky header, which pushed the
+			whole document down by the menu's height the moment it opened —
+			so opening it anywhere but the very top of a page threw the content
+			out from under the reader.
 		-->
 		{#if !minimal}
-			<div id="mobile-menu" class="mobile-menu" class:is-open={open} inert={!open || undefined}>
+			<div
+				id="mobile-menu"
+				class="mobile-menu absolute inset-x-0 top-full shadow-soft"
+				class:is-open={open}
+				inert={!open || undefined}>
 				<div class="overflow-hidden">
-					<ul class="flex flex-col gap-1 pt-2 pb-6">
-						{#each NAV_LINKS as link (link.href)}
-							<li>
-								<a
-									href={link.href}
-									onclick={close}
-									aria-current={isActive(link.href) ? 'page' : undefined}
-									class="block rounded-lg px-4 py-3 text-lg transition-colors duration-160 ease-out
-										{isActive(link.href) ? 'bg-ink-100 font-medium text-night-900' : 'text-ink-700 hover:bg-ink-50'}">
-									{link.name}
-								</a>
+					<!-- Matches the condensed bar's surface so the two read as one
+					     sheet rather than two stacked panels. -->
+					<div class="border-b border-ink-200 bg-white backdrop-blur-lg">
+						<!-- Clamped so a short viewport (landscape phones) scrolls the
+						     links instead of pushing the last one off-screen. The 5.5rem
+						     clears the tallest the bar gets below `lg`, plus a little. -->
+						<ul
+							class="container-page flex max-h-[calc(100dvh-5.5rem)] flex-col gap-1 overflow-y-auto pt-2 pb-6">
+							{#each NAV_LINKS as link (link.href)}
+								<li>
+									<a
+										href={link.href}
+										onclick={close}
+										aria-current={isActive(link.href) ? 'page' : undefined}
+										class="block rounded-lg px-4 py-3 text-lg transition-colors duration-160 ease-out
+											{isActive(link.href) ? 'bg-ink-100 font-medium text-night-900' : 'text-ink-700 hover:bg-ink-50'}">
+										{link.name}
+									</a>
+								</li>
+							{/each}
+							<li class="mt-3">
+								<Button href="/contact" variant="accent" shape="pill" size="lg" chip class="w-full">
+									Contact
+								</Button>
 							</li>
-						{/each}
-						<li class="mt-3">
-							<Button href="/contact" variant="accent" shape="pill" size="lg" chip class="w-full">
-								Contact
-							</Button>
-						</li>
-					</ul>
+						</ul>
+					</div>
 				</div>
 			</div>
 		{/if}
 	</nav>
 </header>
+
+<!-- Now that the panel floats over the page, tapping what is left of the page
+     has to close it. Sits under the header's z-50 so the bar and the panel
+     itself stay clickable. -->
+{#if !minimal}
+	<button
+		type="button"
+		tabindex="-1"
+		aria-hidden="true"
+		onclick={close}
+		class="fixed inset-0 z-40 bg-night-900/25 transition-opacity duration-300 ease-out lg:hidden
+			{open ? 'opacity-100' : 'pointer-events-none opacity-0'}"></button>
+{/if}
 
 <style>
 	/* The underline that grows from the left — carried over from the old nav,
