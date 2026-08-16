@@ -5,6 +5,9 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+	// Vite has no built-in handling for glTF binaries, so without this the AR
+	// route's model import is parsed as JavaScript and the page 500s.
+	assetsInclude: ['**/*.glb'],
 	plugins: [
 		tailwindcss(),
 		// Must come before sveltekit(). It is a Vite plugin that installs its own
